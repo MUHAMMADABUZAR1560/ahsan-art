@@ -58,7 +58,7 @@ const btsItems = [
     id: 6,
     title: "Post-Production",
     description: "Expert editing and color grading process",
-    image: "/images/portfolio/fashion.mp4",
+    image: "/images/portfolio/fashion",
     thumbnail: "/images/portfolio/fashion",
     type: "video",
     category: "Editing",
