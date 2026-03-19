@@ -32,6 +32,7 @@ import {
 } from "@/components/ui/select"
 import { Plus, Pencil, Trash2, Loader2 } from "lucide-react"
 import { ImageIcon } from "lucide-react"
+import Image from "next/image"
 
 interface PortfolioItem {
   id: string
@@ -307,7 +308,7 @@ export default function PortfolioAdminPage() {
           {items.map((item) => (
             <Card key={item.id} className="overflow-hidden">
               <div className="relative aspect-video bg-secondary">
-                <ImageIcon src={item.image_url || "/placeholder.svg"} alt={item.title} className="object-cover" />
+                <Image src={item.image_url || "/placeholder.svg"} alt={item.title} className="object-cover" fill sizes="(max-width: 768px) 100vw, 33vw" />
                 {item.featured && (
                   <span className="absolute top-2 right-2 px-2 py-1 bg-primary text-primary-foreground text-xs font-medium rounded">
                     Featured
