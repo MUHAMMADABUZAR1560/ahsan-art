@@ -8,6 +8,7 @@ const nextConfig = {
       },
     ],
   },
+  trailingSlash: true,
   devIndicators: false
 };
 export default nextConfig;
