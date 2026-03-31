@@ -12,21 +12,21 @@ import { useLockBodyScroll } from "@/hooks/use-lock-body-scroll"
 const btsItems = [
   {
     id: 1,
+    title: "Creative Direction",
+    description: "Planning and conceptualizing the perfect visual story",
+    image: "https://res.cloudinary.com/dhtktd4ka/video/upload/v1774919826/creative_croajr.mp4",
+    thumbnail: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774919237/thumb1_lcixsd.jpg",
+    type: "video",
+    category: "Creative",
+  },
+  {
+    id: 2,
     title: "Studio Setup",
     description: "Professional lighting setup for a skincare product shoot",
     image: "https://res.cloudinary.com/dhtktd4ka/video/upload/v1774919801/studiosetup_alwvfq.mp4",
     thumbnail: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774919239/thumb4_two1hm.png",
     type: "video",
     category: "Photography",
-  },
-  {
-    id: 2,
-    title: "Product Styling",
-    description: "Careful arrangement and styling for the perfect shot",
-    image: "https://res.cloudinary.com/dhtktd4ka/video/upload/v1774919748/productstyling_tt0qek.mov",
-    thumbnail: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774919248/thumb3_hwngnj.png",
-    type: "video",
-    category: "Styling",
   },
   {
     id: 3,
@@ -39,12 +39,12 @@ const btsItems = [
   },
   {
     id: 4,
-    title: "Creative Direction",
-    description: "Planning and conceptualizing the perfect visual story",
-    image: "https://res.cloudinary.com/dhtktd4ka/video/upload/v1774919826/creative_croajr.mp4",
-    thumbnail: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774919237/thumb1_lcixsd.jpg",
+    title: "Product Styling",
+    description: "Careful arrangement and styling for the perfect shot",
+    image: "https://res.cloudinary.com/dhtktd4ka/video/upload/v1774919748/productstyling_tt0qek.mov",
+    thumbnail: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774919248/thumb3_hwngnj.png",
     type: "video",
-    category: "Creative",
+    category: "Styling",
   },
   {
     id: 5,
