@@ -5,8 +5,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
 import { Logo } from "./logo"
-import { Menu, X, ArrowRight, Settings, Sparkles } from "lucide-react"
-import { useAdmin } from "@/hooks/use-admin"
+import { Menu, X, ArrowRight } from "lucide-react"
 
 const navItems = [
   { href: "/", label: "Home" },
@@ -22,7 +21,7 @@ export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [activeHover, setActiveHover] = useState<string | null>(null)
   const pathname = usePathname()
-  const { isAdmin, isLoading } = useAdmin()
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -120,38 +119,6 @@ export function Navigation() {
                   )}
                 </Link>
               ))}
-
-              {/* Admin Panel Button - Only visible to admin */}
-              {!isLoading && isAdmin && (
-                <motion.div
-                  initial={{ opacity: 0, x: -10 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <Link
-                    href="/admin"
-                    className="relative ml-2 px-4 py-2 group"
-                    onMouseEnter={() => setActiveHover("admin")}
-                    onMouseLeave={() => setActiveHover(null)}
-                  >
-                    <span className="relative z-10 flex items-center gap-1.5 text-sm font-medium text-primary">
-                      <Settings className="w-3.5 h-3.5" />
-                      Admin
-                    </span>
-                    <AnimatePresence>
-                      {activeHover === "admin" && (
-                        <motion.span
-                          initial={{ opacity: 0, scale: 0.95 }}
-                          animate={{ opacity: 1, scale: 1 }}
-                          exit={{ opacity: 0, scale: 0.95 }}
-                          transition={{ duration: 0.15 }}
-                          className="absolute inset-0 bg-primary/10 border border-primary/30 rounded-full"
-                        />
-                      )}
-                    </AnimatePresence>
-                  </Link>
-                </motion.div>
-              )}
 
               {/* Divider */}
               <div className="w-px h-6 bg-border mx-4" />
@@ -276,26 +243,7 @@ export function Navigation() {
                   </motion.div>
                 ))}
 
-                {/* Admin Panel Link - Mobile */}
-                {!isLoading && isAdmin && (
-                  <motion.div
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
-                    transition={{ delay: navItems.length * 0.05 + 0.1 }}
-                  >
-                    <Link
-                      href="/admin"
-                      className="group flex items-center justify-between py-4 border-b border-primary/30 bg-primary/5 -mx-6 px-6"
-                    >
-                      <span className="flex items-center gap-3 text-2xl font-serif font-semibold tracking-tight text-primary">
-                        <Settings className="w-6 h-6" />
-                        Admin Panel
-                      </span>
-                      <Sparkles className="w-5 h-5 text-primary" />
-                    </Link>
-                  </motion.div>
-                )}
+
               </div>
 
               {/* Bottom CTA */}
