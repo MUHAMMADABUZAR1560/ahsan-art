@@ -4,8 +4,9 @@ import { useEffect, useState } from "react"
 import { motion, useMotionValue, useSpring } from "framer-motion"
 
 export function CursorFollower() {
+  const [mounted, setMounted] = useState(false)
   const [isVisible, setIsVisible] = useState(false)
-  const [isTouchDevice, setIsTouchDevice] = useState(false) // New state to track touch
+  const [isTouchDevice, setIsTouchDevice] = useState(false)
   const mouseX = useMotionValue(0)
   const mouseY = useMotionValue(0)
 
@@ -14,6 +15,8 @@ export function CursorFollower() {
   const cursorY = useSpring(mouseY, springConfig)
 
   useEffect(() => {
+    setMounted(true)
+    
     // Check if the device has a mouse/fine pointer
     const touchQuery = window.matchMedia("(pointer: coarse)")
     setIsTouchDevice(touchQuery.matches)
@@ -21,7 +24,6 @@ export function CursorFollower() {
     let timer: NodeJS.Timeout
 
     const handleMouseMove = (e: MouseEvent) => {
-      // If it's a touch device, we stop execution here
       if (touchQuery.matches) return
 
       mouseX.set(e.clientX)
@@ -42,8 +44,7 @@ export function CursorFollower() {
     }
   }, [mouseX, mouseY])
 
-  // Don't render anything if it's a touch device
-  if (isTouchDevice) return null
+  if (!mounted || isTouchDevice) return null
 
   return (
     <motion.div
