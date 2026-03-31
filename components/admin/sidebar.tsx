@@ -49,7 +49,7 @@ export function AdminSidebar({ user }: AdminSidebarProps) {
   const SidebarContent = () => (
     <>
       <div className="flex items-center justify-between h-16 px-6 border-b border-sidebar-border">
-        <Logo variant="light" size="sm" />
+        <Logo color="light" size="sm" />
         <button
           onClick={() => setIsMobileOpen(false)}
           className="lg:hidden text-sidebar-foreground/70 hover:text-sidebar-foreground"

@@ -9,15 +9,15 @@ import { ArrowRight, ArrowUpRight, Play } from "lucide-react"
 const categories = ["All", "Photography", "Videography", "Amazon", "Food"]
 
 const portfolioItems = [
-  { id: 1, title: "Skincare", category: "Photography", image: "/images/portfolio/skincare.jpg", type: "image" },
-  { id: 2, title: "Tech", category: "Videography", image: "/images/portfolio/a2.jpg", type: "video" },
-  { id: 3, title: "Amazon", category: "Amazon", image: "/images/portfolio/amazon.jpg", type: "image" },
-  { id: 4, title: "Food", category: "Food", image: "/images/portfolio/food.jpg", type: "image" },
-  { id: 5, title: "Fashion", category: "Photography", image: "/images/portfolio/fashion.jpg", type: "image" },
-  { id: 6, title: "Story", category: "Videography", image: "/images/portfolio/po1.jpg", type: "video" },
-  { id: 7, title: "Product", category: "Photography", image: "/images/portfolio/skincare.jpg", type: "image" },
-  { id: 8, title: "Launch", category: "Videography", image: "/images/portfolio/a2.jpg", type: "video" },
-  { id: 9, title: "Listing", category: "Amazon", image: "/images/portfolio/amazon.jpg", type: "image" },
+  { id: 1, title: "Skincare", category: "Photography", image: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774578569/1_oa9m7u.jpg", type: "image" },
+  { id: 2, title: "Water Bottles", category: "Videography", image: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575418/1_c8da7s.jpg", type: "image" },
+  { id: 3, title: "Bedding", category: "Amazon", image: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575484/1_kttjdw.jpg", type: "image" },
+  { id: 4, title: "Food", category: "Food", image: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575591/1_f4bbym.jpg", type: "image" },
+  { id: 5, title: "Fashion Acc.", category: "Photography", image: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883470/1_ophv2w.jpg", type: "image" },
+  { id: 6, title: "Men Footwear", category: "Photography", image: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883014/1_kwi1qt.jpg", type: "image" },
+  { id: 7, title: "Kids", category: "Photography", image: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883337/1_lt4of6.jpg", type: "image" },
+  { id: 8, title: "Launch", category: "Videography", image: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575368/a2_tc7xlt.jpg", type: "video" },
+  { id: 9, title: "Listing", category: "Amazon", image: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883127/1_hr9gwd.jpg", type: "image" },
 ]
 
 export function PortfolioPreview() {

@@ -39,7 +39,7 @@ export function HeroSection() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
           className="mb-6"
         >
           <span className="inline-flex items-center gap-2 text-sm font-medium tracking-wider uppercase text-muted">
@@ -52,21 +52,21 @@ export function HeroSection() {
           <motion.h1
             initial={{ y: "100%" }}
             animate={{ y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 1.2, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
             className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-serif font-bold text-background leading-[1.1] tracking-tight"
           >
-            Crafting Visual
+            Crafting Visual 
           </motion.h1>
         </div>
         <div className="overflow-hidden">
           <motion.h1
             initial={{ y: "100%" }}
             animate={{ y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 1.2, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
             className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-serif font-bold text-background leading-[1.1] tracking-tight"
           >
             Stories That
-            <span className="text-primary"> Sell</span>
+            <span className="text-primary italic"> Sell</span>
             <span className="inline-block w-3 h-3 md:w-4 md:h-4 rounded-full bg-primary ml-2 align-middle" />
           </motion.h1>
         </div>
@@ -74,8 +74,8 @@ export function HeroSection() {
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="mt-8 text-background/70 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed"
+          transition={{ duration: 0.8, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="mt-8 text-background/70 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed font-light"
         >
           Premium product photography & videography studio specializing in 
           e-commerce brands, Amazon listings, and conversion-focused visual content.

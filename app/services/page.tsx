@@ -23,7 +23,7 @@ const services = [
       "Detail and texture shots",
       "Color-accurate editing",
     ],
-    image: "/images/portfolio/pr1.jpg",
+    image: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575375/pr1_zaane3.jpg",
   },
   {
     id: "videography",
@@ -38,7 +38,7 @@ const services = [
       "Social media content",
       "Professional editing",
     ],
-    image: "/images/portfolio/desighee.jpg",
+    image: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575369/desighee_d8lhee.jpg",
   },
   {
     id: "ugc",
@@ -53,7 +53,7 @@ const services = [
       "Multiple versions",
       "Quick turnaround",
     ],
-    image: "/images/portfolio/x3.jpg",
+    image: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575377/x3_qnwnyr.jpg",
   },
   {
     id: "amazon",
@@ -68,7 +68,7 @@ const services = [
       "Comparison charts",
       "Amazon compliance",
     ],
-    image: "/images/portfolio/g2.jpg",
+    image: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575373/g2_owsbnm.jpg",
   },
   {
     id: "food",
@@ -83,7 +83,7 @@ const services = [
       "Packaging shots",
       "Social content",
     ],
-    image: "/images/portfolio/fp1.jpg",
+    image: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575372/fp1_sdmddj.jpg",
   },
   {
     id: "ecommerce",
@@ -98,7 +98,7 @@ const services = [
       "Brand guidelines",
       "Ongoing support",
     ],
-    image: "/images/portfolio/b1.jpg",
+    image: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575369/b1_pf2xsu.jpg",
   },
 ]
 
@@ -132,70 +132,94 @@ export default function ServicesPage() {
   const processInView = useInView(processRef, { once: true, margin: "-100px" })
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen font-serif">
       <Navigation />
-
+      
       {/* Hero Section */}
-      <section ref={heroRef} className="pt-32 pb-20 lg:pt-40 lg:pb-32 text-background bg-[rgba(255,255,255,1)]">
+      <section ref={heroRef} className="pt-24 pb-12 md:pt-40 md:pb-24 bg-white border-b border-stone-100">
         <div className="container mx-auto px-6 lg:px-12">
-          <div className="max-w-4xl">
-            <motion.span
-              initial={{ opacity: 0, y: 20 }}
-              animate={heroInView ? { opacity: 1, y: 0 } : {}}
-              className="inline-flex items-center gap-2 text-primary text-sm font-medium tracking-wider uppercase mb-6"
+          <motion.div
+            initial="hidden"
+            animate={heroInView ? "visible" : "hidden"}
+            variants={{
+                hidden: { opacity: 0 },
+                visible: {
+                    opacity: 1,
+                    transition: {
+                        staggerChildren: 0.15
+                    }
+                }
+            }}
+          >
+            <motion.span 
+              variants={{
+                  hidden: { opacity: 0, x: -20 },
+                  visible: { opacity: 1, x: 0 }
+              }}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+              className="inline-flex items-center gap-2 text-primary text-[10px] md:text-sm font-bold tracking-widest uppercase mb-4"
             >
-              <span className="w-8 h-px bg-primary" />
-              Our Services
+              <span className="w-6 md:w-8 h-px bg-primary" /> Our Expertise
             </motion.span>
-
-            <div className="overflow-hidden">
-              <motion.h1
-                initial={{ y: "100%" }}
-                animate={heroInView ? { y: 0 } : {}}
-                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                className="text-4xl md:text-5xl lg:text-7xl font-serif font-bold leading-tight text-foreground"
-              >
-                Everything Your
-                <br />
-                Brand Needs
-                <span className="inline-block w-3 h-3 rounded-full bg-primary ml-3 align-middle" />
-              </motion.h1>
-            </div>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={heroInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.3 }}
-              className="mt-8 text-lg md:text-xl max-w-2xl leading-relaxed text-foreground"
+            <motion.h1 
+              variants={{
+                  hidden: { opacity: 0, y: 30 },
+                  visible: { opacity: 1, y: 0 }
+              }}
+              transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+              className="text-4xl md:text-7xl font-bold text-foreground leading-tight"
             >
-              From stunning product photography to engaging video content, 
-              we offer comprehensive visual solutions designed to elevate 
-              your brand and drive results.
+              Professional Visual <br className="hidden md:block" /> Solutions<span className="text-primary">.</span>
+            </motion.h1>
+            <motion.p 
+              variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: { opacity: 1, y: 0 }
+              }}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+              className="mt-6 text-sm md:text-xl text-muted-foreground max-w-2xl leading-relaxed"
+            >
+              From studio photography to high-impact video ads, we provide everything your brand needs to stand out.
             </motion.p>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Services List - Mobile 2x2 Grid / Desktop Alternating List */}
-      <section className="py-24 lg:py-32 bg-background">
+      <section className="py-24 lg:py-32 bg-background overflow-hidden font-serif">
         <div className="container mx-auto px-4 lg:px-12">
-          <div className="grid grid-cols-2 lg:grid-cols-1 gap-4 lg:gap-32">
+          <motion.div 
+            variants={{
+                hidden: { opacity: 0 },
+                visible: {
+                  opacity: 1,
+                  transition: {
+                    staggerChildren: 0.15
+                  }
+                }
+            }}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            className="grid grid-cols-2 lg:grid-cols-1 gap-4 lg:gap-32"
+          >
             {services.map((service, index) => {
               const isEven = index % 2 === 0
               return (
                 <ServiceCard key={service.id} service={service} isEven={isEven} />
               )
             })}
-          </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* Process Section - Mobile 2x2 Grid / Desktop 4-col Grid */}
-      <section ref={processRef} className="py-24 lg:py-32 bg-secondary">
+      {/* Process Section */}
+      <section ref={processRef} className="py-24 lg:py-32 bg-stone-50 overflow-hidden">
         <div className="container mx-auto px-4 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            animate={processInView ? { opacity: 1, y: 0 } : {}}
+            animate={processInView ? "visible" : "hidden"}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="text-center max-w-3xl mx-auto mb-16"
           >
             <span className="inline-flex items-center gap-2 text-primary text-sm font-medium tracking-wider uppercase mb-4">
@@ -203,10 +227,10 @@ export default function ServicesPage() {
               Our Process
               <span className="w-8 h-px bg-primary" />
             </span>
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground">
+            <h2 className="text-3xl md:text-5xl font-serif font-bold text-foreground">
               How We Work
             </h2>
-            <p className="mt-4 text-muted-foreground">
+            <p className="mt-4 text-muted-foreground text-sm md:text-lg">
               A streamlined process designed to deliver exceptional results every time.
             </p>
           </motion.div>

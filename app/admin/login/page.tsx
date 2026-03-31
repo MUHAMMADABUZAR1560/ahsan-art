@@ -54,7 +54,7 @@ export default function AdminLoginPage() {
     <div className="min-h-screen bg-background flex items-center justify-center p-4">
       <div className="w-full max-w-md">
         <div className="flex justify-center mb-8">
-          <Logo variant="dark" size="md" />
+          <Logo color="dark" size="md" />
         </div>
         
         <Card className="border-border/50">

@@ -7,59 +7,60 @@ import { motion, useInView, AnimatePresence } from "framer-motion"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { ArrowRight, Play, X, Camera, Video, Sparkles } from "lucide-react"
+import { useLockBodyScroll } from "@/hooks/use-lock-body-scroll"
 
 const btsItems = [
   {
     id: 1,
+    title: "Creative Direction",
+    description: "Planning and conceptualizing the perfect visual story",
+    image: "https://res.cloudinary.com/dhtktd4ka/video/upload/v1774919826/creative_croajr.mp4",
+    thumbnail: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774919237/thumb1_lcixsd.jpg",
+    type: "video",
+    category: "Creative",
+  },
+  {
+    id: 2,
     title: "Studio Setup",
     description: "Professional lighting setup for a skincare product shoot",
-    image: "/videos/studiosetup",
-    thumbnail: "/images/portfolio/thumb4.jpg",
+    image: "https://res.cloudinary.com/dhtktd4ka/video/upload/v1774919801/studiosetup_alwvfq.mp4",
+    thumbnail: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774919239/thumb4_two1hm.png",
     type: "video",
     category: "Photography",
   },
   {
-    id: 2,
-    title: "Product Styling",
-    description: "Careful arrangement and styling for the perfect shot",
-    image: "/videos/productstyling",
-    thumbnail: "/images/portfolio/thumb3.jpg",
+    id: 3,
+    title: "Food Styling",
+    description: "The art of making food look irresistible",
+    image: "https://res.cloudinary.com/dhtktd4ka/video/upload/v1774919796/foodstyling_pfjwqc.mp4",
+    thumbnail: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774919240/thumb2_hov2bf.png",
     type: "video",
     category: "Styling",
   },
   {
-    id: 3,
-    title: "Video Production",
-    description: "Behind the scenes of our video production process",
-    image: "/videos/videopro",
-    thumbnail: "/images/portfolio/thumb5.jpg", 
-    type: "video",
-    category: "Videography",
-  },
-  {
     id: 4,
-    title: "Food Styling",
-    description: "The art of making food look irresistible",
-    image: "/videos/foodstyling",
-    thumbnail: "/images/portfolio/thumb2.jpg",
+    title: "Product Styling",
+    description: "Careful arrangement and styling for the perfect shot",
+    image: "https://res.cloudinary.com/dhtktd4ka/video/upload/v1774919748/productstyling_tt0qek.mov",
+    thumbnail: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774919248/thumb3_hwngnj.png",
     type: "video",
     category: "Styling",
   },
   {
     id: 5,
-    title: "Creative Direction",
-    description: "Planning and conceptualizing the perfect visual story",
-    image: "/videos/creative",
-    thumbnail: "/images/portfolio/thumb1.jpg",
+    title: "Video Production",
+    description: "Behind the scenes of our video production process",
+    image: "https://res.cloudinary.com/dhtktd4ka/video/upload/v1774575382/bts_q7z9uz.mp4",
+    thumbnail: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575374/skincare_mijkbh.jpg",
     type: "video",
-    category: "Creative",
+    category: "Videography",
   },
   {
     id: 6,
     title: "Post-Production",
     description: "Expert editing and color grading process",
-    image: "/images/portfolio/fashion",
-    thumbnail: "/images/portfolio/fashion",
+    image: "https://res.cloudinary.com/dhtktd4ka/video/upload/v1774575382/bts_q7z9uz.mp4",
+    thumbnail: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883470/1_ophv2w.jpg",
     type: "video",
     category: "Editing",
   },
@@ -89,6 +90,9 @@ export default function BTSPage() {
   const processRef = useRef(null)
   const processInView = useInView(processRef, { once: true, margin: "-100px" })
   const [selectedItem, setSelectedItem] = useState<typeof btsItems[0] | null>(null)
+
+  // Implement scroll lock for the lightbox
+  useLockBodyScroll(!!selectedItem)
 
   return (
     <main className="min-h-screen">
@@ -189,15 +193,33 @@ export default function BTSPage() {
             </p>
           </div>
 
-          {/* Upgraded Grid System */}
-          <div className="grid grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-1 md:gap-6">
+          {/* Upgraded Grid System with Staggered Entrance */}
+          <motion.div 
+            variants={{
+              hidden: { opacity: 0 },
+              visible: {
+                opacity: 1,
+                transition: {
+                  staggerChildren: 0.1
+                }
+              }
+            }}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            className="grid grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-1 md:gap-6"
+          >
             {btsItems.map((item, index) => (
               <motion.div
                 key={item.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
+                variants={{
+                  hidden: { opacity: 0, y: 30 },
+                  visible: { 
+                    opacity: 1, 
+                    y: 0,
+                    transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] }
+                  }
+                }}
                 onClick={() => setSelectedItem(item)}
                 className="group relative rounded-sm md:rounded-xl overflow-hidden cursor-pointer"
               >
@@ -207,31 +229,31 @@ export default function BTSPage() {
                     src={(item.type === "video" ? item.thumbnail : item.image) || "/placeholder.svg"}
                     alt={item.title}
                     fill
-                    className="object-cover transition-transform duration-700 md:group-hover:scale-110"
+                    className="object-cover transition-transform duration-700 ease-out md:group-hover:scale-110"
                   />
                   
                   {/* Overlay - simplified for mobile grid */}
-                  <div className="absolute inset-0 bg-black/40 md:bg-gradient-to-t md:from-foreground/80 md:via-foreground/20 md:to-transparent opacity-0 md:group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-black/40 md:bg-gradient-to-t md:from-foreground/80 md:via-foreground/20 md:to-transparent opacity-0 md:group-hover:opacity-100 transition-opacity duration-500" />
 
                   {/* Video Icon Overlay - Resized for small mobile grid tiles */}
                   {item.type === "video" && (
-                    <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="w-6 h-6 md:w-12 md:h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                            <Play className="w-2.5 h-2.5 md:w-5 md:h-5 text-white fill-white" />
+                    <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                        <div className="w-8 h-8 md:w-16 md:h-16 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center group-hover:scale-110 group-hover:bg-primary transition-all duration-500">
+                            <Play className="w-3 h-3 md:w-6 md:h-6 text-white fill-white" />
                         </div>
                     </div>
                   )}
 
                   {/* Content Overlay - Hidden on mobile grid to keep it clean */}
-                  <div className="hidden md:block absolute bottom-0 left-0 right-0 p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                    <span className="text-primary text-sm font-medium">{item.category}</span>
-                    <h3 className="text-lg font-semibold text-background mt-1">{item.title}</h3>
-                    <p className="text-background/70 text-sm mt-1">{item.description}</p>
+                  <div className="hidden md:block absolute bottom-0 left-0 right-0 p-8 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                    <span className="text-primary text-sm font-medium tracking-wider uppercase">{item.category}</span>
+                    <h3 className="text-2xl font-serif font-bold text-white mt-1">{item.title}</h3>
+                    <p className="text-white/70 text-sm mt-2 line-clamp-2">{item.description}</p>
                   </div>
                 </div>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 

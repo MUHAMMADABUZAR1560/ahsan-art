@@ -7,214 +7,235 @@ import { motion, useInView, AnimatePresence } from "framer-motion"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { ArrowRight, Play, X, ChevronLeft, ChevronRight } from "lucide-react"
+import { useLockBodyScroll } from "@/hooks/use-lock-body-scroll"
 
 const categories = ["All", "Photography", "Videography", "Amazon", "Food", "UGC Videos"]
+
+interface GalleryAsset {
+  type: "image" | "video";
+  url: string;
+  thumbnail?: string;
+}
+
+interface PortfolioItem {
+  id: number;
+  title: string;
+  category: string;
+  description: string;
+  image: string;
+  type: "image" | "video";
+  gallery: GalleryAsset[];
+}
 
 /**
  * PORTFOLIO DATA
  */
-const portfolioItems = [
+const portfolioItems: PortfolioItem[] = [
   { 
-    id: 1, title: "Luxury Skincare", category: "Photography", description: "Premium skincare brand product photography.", image: "/images/portfolio/skincare.jpg", type: "image", 
+    id: 1, title: "Luxury Skincare", category: "Photography", description: "Premium skincare brand product photography.", image: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774578569/1_oa9m7u.jpg", type: "image", 
     gallery: [
-        { type: "image", url: "/images/portfolio/skincare/1.jpg" },
-        { type: "image", url: "/images/portfolio/skincare/2.jpg" },
-        { type: "image", url: "/images/portfolio/skincare/3.jpg" },
-        { type: "image", url: "/images/portfolio/skincare/4.jpg" },
-        { type: "image", url: "/images/portfolio/skincare/5.jpg" },
-        { type: "image", url: "/images/portfolio/skincare/6.jpg" }, ]
-  },
-  { 
-    id: 2, title: "Water Bottles", category: "Photography", description: "Dynamic product video for technology launch.", image: "/images/portfolio/pr1.jpg", type: "image",
-    gallery: [
-               { type: "image", url: "/images/portfolio/bottles/1.jpg" },
-               { type: "image", url: "/images/portfolio/bottles/2.jpg" },
-               { type: "image", url: "/images/portfolio/bottles/3.jpg" },
+        { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774578569/1_oa9m7u.jpg" },
+        { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774578617/2_pcg2aa.jpg" },
+        { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774578618/3_qx7fg8.jpg" },
+        { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774578618/4_c4qbcz.jpg" },
+        { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774578618/5_hrmwbh.jpg" },
+        { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774578618/6_x9xrv9.jpg" },
     ]
   },
   { 
-    id: 3, title: "Bed Sheets", category: "Photography", description: "Amazon listing imagery optimized for conversions.", image: "/images/portfolio/bedsheet.jpg", type: "image",
+    id: 2, title: "Water Bottles", category: "Photography", description: "Dynamic product photography for premium hydration.", image: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575418/1_c8da7s.jpg", type: "image",
     gallery: [
-               { type: "image", url: "/images/portfolio/bedding/1.jpg" },
-               { type: "image", url: "/images/portfolio/bedding/2.jpg" },
-               { type: "image", url: "/images/portfolio/bedding/3.jpg" },
-               { type: "image", url: "/images/portfolio/bedding/4.jpg" },
-               { type: "image", url: "/images/portfolio/bedding/5.jpg" },
-               { type: "image", url: "/images/portfolio/bedding/6.jpg" },
-               { type: "image", url: "/images/portfolio/bedding/7.jpg" },
-               { type: "image", url: "/images/portfolio/bedding/8.jpg" },
-               { type: "image", url: "/images/portfolio/bedding/9.jpg" },
-               { type: "image", url: "/images/portfolio/bedding/10.jpg" },
-               { type: "image", url: "/images/portfolio/bedding/11.jpg" },
-               { type: "image", url: "/images/portfolio/bedding/12.jpg" },
-               { type: "image", url: "/images/portfolio/bedding/13.jpg" },
-               { type: "image", url: "/images/portfolio/bedding/14.jpg" },
-               { type: "image", url: "/images/portfolio/bedding/15.jpg" }
-    ]
-
-  },
-  { 
-    id: 4, title: "Gourmet Food", category: "Food", description: "Appetizing food photography for restaurant menu.", image: "/images/portfolio/food.jpg", type: "image",
-    gallery: [
-               { type: "image", url: "/images/portfolio/food/1.jpg" },
-               { type: "image", url: "/images/portfolio/food/2.jpg" },
-               { type: "image", url: "/images/portfolio/food/3.jpg" },
-               { type: "image", url: "/images/portfolio/food/4.jpg" },
-               { type: "image", url: "/images/portfolio/food/5.jpg" },
-               { type: "image", url: "/images/portfolio/food/6.jpg" },
-               { type: "image", url: "/images/portfolio/food/7.jpg" },
-               { type: "image", url: "/images/portfolio/food/8.jpg" },
-               { type: "image", url: "/images/portfolio/food/9.jpg" },
-               { type: "video", url: "/images/portfolio/food/10.mp4", thumbnail: "/images/portfolio/food/13.jpg" },
-               { type: "video", url: "/images/portfolio/food/11.mp4", thumbnail: "/images/portfolio/food/14.jpg" },
-               { type: "video", url: "/images/portfolio/food/12.mp4", thumbnail: "/images/portfolio/food/15.jpg" }, // Added thumbnail here
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575418/1_c8da7s.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575420/2_heeux0.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575419/3_uatshv.jpg" },
     ]
   },
   { 
-    id: 5, title: "Fashion Acc.", category: "Photography", description: "High-end fashion accessory photography.", image: "/images/portfolio/fashion.jpg", type: "image",
-    gallery: [ { type: "image", url: "/images/portfolio/flatlay clothing/1.jpg" },
-               { type: "image", url: "/images/portfolio/flatlay clothing/2.jpg" },
-               { type: "image", url: "/images/portfolio/flatlay clothing/3.jpg" },
-               { type: "image", url: "/images/portfolio/flatlay clothing/4.jpg" },
-               { type: "image", url: "/images/portfolio/flatlay clothing/5.jpg" },
-               { type: "image", url: "/images/portfolio/flatlay clothing/6.jpg" },
-               { type: "image", url: "/images/portfolio/flatlay clothing/7.jpg" },
-               { type: "image", url: "/images/portfolio/flatlay clothing/8.jpg" },
-               { type: "image", url: "/images/portfolio/flatlay clothing/9.jpg" },
-               { type: "image", url: "/images/portfolio/flatlay clothing/10.jpg" },
-               { type: "image", url: "/images/portfolio/flatlay clothing/11.jpg" },
-               { type: "image", url: "/images/portfolio/flatlay clothing/12.jpg" },
-               { type: "image", url: "/images/portfolio/flatlay clothing/13.jpg" },
-               { type: "image", url: "/images/portfolio/flatlay clothing/14.jpg" },
-               { type: "image", url: "/images/portfolio/flatlay clothing/15.jpg" },
-]
-  },
-  { 
-    id: 6, title: "Men Footwear", category: "Photography", description: "Compelling brand narrative video.", image: "/images/portfolio/men.jpg", type: "video",
-    gallery: [ {type: "image", url: "/images/portfolio/men footwear/1.jpg" },
-               { type: "image", url: "/images/portfolio/men footwear/2.jpg" },
-               { type: "image", url: "/images/portfolio/men footwear/3.jpg" },
-               { type: "image", url: "/images/portfolio/men footwear/4.jpg" },
-               { type: "image", url: "/images/portfolio/men footwear/5.jpg" },
-               { type: "image", url: "/images/portfolio/men footwear/6.jpg" },]
-               },
-  { 
-    id: 7, title: "Kids", category: "Photography", description: "Complete product catalog photography.", image: "/images/portfolio/product.jpg", type: "image",
-    gallery: [{ type: "image", url: "/images/portfolio/kids/1.jpg" },
-               { type: "image", url: "/images/portfolio/kids/2.jpg" },
-               { type: "image", url: "/images/portfolio/kids/3.jpg" },
-               { type: "image", url: "/images/portfolio/kids/4.jpg" },
-               { type: "image", url: "/images/portfolio/kids/5.jpg" },
-               { type: "image", url: "/images/portfolio/kids/6.jpg" },
-               { type: "image", url: "/images/portfolio/kids/7.jpg" },
-               { type: "image", url: "/images/portfolio/kids/8.jpg" },
-               { type: "image", url: "/images/portfolio/kids/9.jpg" },
-               { type: "image", url: "/images/portfolio/kids/10.jpg" },
-               { type: "image", url: "/images/portfolio/kids/11.jpg" },
-               { type: "image", url: "/images/portfolio/kids/12.jpg" },
-               { type: "image", url: "/images/portfolio/kids/13.jpg" },
-               { type: "image", url: "/images/portfolio/kids/14.jpg" },
-               { type: "image", url: "/images/portfolio/kids/15.jpg" },
-               { type: "image", url: "/images/portfolio/kids/16.jpg" },
-               { type: "image", url: "/images/portfolio/kids/17.jpg" },
-               { type: "image", url: "/images/portfolio/kids/18.jpg" },
-               { type: "image", url: "/images/portfolio/kids/19.jpg" },
-               { type: "image", url: "/images/portfolio/kids/20.jpg" },
-               { type: "image", url: "/images/portfolio/kids/21.jpg" },
-               { type: "image", url: "/images/portfolio/kids/22.jpg" },
-               { type: "image", url: "/images/portfolio/kids/23.jpg" },
-               { type: "image", url: "/images/portfolio/kids/24.jpg" },]
-  },
-  { 
-    id: 8, title: "Delivery App", category: "Photography", description: "Vibrant food photography for delivery app.", image: "/images/portfolio/food.jpg", type: "image",
-    gallery: [{ type: "image", url: "/images/portfolio/men clothing/1.jpg" },
-               { type: "image", url: "/images/portfolio/men clothing/2.jpg" },
-               { type: "image", url: "/images/portfolio/men clothing/3.jpg" },
-               { type: "image", url: "/images/portfolio/men clothing/4.jpg"},
-               { type: "image", url: "/images/portfolio/men clothing/5.jpg" },
-               { type: "image", url: "/images/portfolio/men clothing/6.jpg" },]
-  },
-  { 
-    id: 9, title: "Amazon A+", category: "Amazon", description: "Premium A+ content design.", image: "/images/portfolio/amazon.jpg", type: "image",
-    gallery: [ { type: "image", url: "/images/portfolio/men unstitchclothing/1.jpg" },
-               { type: "image", url: "/images/portfolio/men unstitchclothing/2.jpg" },
-               { type: "image", url: "/images/portfolio/men unstitchclothing/3.jpg" },
-               { type: "image", url: "/images/portfolio/men unstitchclothing/4.jpg" },
-               { type: "image", url: "/images/portfolio/men unstitchclothing/5.jpg" },
-               { type: "image", url: "/images/portfolio/men unstitchclothing/6.jpg" },]
-  },
-   { 
-    id: 10, title: "Amazon A+", category: "Amazon", description: "Premium A+ content design.", image: "/images/portfolio/amazon.jpg", type: "image",
-    gallery: [ { type: "image", url: "/images/portfolio/men unstitchclothing/1.jpg" },
-               { type: "image", url: "/images/portfolio/men unstitchclothing/2.jpg" },
-               { type: "image", url: "/images/portfolio/men unstitchclothing/3.jpg" },
-               { type: "image", url: "/images/portfolio/men unstitchclothing/4.jpg" },
-               { type: "image", url: "/images/portfolio/men unstitchclothing/5.jpg" },
-               { type: "image", url: "/images/portfolio/men unstitchclothing/6.jpg" },]
-  },
-  { 
-    id: 11, title: "Amazon A+", category: "Amazon", description: "Premium A+ content design.", image: "/images/portfolio/amazon.jpg", type: "image",
-    gallery: [ { type: "image", url: "/images/portfolio/pillow/1.jpg" },
-               { type: "image", url: "/images/portfolio/pillow/2.jpg" },
-               { type: "image", url: "/images/portfolio/pillow/3.jpg" },
-               { type: "image", url: "/images/portfolio/pillow/4.jpg" },
-               { type: "image", url: "/images/portfolio/pillow/5.jpg" },
-               { type: "image", url: "/images/portfolio/pillow/6.jpg" },]
-  },
-  { 
-    id: 12, title: "Gourmet Food", category: "Food", description: "Appetizing food photography for restaurant menu.", image: "/images/portfolio/food.jpg", type: "image",
+    id: 3, title: "Bed Sheets", category: "Photography", description: "Amazon listing imagery optimized for conversions.", image: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575484/1_kttjdw.jpg", type: "image",
     gallery: [
-               { type: "image", url: "/images/portfolio/women flatlay/1.jpg" },
-               { type: "image", url: "/images/portfolio/women flatlay/2.jpg" },
-               { type: "image", url: "/images/portfolio/women flatlay/3.jpg" },
-               { type: "image", url: "/images/portfolio/women flatlay/4.jpg" },
-               { type: "image", url: "/images/portfolio/women flatlay/5.jpg" },
-               { type: "image", url: "/images/portfolio/women flatlay/6.jpg" },
-               { type: "image", url: "/images/portfolio/women flatlay/7.jpg" },
-               { type: "image", url: "/images/portfolio/women flatlay/8.jpg" },
-               { type: "image", url: "/images/portfolio/women flatlay/9.jpg" },]
-  },
-   { 
-    id: 13, title: "Bed Sheets", category: "Photography", description: "Amazon listing imagery optimized for conversions.", image: "/images/portfolio/bedsheet.jpg", type: "image",
-    gallery: [
-               { type: "image", url: "/images/portfolio/women shoes/1.jpg" },
-               { type: "image", url: "/images/portfolio/women shoes/2.jpg" },
-               { type: "image", url: "/images/portfolio/women shoes/3.jpg" },
-               { type: "image", url: "/images/portfolio/women shoes/4.jpg" },
-               { type: "image", url: "/images/portfolio/women shoes/5.jpg" },
-               { type: "image", url: "/images/portfolio/women shoes/6.jpg" },
-               { type: "image", url: "/images/portfolio/women shoes/7.jpg" },
-               { type: "image", url: "/images/portfolio/women shoes/8.jpg" },
-               { type: "image", url: "/images/portfolio/women shoes/9.jpg" },
-               { type: "image", url: "/images/portfolio/women shoes/10.jpg" },
-               { type: "image", url: "/images/portfolio/women shoes/11.jpg" },
-               { type: "image", url: "/images/portfolio/women shoes/12.jpg" },
-               { type: "image", url: "/images/portfolio/women shoes/13.jpg" },
-               { type: "image", url: "/images/portfolio/women shoes/14.jpg" },
-               { type: "image", url: "/images/portfolio/women shoes/15.jpg" }
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575484/1_kttjdw.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575490/2_hhil0m.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575488/3_xlhci9.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575492/4_ybeayk.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575496/5_mn2atm.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575494/6_y4kkz5.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575495/7_tsndtc.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575501/8_cwdnhy.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575495/9_azhcdg.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575496/10_noax0s.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575504/11_qpudcv.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575507/12_cdndim.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575497/13_s2o90c.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575505/14_uyml1w.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575503/15_hwm7dl.jpg" },
     ]
-
   },
-   { 
-    id: 14, title: "Bed Sheets", category: "Photography", description: "Amazon listing imagery optimized for conversions.", image: "/images/portfolio/bedsheet.jpg", type: "image",
+  { 
+    id: 4, title: "Gourmet Food", category: "Food", description: "Appetizing food photography for restaurant menu.", image: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575591/1_f4bbym.jpg", type: "image",
     gallery: [
-               { type: "image", url: "/images/portfolio/women's bag/1.jpg" },
-               { type: "image", url: "/images/portfolio/women's bag/3.jpg" },
-               { type: "image", url: "/images/portfolio/women's bag/2.jpg" },
-               { type: "image", url: "/images/portfolio/women's bag/4.jpg" },
-               { type: "image", url: "/images/portfolio/women's bag/6.jpg" },
-               { type: "image", url: "/images/portfolio/women's bag/5.jpg" },
-               { type: "image", url: "/images/portfolio/women's bag/7.jpg" },
-               { type: "image", url: "/images/portfolio/women's bag/8.jpg" },
-               { type: "image", url: "/images/portfolio/women's bag/9.jpg" },
-               { type: "image", url: "/images/portfolio/women's bag/10.jpg" },
-               { type: "image", url: "/images/portfolio/women's bag/11.jpg" },
-               { type: "image", url: "/images/portfolio/women's bag/12.jpg" },
-               { type: "image", url: "/images/portfolio/women's bag/13.jpg" },
-               { type: "image", url: "/images/portfolio/women's bag/14.jpg" },
-               { type: "image", url: "/images/portfolio/women's bag/15.jpg" }
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575591/1_f4bbym.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575593/2_nikfhs.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575595/3_uzo9qg.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575595/4_udb3hn.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575592/5_za9jov.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575594/6_qyvzow.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575594/7_kchjti.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575594/8_otriki.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575599/9_kmfe96.jpg" },
+               { type: "video", url: "https://res.cloudinary.com/dhtktd4ka/video/upload/v1774575652/10_wdzpbs.mp4", thumbnail: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575602/14_ntpptt.png" },
+               { type: "video", url: "https://res.cloudinary.com/dhtktd4ka/video/upload/v1774575632/11_uvrvhz.mp4", thumbnail: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575601/13_o7kk3y.png" },
+               { type: "video", url: "https://res.cloudinary.com/dhtktd4ka/video/upload/v1774575676/12_gwqpig.mp4", thumbnail: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575603/15_gjyjyn.png" },
     ]
-
+  },
+  { 
+    id: 5, title: "Fashion Acc.", category: "Photography", description: "High-end fashion accessory photography.", image: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883470/1_ophv2w.jpg", type: "image",
+    gallery: [
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883470/1_ophv2w.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883475/2_smvgwy.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883472/3_vag8do.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883473/4_zmjlen.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883474/5_fsh5oo.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883480/6_ikhrzz.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883476/7_qziga2.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883484/8_o16lz1.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883480/9_ozltdn.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883484/10_excicy.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883484/11_h9iprk.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883484/12_ywngqz.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883487/13_z8pc7v.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883504/14_w02bxo.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883493/15_dydoaj.jpg" },
+    ]
+  },
+  { 
+    id: 6, title: "Men Footwear", category: "Photography", description: "Professional product photography for men's premium footwear.", image: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883014/1_kwi1qt.jpg", type: "image",
+    gallery: [
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883014/1_kwi1qt.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883015/2_krkosf.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883023/3_i130gk.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883019/4_akp9ks.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883027/5_gfbnrd.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883021/6_searyo.jpg" },
+    ]
+  },
+  { 
+    id: 7, title: "Kids", category: "Photography", description: "Adorable and professional kids' product photography.", image: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883337/1_lt4of6.jpg", type: "image",
+    gallery: [
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883337/1_lt4of6.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883337/2_nt8lxu.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883338/3_h8f5ha.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883339/4_dzysxd.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883343/5_gllegp.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883342/6_mybvbm.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883343/7_p3fpdz.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883346/8_ieqjfa.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883347/9_itddaw.jpg" },
+    ]
+  },
+  { 
+    id: 8, title: "Delivery App", category: "Photography", description: "Vibrant food photography for delivery app.", image: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575369/food_ytgqbg.jpg", type: "image",
+    gallery: [{ type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575369/food_ytgqbg.jpg" }]
+  },
+  { 
+    id: 9, title: "Amazon A+", category: "Amazon", description: "Premium A+ content design optimized for brand storytelling and sales.", image: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883127/1_hr9gwd.jpg", type: "image",
+    gallery: [
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883127/1_hr9gwd.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883131/2_nhiqni.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883135/3_vi7gxt.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883135/4_in9x8i.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883160/5_sllikl.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883148/6_xwewjy.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883141/7_nr3dq0.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883146/8_pirdb9.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883158/9_gvtkby.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883157/10_nurxop.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883165/11_eoydmp.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883159/12_kmt1ge.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883157/13_td26kx.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883179/14_u7zkvr.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883164/15_ldfqoi.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883166/16_kgqw4j.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883176/17_w8zwxt.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883184/18_ynrau1.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883175/19_jqemy6.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883180/20_vqbioe.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883181/21_whtczx.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883183/22_bev8mp.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883192/23_lp0xb0.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883190/24_aiqla8.jpg" },
+    ]
+  },
+  { 
+    id: 10, title: "Women Footwear", category: "Photography", description: "Elegant product photography for women's designer footwear.", image: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883366/1_hc7kx2.jpg", type: "image",
+    gallery: [
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883366/1_hc7kx2.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883365/2_ufnpm0.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883367/3_t71ogd.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883373/4_lucubc.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883368/5_ay0xdr.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883371/6_eznaax.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883370/7_urvdq0.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883372/8_xk40hy.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883372/9_uffnwv.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883374/10_nmn8bi.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883375/11_x9jgum.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883385/12_bppxpt.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883379/13_qlhgaq.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883379/14_ykgffx.jpg" },
+    ]
+  },
+  { 
+    id: 11, title: "Men Clothing", category: "Photography", description: "Premium lifestyle and studio photography for men's fashion apparel.", image: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883220/1_qigumo.jpg", type: "image",
+    gallery: [
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883220/1_qigumo.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883223/2_m4jjhd.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883229/3_nqjygb.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883231/4_clinqq.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883233/5_tjbj6w.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883239/6_fn2iug.jpg" },
+    ]
+  },
+  { 
+    id: 12, title: "Men Unstitched", category: "Photography", description: "Minimalist and clean product photography for unstitched men's fabric.", image: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883267/1_qdlrog.jpg", type: "image",
+    gallery: [
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883267/1_qdlrog.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883272/2_ns030g.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883278/3_irnsn6.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883282/4_oqvzgv.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883287/5_ca2ho3.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883291/6_tyeiar.jpg" },
+    ]
+  },
+  { 
+    id: 13, title: "Pillows", category: "Photography", description: "Soft and luxurious pillow product photography for e-commerce listings.", image: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883298/1_gok4n1.jpg", type: "image",
+    gallery: [
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883298/1_gok4n1.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883299/2_pzpnga.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883301/3_irnsus.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883299/4_krbj2q.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883301/5_z8ohnf.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883302/6_dhy5ok.jpg" },
+    ]
+  },
+  { 
+    id: 14, title: "Flatlay", category: "Photography", description: "Minimalist flatlay product photography highlighting texture and design.", image: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575751/1_wkbknx.jpg", type: "image",
+    gallery: [
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575751/1_wkbknx.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575774/2_votrjj.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575825/3_ylrd2f.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774576688/4_y6tv6c.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774576692/5_yjrpt2.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774576700/6_zugoxb.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774576694/7_xwfnvs.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774576694/8_xzr58q.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774576695/9_hcr6kq.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774576696/10_v4v6rx.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774576700/11_s1bxel.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774576701/12_cmv8oa.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774576701/13_gjhh0c.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774576698/14_mhaj0m.jpg" },
+               { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774576701/15_apjzen.jpg" },
+    ]
   },
 ]
 
@@ -223,8 +244,11 @@ export default function PortfolioPage() {
   const heroInView = useInView(heroRef, { once: true })
   
   const [activeCategory, setActiveCategory] = useState("All")
-  const [selectedProject, setSelectedProject] = useState<typeof portfolioItems[0] | null>(null)
-  const [fullscreenAsset, setFullscreenAsset] = useState<{type: string, url: string} | null>(null)
+  const [selectedProject, setSelectedProject] = useState<PortfolioItem | null>(null)
+  const [fullscreenAsset, setFullscreenAsset] = useState<GalleryAsset | null>(null)
+
+  // Use the scroll lock hook for both levels of overlays
+  useLockBodyScroll(!!selectedProject || !!fullscreenAsset)
 
   const filteredItems = activeCategory === "All"
       ? portfolioItems
@@ -287,20 +311,43 @@ export default function PortfolioPage() {
             ))}
           </motion.div>
 
-          <motion.div layout className="grid grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-1.5 md:gap-6">
+          <motion.div 
+            layout 
+            variants={{
+              hidden: { opacity: 0 },
+              visible: {
+                opacity: 1,
+                transition: {
+                  staggerChildren: 0.05
+                }
+              }
+            }}
+            initial="hidden"
+            animate="visible"
+            className="grid grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-1.5 md:gap-6"
+          >
             <AnimatePresence mode="popLayout">
               {filteredItems.map((item, index) => (
                 <motion.div
                   key={item.id}
                   layout
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ duration: 0.3, delay: index * 0.03 }}
+                  variants={{
+                    hidden: { opacity: 0, y: 20 },
+                    visible: { opacity: 1, y: 0 }
+                  }}
+                  transition={{ 
+                    duration: 0.6, 
+                    ease: [0.22, 1, 0.36, 1]
+                  }}
                   onClick={() => setSelectedProject(item)}
                   className="group relative aspect-square md:aspect-[4/5] rounded-sm md:rounded-xl overflow-hidden cursor-pointer bg-stone-100"
                 >
-                  <Image src={item.image || "/placeholder.svg"} alt={item.title} fill className="object-cover transition-transform duration-500 md:group-hover:scale-105" />
+                  <Image 
+                    src={item.image || "/placeholder.svg"} 
+                    alt={item.title} 
+                    fill 
+                    className="object-cover transition-transform duration-700 ease-out md:group-hover:scale-110" 
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 md:group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
                     <span className="text-primary text-[10px] md:text-sm font-medium">{item.category}</span>
                     <h3 className="text-xs md:text-xl font-semibold text-white mt-1">{item.title}</h3>

@@ -24,7 +24,7 @@ export function AboutPreview() {
           <motion.div variants={fadeInUp} className="relative">
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden">
               <Image
-                src="/images/studio.jpg"
+                src="https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575375/studio_zpk4im.jpg"
                 alt="Ahsan Art Creative Studio"
                 fill
                 className="object-cover"

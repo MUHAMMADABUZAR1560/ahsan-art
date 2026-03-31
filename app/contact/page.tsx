@@ -30,8 +30,8 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Studio",
-    value: "Pakistan",
-    href: "#",
+    value: "Ahsan Art, Faisalabad, Pakistan",
+    href: "https://maps.app.goo.gl/Zck8ebMFn9yVKkha8",
   },
 ]
 
@@ -153,28 +153,44 @@ export default function ContactPage() {
                 Reach out through any of these channels and we'll get back to you within 24 hours.
               </p>
 
-              <div className="mt-10 space-y-6">
+              <motion.div 
+                variants={{
+                  hidden: { opacity: 0 },
+                  visible: {
+                    opacity: 1,
+                    transition: { staggerChildren: 0.1 }
+                  }
+                }}
+                initial="hidden"
+                animate={formInView ? "visible" : "hidden"}
+                className="mt-10 space-y-6"
+              >
                 {contactInfo.map((item, index) => (
                   <motion.a
                     key={index}
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={formInView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ delay: 0.2 + index * 0.1 }}
-                    className="flex items-center gap-4 p-4 bg-secondary rounded-xl hover:bg-primary/10 transition-colors group"
+                    variants={{
+                      hidden: { opacity: 0, y: 20 },
+                      visible: { 
+                        opacity: 1, 
+                        y: 0,
+                        transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] }
+                      }
+                    }}
+                    className="flex items-center gap-4 p-4 bg-secondary rounded-xl hover:bg-primary/10 transition-all group border border-transparent hover:border-primary/20"
                   >
-                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-colors">
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-all duration-500">
                       <item.icon className="w-6 h-6 text-primary group-hover:text-primary-foreground transition-colors" />
                     </div>
                     <div>
                       <div className="text-sm text-muted-foreground">{item.title}</div>
-                      <div className="font-medium text-foreground">{item.value}</div>
+                      <div className="font-bold text-foreground">{item.value}</div>
                     </div>
                   </motion.a>
                 ))}
-              </div>
+              </motion.div>
 
               {/* Working Hours */}
               <motion.div
@@ -282,7 +298,7 @@ export default function ContactPage() {
                       <option value="">
                         {formData.service ? "Select pricing option" : "Select a service first"}
                       </option>
-                      {formData.service && servicePrices[formData.service].map((item) => (
+                      {formData.service && servicePrices[formData.service as keyof typeof servicePrices].map((item) => (
                         <option key={item.value} value={item.value}>
                           {item.label}
                         </option>
@@ -370,6 +386,38 @@ export default function ContactPage() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Map Section */}
+      <section className="py-24 lg:py-32 bg-background">
+        <div className="container mx-auto px-6 lg:px-12">
+          <div className="max-w-4xl mx-auto mb-12 text-center">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground">
+              Visit Our Studio
+            </h2>
+            <p className="mt-4 text-muted-foreground">
+              Find us in the heart of Faisalabad. Click the marker to get directions.
+            </p>
+          </div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="w-full h-[400px] md:h-[600px] rounded-3xl overflow-hidden grayscale hover:grayscale-0 transition-all duration-700 border border-primary/10 shadow-2xl shadow-primary/5"
+          >
+            <iframe
+              src="https://maps.google.com/maps?q=Ahsan%20Art%20@31.466756,73.192938&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Ahsan Art Location Map"
+            />
+          </motion.div>
         </div>
       </section>
 

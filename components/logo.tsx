@@ -27,8 +27,8 @@ export function Logo({
 
   // Logic to switch between the main logo and the footer logo
   const imageSrc = variant === "footer" 
-    ? "/images/portfolio/footerlogo.png" 
-    : "/images/portfolio/Logo3.png"
+    ? "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575381/footerlogo_ucwjlu.png" 
+    : "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575375/Logo3_r5awnk.png"
 
   const logoVariants = {
     hidden: { opacity: 0, scale: 0.9 },
@@ -37,7 +37,7 @@ export function Logo({
       scale: 1,
       transition: {
         duration: 0.6,
-        ease: [0.22, 1, 0.36, 1],
+        ease: [0.22, 1, 0.36, 1] as any, 
       },
     },
   }
