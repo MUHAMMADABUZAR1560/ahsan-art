@@ -1,12 +1,4 @@
 {
   "framework": "nextjs",
-  "cleanUrls": true,
-  "images": {
-    "remotePatterns": [
-      {
-        "protocol": "https",
-        "hostname": "res.cloudinary.com"
-      }
-    ]
-  }
+  "cleanUrls": true
 }
