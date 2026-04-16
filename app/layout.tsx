@@ -1,8 +1,9 @@
-import React from "react"
+import React, { Suspense } from "react"
 import type { Metadata, Viewport } from 'next'
 import { Syne, Inter } from 'next/font/google'
 import './globals.css'
 import { CursorFollower } from "@/components/CursorFollower" // Restored import
+import MetaPixel from "@/components/MetaPixel"
 
 const syne = Syne({ 
   subsets: ["latin"],
@@ -43,6 +44,9 @@ export default function RootLayout({
     <html lang="en" className={`${syne.variable} ${inter.variable}`}>
       <body className="font-sans antialiased">
         <CursorFollower /> {/* Restored global cursor component */}
+        <Suspense fallback={null}>
+          <MetaPixel />
+        </Suspense>
         {children}
       </body>
     </html>
