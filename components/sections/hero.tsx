@@ -16,11 +16,11 @@ import Autoplay from "embla-carousel-autoplay"
 
 const slides = [
   {
-    tag: "Premium Creative Studio",
-    title1: "Crafting Visual",
-    title2: "Stories That",
-    highlight: "Sell",
-    description: "Premium product photography & videography studio specializing in e-commerce brands, Amazon listings, and conversion-focused visual content.",
+    tag: "Faisalabad's E-Commerce Content Studio",
+    title1: "Visuals That Build",
+    title2: "Your Brand And Bring",
+    highlight: "Sales",
+    description: "We create product photos and videos for e-commerce brands, social media, and online stores — content that doesn't just look good, but actually converts.",
     bgImage: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575375/studio_zpk4im.jpg",
   },
   {
@@ -151,7 +151,7 @@ export function HeroSection() {
                         className="mt-8 pt-8 border-t border-white/10 flex flex-wrap items-center justify-start gap-8 md:gap-12"
                       >
                         {[
-                          { value: "5+", label: "Years Exp" },
+                          { value: "7+", label: "Years in E-Commerce" },
                           { value: "500+", label: "Projects" },
                           { value: "100+", label: "Clients" },
                         ].map((stat, idx) => (

@@ -40,9 +40,7 @@ export function CTASection() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-3xl md:text-4xl lg:text-6xl font-serif font-bold leading-tight"
           >
-            Ready to Transform
-            <br />
-            Your Brand Visuals?
+            Ready to Make Your Brand Look Its Best?
           </motion.h2>
 
           <motion.p
@@ -51,8 +49,7 @@ export function CTASection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mt-6 text-primary-foreground/80 text-lg md:text-xl max-w-2xl mx-auto"
           >
-            Let's discuss your project and create stunning visuals that 
-            capture attention and drive conversions.
+            Tell us about your product. We'll build a content plan that fits your goals and your budget.
           </motion.p>
 
           <motion.div

@@ -18,8 +18,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Ahsan Art - Creative Studio | Product Photography & Videography',
-  description: 'Premium product photography and videography studio. Specializing in e-commerce, Amazon content, food photography, and UGC videos. 5+ years of professional experience.',
+  title: 'Ahsan Art Creative Studio | Product Photography & Videography in Faisalabad',
+  description: 'Ahsan Art Creative Studio — Faisalabad\'s e-commerce focused content studio. Product photography, videography, UGC, and social media content that builds trust and drives real sales.',
   keywords: ['product photography', 'videography', 'e-commerce', 'amazon', 'food photography', 'ugc videos', 'creative studio'],
   authors: [{ name: 'Ahsan Art' }],
   openGraph: {

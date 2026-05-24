@@ -6,7 +6,7 @@ import { Award, Clock, Target, Users, Sparkles, Shield, ArrowRight } from "lucid
 import { fadeInUp, staggerContainer } from "@/lib/animations"
 
 const stats = [
-  { value: 5, suffix: "+", label: "Years Exp", icon: Award },
+  { value: 7, suffix: "+", label: "Years in E-Commerce", icon: Award },
   { value: 500, suffix: "+", label: "Projects", icon: Target },
   { value: 100, suffix: "+", label: "Clients", icon: Users },
   { value: 24, suffix: "hr", label: "Turnaround", icon: Clock },
@@ -15,33 +15,33 @@ const stats = [
 const features = [
   {
     icon: Award,
-    title: "5+ Years Exp",
-    description: "Trusted expertise in visual branding.",
+    title: "E-Commerce Specialists",
+    description: "Our whole team is focused on e-commerce content. This is all we do — and it shows in the results.",
   },
   {
     icon: Target,
-    title: "E-com Focus",
-    description: "Optimized for Amazon & Shopify.",
+    title: "Strategy Before Every Shoot",
+    description: "We analyze your brand, your competitors, and your audience before we plan a single shot.",
   },
   {
     icon: Sparkles,
-    title: "All-in-One",
-    description: "Photo, video, and design solutions.",
+    title: "Better Ads, Lower Costs",
+    description: "Our content is built to perform in paid campaigns — your cost per result goes down, your orders go up.",
   },
   {
     icon: Clock,
-    title: "Fast Delivery",
-    description: "Quick turnaround without quality loss.",
+    title: "All Under One Roof",
+    description: "Photography, video, editing, Amazon content — everything in one place. No juggling multiple vendors.",
   },
   {
     icon: Shield,
-    title: "Guaranteed",
-    description: "Premium results that exceed expectations.",
+    title: "Clients Who Keep Coming Back",
+    description: "Most of our clients stay with us for months and years. Some tried other studios and came back. The work speaks for itself.",
   },
   {
     icon: Users,
-    title: "Live Support",
-    description: "Personal attention for every project.",
+    title: "Personal Attention on Every Project",
+    description: "You deal directly with us — not a random coordinator. We respond fast and care about your results.",
   },
 ]
 
@@ -92,11 +92,11 @@ export function WhyChooseUs() {
             className="inline-flex items-center gap-2 text-primary text-[10px] md:text-sm font-bold tracking-widest uppercase mb-4"
           >
             <span className="w-6 md:w-8 h-px bg-primary" />
-            Why Choose Us
+            Why Ahsan Art
             <span className="w-6 md:w-8 h-px bg-primary" />
           </motion.span>
           <h2 className="text-2xl md:text-5xl font-serif font-bold text-foreground leading-tight">
-            Your Partner in <span className="text-primary">Visual Excellence</span>
+            We Don't Just Make Content. We Grow Brands.
           </h2>
         </div>
 
@@ -148,7 +148,7 @@ export function WhyChooseUs() {
           >
             <div className="text-center md:text-left">
               <h3 className="text-xl md:text-3xl font-serif font-bold">Ready to elevate your brand?</h3>
-              <p className="text-sm md:text-lg text-primary-foreground/80 mt-1">Let's create stunning visuals that convert.</p>
+              <p className="text-sm md:text-lg text-primary-foreground/80 mt-1">Tell us about your product. We'll build a content plan that fits your goals and your budget.</p>
             </div>
             <a
               href="/contact"

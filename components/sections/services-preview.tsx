@@ -9,38 +9,38 @@ import { fadeInUp, staggerContainer } from "@/lib/animations"
 const services = [
   {
     icon: Camera,
-    title: "Photography",
-    description: "High-quality product images in their best light.",
+    title: "Product Photography",
+    description: "Sharp, clean images that make your product look exactly how it should — built for websites, social media, and online stores.",
     href: "/services#photography",
   },
   {
     icon: Video,
-    title: "Videography",
-    description: "Dynamic video content that brings items to life.",
+    title: "Product Videography",
+    description: "Not just a video — a sales tool. We plan the strategy first, then shoot content that positions your brand and drives results.",
     href: "/services#videography",
   },
   {
     icon: Play,
     title: "UGC Videos",
-    description: "Authentic content that builds brand trust.",
+    description: "Real-looking content people actually trust — made for TikTok, Reels, and ads that convert.",
     href: "/services#ugc",
   },
   {
     icon: Package,
-    title: "Amazon",
-    description: "Optimized visuals designed for listings.",
+    title: "Amazon Content",
+    description: "Listing images, infographics, and A+ content built to rank and convert on Amazon.",
     href: "/services#amazon",
   },
   {
     icon: Utensils,
     title: "Food",
-    description: "Mouth-watering imagery that drives desire.",
+    description: "Food shots that make people hungry just by looking — styled and shot for menus, packaging, and social media.",
     href: "/services#food",
   },
   {
     icon: ShoppingBag,
-    title: "E-commerce",
-    description: "Complete visual solutions for your store.",
+    title: "E-Commerce Solutions",
+    description: "Full content packages for your online store — consistent visuals across your website, social media, and ads.",
     href: "/services#ecommerce",
   },
 ]
@@ -65,9 +65,7 @@ export function ServicesPreview() {
             <span className="w-8 h-px bg-primary" />
           </span>
           <h2 className="text-2xl md:text-4xl lg:text-5xl font-serif font-bold text-foreground leading-tight">
-            Everything You Need to
-            <br />
-            <span className="text-primary">Elevate Your Brand</span>
+            One Studio. Everything Your Brand Needs.
           </h2>
         </motion.div>
 

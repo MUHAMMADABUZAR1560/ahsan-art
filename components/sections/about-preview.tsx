@@ -38,7 +38,7 @@ export function AboutPreview() {
               transition={{ delay: 0.5, duration: 0.6 }}
               className="absolute -right-4 lg:-right-8 bottom-8 bg-background p-6 rounded-xl shadow-2xl max-w-[200px]"
             >
-              <div className="text-4xl font-serif font-bold text-primary">5+</div>
+              <div className="text-4xl font-serif font-bold text-primary">7+</div>
               <div className="text-sm text-muted-foreground mt-1">
                 Years of Professional Experience
               </div>
@@ -51,34 +51,24 @@ export function AboutPreview() {
           <motion.div variants={fadeInUp} className="lg:pl-8">
             <span className="inline-flex items-center gap-2 text-primary text-sm font-medium tracking-wider uppercase mb-4">
               <span className="w-8 h-px bg-primary" />
-              About Us
+              About Ahsan Art
             </span>
 
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-foreground leading-tight">
-              Where Creativity
-              <br />
-              Meets Precision
+              The Studio Behind Hundreds of Brands
               <span className="inline-block w-2 h-2 rounded-full bg-primary ml-2 align-middle" />
             </h2>
 
             <p className="mt-6 text-muted-foreground text-lg leading-relaxed">
-              At Ahsan Art, we believe every product has a story waiting to be told. 
-              Our studio combines artistic vision with technical excellence to create 
-              visual content that not only captures attention but drives conversions.
-            </p>
-
-            <p className="mt-4 text-muted-foreground leading-relaxed">
-              With over 5 years of experience in product photography and videography, 
-              we specialize in creating compelling visual content for e-commerce brands, 
-              Amazon sellers, and businesses looking to elevate their online presence.
+              Most photographers in Faisalabad do weddings, events, everything. We don't. Ahsan Art is built specifically for e-commerce and product content — and that focus makes all the difference. We don't just shoot pretty pictures. Before any project, we study your brand, your social media, your website — and then we plan content that fits your goals and your budget. The result? Better ads, lower ad costs, more orders, and a brand that people actually remember. That's why most of our clients don't leave. They stay — some for 2 years and counting.
             </p>
 
             <div className="mt-8 grid grid-cols-2 gap-6">
               {[
-                { title: "E-commerce Focus", desc: "Optimized for online sales" },
-                { title: "Fast Turnaround", desc: "Quick delivery without compromise" },
-                { title: "Creative Direction", desc: "From concept to execution" },
-                { title: "Quality Assured", desc: "Premium results every time" },
+                { title: "E-Commerce Specialists", desc: "Optimized for online sales" },
+                { title: "Strategy Before Every Shoot", desc: "Quick delivery without compromise" },
+                { title: "All Under One Roof", desc: "From concept to execution" },
+                { title: "Clients Who Keep Coming Back", desc: "Premium results every time" },
               ].map((item, index) => (
                 <motion.div
                   key={index}

@@ -14,14 +14,14 @@ const services = [
     id: "photography",
     icon: Camera,
     title: "Product Photography",
-    description: "High-quality product images that showcase your items in their best light and drive conversions.",
+    description: "Your product image is doing the selling before anyone reads a single word. We make sure it does that job well. We shoot with your brand identity in mind — so whether it's a website, social media, or a product listing, the images feel consistent, professional, and trustworthy.",
     features: [
-      "Professional studio lighting",
-      "White background shots",
-      "Lifestyle photography",
-      "360-degree product shots",
-      "Detail and texture shots",
+      "Studio & white background shots",
+      "Lifestyle and in-context photography",
+      "Detail and texture close-ups",
+      "360\u00b0 product views",
       "Color-accurate editing",
+      "Social media and website ready formats",
     ],
     image: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575375/pr1_zaane3.jpg",
   },
@@ -29,14 +29,14 @@ const services = [
     id: "videography",
     icon: Video,
     title: "Product Videography",
-    description: "Dynamic video content that brings your products to life and engages your audience.",
+    description: "A video isn't just content — it's your brand talking to a customer. Before we shoot, we analyze your brand, your audience, and where the video will run. Then we plan the messaging, the look, and the format. The result is a video that positions your brand properly and drives action — not just views.",
     features: [
-      "Product showcase videos",
-      "Unboxing videos",
-      "How-to demonstrations",
-      "Brand story videos",
-      "Social media content",
-      "Professional editing",
+      "Brand-aligned video strategy",
+      "Product showcase and demo videos",
+      "Social media cuts (Reels, TikTok, YouTube Shorts)",
+      "Ads-ready content that lowers your cost per result",
+      "Unboxing and how-to videos",
+      "Professional editing and color grading",
     ],
     image: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575369/desighee_d8lhee.jpg",
   },
@@ -44,13 +44,12 @@ const services = [
     id: "ugc",
     icon: Play,
     title: "UGC Videos",
-    description: "Authentic user-generated style content that builds trust and drives engagement.",
+    description: "People trust people. UGC-style content looks real because it's made to feel real — and that's exactly why it converts. We create authentic review and testimonial-style videos in formats built for today's platforms.",
     features: [
-      "Authentic testimonials",
-      "Product reviews",
-      "Social-ready formats",
-      "TikTok & Reels content",
-      "Multiple versions",
+      "Natural, trust-building video style",
+      "TikTok, Instagram Reels, and ad formats",
+      "Authentic review and testimonial style",
+      "Multiple versions for A/B testing",
       "Quick turnaround",
     ],
     image: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575377/x3_qnwnyr.jpg",
@@ -59,14 +58,13 @@ const services = [
     id: "amazon",
     icon: Package,
     title: "Amazon Content",
-    description: "Optimized visual content designed specifically for Amazon listings to maximize conversions.",
+    description: "On Amazon, your image is your storefront. We create listing visuals that follow Amazon's rules, highlight your product's best features, and give buyers a reason to click Add to Cart.",
     features: [
-      "Main image optimization",
-      "Infographic images",
-      "A+ Content design",
-      "Lifestyle images",
-      "Comparison charts",
-      "Amazon compliance",
+      "Main product images (Amazon compliant)",
+      "Feature and benefit infographics",
+      "A+ Content / Enhanced Brand Content",
+      "Lifestyle and comparison images",
+      "Full listing visual packages",
     ],
     image: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575373/g2_owsbnm.jpg",
   },
@@ -74,14 +72,13 @@ const services = [
     id: "food",
     icon: Utensils,
     title: "Food Photography",
-    description: "Mouth-watering food imagery that makes viewers crave your products.",
+    description: "Food has to look delicious before anyone reads the menu. We style and shoot food the way it deserves — with lighting, composition, and color that makes people hungry just scrolling past.",
     features: [
-      "Hero shots",
-      "Menu photography",
-      "Ingredient styling",
-      "Action shots",
-      "Packaging shots",
-      "Social content",
+      "Hero and feature shots",
+      "Menu and catalog photography",
+      "Packaging photography",
+      "Flat lay and ingredient styling",
+      "Social media content",
     ],
     image: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575372/fp1_sdmddj.jpg",
   },
@@ -89,14 +86,12 @@ const services = [
     id: "ecommerce",
     icon: ShoppingBag,
     title: "E-commerce Solutions",
-    description: "Complete visual solutions for your online store and brand presence.",
+    description: "Running a full online store? We build complete visual packages so your entire catalog, website, and social media look consistent and professional — all in one place.",
     features: [
-      "Full catalog shoots",
-      "Website imagery",
-      "Social media assets",
-      "Banner designs",
-      "Brand guidelines",
-      "Ongoing support",
+      "Full product catalog shoots",
+      "Website banners and category images",
+      "Social media content sets",
+      "Ongoing content partnerships",
     ],
     image: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575369/b1_pf2xsu.jpg",
   },
@@ -105,23 +100,23 @@ const services = [
 const process = [
   {
     step: "01",
-    title: "Discovery",
-    description: "We learn about your brand, products, and goals to create a tailored approach.",
+    title: "We Listen",
+    description: "Tell us about your product, your brand, and your goals. No assumptions, just honest conversation.",
   },
   {
     step: "02",
-    title: "Planning",
-    description: "Detailed shot lists, mood boards, and timelines to ensure smooth execution.",
+    title: "We Analyze & Plan",
+    description: "We look at your brand, your competitors, and your platforms — then suggest what content you actually need.",
   },
   {
     step: "03",
-    title: "Production",
-    description: "Professional shooting with attention to every detail and your brand vision.",
+    title: "We Shoot",
+    description: "Professional production with your brand vision at the center of every frame.",
   },
   {
     step: "04",
-    title: "Delivery",
-    description: "Expertly edited content delivered on time and ready for use.",
+    title: "We Deliver",
+    description: "Edited, polished, and ready to use. On time, every time.",
   },
 ]
 
@@ -159,7 +154,7 @@ export default function ServicesPage() {
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
               className="inline-flex items-center gap-2 text-primary text-[10px] md:text-sm font-bold tracking-widest uppercase mb-4"
             >
-              <span className="w-6 md:w-8 h-px bg-primary" /> Our Expertise
+              <span className="w-6 md:w-8 h-px bg-primary" /> What We Do
             </motion.span>
             <motion.h1 
               variants={{
@@ -169,7 +164,7 @@ export default function ServicesPage() {
               transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
               className="text-4xl md:text-7xl font-bold text-foreground leading-tight"
             >
-              Professional Visual <br className="hidden md:block" /> Solutions<span className="text-primary">.</span>
+              Professional Content Built to Perform<span className="text-primary">.</span>
             </motion.h1>
             <motion.p 
               variants={{
@@ -179,7 +174,7 @@ export default function ServicesPage() {
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
               className="mt-6 text-sm md:text-xl text-muted-foreground max-w-2xl leading-relaxed"
             >
-              From studio photography to high-impact video ads, we provide everything your brand needs to stand out.
+              Every service we offer is designed with one goal — to help your brand look great and sell more.
             </motion.p>
           </motion.div>
         </div>
@@ -269,10 +264,10 @@ export default function ServicesPage() {
       <section className="py-24 lg:py-32 bg-primary text-primary-foreground">
         <div className="container mx-auto px-6 lg:px-12 text-center">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold">
-            Ready to Get Started?
+            Ready to Make Your Brand Look Its Best?
           </h2>
           <p className="mt-6 text-primary-foreground/80 text-lg max-w-2xl mx-auto">
-            Let's discuss your project and create stunning visuals that drive results.
+            Tell us about your product. We'll build a content plan that fits your goals and your budget.
           </p>
           <Link
             href="/contact"

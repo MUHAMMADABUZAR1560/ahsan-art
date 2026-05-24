@@ -17,10 +17,10 @@ const timeline = [
 ]
 
 const values = [
-  { icon: Sparkles, title: "Creativity", description: "Fresh eyes for every project." },
-  { icon: Target, title: "Precision", description: "Attention to every single pixel." },
-  { icon: Users, title: "Collaboration", description: "Bringing your vision to life together." },
-  { icon: Award, title: "Excellence", description: "Only the best results will do." },
+  { icon: Sparkles, title: "Creative That Fits Your Brand", description: "We match the look, feel, and tone to what your brand needs — whether that's clean and minimal or rich and bold." },
+  { icon: Target, title: "Precision in Every Frame", description: "Every detail is intentional — lighting, angles, color. Nothing is left to chance." },
+  { icon: Users, title: "Strategy First", description: "Good content without a plan is wasted. We think about where this content goes and what it needs to do before we shoot." },
+  { icon: Award, title: "Long-Term Partnerships", description: "We want clients who grow with us. Most do — and that's the biggest proof of what we deliver." },
 ]
 
 export default function AboutPage() {
@@ -67,7 +67,7 @@ export default function AboutPage() {
               transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
               className="text-4xl md:text-7xl font-serif font-bold text-foreground leading-tight"
             >
-              Where Vision <br className="hidden md:block" /> Meets Craft<span className="text-primary">.</span>
+              Built for E-Commerce. Focused on Results<span className="text-primary">.</span>
             </motion.h1>
             <motion.p
               variants={{
@@ -77,7 +77,7 @@ export default function AboutPage() {
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
               className="mt-6 text-sm md:text-xl text-muted-foreground max-w-2xl leading-relaxed"
             >
-              We capture stories through stunning visual content that resonates and drives results.
+              We're not a general photography studio. We're a content team that specializes in one thing — making online brands grow.
             </motion.p>
           </motion.div>
         </div>
@@ -104,7 +104,7 @@ export default function AboutPage() {
             {[
               { label: "Projects", value: "500+" },
               { label: "Clients", value: "100+" },
-              { label: "Years", value: "5+" }
+              { label: "Years", value: "7+" }
             ].map((stat, idx) => (
               <motion.div 
                 key={idx}
@@ -186,8 +186,10 @@ export default function AboutPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
             >
-              <h2 className="text-3xl md:text-5xl font-serif font-bold mb-6">Full-Service Studio</h2>
-              <p className="text-white/60 mb-10 text-sm md:text-base">We handle every aspect of your visual content needs, ensuring brand consistency at every touchpoint.</p>
+              <h2 className="text-3xl md:text-5xl font-serif font-bold mb-6">The Studio Behind Hundreds of Brands</h2>
+              <p className="text-white/60 mb-6 text-sm md:text-base">Ahsan Art Creative Studio was started by Muhammad Ahsan, who has spent over 7 years in the e-commerce industry. Before starting the studio, he worked as a product photographer at Elo and as Lead Photographer at Peropelle — giving him hands-on experience with international brand standards and e-commerce content at scale.</p>
+              <p className="text-white/60 mb-6 text-sm md:text-base">Based in Faisalabad, we noticed one thing early on — most local photographers shoot everything. Weddings, events, products, all mixed together. We chose to go the other way. Our entire team is focused on product and brand content — and that focus is what makes our work different.</p>
+              <p className="text-white/60 mb-10 text-sm md:text-base">We study your brand before we shoot. We plan your content strategy. And we deliver visuals that don't just look good — they build trust, strengthen your brand identity, and bring real sales.</p>
               
               <div className="grid grid-cols-2 gap-4">
                 <motion.div 
