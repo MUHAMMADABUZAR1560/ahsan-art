@@ -62,7 +62,7 @@ export function HeroSection() {
       className="relative min-h-screen w-full flex items-center overflow-hidden bg-black"
     >
       <Carousel
-        plugins={[plugin.current]}
+        plugins={[plugin.current as any]}
         className="w-full h-full absolute inset-0 z-0"
         opts={{
           loop: true,
