@@ -31,6 +31,9 @@ export const metadata: Metadata = {
     icon: '/favicon.png?v=3',
     shortcut: '/favicon.png?v=3',
     apple: '/favicon.png?v=3',
+  },
+  verification: {
+    google: 'G1u452HZsA8jYIUY4MyaH0c9Af_oWXoxLbMva6GCaaE',
   }
 }
 
@@ -48,6 +51,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${syne.variable} ${inter.variable}`}>
       <head>
+        <meta name="google-site-verification" content="G1u452HZsA8jYIUY4MyaH0c9Af_oWXoxLbMva6GCaaE" />
         <link rel="icon" href="/favicon.png?v=3" type="image/png" />
         <link rel="shortcut icon" href="/favicon.png?v=3" type="image/png" />
         <link rel="apple-touch-icon" href="/favicon.png?v=3" type="image/png" />
