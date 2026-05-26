@@ -27,6 +27,11 @@ export const metadata: Metadata = {
     description: 'Premium product photography and videography studio',
     type: 'website',
   },
+  icons: {
+    icon: '/favicon.png?v=3',
+    shortcut: '/favicon.png?v=3',
+    apple: '/favicon.png?v=3',
+  }
 }
 
 export const viewport: Viewport = {
@@ -43,6 +48,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${syne.variable} ${inter.variable}`}>
       <head>
+        <link rel="icon" href="/favicon.png?v=3" type="image/png" />
+        <link rel="shortcut icon" href="/favicon.png?v=3" type="image/png" />
+        <link rel="apple-touch-icon" href="/favicon.png?v=3" type="image/png" />
         <script
           dangerouslySetInnerHTML={{
             __html: `
