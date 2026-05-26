@@ -83,13 +83,34 @@ export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
 
+  const [submitError, setSubmitError] = useState("")
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-    await new Promise((resolve) => setTimeout(resolve, 1500))
-    setIsSubmitting(false)
-    setIsSubmitted(true)
-    setFormData({ name: "", email: "", service: "", budget: "", message: "" })
+    setSubmitError("")
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      })
+
+      if (!res.ok) {
+        const data = await res.json()
+        setSubmitError(data.error || "Something went wrong. Please try WhatsApp instead.")
+        setIsSubmitting(false)
+        return
+      }
+
+      setIsSubmitting(false)
+      setIsSubmitted(true)
+      setFormData({ name: "", email: "", service: "", budget: "", message: "" })
+    } catch {
+      setSubmitError("Network error. Please try WhatsApp instead.")
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -320,6 +341,20 @@ export default function ContactPage() {
                       placeholder="Tell us about your project..."
                     />
                   </div>
+
+                  {submitError && (
+                    <div className="p-4 bg-red-50 border border-red-200 rounded-xl text-sm text-red-700">
+                      {submitError}{" "}
+                      <a
+                        href="https://wa.me/923081122525"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline font-semibold"
+                      >
+                        Message us on WhatsApp
+                      </a>
+                    </div>
+                  )}
 
                   <button
                     type="submit"
