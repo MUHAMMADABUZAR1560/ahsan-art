@@ -76,8 +76,8 @@ export function Navigation() {
               </motion.div>
             </Link>
 
-            {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center gap-1">
+            {/* Desktop Navigation - Centered */}
+            <div className="hidden lg:flex items-center justify-center flex-1 mx-8 gap-1">
               {navItems.map((item) => (
                 <Link
                   key={item.href}
@@ -87,7 +87,7 @@ export function Navigation() {
                   className="relative px-4 py-2 group"
                 >
                   <span
-                    className={`relative z-10 text-sm font-medium transition-colors duration-300 text-stone-400 ${
+                    className={`relative z-10 text-sm font-medium transition-colors duration-300 ${
                       pathname === item.href
                         ? "text-primary"
                         : "text-foreground/80 group-hover:text-foreground"
@@ -119,11 +119,10 @@ export function Navigation() {
                   )}
                 </Link>
               ))}
+            </div>
 
-              {/* Divider */}
-              <div className="w-px h-6 bg-border mx-4" />
-
-              {/* CTA Button */}
+            {/* Right side CTA (Desktop) */}
+            <div className="hidden lg:flex items-center">
               <motion.div
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}

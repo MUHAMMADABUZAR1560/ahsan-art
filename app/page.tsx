@@ -1,7 +1,9 @@
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { HeroSection } from "@/components/sections/hero"
+import { StatsStrip } from "@/components/sections/stats-strip"
 import { AboutPreview } from "@/components/sections/about-preview"
+import { ClientsTicker } from "@/components/sections/clients-ticker"
 import { ServicesPreview } from "@/components/sections/services-preview"
 import { PortfolioPreview } from "@/components/sections/portfolio-preview"
 import { WhyChooseUs } from "@/components/sections/why-choose-us"
@@ -12,7 +14,9 @@ export default function HomePage() {
     <main className="min-h-screen">
       <Navigation />
       <HeroSection />
+      <StatsStrip />
       <AboutPreview />
+      <ClientsTicker />
       <ServicesPreview />
       <PortfolioPreview />
       <WhyChooseUs />
