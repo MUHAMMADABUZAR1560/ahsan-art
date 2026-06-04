@@ -1,8 +1,9 @@
 "use client"
 
 import { useState } from "react"
+import Link from "next/link"
 import { motion, AnimatePresence, useInView } from "framer-motion"
-import { Plus, Minus } from "lucide-react"
+import { Plus, Minus, ArrowUpRight } from "lucide-react"
 import { useRef } from "react"
 
 const faqs = [
@@ -54,6 +55,9 @@ export function FAQSection() {
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-serif font-bold text-foreground">
             Frequently Asked <span className="text-primary italic">Questions</span>
           </h2>
+          <p className="mt-4 text-muted-foreground text-sm md:text-base max-w-xl mx-auto">
+            Everything you need to know before working with us.
+          </p>
         </motion.div>
 
         <div className="space-y-4">
@@ -104,6 +108,22 @@ export function FAQSection() {
             )
           })}
         </div>
+
+        {/* View All Link */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.6 }}
+          className="mt-10 text-center"
+        >
+          <Link
+            href="/faq"
+            className="group inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+          >
+            See all frequently asked questions
+            <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+          </Link>
+        </motion.div>
       </div>
     </section>
   )

@@ -127,6 +127,25 @@ export function GoogleReviews() {
             </motion.div>
           ))}
         </motion.div>
+
+        {/* View All CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="mt-12 text-center"
+        >
+          <a
+            href="https://g.page/r/ahsanart/review"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 border border-border/60 rounded-full px-6 py-3 text-sm font-medium text-foreground hover:border-primary hover:text-primary transition-colors group"
+          >
+            <GoogleIcon />
+            View All Reviews on Google
+            <svg className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+          </a>
+        </motion.div>
       </div>
     </section>
   )
