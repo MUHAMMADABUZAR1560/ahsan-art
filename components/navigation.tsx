@@ -12,6 +12,7 @@ const navItems = [
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
   { href: "/portfolio", label: "Portfolio" },
+  { href: "/faq", label: "FAQ" },
   { href: "/behind-the-scenes", label: "BTS" },
   { href: "/contact", label: "Contact" },
 ]

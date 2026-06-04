@@ -5,8 +5,11 @@ import { StatsStrip } from "@/components/sections/stats-strip"
 import { AboutPreview } from "@/components/sections/about-preview"
 import { ClientsTicker } from "@/components/sections/clients-ticker"
 import { ServicesPreview } from "@/components/sections/services-preview"
+import { ReelsShowcase } from "@/components/sections/reels-showcase"
 import { PortfolioPreview } from "@/components/sections/portfolio-preview"
 import { WhyChooseUs } from "@/components/sections/why-choose-us"
+import { BrandsGrid } from "@/components/sections/brands-grid"
+import { GoogleReviews } from "@/components/sections/google-reviews"
 import { CTASection } from "@/components/sections/cta-section"
 
 export default function HomePage() {
@@ -18,8 +21,11 @@ export default function HomePage() {
       <AboutPreview />
       <ClientsTicker />
       <ServicesPreview />
+      <ReelsShowcase />
       <PortfolioPreview />
       <WhyChooseUs />
+      <BrandsGrid />
+      <GoogleReviews />
       <CTASection />
       <Footer />
     </main>
