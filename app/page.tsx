@@ -10,6 +10,7 @@ import { PortfolioPreview } from "@/components/sections/portfolio-preview"
 import { WhyChooseUs } from "@/components/sections/why-choose-us"
 import { BrandsGrid } from "@/components/sections/brands-grid"
 import { GoogleReviews } from "@/components/sections/google-reviews"
+import { FAQSection } from "@/components/sections/faq-section"
 import { CTASection } from "@/components/sections/cta-section"
 
 export default function HomePage() {
@@ -26,6 +27,7 @@ export default function HomePage() {
       <WhyChooseUs />
       <BrandsGrid />
       <GoogleReviews />
+      <FAQSection />
       <CTASection />
       <Footer />
     </main>

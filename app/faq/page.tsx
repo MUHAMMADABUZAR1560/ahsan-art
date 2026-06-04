@@ -1,21 +1,17 @@
-"use client"
+import type { Metadata } from "next"
+import { FAQPageClient } from "./faq-client"
 
-import { Navigation } from "@/components/navigation"
-import { Footer } from "@/components/footer"
-import { FAQSection } from "@/components/sections/faq-section"
-import { CTASection } from "@/components/sections/cta-section"
+export const metadata: Metadata = {
+  title: "FAQ — Ahsan Art Creative Studio",
+  description: "Answers to common questions about our product photography, videography, UGC, and Amazon content services. Based in Faisalabad, serving brands across Pakistan.",
+  openGraph: {
+    title: "FAQ — Ahsan Art Creative Studio",
+    description: "Answers to common questions about product photography, videography and UGC services.",
+    type: "website",
+    url: "https://ahsanart.pk/faq",
+  },
+}
 
 export default function FAQPage() {
-  return (
-    <main className="min-h-screen bg-background">
-      <Navigation />
-      
-      <div className="pt-24 md:pt-32">
-        <FAQSection />
-      </div>
-
-      <CTASection />
-      <Footer />
-    </main>
-  )
+  return <FAQPageClient />
 }

@@ -11,6 +11,7 @@ const footerLinks = {
     { href: "/about", label: "About" },
     { href: "/services", label: "Services" },
     { href: "/portfolio", label: "Portfolio" },
+    { href: "/faq", label: "FAQ" },
     { href: "/behind-the-scenes", label: "BTS" },
     { href: "/contact", label: "Contact" },
   ],
@@ -18,8 +19,9 @@ const footerLinks = {
     { href: "/services#photography", label: "Photography" },
     { href: "/services#videography", label: "Videography" },
     { href: "/services#ugc", label: "UGC Videos" },
-    { href: "/services#amazon", label: "Amazon" },
-    { href: "/services#food", label: "Food" },
+    { href: "/services#amazon", label: "Amazon Content" },
+    { href: "/services#food", label: "Food Photography" },
+    { href: "/services#ecommerce", label: "E-Commerce" },
   ],
 }
 
