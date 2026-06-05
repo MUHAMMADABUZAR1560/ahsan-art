@@ -24,9 +24,12 @@ export function PortfolioPreview() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
   const [activeCategory, setActiveCategory] = useState("All")
 
-  const filteredItems = activeCategory === "All"
+  let filteredItems = activeCategory === "All"
     ? portfolioItems
     : portfolioItems.filter((item) => item.category === activeCategory)
+    
+  // Limit to 4 items to create a perfect 2x2 grid on the homepage
+  filteredItems = filteredItems.slice(0, 4)
 
   return (
     <section ref={ref} className="py-20 md:py-32 bg-foreground text-background">
@@ -67,14 +70,10 @@ export function PortfolioPreview() {
           </div>
         </motion.div>
 
-        {/* Asymmetric Grid */}
-        <motion.div layout className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6">
+        {/* 2x2 Grid */}
+        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
           <AnimatePresence mode="popLayout">
             {filteredItems.map((item, index) => {
-              // Determine col span based on 'size'
-              // large = 8 cols, small = 4 cols (on 12-col grid)
-              // This creates an asymmetric look when mixing sizes.
-              const isLarge = item.size === "large"
               return (
                 <motion.div
                   key={item.id}
@@ -83,9 +82,7 @@ export function PortfolioPreview() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.5, delay: index * 0.05, ease: [0.22, 1, 0.36, 1] }}
-                  className={`group relative overflow-hidden cursor-pointer rounded-2xl bg-background/5 ${
-                    isLarge ? "md:col-span-8 aspect-[4/3] md:aspect-[16/9]" : "md:col-span-4 aspect-square md:aspect-[4/5]"
-                  }`}
+                  className="group relative overflow-hidden cursor-pointer rounded-2xl bg-background/5 aspect-[4/3]"
                 >
                   <Image
                     src={item.image || "/placeholder.svg"}
