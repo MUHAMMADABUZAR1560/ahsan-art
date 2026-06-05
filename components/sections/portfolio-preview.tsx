@@ -71,7 +71,7 @@ export function PortfolioPreview() {
         </motion.div>
 
         {/* 2x2 Grid */}
-        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+        <motion.div layout className="grid grid-cols-2 gap-4 md:gap-6">
           <AnimatePresence mode="popLayout">
             {filteredItems.map((item, index) => {
               return (
