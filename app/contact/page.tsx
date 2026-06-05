@@ -6,6 +6,7 @@ import Link from "next/link"
 import { motion, useInView } from "framer-motion"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
+import { FAQSection } from "@/components/sections/faq-section"
 import { Phone, Mail, Instagram, MapPin, Send, CheckCircle } from "lucide-react"
 
 const contactInfo = [
@@ -118,7 +119,7 @@ export default function ContactPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section ref={heroRef} className="pt-32 pb-20 lg:pt-40 lg:pb-24 text-background bg-[rgba(255,255,255,1)]">
+      <section ref={heroRef} className="pt-32 pb-20 lg:pt-48 lg:pb-24 border-b border-border/50">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="max-w-4xl">
             <motion.span
@@ -380,49 +381,8 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-24 lg:py-32 bg-secondary">
-        <div className="container mx-auto px-6 lg:px-12">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground">
-              Frequently Asked Questions
-            </h2>
-          </div>
-
-          <div className="max-w-3xl mx-auto space-y-4">
-            {[
-              {
-                q: "What is your typical turnaround time?",
-                a: "Turnaround time depends on the project scope. Standard projects are delivered within 5-7 business days, while rush orders can be accommodated with prior arrangement.",
-              },
-              {
-                q: "Do you offer revisions?",
-                a: "Yes! All packages include revisions to ensure you're completely satisfied with the final result. We work closely with you throughout the process.",
-              },
-              {
-                q: "What file formats do you deliver?",
-                a: "We deliver high-resolution images in JPEG and PNG formats, optimized for both web and print. RAW files are available upon request.",
-              },
-              {
-                q: "Do you ship products back after the shoot?",
-                a: "Yes, we safely store your products during the shoot and ship them back to you once the project is complete. Shipping costs are the client's responsibility.",
-              },
-            ].map((faq, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="p-6 bg-background rounded-xl"
-              >
-                <h3 className="font-semibold text-foreground text-lg">{faq.q}</h3>
-                <p className="mt-2 text-muted-foreground">{faq.a}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* FAQ Section - reusing the proper component */}
+      <FAQSection />
 
       {/* Map Section */}
       <section className="py-24 lg:py-32 bg-background">

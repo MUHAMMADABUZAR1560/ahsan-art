@@ -259,33 +259,34 @@ export default function PortfolioPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section ref={heroRef} className="pt-24 pb-12 md:pt-40 md:pb-24 bg-white">
+      <section ref={heroRef} className="pt-32 pb-12 md:pt-48 md:pb-24 border-b border-border/50">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="max-w-4xl">
             <motion.span
-              initial={{ opacity: 0, y: 10 }}
-              animate={heroInView ? { opacity: 1, y: 0 } : {}}
-              className="inline-flex items-center gap-2 text-primary text-[10px] md:text-sm font-medium tracking-widest uppercase mb-4"
+              initial={{ opacity: 0, x: -20 }}
+              animate={heroInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+              className="inline-flex items-center gap-2 text-primary text-xs font-bold tracking-widest uppercase mb-6"
             >
-              <span className="w-6 md:w-8 h-px bg-primary" />
-              Our Work
+              <span className="w-8 h-px bg-primary" /> Our Work
             </motion.span>
 
             <motion.h1
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={heroInView ? { opacity: 1, y: 0 } : {}}
-              className="text-4xl md:text-7xl font-serif font-bold leading-tight text-foreground"
+              transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+              className="text-4xl md:text-7xl lg:text-8xl font-serif font-bold leading-tight text-foreground"
             >
               Selected Projects<span className="text-primary">.</span>
             </motion.h1>
 
             <motion.p
-              initial={{ opacity: 0 }}
-              animate={heroInView ? { opacity: 1 } : {}}
-              transition={{ delay: 0.2 }}
-              className="mt-4 md:mt-8 text-base md:text-xl max-w-2xl text-foreground/80 leading-relaxed"
+              initial={{ opacity: 0, y: 20 }}
+              animate={heroInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ delay: 0.2, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+              className="mt-6 md:mt-8 text-base md:text-xl max-w-2xl text-muted-foreground leading-relaxed"
             >
-              A showcase of our finest work across product photography and e-commerce content.
+              A showcase of our finest work across product photography, videography, and e-commerce content.
             </motion.p>
           </div>
         </div>
