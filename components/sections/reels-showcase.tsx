@@ -66,7 +66,7 @@ export function ReelsShowcase() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
-              className="relative flex-shrink-0 w-[70vw] md:w-auto aspect-[9/16] rounded-2xl overflow-hidden group cursor-pointer bg-background"
+              className="relative flex-shrink-0 w-[45vw] sm:w-[40vw] md:w-auto aspect-[9/16] rounded-2xl overflow-hidden group cursor-pointer bg-background"
             >
               <video
                 src={reel.videoSrc}
