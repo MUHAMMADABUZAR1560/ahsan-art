@@ -9,7 +9,6 @@ import { ReelsShowcase } from "@/components/sections/reels-showcase"
 import { PortfolioPreview } from "@/components/sections/portfolio-preview"
 import { WhyChooseUs } from "@/components/sections/why-choose-us"
 import { GoogleReviews } from "@/components/sections/google-reviews"
-import { FAQSection } from "@/components/sections/faq-section"
 import { CTASection } from "@/components/sections/cta-section"
 
 export default function HomePage() {
@@ -25,7 +24,6 @@ export default function HomePage() {
       <PortfolioPreview />
       <WhyChooseUs />
       <GoogleReviews />
-      <FAQSection />
       <CTASection />
       <Footer />
     </main>
