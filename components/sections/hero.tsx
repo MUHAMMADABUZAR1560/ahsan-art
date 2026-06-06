@@ -111,7 +111,7 @@ export function HeroSection() {
 
               {/* ── DESKTOP layout: left-aligned glass card ── */}
               <div className="absolute inset-0 hidden md:flex items-center z-20">
-                <div className="container mx-auto px-6 lg:px-16 w-full">
+                <div className="w-full px-6 md:px-12 lg:px-16 xl:px-24">
                   <motion.div
                     style={{ y, opacity }}
                     initial={{ opacity: 0, x: -30 }}
