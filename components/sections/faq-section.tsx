@@ -35,7 +35,7 @@ const faqs = [
 
 export function FAQSection() {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const isInView = useInView(ref, { margin: "-100px" })
   const [openIndex, setOpenIndex] = useState<number | null>(0)
 
   return (

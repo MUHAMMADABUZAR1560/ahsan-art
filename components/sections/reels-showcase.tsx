@@ -33,7 +33,7 @@ const reels = [
 
 export function ReelsShowcase() {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const isInView = useInView(ref, { margin: "-100px" })
 
   return (
     <section ref={ref} className="py-24 md:py-32 bg-secondary/30 border-y border-border/50 overflow-hidden">

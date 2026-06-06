@@ -81,7 +81,7 @@ function TickerRow({ items, direction = "left" }: { items: typeof brands; direct
 
 export function ClientsTicker() {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-50px" })
+  const isInView = useInView(ref, { margin: "-50px" })
 
   return (
     <section ref={ref} className="py-14 md:py-20 bg-secondary border-y border-border/50 overflow-hidden">

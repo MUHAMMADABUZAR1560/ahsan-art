@@ -40,7 +40,7 @@ function AnimatedCounter({ value, suffix, isInView }: { value: number; suffix: s
 
 export function StatsStrip() {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-80px" })
+  const isInView = useInView(ref, { margin: "-80px" })
 
   return (
     <section ref={ref} className="py-0 bg-foreground overflow-hidden">

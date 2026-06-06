@@ -48,7 +48,7 @@ const features = [
 function AnimatedCounter({ value, suffix }: { value: number; suffix: string }) {
   const [count, setCount] = useState(0)
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true })
+  const isInView = useInView(ref, { })
 
   useEffect(() => {
     if (isInView) {
@@ -78,7 +78,7 @@ function AnimatedCounter({ value, suffix }: { value: number; suffix: string }) {
 
 export function WhyChooseUs() {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const isInView = useInView(ref, { margin: "-100px" })
 
   return (
     <section ref={ref} className="py-16 md:py-32 bg-background overflow-hidden">

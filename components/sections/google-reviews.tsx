@@ -81,7 +81,7 @@ function ReviewSkeleton() {
 
 export function GoogleReviews() {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const isInView = useInView(ref, { margin: "-100px" })
   
   const [reviews, setReviews] = useState<Review[]>([])
   const [rating, setRating] = useState<number>(5.0)

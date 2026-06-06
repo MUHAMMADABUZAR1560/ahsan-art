@@ -20,7 +20,7 @@ const brands = [
 
 export function BrandsGrid() {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-50px" })
+  const isInView = useInView(ref, { margin: "-50px" })
 
   return (
     <section ref={ref} className="py-20 md:py-32 bg-background border-t border-border/50">

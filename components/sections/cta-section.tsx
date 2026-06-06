@@ -7,7 +7,7 @@ import { ArrowRight, MessageCircle, Instagram } from "lucide-react"
 
 export function CTASection() {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const isInView = useInView(ref, { margin: "-100px" })
 
   return (
     <section
