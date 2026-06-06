@@ -133,7 +133,7 @@ export default function AboutPage() {
                   src="https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575375/studio_zpk4im.jpg" 
                   alt="Ahsan Art Studio" 
                   fill 
-                  className="object-cover grayscale hover:grayscale-0 transition-all duration-700" 
+                  className="object-cover transition-all duration-700" 
                 />
               </div>
               
@@ -143,7 +143,7 @@ export default function AboutPage() {
                   src="https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575369/b1_pf2xsu.jpg" 
                   alt="Studio Work" 
                   fill 
-                  className="object-cover grayscale hover:grayscale-0 transition-all duration-700" 
+                  className="object-cover transition-all duration-700" 
                 />
               </div>
 

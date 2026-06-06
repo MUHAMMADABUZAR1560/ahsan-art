@@ -21,9 +21,9 @@ const slides = [
     title2: "Your Brand And Bring",
     highlight: "Sales",
     description: "We create product photos and videos for e-commerce brands, social media, and online stores — content that doesn't just look good, but actually converts.",
-    bgImage: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575375/studio_zpk4im.jpg",
+    bgImage: "/images/bimage.jpeg",
     // 📱 Replace mobileImage URL with a portrait/vertical version of your photo for best results
-    mobileImage: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575375/studio_zpk4im.jpg",
+    mobileImage: "/images/bimage.jpeg",
   },
   {
     tag: "E-Commerce Excellence",

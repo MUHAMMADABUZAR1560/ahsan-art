@@ -400,7 +400,7 @@ export default function ContactPage() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="w-full h-[400px] md:h-[600px] rounded-3xl overflow-hidden grayscale hover:grayscale-0 transition-all duration-700 border border-primary/10 shadow-2xl shadow-primary/5"
+            className="w-full h-[400px] md:h-[600px] rounded-3xl overflow-hidden transition-all duration-700 border border-primary/10 shadow-2xl shadow-primary/5"
           >
             <iframe
               src="https://maps.google.com/maps?q=Ahsan%20Art%20@31.466756,73.192938&t=&z=15&ie=UTF8&iwloc=&output=embed"
