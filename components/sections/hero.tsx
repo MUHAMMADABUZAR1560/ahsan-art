@@ -21,9 +21,9 @@ const slides = [
     title2: "Your Brand And Bring",
     highlight: "Sales",
     description: "We create product photos and videos for e-commerce brands, social media, and online stores — content that doesn't just look good, but actually converts.",
-    bgImage: "/images/bimage.jpeg",
+    bgImage: "/images/cimage.jpeg",
     // 📱 Replace mobileImage URL with a portrait/vertical version of your photo for best results
-    mobileImage: "/images/bimage.jpeg",
+    mobileImage: "/images/cimage.jpeg",
   },
   {
     tag: "E-Commerce Excellence",
