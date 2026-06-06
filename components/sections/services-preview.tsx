@@ -111,28 +111,18 @@ export function ServicesPreview() {
                 href={service.href}
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
-                className="group flex items-center gap-4 md:gap-8 py-5 md:py-6 px-4 md:px-8 transition-all duration-300 rounded-l-[2rem] md:rounded-l-full bg-gradient-to-r from-primary/30 via-primary/10 to-transparent border-l-4 border-transparent hover:border-primary"
+                className="group flex items-center justify-between gap-4 md:gap-8 py-5 md:py-6 px-4 md:px-8 transition-all duration-300 rounded-l-2xl bg-gradient-to-r from-primary/80 via-primary/20 to-transparent border-l-4 border-transparent hover:border-primary"
               >
-                {/* Number */}
-                <span className={`text-xs md:text-sm font-mono font-bold tracking-widest transition-colors duration-300 flex-shrink-0 w-8 ${hoveredIndex === index ? "text-primary" : "text-muted-foreground/40"}`}>
-                  {service.number}
-                </span>
-
                 {/* Content */}
                 <div className="flex-1 min-w-0">
-                  <div className="flex flex-col md:flex-row md:items-center gap-1 md:gap-4">
-                    <h3 className={`text-lg md:text-2xl font-serif font-bold transition-colors duration-300 ${hoveredIndex === index ? "text-primary" : "text-foreground"}`}>
-                      {service.title}
-                    </h3>
-                  </div>
-                  <p className="mt-1.5 md:mt-2 text-sm leading-relaxed text-muted-foreground/70 max-w-2xl">
-                    {service.description}
-                  </p>
+                  <h3 className={`text-lg md:text-2xl font-serif font-bold transition-colors duration-300 ${hoveredIndex === index ? "text-primary-foreground" : "text-foreground"}`}>
+                    {service.title}
+                  </h3>
                 </div>
 
                 {/* Arrow */}
-                <div className={`flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full border flex items-center justify-center transition-all duration-300 ${hoveredIndex === index ? "bg-primary border-primary" : "border-border bg-transparent"}`}>
-                  <ArrowUpRight className={`w-4 h-4 md:w-5 md:h-5 transition-all duration-300 ${hoveredIndex === index ? "text-white translate-x-0.5 -translate-y-0.5" : "text-muted-foreground"}`} />
+                <div className={`flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full border flex items-center justify-center transition-all duration-300 ${hoveredIndex === index ? "bg-primary-foreground border-primary-foreground" : "border-border bg-transparent"}`}>
+                  <ArrowUpRight className={`w-4 h-4 md:w-5 md:h-5 transition-all duration-300 ${hoveredIndex === index ? "text-primary translate-x-0.5 -translate-y-0.5" : "text-muted-foreground"}`} />
                 </div>
               </Link>
             </motion.div>
