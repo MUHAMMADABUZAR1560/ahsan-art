@@ -111,7 +111,7 @@ export function ServicesPreview() {
                 href={service.href}
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
-                className="group flex items-center gap-4 md:gap-8 py-5 md:py-6 px-4 md:px-8 transition-all duration-300 rounded-l-[2rem] md:rounded-l-full bg-gradient-to-r from-primary/10 via-primary/5 to-transparent border-l-4 border-transparent hover:border-primary"
+                className="group flex items-center gap-4 md:gap-8 py-5 md:py-6 px-4 md:px-8 transition-all duration-300 rounded-l-[2rem] md:rounded-l-full bg-gradient-to-r from-primary/30 via-primary/10 to-transparent border-l-4 border-transparent hover:border-primary"
               >
                 {/* Number */}
                 <span className={`text-xs md:text-sm font-mono font-bold tracking-widest transition-colors duration-300 flex-shrink-0 w-8 ${hoveredIndex === index ? "text-primary" : "text-muted-foreground/40"}`}>
