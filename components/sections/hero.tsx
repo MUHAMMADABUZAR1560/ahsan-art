@@ -98,13 +98,13 @@ export function HeroSection() {
                     initial={{ opacity: 0, x: -30 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                    className="w-full max-w-xl lg:max-w-2xl min-h-[520px] lg:min-h-[560px] bg-black/35 backdrop-blur-xl border border-white/10 rounded-[2rem] p-8 md:p-12 text-left shadow-2xl ring-1 ring-white/5 flex flex-col justify-between"
+                    className="w-full max-w-xl lg:max-w-2xl md:min-h-[520px] lg:min-h-[560px] bg-black/40 md:bg-black/35 backdrop-blur-xl border border-white/10 rounded-3xl md:rounded-[2rem] p-6 md:p-12 text-left shadow-2xl ring-1 ring-white/5 flex flex-col justify-between mt-12 md:mt-0"
                   >
                     <div>
                       {/* Tag/Badge with Accent line */}
-                      <div className="flex items-center gap-3 mb-6">
-                        <span className="h-[2px] w-8 bg-primary rounded-full" />
-                        <span className="text-xs font-semibold uppercase tracking-widest text-primary-foreground/90">
+                      <div className="flex items-center gap-3 mb-4 md:mb-6">
+                        <span className="h-[2px] w-6 md:w-8 bg-primary rounded-full" />
+                        <span className="text-[10px] md:text-xs font-semibold uppercase tracking-widest text-primary-foreground/90">
                           {slide.tag}
                         </span>
                       </div>
@@ -115,29 +115,29 @@ export function HeroSection() {
                         <span className="inline-block">
                           {slide.title2}
                           <span className="text-primary italic"> {slide.highlight}</span>
-                          <span className="inline-block w-2.5 h-2.5 rounded-full bg-primary ml-1.5 align-middle animate-pulse" />
+                          <span className="inline-block w-2 md:w-2.5 h-2 md:h-2.5 rounded-full bg-primary ml-1.5 align-middle animate-pulse" />
                         </span>
                       </h1>
 
                       {/* Description */}
-                      <p className="mt-6 text-white/75 text-base md:text-lg leading-relaxed font-light max-w-xl">
+                      <p className="mt-4 md:mt-6 text-white/75 text-sm md:text-lg leading-relaxed font-light max-w-xl">
                         {slide.description}
                       </p>
                     </div>
 
                     <div>
                       {/* CTA Buttons */}
-                      <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+                      <div className="mt-6 md:mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 md:gap-4">
                         <Link
                           href="/portfolio"
-                          className="group bg-primary text-primary-foreground px-8 py-4 rounded-full text-sm font-semibold flex items-center justify-center gap-2 hover:bg-primary/95 transition-all shadow-lg shadow-primary/25 hover:scale-105 active:scale-95 duration-300"
+                          className="group bg-primary text-primary-foreground px-6 md:px-8 py-3.5 md:py-4 rounded-full text-sm font-semibold flex items-center justify-center gap-2 hover:bg-primary/95 transition-all shadow-lg shadow-primary/25 hover:scale-105 active:scale-95 duration-300"
                         >
                           View Our Work
                           <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                         </Link>
                         <Link
                           href="/contact"
-                          className="group border border-white/20 text-white hover:bg-white hover:text-black px-8 py-4 rounded-full text-sm font-semibold flex items-center justify-center transition-all hover:scale-105 active:scale-95 duration-300"
+                          className="group border border-white/20 text-white hover:bg-white hover:text-black px-6 md:px-8 py-3.5 md:py-4 rounded-full text-sm font-semibold flex items-center justify-center transition-all hover:scale-105 active:scale-95 duration-300"
                         >
                           Start a Project
                         </Link>
@@ -148,7 +148,7 @@ export function HeroSection() {
                         initial={{ opacity: 0, y: 15 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.8 }}
-                        className="mt-8 pt-8 border-t border-white/10 flex flex-wrap items-center justify-start gap-8 md:gap-12"
+                        className="mt-6 pt-6 md:mt-8 md:pt-8 border-t border-white/10 flex flex-wrap items-center justify-start gap-6 md:gap-12"
                       >
                         {[
                           { value: "7+", label: "Years in E-Commerce" },
@@ -156,10 +156,10 @@ export function HeroSection() {
                           { value: "100+", label: "Clients" },
                         ].map((stat, idx) => (
                           <div key={idx} className="text-left">
-                            <div className="text-2xl md:text-3xl font-serif font-bold text-white leading-none">
+                            <div className="text-xl md:text-3xl font-serif font-bold text-white leading-none">
                               {stat.value}
                             </div>
-                            <div className="text-white/40 text-xs mt-2 font-medium tracking-wide uppercase">{stat.label}</div>
+                            <div className="text-white/40 text-[10px] md:text-xs mt-1.5 md:mt-2 font-medium tracking-wide uppercase">{stat.label}</div>
                           </div>
                         ))}
                       </motion.div>
