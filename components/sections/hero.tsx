@@ -85,13 +85,15 @@ export function HeroSection() {
                   sizes="100vw"
                   quality={90}
                 />
-                {/* Left-heavy dark gradient for maximum text contrast */}
-                <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/20 z-10" />
-                <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40 z-10" />
+                {/* Desktop: left-heavy gradient */}
+                <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/20 z-10 hidden md:block" />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40 z-10 hidden md:block" />
+                {/* Mobile: only a bottom fade so banner is visible */}
+                <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/85 z-10 md:hidden" />
               </motion.div>
 
-              {/* Centered container with left-aligned glass card */}
-              <div className="absolute inset-0 flex items-center z-20">
+              {/* ── DESKTOP layout: left-aligned glass card ── */}
+              <div className="absolute inset-0 hidden md:flex items-center z-20">
                 <div className="container mx-auto px-6 lg:px-16 w-full">
                   <motion.div
                     style={{ y, opacity }}
