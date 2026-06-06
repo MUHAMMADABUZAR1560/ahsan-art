@@ -99,7 +99,7 @@ export function ServicesPreview() {
         </motion.div>
 
         {/* Numbered Services List */}
-        <div className="divide-y divide-border/50">
+        <div className="flex flex-col gap-3">
           {services.map((service, index) => (
             <motion.div
               key={index}
@@ -111,29 +111,21 @@ export function ServicesPreview() {
                 href={service.href}
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
-                className="group flex items-center gap-4 md:gap-8 py-6 md:py-8 transition-all duration-300"
+                className="group flex items-center gap-4 md:gap-8 py-5 md:py-6 px-4 md:px-8 transition-all duration-300 rounded-l-[2rem] md:rounded-l-full bg-gradient-to-r from-primary/10 via-primary/5 to-transparent border-l-4 border-transparent hover:border-primary"
               >
                 {/* Number */}
                 <span className={`text-xs md:text-sm font-mono font-bold tracking-widest transition-colors duration-300 flex-shrink-0 w-8 ${hoveredIndex === index ? "text-primary" : "text-muted-foreground/40"}`}>
                   {service.number}
                 </span>
 
-                {/* Icon — hidden on mobile */}
-                <div className={`hidden md:flex w-12 h-12 rounded-xl items-center justify-center flex-shrink-0 transition-all duration-300 ${hoveredIndex === index ? "bg-primary" : "bg-secondary"}`}>
-                  <service.icon className={`w-5 h-5 transition-colors duration-300 ${hoveredIndex === index ? "text-white" : "text-primary"}`} />
-                </div>
-
                 {/* Content */}
                 <div className="flex-1 min-w-0">
                   <div className="flex flex-col md:flex-row md:items-center gap-1 md:gap-4">
-                    <h3 className={`text-lg md:text-2xl lg:text-3xl font-serif font-bold transition-colors duration-300 ${hoveredIndex === index ? "text-primary" : "text-foreground"}`}>
+                    <h3 className={`text-lg md:text-2xl font-serif font-bold transition-colors duration-300 ${hoveredIndex === index ? "text-primary" : "text-foreground"}`}>
                       {service.title}
                     </h3>
-                    <span className="hidden md:inline-flex text-[10px] font-bold uppercase tracking-widest text-muted-foreground/50 border border-border rounded-full px-2.5 py-0.5">
-                      {service.tag}
-                    </span>
                   </div>
-                  <p className={`mt-1 md:mt-2 text-sm md:text-base leading-relaxed transition-all duration-300 max-w-2xl ${hoveredIndex === index ? "text-muted-foreground" : "text-muted-foreground/60 md:max-h-0 md:overflow-hidden md:opacity-0 group-hover:md:max-h-20 group-hover:md:opacity-100"}`}>
+                  <p className="mt-1.5 md:mt-2 text-sm leading-relaxed text-muted-foreground/70 max-w-2xl">
                     {service.description}
                   </p>
                 </div>
