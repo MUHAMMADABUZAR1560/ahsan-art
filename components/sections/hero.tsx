@@ -22,6 +22,8 @@ const slides = [
     highlight: "Sales",
     description: "We create product photos and videos for e-commerce brands, social media, and online stores — content that doesn't just look good, but actually converts.",
     bgImage: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575375/studio_zpk4im.jpg",
+    // 📱 Replace mobileImage URL with a portrait/vertical version of your photo for best results
+    mobileImage: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575375/studio_zpk4im.jpg",
   },
   {
     tag: "E-Commerce Excellence",
@@ -30,6 +32,8 @@ const slides = [
     highlight: "Aesthetic",
     description: "Stand out in crowded marketplaces with stunning, high-end product photography that captures attention and drives sales.",
     bgImage: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575374/skincare_mijkbh.jpg",
+    // 📱 Replace mobileImage URL with a portrait/vertical version of your photo for best results
+    mobileImage: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575374/skincare_mijkbh.jpg",
   },
   {
     tag: "Cinematic Videography",
@@ -38,6 +42,8 @@ const slides = [
     highlight: "Audiences",
     description: "Engage your customers with premium video production, showcasing your products in their best light through dynamic visuals.",
     bgImage: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883470/1_ophv2w.jpg",
+    // 📱 Replace mobileImage URL with a portrait/vertical version of your photo for best results
+    mobileImage: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883470/1_ophv2w.jpg",
   }
 ]
 
@@ -76,12 +82,23 @@ export function HeroSection() {
                 style={{ scale }}
                 className="absolute inset-0 z-0 select-none pointer-events-none"
               >
+                {/* Desktop image — landscape/wide format */}
                 <Image
                   src={slide.bgImage}
                   alt={slide.tag}
                   fill
                   priority={index === 0}
-                  className="object-cover object-center transition-all duration-700"
+                  className="object-cover object-center transition-all duration-700 hidden md:block"
+                  sizes="100vw"
+                  quality={90}
+                />
+                {/* Mobile image — portrait/vertical format (swap mobileImage URL per slide for best results) */}
+                <Image
+                  src={slide.mobileImage}
+                  alt={slide.tag}
+                  fill
+                  priority={index === 0}
+                  className="object-cover object-top transition-all duration-700 md:hidden"
                   sizes="100vw"
                   quality={90}
                 />
