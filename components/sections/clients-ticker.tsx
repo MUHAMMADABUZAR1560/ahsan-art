@@ -1,33 +1,48 @@
 "use client"
 
-import { useRef } from "react"
+import { useRef, useState } from "react"
 import { motion, useInView } from "framer-motion"
+import Image from "next/image"
 
 const brands = [
-  { name: "ELO", category: "Skincare", color: "from-violet-500 to-purple-700", initials: "EL" },
-  { name: "Peropelle", category: "Fashion", color: "from-rose-500 to-pink-700", initials: "PE" },
-  { name: "Vogue Aesthetics", category: "Beauty", color: "from-fuchsia-500 to-purple-700", initials: "VA" },
-  { name: "Urban Sole", category: "Footwear", color: "from-blue-500 to-indigo-700", initials: "US" },
-  { name: "Safi", category: "Healthcare", color: "from-emerald-500 to-teal-700", initials: "SA" },
-  { name: "Khaadi", category: "Clothing", color: "from-amber-500 to-orange-700", initials: "KH" },
-  { name: "Sapphire", category: "Fashion", color: "from-sky-500 to-blue-700", initials: "SP" },
-  { name: "Outfitters", category: "Apparel", color: "from-red-500 to-rose-700", initials: "OU" },
-  { name: "J.", category: "Retail", color: "from-violet-600 to-indigo-700", initials: "J." },
-  { name: "Bonanza Satrangi", category: "Clothing", color: "from-pink-500 to-rose-700", initials: "BS" },
-  { name: "Edenrobe", category: "Fashion", color: "from-teal-500 to-emerald-700", initials: "ER" },
-  { name: "Charizma", category: "Textiles", color: "from-orange-500 to-amber-700", initials: "CH" },
+  { name: "Khaadi", category: "Clothing", domain: "khaadi.com", initials: "KH" },
+  { name: "Sapphire", category: "Fashion", domain: "sapphireonline.pk", initials: "SP" },
+  { name: "Outfitters", category: "Apparel", domain: "outfitters.com.pk", initials: "OU" },
+  { name: "Edenrobe", category: "Fashion", domain: "edenrobe.com", initials: "ER" },
+  { name: "Bonanza Satrangi", category: "Clothing", domain: "bonanzasatrangi.com", initials: "BS" },
+  { name: "Charizma", category: "Textiles", domain: "charizma.com.pk", initials: "CH" },
+  { name: "J.", category: "Retail", domain: "j-dot.pk", initials: "J." },
+  { name: "Safi", category: "Healthcare", domain: "safi.pk", initials: "SA" },
+  { name: "Peropelle", category: "Fashion", domain: "peropelle.com", initials: "PE" },
+  { name: "Urban Sole", category: "Footwear", domain: "urbansole.pk", initials: "US" },
+  { name: "Alkaram Studio", category: "Textiles", domain: "alkaramstudio.com", initials: "AK" },
+  { name: "Gul Ahmed", category: "Clothing", domain: "gulahmedshop.com", initials: "GA" },
 ]
 
 function BrandCard({ brand }: { brand: typeof brands[0] }) {
+  const [imgError, setImgError] = useState(false)
+  const logoUrl = `https://logo.clearbit.com/${brand.domain}`
+
   return (
-    <div className="flex flex-col items-center gap-2.5 px-6 flex-shrink-0 group">
-      {/* Circular logo */}
-      <div
-        className={`w-16 h-16 md:w-20 md:h-20 rounded-full bg-gradient-to-br ${brand.color} flex items-center justify-center shadow-lg ring-2 ring-white/10 group-hover:scale-110 group-hover:ring-primary/40 transition-all duration-300`}
-      >
-        <span className="text-white font-bold text-sm md:text-base tracking-wide select-none">
-          {brand.initials}
-        </span>
+    <div className="flex flex-col items-center gap-3 px-6 flex-shrink-0 group cursor-default">
+      {/* Circular logo container */}
+      <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-white flex items-center justify-center shadow-md ring-1 ring-border/30 group-hover:scale-110 group-hover:ring-primary/40 group-hover:shadow-lg transition-all duration-300 overflow-hidden">
+        {!imgError ? (
+          <Image
+            src={logoUrl}
+            alt={brand.name}
+            width={80}
+            height={80}
+            className="w-12 h-12 md:w-14 md:h-14 object-contain"
+            onError={() => setImgError(true)}
+            unoptimized
+          />
+        ) : (
+          // Fallback: clean initials on white background
+          <span className="text-gray-700 font-bold text-sm md:text-base tracking-wide select-none">
+            {brand.initials}
+          </span>
+        )}
       </div>
       {/* Brand name */}
       <div className="text-center">
