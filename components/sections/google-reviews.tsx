@@ -1,47 +1,16 @@
 "use client"
 
-import { useRef } from "react"
+import { useRef, useEffect, useState } from "react"
 import { motion, useInView } from "framer-motion"
 import { Star } from "lucide-react"
 
-const reviews = [
-  {
-    author: "Ali Khan",
-    date: "2 months ago",
-    content: "Ahsan and his team are phenomenal. They shot our entire summer catalog and the results exceeded our expectations. The lighting, the composition, everything was perfectly aligned with our brand guidelines.",
-    rating: 5
-  },
-  {
-    author: "Sara Ahmed",
-    date: "4 months ago",
-    content: "Highly recommend Ahsan Art Creative Studio for e-commerce videography. They understood our vision immediately and delivered high-converting UGC reels for our Instagram ads.",
-    rating: 5
-  },
-  {
-    author: "Usman Tariq",
-    date: "1 month ago",
-    content: "We hired them for Amazon A+ content and product listing images. Our click-through rate jumped by 30% within weeks of updating the visuals. Worth every penny.",
-    rating: 5
-  },
-  {
-    author: "Zainab Raza",
-    date: "6 months ago",
-    content: "Professional, timely, and incredibly talented. They styled and shot our new food menu and the photos look absolutely mouth-watering. Will definitely work with them again.",
-    rating: 5
-  },
-  {
-    author: "Hassan Malik",
-    date: "3 months ago",
-    content: "Exceptional quality work. The team went above and beyond to ensure every shot was perfect. Our brand image has never looked this premium before.",
-    rating: 5
-  },
-  {
-    author: "Ayesha Butt",
-    date: "5 months ago",
-    content: "Incredible attention to detail. From brief to final delivery, the entire process was smooth. The images instantly elevated our product listings on our website.",
-    rating: 5
-  },
-]
+interface Review {
+  author_name: string;
+  relative_time_description: string;
+  text: string;
+  rating: number;
+  profile_photo_url: string;
+}
 
 // Custom Google Icon SVG
 function GoogleIcon() {
@@ -55,24 +24,28 @@ function GoogleIcon() {
   )
 }
 
-function ReviewCard({ review }: { review: typeof reviews[0] }) {
+function ReviewCard({ review }: { review: Review }) {
   return (
     <div className="flex-shrink-0 w-[85vw] md:w-auto bg-background p-6 md:p-8 rounded-3xl border border-border/50 hover:border-primary/50 transition-colors duration-300 flex flex-col h-full">
       <div className="flex gap-1 text-yellow-500 mb-4">
-        {[...Array(review.rating)].map((_, i) => (
+        {[...Array(review.rating || 5)].map((_, i) => (
           <Star key={i} className="w-4 h-4 fill-current" />
         ))}
       </div>
-      <p className="text-muted-foreground text-sm leading-relaxed flex-grow mb-6">
-        &ldquo;{review.content}&rdquo;
+      <p className="text-muted-foreground text-sm leading-relaxed flex-grow mb-6 line-clamp-6">
+        &ldquo;{review.text}&rdquo;
       </p>
       <div className="flex items-center gap-3 mt-auto">
-        <div className="w-9 h-9 rounded-full bg-secondary flex items-center justify-center font-bold text-foreground text-sm flex-shrink-0">
-          {review.author.charAt(0)}
-        </div>
+        {review.profile_photo_url ? (
+          <img src={review.profile_photo_url} alt={review.author_name} className="w-9 h-9 rounded-full object-cover" />
+        ) : (
+          <div className="w-9 h-9 rounded-full bg-secondary flex items-center justify-center font-bold text-foreground text-sm flex-shrink-0">
+            {review.author_name.charAt(0)}
+          </div>
+        )}
         <div className="min-w-0">
-          <div className="font-bold text-sm text-foreground truncate">{review.author}</div>
-          <div className="text-xs text-muted-foreground">{review.date}</div>
+          <div className="font-bold text-sm text-foreground truncate">{review.author_name}</div>
+          <div className="text-xs text-muted-foreground">{review.relative_time_description}</div>
         </div>
         <div className="ml-auto">
           <GoogleIcon />
@@ -82,12 +55,63 @@ function ReviewCard({ review }: { review: typeof reviews[0] }) {
   )
 }
 
+function ReviewSkeleton() {
+  return (
+    <div className="flex-shrink-0 w-[85vw] md:w-auto bg-background p-6 md:p-8 rounded-3xl border border-border/50 flex flex-col h-full animate-pulse">
+      <div className="flex gap-1 mb-4">
+        {[...Array(5)].map((_, i) => (
+          <div key={i} className="w-4 h-4 rounded-full bg-muted" />
+        ))}
+      </div>
+      <div className="flex-grow mb-6 space-y-2">
+        <div className="h-4 bg-muted rounded w-full" />
+        <div className="h-4 bg-muted rounded w-5/6" />
+        <div className="h-4 bg-muted rounded w-4/6" />
+      </div>
+      <div className="flex items-center gap-3 mt-auto">
+        <div className="w-9 h-9 rounded-full bg-muted flex-shrink-0" />
+        <div className="min-w-0 flex-1 space-y-2">
+          <div className="h-3 bg-muted rounded w-24" />
+          <div className="h-2 bg-muted rounded w-16" />
+        </div>
+      </div>
+    </div>
+  )
+}
+
 export function GoogleReviews() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
+  
+  const [reviews, setReviews] = useState<Review[]>([])
+  const [rating, setRating] = useState<number>(5.0)
+  const [totalReviews, setTotalReviews] = useState<number>(0)
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    async function fetchReviews() {
+      try {
+        const res = await fetch('/api/reviews');
+        if (res.ok) {
+          const data = await res.json();
+          setReviews(data.reviews || []);
+          setRating(data.rating || 5.0);
+          setTotalReviews(data.user_ratings_total || 0);
+        }
+      } catch (error) {
+        console.error("Failed to fetch reviews:", error);
+      } finally {
+        setLoading(false);
+      }
+    }
+    
+    if (isInView) {
+      fetchReviews();
+    }
+  }, [isInView]);
 
   // Duplicate reviews for seamless infinite scroll
-  const duplicated = [...reviews, ...reviews]
+  const duplicated = [...reviews, ...reviews, ...reviews]
 
   return (
     <section ref={ref} className="py-20 md:py-32 bg-secondary/50 border-t border-border/50 overflow-hidden">
@@ -114,14 +138,18 @@ export function GoogleReviews() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex items-center gap-4 bg-background px-6 py-4 rounded-2xl border border-border/50 self-start md:self-auto"
           >
-            <div className="text-4xl font-bold text-foreground">5.0</div>
+            <div className="text-4xl font-bold text-foreground">
+              {loading ? "-" : rating.toFixed(1)}
+            </div>
             <div className="flex flex-col gap-1">
               <div className="flex text-yellow-500">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-4 h-4 fill-current" />
                 ))}
               </div>
-              <div className="text-xs text-muted-foreground font-medium">Based on 40+ reviews</div>
+              <div className="text-xs text-muted-foreground font-medium">
+                {loading ? "Loading..." : `Based on ${totalReviews}+ reviews`}
+              </div>
             </div>
           </motion.div>
         </div>
@@ -142,9 +170,13 @@ export function GoogleReviews() {
             repeat: Infinity,
           }}
         >
-          {duplicated.map((review, i) => (
-            <ReviewCard key={i} review={review} />
-          ))}
+          {loading ? (
+            [...Array(3)].map((_, i) => <ReviewSkeleton key={i} />)
+          ) : (
+            duplicated.map((review, i) => (
+              <ReviewCard key={i} review={review} />
+            ))
+          )}
         </motion.div>
       </div>
 
@@ -159,14 +191,18 @@ export function GoogleReviews() {
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
         >
-          {reviews.map((review, index) => (
-            <motion.div
-              key={index}
-              variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
-            >
-              <ReviewCard review={review} />
-            </motion.div>
-          ))}
+          {loading ? (
+            [...Array(4)].map((_, i) => <ReviewSkeleton key={i} />)
+          ) : (
+            reviews.slice(0, 4).map((review, index) => (
+              <motion.div
+                key={index}
+                variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+              >
+                <ReviewCard review={review} />
+              </motion.div>
+            ))
+          )}
         </motion.div>
 
         {/* View All CTA */}
