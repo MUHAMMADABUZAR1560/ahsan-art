@@ -143,12 +143,11 @@ export function HeroSection() {
                         </Link>
                       </div>
 
-                      {/* Premium Stats Preview (On all slides for perfect consistency) */}
                       <motion.div
                         initial={{ opacity: 0, y: 15 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.8 }}
-                        className="mt-6 pt-6 md:mt-8 md:pt-8 border-t border-white/10 flex flex-wrap items-center justify-start gap-6 md:gap-12"
+                        className="mt-8 pt-8 border-t border-white/10 flex flex-wrap items-center justify-start gap-12"
                       >
                         {[
                           { value: "7+", label: "Years in E-Commerce" },
@@ -156,10 +155,10 @@ export function HeroSection() {
                           { value: "100+", label: "Clients" },
                         ].map((stat, idx) => (
                           <div key={idx} className="text-left">
-                            <div className="text-xl md:text-3xl font-serif font-bold text-white leading-none">
+                            <div className="text-3xl font-serif font-bold text-white leading-none">
                               {stat.value}
                             </div>
-                            <div className="text-white/40 text-[10px] md:text-xs mt-1.5 md:mt-2 font-medium tracking-wide uppercase">{stat.label}</div>
+                            <div className="text-white/40 text-xs mt-2 font-medium tracking-wide uppercase">{stat.label}</div>
                           </div>
                         ))}
                       </motion.div>
@@ -167,10 +166,58 @@ export function HeroSection() {
                   </motion.div>
                 </div>
               </div>
+
+              {/* ── MOBILE layout: compact strip pinned to bottom ── */}
+              <div className="absolute bottom-0 left-0 right-0 z-20 md:hidden">
+                <motion.div
+                  style={{ opacity }}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                  className="bg-black/60 backdrop-blur-xl border-t border-white/10 px-5 py-5"
+                >
+                  {/* Tag */}
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="h-[2px] w-5 bg-primary rounded-full" />
+                    <span className="text-[9px] font-bold uppercase tracking-widest text-primary">
+                      {slide.tag}
+                    </span>
+                  </div>
+                  {/* Title */}
+                  <h1 className="text-2xl font-serif font-bold text-white leading-tight mb-1">
+                    {slide.title1}{" "}
+                    <span className="text-primary italic">{slide.highlight}</span>
+                    <span className="inline-block w-1.5 h-1.5 rounded-full bg-primary ml-1 align-middle animate-pulse" />
+                  </h1>
+                  {/* CTA + Stats row */}
+                  <div className="flex items-center justify-between mt-4 gap-3">
+                    <Link
+                      href="/portfolio"
+                      className="group bg-primary text-white px-5 py-2.5 rounded-full text-xs font-bold flex items-center gap-1.5 hover:bg-primary/90 transition-all shadow-lg shadow-primary/25 shrink-0"
+                    >
+                      View Work
+                      <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+                    </Link>
+                    <div className="flex items-center gap-4">
+                      {[
+                        { value: "7+", label: "Years" },
+                        { value: "500+", label: "Projects" },
+                        { value: "100+", label: "Clients" },
+                      ].map((stat, idx) => (
+                        <div key={idx} className="text-center">
+                          <div className="text-base font-serif font-bold text-white leading-none">{stat.value}</div>
+                          <div className="text-white/40 text-[8px] mt-0.5 font-medium tracking-wide uppercase">{stat.label}</div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+
             </CarouselItem>
           ))}
         </CarouselContent>
-        {/* Carousel controls - Custom glass styling */}
+        {/* Carousel controls - Desktop only */}
         <div className="absolute left-8 top-1/2 -translate-y-1/2 z-30 hidden md:block">
           <CarouselPrevious className="relative static translate-x-0 translate-y-0 border-white/10 text-white hover:bg-white/10 hover:text-white bg-white/5 backdrop-blur-md h-12 w-12 transition-all hover:scale-110 active:scale-90" />
         </div>
@@ -184,7 +231,7 @@ export function HeroSection() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 pointer-events-none"
+        className="absolute bottom-28 md:bottom-8 left-1/2 -translate-x-1/2 z-20 pointer-events-none"
       >
         <motion.div
           animate={{ y: [0, 8, 0] }}
