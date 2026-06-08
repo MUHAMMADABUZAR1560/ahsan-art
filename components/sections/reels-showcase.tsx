@@ -1,39 +1,45 @@
 "use client"
 
-import { useRef } from "react"
+import { useRef, useEffect, useState } from "react"
 import { motion, useInView } from "framer-motion"
-import { Play } from "lucide-react"
+import { Play, Instagram, ExternalLink } from "lucide-react"
+import Link from "next/link"
 
-const reels = [
-  {
-    id: 1,
-    title: "Skincare Texture",
-    videoSrc: "https://res.cloudinary.com/dhtktd4ka/video/upload/v1774575368/a2_tc7xlt.mp4", // Replace with actual video URL
-    poster: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575368/a2_tc7xlt.jpg",
-  },
-  {
-    id: 2,
-    title: "Product Unboxing",
-    videoSrc: "https://res.cloudinary.com/dhtktd4ka/video/upload/v1774575368/a2_tc7xlt.mp4", // Replace with actual video URL
-    poster: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575418/1_c8da7s.jpg",
-  },
-  {
-    id: 3,
-    title: "UGC Testimonial",
-    videoSrc: "https://res.cloudinary.com/dhtktd4ka/video/upload/v1774575368/a2_tc7xlt.mp4", // Replace with actual video URL
-    poster: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883470/1_ophv2w.jpg",
-  },
-  {
-    id: 4,
-    title: "Amazon Video Ad",
-    videoSrc: "https://res.cloudinary.com/dhtktd4ka/video/upload/v1774575368/a2_tc7xlt.mp4", // Replace with actual video URL
-    poster: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774578569/1_oa9m7u.jpg",
-  }
+type Reel = {
+  id: string
+  media_type: string
+  media_url: string
+  thumbnail_url?: string
+  caption?: string
+  permalink?: string
+}
+
+const FALLBACK_REELS: Reel[] = [
+  { id: '1', media_type: 'VIDEO', media_url: 'https://res.cloudinary.com/dhtktd4ka/video/upload/v1774575368/a2_tc7xlt.mp4', thumbnail_url: 'https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575368/a2_tc7xlt.jpg', caption: 'Skincare Texture', permalink: '#' },
+  { id: '2', media_type: 'VIDEO', media_url: 'https://res.cloudinary.com/dhtktd4ka/video/upload/v1774575368/a2_tc7xlt.mp4', thumbnail_url: 'https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575418/1_c8da7s.jpg', caption: 'Product Unboxing', permalink: '#' },
+  { id: '3', media_type: 'VIDEO', media_url: 'https://res.cloudinary.com/dhtktd4ka/video/upload/v1774575368/a2_tc7xlt.mp4', thumbnail_url: 'https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883470/1_ophv2w.jpg', caption: 'UGC Testimonial', permalink: '#' },
+  { id: '4', media_type: 'VIDEO', media_url: 'https://res.cloudinary.com/dhtktd4ka/video/upload/v1774575368/a2_tc7xlt.mp4', thumbnail_url: 'https://res.cloudinary.com/dhtktd4ka/image/upload/v1774578569/1_oa9m7u.jpg', caption: 'Amazon Video Ad', permalink: '#' },
 ]
 
 export function ReelsShowcase() {
   const ref = useRef(null)
   const isInView = useInView(ref, { margin: "-100px" })
+  const [reels, setReels] = useState<Reel[]>(FALLBACK_REELS)
+  const [isLive, setIsLive] = useState(false)
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    fetch('/api/instagram-reels')
+      .then(res => res.json())
+      .then(data => {
+        if (data.reels && data.reels.length > 0) {
+          setReels(data.reels.slice(0, 4))
+          setIsLive(data.source === 'instagram')
+        }
+      })
+      .catch(() => { /* keep fallback */ })
+      .finally(() => setLoading(false))
+  }, [])
 
   return (
     <section ref={ref} className="py-24 md:py-32 bg-secondary/30 border-y border-border/50 overflow-hidden">
@@ -50,12 +56,21 @@ export function ReelsShowcase() {
               Vertical Video
             </span>
             <h2 className="text-3xl md:text-5xl lg:text-6xl font-serif font-bold text-foreground leading-tight">
-              Reels & <span className="text-primary italic">UGC</span>
+              Reels &amp; <span className="text-primary italic">UGC</span>
             </h2>
           </div>
-          <p className="text-muted-foreground max-w-md text-sm md:text-base">
-            High-converting vertical video content designed for TikTok, Instagram Reels, and Shorts.
-          </p>
+          <div className="flex flex-col items-start md:items-end gap-3">
+            <p className="text-muted-foreground max-w-md text-sm md:text-base">
+              High-converting vertical video content designed for TikTok, Instagram Reels, and Shorts.
+            </p>
+            {isLive && (
+              <span className="inline-flex items-center gap-2 text-xs font-semibold text-primary bg-primary/10 px-3 py-1.5 rounded-full">
+                <Instagram className="w-3 h-3" />
+                Live from Instagram
+                <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+              </span>
+            )}
+          </div>
         </motion.div>
 
         {/* Horizontal scroll on mobile, grid on desktop */}
@@ -69,8 +84,8 @@ export function ReelsShowcase() {
               className="relative flex-shrink-0 w-[45vw] sm:w-[40vw] md:w-auto aspect-[9/16] rounded-2xl overflow-hidden group cursor-pointer bg-background"
             >
               <video
-                src={reel.videoSrc}
-                poster={reel.poster}
+                src={reel.media_url}
+                poster={reel.thumbnail_url}
                 loop
                 muted
                 playsInline
@@ -81,14 +96,34 @@ export function ReelsShowcase() {
                   e.currentTarget.currentTime = 0
                 }}
               />
-              
+
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80" />
-              
-              <div className="absolute inset-0 p-6 flex flex-col justify-end">
-                <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center mb-4 group-hover:bg-primary transition-colors duration-300">
-                  <Play className="w-4 h-4 text-white fill-white translate-x-0.5" />
+
+              <div className="absolute inset-0 p-6 flex flex-col justify-between">
+                {/* Top: Instagram link if live */}
+                {isLive && reel.permalink && reel.permalink !== '#' && (
+                  <Link
+                    href={reel.permalink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="self-end w-9 h-9 rounded-full bg-black/30 backdrop-blur-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-primary"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <ExternalLink className="w-4 h-4 text-white" />
+                  </Link>
+                )}
+
+                {/* Bottom: Play + Caption */}
+                <div className="flex flex-col justify-end mt-auto">
+                  <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center mb-4 group-hover:bg-primary transition-colors duration-300">
+                    <Play className="w-4 h-4 text-white fill-white translate-x-0.5" />
+                  </div>
+                  {reel.caption && (
+                    <h3 className="text-white font-serif font-bold text-lg md:text-xl line-clamp-2">
+                      {reel.caption.split('\n')[0].substring(0, 40)}
+                    </h3>
+                  )}
                 </div>
-                <h3 className="text-white font-serif font-bold text-lg md:text-xl">{reel.title}</h3>
               </div>
             </motion.div>
           ))}
