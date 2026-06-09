@@ -2,8 +2,9 @@ import React, { Suspense } from "react"
 import type { Metadata, Viewport } from 'next'
 import { Syne, Inter } from 'next/font/google'
 import './globals.css'
-import { CursorFollower } from "@/components/CursorFollower" // Restored import
+import { CursorFollower } from "@/components/CursorFollower"
 import MetaPixel from "@/components/MetaPixel"
+import JsonLd from "@/components/JsonLd"
 
 const syne = Syne({ 
   subsets: ["latin"],
@@ -18,14 +19,44 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Ahsan Art Creative Studio | Product Photography & Videography in Faisalabad',
-  description: 'Ahsan Art Creative Studio — Faisalabad\'s e-commerce focused content studio. Product photography, videography, UGC, and social media content that builds trust and drives real sales.',
-  keywords: ['product photography', 'videography', 'e-commerce', 'amazon', 'food photography', 'ugc videos', 'creative studio'],
-  authors: [{ name: 'Ahsan Art' }],
+  metadataBase: new URL('https://www.ahsanart.pk'),
+  title: {
+    default: 'Ahsan Art Creative Studio | Product Photography & Videography in Faisalabad',
+    template: '%s | Ahsan Art Faisalabad',
+  },
+  description: "Faisalabad's e-commerce content studio. Product photography, videography, UGC videos, Amazon listing images, and food photography that builds trust and drives real sales.",
+  authors: [{ name: 'Ahsan Art Creative Studio' }],
+  creator: 'Ahsan Art',
+  publisher: 'Ahsan Art Creative Studio',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, 'max-image-preview': 'large' },
+  },
   openGraph: {
-    title: 'Ahsan Art - Creative Studio',
-    description: 'Premium product photography and videography studio',
     type: 'website',
+    locale: 'en_PK',
+    url: 'https://www.ahsanart.pk',
+    siteName: 'Ahsan Art Creative Studio',
+    title: 'Ahsan Art Creative Studio | Product Photography & Videography in Faisalabad',
+    description: "Faisalabad's e-commerce content studio. Product photography, videography, UGC, and Amazon content that drives real sales.",
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Ahsan Art Creative Studio — Product Photography in Faisalabad',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Ahsan Art Creative Studio | Product Photography Faisalabad',
+    description: 'E-commerce content studio in Faisalabad. Product photography, videography, UGC & Amazon content.',
+    images: ['/og-image.jpg'],
+  },
+  alternates: {
+    canonical: 'https://www.ahsanart.pk',
   },
   icons: {
     icon: '/favicon.png?v=3',
@@ -49,8 +80,9 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${syne.variable} ${inter.variable}`}>
+    <html lang="en-PK" className={`${syne.variable} ${inter.variable}`}>
       <head>
+        <JsonLd />
         <meta name="google-site-verification" content="G1u452HZsA8jYIUY4MyaH0c9Af_oWXoxLbMva6GCaaE" />
         <link rel="icon" href="/favicon.png?v=3" type="image/png" />
         <link rel="shortcut icon" href="/favicon.png?v=3" type="image/png" />
@@ -82,7 +114,7 @@ fbq('track', 'PageView');
             alt=""
           />
         </noscript>
-        <CursorFollower /> {/* Restored global cursor component */}
+        <CursorFollower />
         <Suspense fallback={null}>
           <MetaPixel />
         </Suspense>

@@ -131,7 +131,7 @@ export default function AboutPage() {
               <div className="absolute right-0 top-0 w-[80%] h-[75%] rounded-3xl overflow-hidden shadow-2xl">
                 <Image 
                   src="https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575375/studio_zpk4im.jpg" 
-                  alt="Ahsan Art Studio" 
+                  alt="Ahsan Art Creative Studio Product Photography Setup in Faisalabad" 
                   fill 
                   className="object-cover transition-all duration-700" 
                 />
@@ -141,7 +141,7 @@ export default function AboutPage() {
               <div className="absolute left-0 bottom-0 w-[55%] h-[45%] rounded-3xl overflow-hidden shadow-2xl border-8 border-background">
                 <Image 
                   src="https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575369/b1_pf2xsu.jpg" 
-                  alt="Studio Work" 
+                  alt="Behind the scenes of a product photography shoot at Ahsan Art Studio" 
                   fill 
                   className="object-cover transition-all duration-700" 
                 />
@@ -158,7 +158,7 @@ export default function AboutPage() {
             <div className="md:hidden relative aspect-square rounded-2xl overflow-hidden w-full">
                <Image 
                   src="https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575375/studio_zpk4im.jpg" 
-                  alt="Ahsan Art Studio" 
+                  alt="Professional product videography equipment at Ahsan Art Creative Studio" 
                   fill 
                   className="object-cover" 
                 />

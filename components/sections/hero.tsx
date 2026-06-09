@@ -129,14 +129,25 @@ export function HeroSection() {
                       </div>
 
                       {/* Title */}
-                      <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif font-bold text-white leading-[1.15] tracking-tight">
-                        {slide.title1} <br />
-                        <span className="inline-block">
-                          {slide.title2}
-                          <span className="text-primary italic"> {slide.highlight}</span>
-                          <span className="inline-block w-2 md:w-2.5 h-2 md:h-2.5 rounded-full bg-primary ml-1.5 align-middle animate-pulse" />
-                        </span>
-                      </h1>
+                      {index === 0 ? (
+                        <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif font-bold text-white leading-[1.15] tracking-tight">
+                          {slide.title1} <br />
+                          <span className="inline-block">
+                            {slide.title2}
+                            <span className="text-primary italic"> {slide.highlight}</span>
+                            <span className="inline-block w-2 md:w-2.5 h-2 md:h-2.5 rounded-full bg-primary ml-1.5 align-middle animate-pulse" />
+                          </span>
+                        </h1>
+                      ) : (
+                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-serif font-bold text-white leading-[1.15] tracking-tight">
+                          {slide.title1} <br />
+                          <span className="inline-block">
+                            {slide.title2}
+                            <span className="text-primary italic"> {slide.highlight}</span>
+                            <span className="inline-block w-2 md:w-2.5 h-2 md:h-2.5 rounded-full bg-primary ml-1.5 align-middle animate-pulse" />
+                          </span>
+                        </h2>
+                      )}
 
                       {/* Description */}
                       <p className="mt-4 md:mt-6 text-white/75 text-sm md:text-lg leading-relaxed font-light max-w-xl">
@@ -203,11 +214,19 @@ export function HeroSection() {
                     </span>
                   </div>
                   {/* Title */}
-                  <h1 className="text-2xl font-serif font-bold text-white leading-tight mb-1">
-                    {slide.title1}{" "}
-                    <span className="text-primary italic">{slide.highlight}</span>
-                    <span className="inline-block w-1.5 h-1.5 rounded-full bg-primary ml-1 align-middle animate-pulse" />
-                  </h1>
+                  {index === 0 ? (
+                    <h1 className="text-2xl font-serif font-bold text-white leading-tight mb-1">
+                      {slide.title1}{" "}
+                      <span className="text-primary italic">{slide.highlight}</span>
+                      <span className="inline-block w-1.5 h-1.5 rounded-full bg-primary ml-1 align-middle animate-pulse" />
+                    </h1>
+                  ) : (
+                    <h2 className="text-2xl font-serif font-bold text-white leading-tight mb-1">
+                      {slide.title1}{" "}
+                      <span className="text-primary italic">{slide.highlight}</span>
+                      <span className="inline-block w-1.5 h-1.5 rounded-full bg-primary ml-1 align-middle animate-pulse" />
+                    </h2>
+                  )}
                   {/* CTA + Stats row */}
                   <div className="flex items-center justify-between mt-4 gap-3">
                     <Link

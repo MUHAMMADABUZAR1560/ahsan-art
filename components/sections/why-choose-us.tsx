@@ -46,7 +46,7 @@ const features = [
 ]
 
 function AnimatedCounter({ value, suffix }: { value: number; suffix: string }) {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(value)
   const ref = useRef(null)
   const isInView = useInView(ref, { })
 
@@ -69,12 +69,14 @@ function AnimatedCounter({ value, suffix }: { value: number; suffix: string }) {
   }, [isInView, value])
 
   return (
-    <span ref={ref} className="tabular-nums">
+    <span ref={ref} className="tabular-nums" data-target={value}>
       {count}
       {suffix}
     </span>
   )
 }
+
+
 
 export function WhyChooseUs() {
   const ref = useRef(null)

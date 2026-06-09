@@ -1,11 +1,16 @@
 import type { Metadata } from 'next'
-import type { ReactNode } from 'react'
 
 export const metadata: Metadata = {
-  title: 'Our Services | Product Photography, Videography & E-Commerce Content — Ahsan Art Faisalabad',
-  description: 'Ahsan Art offers product photography, videography, UGC videos, Amazon listing content, food photography, and full e-commerce visual solutions in Faisalabad, Pakistan.',
+  title: 'Our Services | Product Photography, Videography & Amazon Content',
+  description: 'Ahsan Art offers product photography, videography, UGC videos, Amazon listing content, food photography and full e-commerce visual solutions in Faisalabad, Pakistan.',
+  alternates: { canonical: 'https://www.ahsanart.pk/services' },
+  openGraph: {
+    url: 'https://www.ahsanart.pk/services',
+    title: 'Our Services | Product Photography, Videography & Amazon Content',
+    description: 'Product photography, videography, UGC videos, Amazon listing content and food photography in Faisalabad.',
+  },
 }
 
-export default function ServicesLayout({ children }: { children: ReactNode }) {
+export default function ServicesLayout({ children }: { children: React.ReactNode }) {
   return <>{children}</>
 }

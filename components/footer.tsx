@@ -103,6 +103,10 @@ export function Footer() {
                 <p className="text-xs text-background/50 leading-relaxed max-w-[200px]">
                   Gatwala Commercial Hub, Faisalabad.
                 </p>
+                <div className="pt-2">
+                  <p className="text-xs font-bold text-background/70 uppercase tracking-wider mb-1">Hours</p>
+                  <p className="text-xs text-background/50">Mon-Sat: 9:00 AM - 6:00 PM</p>
+                </div>
               </div>
             </div>
           </div>
