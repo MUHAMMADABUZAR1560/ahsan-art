@@ -89,6 +89,9 @@ export function PortfolioPreview() {
                     alt={item.title}
                     fill
                     className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                    quality={60}
+                    loading="lazy"
+                    sizes="(max-width: 768px) 100vw, 100vw"
                   />
                   
                   {/* Persistent dark gradient for text legibility */}

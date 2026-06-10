@@ -21,10 +21,10 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.ahsanart.pk'),
   title: {
-    default: 'Ahsan Art Creative Studio | Product Photography & Videography in Faisalabad',
+    default: 'Ahsan Art | Product Photography & Videography Studio Faisalabad',
     template: '%s | Ahsan Art Faisalabad',
   },
-  description: "Faisalabad's e-commerce content studio. Product photography, videography, UGC videos, Amazon listing images, and food photography that builds trust and drives real sales.",
+  description: "Faisalabad's #1 product photography & videography studio for e-commerce brands. Photos, UGC videos & Amazon content that drive sales.",
   authors: [{ name: 'Ahsan Art Creative Studio' }],
   creator: 'Ahsan Art',
   publisher: 'Ahsan Art Creative Studio',
@@ -82,6 +82,10 @@ export default function RootLayout({
   return (
     <html lang="en-PK" className={`${syne.variable} ${inter.variable}`}>
       <head>
+        <meta property="og:url" content="https://www.ahsanart.pk/" />
+        <meta property="og:image" content="https://www.ahsanart.pk/images/og-image.jpg" />
+        <meta name="twitter:site" content="@ahsanart_studio" />
+        <meta name="twitter:image" content="https://www.ahsanart.pk/images/og-image.jpg" />
         <JsonLd />
         <meta name="google-site-verification" content="G1u452HZsA8jYIUY4MyaH0c9Af_oWXoxLbMva6GCaaE" />
         <link rel="icon" href="/favicon.png?v=3" type="image/png" />
@@ -109,7 +113,7 @@ fbq('track', 'PageView');
           <img 
             height="1" 
             width="1" 
-            style={{ display: "none" }}
+            className="hidden"
             src="https://www.facebook.com/tr?id=4212243222420918&ev=PageView&noscript=1"
             alt=""
           />

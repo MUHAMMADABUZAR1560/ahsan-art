@@ -134,6 +134,9 @@ export default function AboutPage() {
                   alt="Ahsan Art Creative Studio Product Photography Setup in Faisalabad" 
                   fill 
                   className="object-cover transition-all duration-700" 
+                  quality={60}
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, 100vw"
                 />
               </div>
               
@@ -144,6 +147,9 @@ export default function AboutPage() {
                   alt="Behind the scenes of a product photography shoot at Ahsan Art Studio" 
                   fill 
                   className="object-cover transition-all duration-700" 
+                  quality={60}
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, 100vw"
                 />
               </div>
 
@@ -161,6 +167,9 @@ export default function AboutPage() {
                   alt="Professional product videography equipment at Ahsan Art Creative Studio" 
                   fill 
                   className="object-cover" 
+                  quality={60}
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, 100vw"
                 />
             </div>
             

@@ -90,7 +90,7 @@ export function HeroSection() {
                   priority={index === 0}
                   className="object-cover object-center transition-all duration-700 hidden md:block"
                   sizes="100vw"
-                  quality={90}
+                  quality={60}
                 />
                 {/* Mobile image — portrait/vertical format (swap mobileImage URL per slide for best results) */}
                 <Image
@@ -100,7 +100,7 @@ export function HeroSection() {
                   priority={index === 0}
                   className="object-cover object-top transition-all duration-700 md:hidden"
                   sizes="100vw"
-                  quality={90}
+                  quality={60}
                 />
                 {/* Desktop: left-heavy gradient */}
                 <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/20 z-10 hidden md:block" />
@@ -215,11 +215,11 @@ export function HeroSection() {
                   </div>
                   {/* Title */}
                   {index === 0 ? (
-                    <h1 className="text-2xl font-serif font-bold text-white leading-tight mb-1">
+                    <h2 className="text-2xl font-serif font-bold text-white leading-tight mb-1">
                       {slide.title1}{" "}
                       <span className="text-primary italic">{slide.highlight}</span>
                       <span className="inline-block w-1.5 h-1.5 rounded-full bg-primary ml-1 align-middle animate-pulse" />
-                    </h1>
+                    </h2>
                   ) : (
                     <h2 className="text-2xl font-serif font-bold text-white leading-tight mb-1">
                       {slide.title1}{" "}

@@ -28,6 +28,9 @@ export function AboutPreview() {
                 alt="Ahsan Art Creative Studio"
                 fill
                 className="object-cover"
+                quality={60}
+                loading="lazy"
+                sizes="(max-width: 768px) 100vw, 100vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-foreground/40 to-transparent" />
             </div>

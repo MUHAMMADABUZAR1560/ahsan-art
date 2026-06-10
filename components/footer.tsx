@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { motion } from "framer-motion"
 import { Logo } from "./logo"
 import { Instagram, MessageCircle, Mail, ArrowUpRight, MapPin } from "lucide-react"
@@ -117,15 +118,18 @@ export function Footer() {
               <MapPin className="w-3 h-3" /> Location
             </h4>
             <div className="relative w-full aspect-video md:aspect-square lg:aspect-video rounded-xl overflow-hidden border border-background/10 bg-background/5">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3403.0114704332973!2d73.167816!3d31.468849!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x392269a915993717%3A0xc6c4f9104f291079!2sGatwala%20Commercial%20Hub!5e0!3m2!1sen!2s!4v1700000000000"
-                width="100%"
-                height="100%"
-                style={{ border: 0, filter: 'grayscale(100%) invert(90%) contrast(90%)' }}
-                allowFullScreen
-                loading="lazy"
-                className="opacity-60 hover:opacity-100 transition-opacity duration-500"
-              ></iframe>
+              <Link href="https://maps.app.goo.gl/Zck8ebMFn9yVKkha8" target="_blank" rel="noopener noreferrer" className="block w-full h-full relative group">
+                <Image
+                  src="/images/map-thumbnail.jpg"
+                  alt="Ahsan Art Location Map"
+                  fill
+                  className="object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500 grayscale invert-[0.9] contrast-90"
+                  sizes="(max-width: 768px) 100vw, 300px"
+                />
+                <div className="absolute inset-0 bg-transparent flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <span className="bg-white text-black px-4 py-2 rounded-full font-semibold shadow-lg text-xs">View Map</span>
+                </div>
+              </Link>
             </div>
           </div>
         </div>

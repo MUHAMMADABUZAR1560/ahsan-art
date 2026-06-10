@@ -348,6 +348,9 @@ export default function PortfolioPage() {
                     alt={item.title} 
                     fill 
                     className="object-cover transition-transform duration-700 ease-out md:group-hover:scale-110" 
+                    quality={60}
+                    loading="lazy"
+                    sizes="(max-width: 768px) 100vw, 100vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 md:group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
                     <span className="text-primary text-[10px] md:text-sm font-medium">{item.category}</span>
@@ -402,6 +405,9 @@ export default function PortfolioPage() {
                               alt={`${selectedProject.title} ${idx}`} 
                               fill 
                               className="object-cover" 
+                              quality={60}
+                              loading="lazy"
+                              sizes="(max-width: 768px) 100vw, 100vw"
                             />
                             {asset.type === "video" && (
                                 <div className="absolute inset-0 flex items-center justify-center bg-black/20">
@@ -437,7 +443,7 @@ export default function PortfolioPage() {
                 <video src={fullscreenAsset.url} controls autoPlay className="max-h-full max-w-full rounded-md" />
               ) : (
                 <div className="relative w-full h-full">
-                  <Image src={fullscreenAsset.url} alt="Fullscreen Asset" fill className="object-contain" />
+                  <Image src={fullscreenAsset.url} alt="Fullscreen Asset" fill className="object-contain" quality={60} loading="lazy" sizes="(max-width: 768px) 100vw, 100vw" />
                 </div>
               )}
             </div>

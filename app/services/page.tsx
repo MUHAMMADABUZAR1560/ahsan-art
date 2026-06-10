@@ -226,6 +226,9 @@ function ServiceRow({ service, index, isLast }: { service: typeof services[0], i
               alt={service.title}
               fill
               className="object-cover"
+              quality={60}
+              loading="lazy"
+              sizes="(max-width: 768px) 100vw, 100vw"
             />
           </motion.div>
         </div>

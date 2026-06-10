@@ -35,6 +35,9 @@ function BrandCard({ brand }: { brand: typeof brands[0] }) {
             height={80}
             className="w-12 h-12 md:w-14 md:h-14 object-contain"
             onError={() => setImgError(true)}
+            quality={60}
+            loading="lazy"
+            sizes="(max-width: 768px) 100vw, 100vw"
             unoptimized
           />
         ) : (

@@ -230,6 +230,9 @@ export default function BTSPage() {
                     alt={item.title}
                     fill
                     className="object-cover transition-transform duration-700 ease-out md:group-hover:scale-110"
+                    quality={60}
+                    loading="lazy"
+                    sizes="(max-width: 768px) 100vw, 100vw"
                   />
                   
                   {/* Overlay - simplified for mobile grid */}
@@ -296,6 +299,9 @@ export default function BTSPage() {
                     alt={selectedItem.title}
                     fill
                     className="object-cover"
+                    quality={60}
+                    loading="lazy"
+                    sizes="(max-width: 768px) 100vw, 100vw"
                   />
                 )}
               </div>
