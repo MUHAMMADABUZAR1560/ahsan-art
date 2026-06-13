@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react"
 import Link from "next/link"
-import { motion, useInView } from "framer-motion"
+import { useEffect } from "react"
 import { ArrowUpRight, Camera, Video, ShoppingBag, Utensils, Play, Package } from "lucide-react"
 
 const services = [
@@ -57,20 +57,29 @@ const services = [
 ]
 
 export function ServicesPreview() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { margin: "-100px" })
+  const ref = useRef<HTMLElement>(null)
+  const [inView, setInView] = useState(false)
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
+
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const obs = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setInView(true); obs.disconnect() } },
+      { rootMargin: "-80px" }
+    )
+    obs.observe(el)
+    return () => obs.disconnect()
+  }, [])
 
   return (
     <section ref={ref} className="py-16 md:py-28 bg-background">
       <div className="container mx-auto px-4 md:px-12">
 
         {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 md:mb-16"
+        <div
+          className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 md:mb-16 transition-all duration-700"
+          style={{ opacity: inView ? 1 : 0, transform: inView ? "translateY(0)" : "translateY(30px)" }}
         >
           <div>
             <span className="inline-flex items-center gap-2 text-primary text-xs font-bold tracking-widest uppercase mb-4">
@@ -83,10 +92,9 @@ export function ServicesPreview() {
               <br />Your Brand Needs.
             </h2>
           </div>
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ delay: 0.3, duration: 0.6 }}
+          <div
+            className="transition-all duration-700 delay-300"
+            style={{ opacity: inView ? 1 : 0, transform: inView ? "translateX(0)" : "translateX(20px)" }}
           >
             <Link
               href="/services"
@@ -95,17 +103,19 @@ export function ServicesPreview() {
               View All Services
               <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </Link>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
 
         {/* Numbered Services List */}
         <div className="flex flex-col gap-3">
           {services.map((service, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
+              style={{
+                opacity: inView ? 1 : 0,
+                transform: inView ? "translateY(0)" : "translateY(20px)",
+                transition: `opacity 500ms ease ${index * 70}ms, transform 500ms ease ${index * 70}ms`,
+              }}
             >
               <Link
                 href={service.href}
@@ -125,7 +135,7 @@ export function ServicesPreview() {
                   <ArrowUpRight className={`w-4 h-4 md:w-5 md:h-5 transition-all duration-300 ${hoveredIndex === index ? "text-primary translate-x-0.5 -translate-y-0.5" : "text-muted-foreground"}`} />
                 </div>
               </Link>
-            </motion.div>
+            </div>
           ))}
         </div>
 

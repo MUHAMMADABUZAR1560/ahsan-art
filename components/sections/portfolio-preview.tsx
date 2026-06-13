@@ -3,7 +3,7 @@
 import { useRef, useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { motion, useInView, AnimatePresence } from "framer-motion"
+import { useEffect } from "react"
 import { ArrowUpRight, Play } from "lucide-react"
 
 const categories = ["All", "Photography", "Videography", "Amazon", "Food"]
@@ -20,27 +20,44 @@ const portfolioItems = [
 ]
 
 export function PortfolioPreview() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { margin: "-100px" })
+  const ref = useRef<HTMLElement>(null)
+  const [inView, setInView] = useState(false)
   const [activeCategory, setActiveCategory] = useState("All")
+  const [visible, setVisible] = useState(true)
+
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const obs = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setInView(true); obs.disconnect() } },
+      { rootMargin: "-80px" }
+    )
+    obs.observe(el)
+    return () => obs.disconnect()
+  }, [])
+
+  // Simple fade trick on filter change — no AnimatePresence needed
+  const handleCategory = (cat: string) => {
+    if (cat === activeCategory) return
+    setVisible(false)
+    setTimeout(() => { setActiveCategory(cat); setVisible(true) }, 200)
+  }
 
   let filteredItems = activeCategory === "All"
     ? portfolioItems
     : portfolioItems.filter((item) => item.category === activeCategory)
-    
-  // Limit to 4 items to create a perfect 2x2 grid on the homepage
+
+  // Limit to 4 items to create a 2x2 grid on homepage
   filteredItems = filteredItems.slice(0, 4)
 
   return (
     <section ref={ref} className="py-20 md:py-32 bg-foreground text-background">
       <div className="container mx-auto px-4 md:px-12">
-        
+
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-12 md:mb-20"
+        <div
+          className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-12 md:mb-20 transition-all duration-700"
+          style={{ opacity: inView ? 1 : 0, transform: inView ? "translateY(0)" : "translateY(30px)" }}
         >
           <div>
             <span className="inline-flex items-center gap-2 text-primary text-xs font-bold tracking-widest uppercase mb-4">
@@ -48,7 +65,7 @@ export function PortfolioPreview() {
               Selected Works
             </span>
             <h2 className="text-3xl md:text-5xl lg:text-6xl font-serif font-bold leading-tight">
-              A Glimpse Into <br className="hidden md:block"/> Our <span className="text-primary italic">Portfolio</span>.
+              A Glimpse Into <br className="hidden md:block" /> Our <span className="text-primary italic">Portfolio</span>.
             </h2>
           </div>
 
@@ -57,7 +74,7 @@ export function PortfolioPreview() {
             {categories.map((category) => (
               <button
                 key={category}
-                onClick={() => setActiveCategory(category)}
+                onClick={() => handleCategory(category)}
                 className={`px-5 py-2.5 rounded-full text-xs font-bold tracking-wider uppercase transition-all duration-300 whitespace-nowrap ${
                   activeCategory === category
                     ? "bg-primary text-white"
@@ -68,68 +85,61 @@ export function PortfolioPreview() {
               </button>
             ))}
           </div>
-        </motion.div>
+        </div>
 
         {/* 2x2 Grid */}
-        <div className="grid grid-cols-2 gap-4 md:gap-6">
-          <AnimatePresence mode="wait">
-            {filteredItems.map((item, index) => {
-              return (
-                <motion.div
-                  key={item.id}
-                  initial={{ opacity: 0, y: 15 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, scale: 0.98 }}
-                  transition={{ duration: 0.3, delay: index * 0.03, ease: [0.22, 1, 0.36, 1] }}
-                  className="group relative overflow-hidden cursor-pointer rounded-2xl bg-background/5 aspect-[4/3]"
-                >
-                  <Image
-                    src={item.image || "/placeholder.svg"}
-                    alt={item.title}
-                    fill
-                    className="object-cover transition-transform duration-1000 group-hover:scale-105"
-                    quality={60}
-                    loading="lazy"
-                    sizes="(max-width: 768px) 100vw, 100vw"
-                  />
-                  
-                  {/* Persistent dark gradient for text legibility */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80" />
-                  
-                  {/* Hover Overlay Background */}
-                  <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        <div
+          className="grid grid-cols-2 gap-4 md:gap-6 transition-opacity duration-200"
+          style={{ opacity: visible ? 1 : 0 }}
+        >
+          {filteredItems.map((item, index) => (
+            <div
+              key={item.id}
+              className="group relative overflow-hidden cursor-pointer rounded-2xl bg-background/5 aspect-[4/3]"
+            >
+              <Image
+                src={item.image || "/placeholder.svg"}
+                alt={item.title}
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                quality={60}
+                loading="lazy"
+                sizes="(max-width: 768px) 50vw, 50vw"
+              />
 
-                  {/* Content Container */}
-                  <div className="absolute inset-0 p-6 md:p-10 flex flex-col justify-end">
-                    <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                      <div className="flex items-center gap-3 mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                        <span className="w-6 h-px bg-primary" />
-                        <span className="text-primary text-[10px] md:text-xs font-bold uppercase tracking-widest">{item.category}</span>
-                      </div>
-                      <h3 className="text-xl md:text-3xl font-serif font-bold text-white mb-2">{item.title}</h3>
-                    </div>
-                  </div>
+              {/* Persistent dark gradient for text legibility */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80" />
 
-                  {/* Top Right Arrow / Icon */}
-                  <div className="absolute top-6 right-6 w-12 h-12 rounded-full bg-black/20 backdrop-blur-md border border-white/10 flex items-center justify-center transform -translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-100">
-                    {item.type === "video" ? (
-                      <Play className="w-5 h-5 text-white fill-white translate-x-0.5" />
-                    ) : (
-                      <ArrowUpRight className="w-5 h-5 text-white" />
-                    )}
+              {/* Hover Overlay Background */}
+              <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+              {/* Content Container */}
+              <div className="absolute inset-0 p-6 md:p-10 flex flex-col justify-end">
+                <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                  <div className="flex items-center gap-3 mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                    <span className="w-6 h-px bg-primary" />
+                    <span className="text-primary text-[10px] md:text-xs font-bold uppercase tracking-widest">{item.category}</span>
                   </div>
-                </motion.div>
-              )
-            })}
-          </AnimatePresence>
+                  <h3 className="text-xl md:text-3xl font-serif font-bold text-white mb-2">{item.title}</h3>
+                </div>
+              </div>
+
+              {/* Top Right Arrow / Icon */}
+              <div className="absolute top-6 right-6 w-12 h-12 rounded-full bg-black/20 backdrop-blur-md border border-white/10 flex items-center justify-center transform -translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-100">
+                {item.type === "video" ? (
+                  <Play className="w-5 h-5 text-white fill-white translate-x-0.5" />
+                ) : (
+                  <ArrowUpRight className="w-5 h-5 text-white" />
+                )}
+              </div>
+            </div>
+          ))}
         </div>
 
         {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-16 md:mt-24 text-center"
+        <div
+          className="mt-16 md:mt-24 text-center transition-all duration-700 delay-300"
+          style={{ opacity: inView ? 1 : 0, transform: inView ? "translateY(0)" : "translateY(20px)" }}
         >
           <Link
             href="/portfolio"
@@ -138,7 +148,7 @@ export function PortfolioPreview() {
             Explore Full Portfolio
             <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </Link>
-        </motion.div>
+        </div>
       </div>
     </section>
   )

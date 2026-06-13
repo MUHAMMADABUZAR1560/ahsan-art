@@ -1,27 +1,41 @@
 "use client"
 
-import { useRef } from "react"
+import { useRef, useEffect, useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { motion, useInView } from "framer-motion"
 import { ArrowRight } from "lucide-react"
-import { fadeInUp, staggerContainer } from "@/lib/animations"
+
+const features = [
+  { title: "E-Commerce Specialists", desc: "Optimized for online sales" },
+  { title: "Strategy Before Every Shoot", desc: "Quick delivery without compromise" },
+  { title: "All Under One Roof", desc: "From concept to execution" },
+  { title: "Clients Who Keep Coming Back", desc: "Premium results every time" },
+]
 
 export function AboutPreview() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { margin: "-100px" })
+  const ref = useRef<HTMLElement>(null)
+  const [inView, setInView] = useState(false)
+
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const obs = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setInView(true); obs.disconnect() } },
+      { rootMargin: "-80px" }
+    )
+    obs.observe(el)
+    return () => obs.disconnect()
+  }, [])
 
   return (
     <section ref={ref} className="py-24 lg:py-32 bg-secondary">
       <div className="container mx-auto px-6 lg:px-12">
-        <motion.div
-          variants={staggerContainer}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
-        >
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Image Side */}
-          <motion.div variants={fadeInUp} className="relative">
+          <div
+            className="relative transition-all duration-700"
+            style={{ opacity: inView ? 1 : 0, transform: inView ? "translateY(0)" : "translateY(30px)" }}
+          >
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden">
               <Image
                 src="https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575375/studio_zpk4im.jpg"
@@ -30,28 +44,29 @@ export function AboutPreview() {
                 className="object-cover"
                 quality={60}
                 loading="lazy"
-                sizes="(max-width: 768px) 100vw, 100vw"
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-foreground/40 to-transparent" />
             </div>
             {/* Floating Card */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={isInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ delay: 0.5, duration: 0.6 }}
-              className="absolute -right-4 lg:-right-8 bottom-8 bg-background p-6 rounded-xl shadow-2xl max-w-[200px]"
+            <div
+              className="absolute -right-4 lg:-right-8 bottom-8 bg-background p-6 rounded-xl shadow-2xl max-w-[200px] transition-all duration-700 delay-300"
+              style={{ opacity: inView ? 1 : 0, transform: inView ? "translateX(0)" : "translateX(20px)" }}
             >
               <div className="text-4xl font-serif font-bold text-primary">7+</div>
               <div className="text-sm text-muted-foreground mt-1">
                 Years of Professional Experience
               </div>
-            </motion.div>
+            </div>
             {/* Purple Accent */}
             <div className="absolute -z-10 -bottom-4 -left-4 w-full h-full bg-primary/10 rounded-2xl" />
-          </motion.div>
+          </div>
 
           {/* Content Side */}
-          <motion.div variants={fadeInUp} className="lg:pl-8">
+          <div
+            className="lg:pl-8 transition-all duration-700 delay-150"
+            style={{ opacity: inView ? 1 : 0, transform: inView ? "translateY(0)" : "translateY(30px)" }}
+          >
             <span className="inline-flex items-center gap-2 text-primary text-sm font-medium tracking-wider uppercase mb-4">
               <span className="w-8 h-px bg-primary" />
               About Ahsan Art Creative Studio
@@ -67,32 +82,27 @@ export function AboutPreview() {
             </p>
 
             <div className="mt-8 grid grid-cols-2 gap-6">
-              {[
-                { title: "E-Commerce Specialists", desc: "Optimized for online sales" },
-                { title: "Strategy Before Every Shoot", desc: "Quick delivery without compromise" },
-                { title: "All Under One Roof", desc: "From concept to execution" },
-                { title: "Clients Who Keep Coming Back", desc: "Premium results every time" },
-              ].map((item, index) => (
-                <motion.div
+              {features.map((item, index) => (
+                <div
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ delay: 0.3 + index * 0.1 }}
-                  className="group"
+                  className="group transition-all duration-500"
+                  style={{
+                    opacity: inView ? 1 : 0,
+                    transform: inView ? "translateY(0)" : "translateY(20px)",
+                    transitionDelay: `${300 + index * 80}ms`,
+                  }}
                 >
                   <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors">
                     {item.title}
                   </h4>
                   <p className="text-sm text-muted-foreground mt-1">{item.desc}</p>
-                </motion.div>
+                </div>
               ))}
             </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.8 }}
-              className="mt-10"
+            <div
+              className="mt-10 transition-all duration-500 delay-[650ms]"
+              style={{ opacity: inView ? 1 : 0, transform: inView ? "translateY(0)" : "translateY(20px)" }}
             >
               <Link
                 href="/about"
@@ -101,9 +111,9 @@ export function AboutPreview() {
                 Learn More About Us
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
-            </motion.div>
-          </motion.div>
-        </motion.div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   )

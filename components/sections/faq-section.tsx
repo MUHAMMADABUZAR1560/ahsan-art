@@ -1,10 +1,8 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
 import Link from "next/link"
-import { motion, AnimatePresence, useInView } from "framer-motion"
 import { Plus, Minus, ArrowUpRight } from "lucide-react"
-import { useRef } from "react"
 
 const faqs = [
   {
@@ -34,18 +32,27 @@ const faqs = [
 ]
 
 export function FAQSection() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { margin: "-100px" })
+  const ref = useRef<HTMLElement>(null)
+  const [inView, setInView] = useState(false)
   const [openIndex, setOpenIndex] = useState<number | null>(0)
+
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const obs = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setInView(true); obs.disconnect() } },
+      { rootMargin: "-80px" }
+    )
+    obs.observe(el)
+    return () => obs.disconnect()
+  }, [])
 
   return (
     <section ref={ref} className="py-24 md:py-32 bg-background border-t border-border/50">
       <div className="container mx-auto px-4 md:px-12 max-w-4xl">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="text-center mb-16"
+        <div
+          className="text-center mb-16 transition-all duration-700"
+          style={{ opacity: inView ? 1 : 0, transform: inView ? "translateY(0)" : "translateY(30px)" }}
         >
           <span className="inline-flex items-center gap-2 text-primary text-xs font-bold tracking-widest uppercase mb-4">
             <span className="w-8 h-px bg-primary" />
@@ -58,20 +65,22 @@ export function FAQSection() {
           <p className="mt-4 text-muted-foreground text-sm md:text-base max-w-xl mx-auto">
             Everything you need to know before working with us.
           </p>
-        </motion.div>
+        </div>
 
         <div className="space-y-4">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index
             return (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
-                className={`border rounded-2xl overflow-hidden transition-colors duration-300 ${
+                className={`border rounded-2xl overflow-hidden transition-all duration-300 ${
                   isOpen ? "bg-secondary border-primary/20" : "bg-transparent border-border/50 hover:border-border"
                 }`}
+                style={{
+                  opacity: inView ? 1 : 0,
+                  transform: inView ? "translateY(0)" : "translateY(20px)",
+                  transition: `opacity 500ms ease ${index * 80}ms, transform 500ms ease ${index * 80}ms, background-color 300ms, border-color 300ms`,
+                }}
               >
                 <button
                   onClick={() => setOpenIndex(isOpen ? null : index)}
@@ -90,27 +99,33 @@ export function FAQSection() {
                     )}
                   </div>
                 </button>
-                <motion.div
-                  initial={false}
-                  animate={{ height: isOpen ? "auto" : 0, opacity: isOpen ? 1 : 0 }}
-                  transition={{ duration: 0.3, ease: "easeInOut" }}
-                  style={{ overflow: "hidden" }}
+                <div
+                  className="transition-all duration-300 ease-in-out grid"
+                  style={{
+                    gridTemplateRows: isOpen ? "1fr" : "0fr",
+                    opacity: isOpen ? 1 : 0,
+                    overflow: "hidden",
+                  }}
                 >
-                  <div className="px-6 pb-6 md:px-8 md:pb-8 text-muted-foreground text-sm md:text-base leading-relaxed">
-                    {faq.answer}
+                  <div className="min-h-0">
+                    <div className="px-6 pb-6 md:px-8 md:pb-8 text-muted-foreground text-sm md:text-base leading-relaxed">
+                      {faq.answer}
+                    </div>
                   </div>
-                </motion.div>
-              </motion.div>
+                </div>
+              </div>
             )
           })}
         </div>
 
         {/* View All Link */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.6 }}
-          className="mt-10 text-center"
+        <div
+          className="mt-10 text-center transition-all duration-500"
+          style={{
+            opacity: inView ? 1 : 0,
+            transform: inView ? "translateY(0)" : "translateY(16px)",
+            transitionDelay: "500ms",
+          }}
         >
           <Link
             href="/faq"
@@ -119,7 +134,7 @@ export function FAQSection() {
             See all frequently asked questions
             <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </Link>
-        </motion.div>
+        </div>
       </div>
     </section>
   )

@@ -1,7 +1,6 @@
 "use client"
 
 import { useRef, useEffect, useState } from "react"
-import { motion, useInView } from "framer-motion"
 
 const stats = [
   { value: 500, suffix: "+", label: "Projects Delivered" },
@@ -11,30 +10,27 @@ const stats = [
 ]
 
 function AnimatedCounter({ value, suffix, isInView }: { value: number; suffix: string; isInView: boolean }) {
-  // Start with the actual value for server-rendered HTML
   const [count, setCount] = useState(value)
+  const started = useRef(false)
 
   useEffect(() => {
-    if (!isInView) return
-    // Determine a sensible start point for the animation
-    let start = value > 50 ? value - 50 : 0
-    const duration = 2000
-    const increment = (value - start) / (duration / 16)
-    
-    // Only animate if start < value
-    if (start < value) {
-      setCount(start)
-      const timer = setInterval(() => {
-        start += increment
-        if (start >= value) {
-          setCount(value)
-          clearInterval(timer)
-        } else {
-          setCount(Math.floor(start))
-        }
-      }, 16)
-      return () => clearInterval(timer)
+    if (!isInView || started.current) return
+    started.current = true
+
+    const start = value > 50 ? value - 50 : 0
+    const duration = 1800
+    const startTime = performance.now()
+
+    const tick = (now: number) => {
+      const elapsed = now - startTime
+      const progress = Math.min(elapsed / duration, 1)
+      // ease out
+      const eased = 1 - Math.pow(1 - progress, 3)
+      setCount(Math.floor(start + (value - start) * eased))
+      if (progress < 1) requestAnimationFrame(tick)
     }
+
+    requestAnimationFrame(tick)
   }, [isInView, value])
 
   return (
@@ -46,37 +42,48 @@ function AnimatedCounter({ value, suffix, isInView }: { value: number; suffix: s
 }
 
 export function StatsStrip() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { margin: "-80px" })
+  const ref = useRef<HTMLElement>(null)
+  const [inView, setInView] = useState(false)
+
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const obs = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setInView(true); obs.disconnect() } },
+      { rootMargin: "-80px" }
+    )
+    obs.observe(el)
+    return () => obs.disconnect()
+  }, [])
 
   return (
     <section ref={ref} className="py-0 bg-foreground overflow-hidden">
       <div className="container mx-auto px-4 md:px-12">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.6 }}
-          className="grid grid-cols-2 md:grid-cols-4"
+        <div
+          className="grid grid-cols-2 md:grid-cols-4 transition-opacity duration-600"
+          style={{ opacity: inView ? 1 : 0 }}
         >
           {stats.map((stat, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
-              className={`py-10 md:py-14 px-6 md:px-10 text-center border-border/20 ${
+              className={`py-10 md:py-14 px-6 md:px-10 text-center border-border/20 transition-all duration-500 ${
                 index < stats.length - 1 ? "border-r" : ""
               } ${index >= 2 ? "border-t md:border-t-0" : ""}`}
+              style={{
+                opacity: inView ? 1 : 0,
+                transform: inView ? "translateY(0)" : "translateY(20px)",
+                transitionDelay: `${index * 80}ms`,
+              }}
             >
               <div className="text-3xl md:text-5xl lg:text-6xl font-serif font-bold text-background leading-none">
-                <AnimatedCounter value={stat.value} suffix={stat.suffix} isInView={isInView} />
+                <AnimatedCounter value={stat.value} suffix={stat.suffix} isInView={inView} />
               </div>
               <div className="mt-2 text-[10px] md:text-xs uppercase tracking-widest text-background/50 font-medium">
                 {stat.label}
               </div>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   )

@@ -1,8 +1,7 @@
 "use client"
 
-import { useRef } from "react"
+import { useRef, useState, useEffect } from "react"
 import Link from "next/link"
-import { motion, useInView } from "framer-motion"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { FAQSection } from "@/components/sections/faq-section"
@@ -10,16 +9,21 @@ import { CTASection } from "@/components/sections/cta-section"
 import { ArrowRight, MessageCircle } from "lucide-react"
 
 const categories = [
-  { label: "Shipping & Products", icon: "📦" },
-  { label: "Turnaround Time", icon: "⏱️" },
-  { label: "Pricing", icon: "💰" },
-  { label: "Usage Rights", icon: "✅" },
-  { label: "Revisions", icon: "🔄" },
+  { label: "Shipping & Products" },
+  { label: "Turnaround Time" },
+  { label: "Pricing" },
+  { label: "Usage Rights" },
+  { label: "Revisions" },
 ]
 
 export function FAQPageClient() {
-  const heroRef = useRef(null)
-  const heroInView = useInView(heroRef, { once: true })
+  const heroRef = useRef<HTMLElement>(null)
+  const [visible, setVisible] = useState(false)
+
+  useEffect(() => {
+    const t = requestAnimationFrame(() => setVisible(true))
+    return () => cancelAnimationFrame(t)
+  }, [])
 
   return (
     <main className="min-h-screen bg-background">
@@ -33,54 +37,41 @@ export function FAQPageClient() {
         </div>
 
         <div className="container mx-auto px-6 lg:px-12 relative z-10">
-          <motion.div
-            initial="hidden"
-            animate={heroInView ? "visible" : "hidden"}
-            variants={{
-              hidden: { opacity: 0 },
-              visible: { opacity: 1, transition: { staggerChildren: 0.12 } }
-            }}
+          <span
+            className="inline-flex items-center gap-2 text-primary text-xs font-bold tracking-widest uppercase mb-6 transition-all duration-700"
+            style={{ opacity: visible ? 1 : 0, transform: visible ? "translateX(0)" : "translateX(-20px)" }}
           >
-            <motion.span
-              variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0 } }}
-              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              className="inline-flex items-center gap-2 text-primary text-xs font-bold tracking-widest uppercase mb-6"
-            >
-              <span className="w-8 h-px bg-primary" /> Help Center
-            </motion.span>
+            <span className="w-8 h-px bg-primary" /> Help Center
+          </span>
 
-            <motion.h1
-              variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } }}
-              transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-              className="text-4xl md:text-7xl lg:text-8xl font-serif font-bold text-foreground leading-tight"
-            >
-              Got Questions<span className="text-primary">?</span>
-            </motion.h1>
+          <h1
+            className="text-4xl md:text-7xl lg:text-8xl font-serif font-bold text-foreground leading-tight transition-all duration-700 delay-100"
+            style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(30px)" }}
+          >
+            Got Questions<span className="text-primary">?</span>
+          </h1>
 
-            <motion.p
-              variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
-              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              className="mt-6 text-muted-foreground text-base md:text-xl leading-relaxed max-w-xl"
-            >
-              Everything you need to know about working with us — from shipping your products to getting final deliverables.
-            </motion.p>
+          <p
+            className="mt-6 text-muted-foreground text-base md:text-xl leading-relaxed max-w-xl transition-all duration-700 delay-200"
+            style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(20px)" }}
+          >
+            Everything you need to know about working with us — from shipping your products to getting final deliverables.
+          </p>
 
-            {/* Quick Category Pills */}
-            <motion.div
-              variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
-              transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-              className="flex flex-wrap gap-3 mt-10"
-            >
-              {categories.map((cat, i) => (
-                <span
-                  key={i}
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-secondary text-foreground/70 rounded-full text-xs font-medium border border-border/50"
-                >
-                  {cat.icon} {cat.label}
-                </span>
-              ))}
-            </motion.div>
-          </motion.div>
+          {/* Quick Category Pills */}
+          <div
+            className="flex flex-wrap gap-3 mt-10 transition-all duration-700 delay-300"
+            style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(20px)" }}
+          >
+            {categories.map((cat, i) => (
+              <span
+                key={i}
+                className="inline-flex items-center gap-2 px-4 py-2 bg-secondary text-foreground/70 rounded-full text-xs font-medium border border-border/50"
+              >
+                {cat.label}
+              </span>
+            ))}
+          </div>
         </div>
       </section>
 

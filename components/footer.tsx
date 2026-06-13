@@ -1,7 +1,6 @@
 "use client"
 
 import Link from "next/link"
-import { motion } from "framer-motion"
 import { Logo } from "./logo"
 import { Instagram, MessageCircle, Mail, ArrowUpRight, MapPin } from "lucide-react"
 
@@ -147,10 +146,11 @@ export function Footer() {
 
       {/* Large Moving Text Footer */}
       <div className="border-t border-background/5 py-8 md:py-12 overflow-hidden bg-background/[0.02]">
-        <motion.div
-          initial={{ x: "0%" }}
-          animate={{ x: "-50%" }}
-          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+        <div
+          style={{
+            animation: "marquee-mobile 25s linear infinite",
+            willChange: "transform",
+          }}
           className="flex whitespace-nowrap select-none pointer-events-none"
         >
           {[...Array(4)].map((_, i) => (
@@ -158,7 +158,7 @@ export function Footer() {
               Ahsan Art Creative Studio • 
             </span>
           ))}
-        </motion.div>
+        </div>
       </div>
     </footer>
   )

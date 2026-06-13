@@ -3,7 +3,6 @@
 import { useRef } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { motion } from "framer-motion"
 import { ArrowDown, ArrowRight } from "lucide-react"
 import {
   Carousel,
@@ -102,11 +101,9 @@ export function HeroSection() {
               {/* ── DESKTOP layout: left-aligned glass card ── */}
               <div className="absolute inset-0 hidden md:flex items-center z-20">
                 <div className="w-full px-6 md:px-12 lg:px-16 xl:px-24">
-                  <motion.div
-                    initial={{ opacity: 0, x: -30 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                  <div
                     className="w-full max-w-xl lg:max-w-2xl md:min-h-[520px] lg:min-h-[560px] bg-black/40 md:bg-black/35 backdrop-blur-xl border border-white/10 rounded-3xl md:rounded-[2rem] p-6 md:p-12 text-left shadow-2xl ring-1 ring-white/5 flex flex-col justify-between mt-12 md:mt-0"
+                    style={{ animation: 'fadeInLeft 0.8s cubic-bezier(0.16,1,0.3,1) both' }}
                   >
                     <div>
                       {/* Tag/Badge with Accent line */}
@@ -162,11 +159,9 @@ export function HeroSection() {
                         </Link>
                       </div>
 
-                      <motion.div
-                        initial={{ opacity: 0, y: 15 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.8 }}
+                      <div
                         className="mt-8 pt-8 border-t border-white/10 flex flex-wrap items-center justify-start gap-12"
+                        style={{ animation: 'fadeInUp 0.6s ease 0.8s both' }}
                       >
                         {[
                           { value: "7+", label: "Years in E-Commerce" },
@@ -180,19 +175,17 @@ export function HeroSection() {
                             <div className="text-white/40 text-xs mt-2 font-medium tracking-wide uppercase">{stat.label}</div>
                           </div>
                         ))}
-                      </motion.div>
+                      </div>
                     </div>
-                  </motion.div>
+                  </div>
                 </div>
               </div>
 
               {/* ── MOBILE layout: compact strip pinned to bottom ── */}
               <div className="absolute bottom-0 left-0 right-0 z-20 md:hidden">
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                <div
                   className="bg-black/60 backdrop-blur-xl border-t border-white/10 px-5 py-5"
+                  style={{ animation: 'fadeInUp 0.8s cubic-bezier(0.16,1,0.3,1) both' }}
                 >
                   {/* Tag */}
                   <div className="flex items-center gap-2 mb-2">
@@ -237,7 +230,7 @@ export function HeroSection() {
                       ))}
                     </div>
                   </div>
-                </motion.div>
+                </div>
               </div>
 
             </CarouselItem>
@@ -252,22 +245,13 @@ export function HeroSection() {
         </div>
       </Carousel>
 
-      {/* Animated Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2 }}
-        className="absolute bottom-40 md:bottom-8 left-1/2 -translate-x-1/2 z-20 pointer-events-none"
-      >
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 1.8, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
-          className="flex flex-col items-center gap-1.5 text-white/40"
-        >
+      {/* Scroll Indicator — CSS bounce, no JS */}
+      <div className="absolute bottom-40 md:bottom-8 left-1/2 -translate-x-1/2 z-20 pointer-events-none" style={{ animation: 'fadeIn 1s ease 1.2s both' }}>
+        <div className="flex flex-col items-center gap-1.5 text-white/40" style={{ animation: 'scrollBounce 1.8s ease-in-out infinite' }}>
           <span className="text-[10px] uppercase tracking-widest font-semibold">Scroll</span>
           <ArrowDown className="w-3.5 h-3.5" />
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
 
     </section>
   )

@@ -1,9 +1,7 @@
 "use client"
 
 import { useRef, useEffect, useState } from "react"
-import { motion, useInView } from "framer-motion"
 import { Award, Clock, Target, Users, Sparkles, Shield, ArrowRight } from "lucide-react"
-import { fadeInUp, staggerContainer } from "@/lib/animations"
 
 const stats = [
   { value: 7, suffix: "+", label: "Years in E-Commerce", icon: Award },
@@ -45,102 +43,99 @@ const features = [
   },
 ]
 
-function AnimatedCounter({ value, suffix }: { value: number; suffix: string }) {
+function AnimatedCounter({ value, suffix, isInView }: { value: number; suffix: string; isInView: boolean }) {
   const [count, setCount] = useState(0)
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true })
+  const started = useRef(false)
 
   useEffect(() => {
-    if (isInView) {
-      const duration = 1000
-      const startTime = performance.now()
-      let animationFrameId: number
+    if (!isInView || started.current) return
+    started.current = true
 
-      const updateCount = (now: number) => {
-        const progress = Math.min((now - startTime) / duration, 1)
-        const easeProgress = progress * (2 - progress) // Ease out quadratic
-        const currentCount = Math.floor(easeProgress * value)
-        
-        setCount(currentCount)
+    const duration = 1000
+    const startTime = performance.now()
 
-        if (progress < 1) {
-          animationFrameId = requestAnimationFrame(updateCount)
-        } else {
-          setCount(value)
-        }
-      }
-
-      animationFrameId = requestAnimationFrame(updateCount)
-      return () => {
-        if (animationFrameId) cancelAnimationFrame(animationFrameId)
-      }
+    const tick = (now: number) => {
+      const elapsed = now - startTime
+      const progress = Math.min(elapsed / duration, 1)
+      const eased = progress * (2 - progress) // ease out quadratic
+      setCount(Math.floor(eased * value))
+      if (progress < 1) requestAnimationFrame(tick)
+      else setCount(value)
     }
+
+    requestAnimationFrame(tick)
   }, [isInView, value])
 
   return (
-    <span ref={ref} className="tabular-nums" data-target={value}>
+    <span className="tabular-nums" data-target={value}>
       {count}
       {suffix}
     </span>
   )
 }
 
-
-
 export function WhyChooseUs() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { margin: "-100px" })
+  const ref = useRef<HTMLElement>(null)
+  const [inView, setInView] = useState(false)
+
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const obs = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setInView(true); obs.disconnect() } },
+      { rootMargin: "-80px" }
+    )
+    obs.observe(el)
+    return () => obs.disconnect()
+  }, [])
 
   return (
     <section ref={ref} className="py-16 md:py-32 bg-background overflow-hidden">
       <div className="container mx-auto px-4 md:px-12">
-        
+
         {/* Header Section */}
         <div className="text-center max-w-3xl mx-auto mb-12 md:mb-20">
-          <motion.span
-            initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : {}}
-            className="inline-flex items-center gap-2 text-primary text-[10px] md:text-sm font-bold tracking-widest uppercase mb-4"
+          <span
+            className="inline-flex items-center gap-2 text-primary text-[10px] md:text-sm font-bold tracking-widest uppercase mb-4 transition-opacity duration-700"
+            style={{ opacity: inView ? 1 : 0 }}
           >
             <span className="w-6 md:w-8 h-px bg-primary" />
             Why Ahsan Art Creative Studio
             <span className="w-6 md:w-8 h-px bg-primary" />
-          </motion.span>
+          </span>
           <h2 className="text-2xl md:text-5xl font-serif font-bold text-foreground leading-tight">
             We Don't Just Make Content. We Grow Brands.
           </h2>
         </div>
 
-        {/* Stats Bar - Compacted */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={isInView ? { opacity: 1, scale: 1 } : {}}
-          className="grid grid-cols-4 gap-2 md:gap-4 p-4 md:p-10 bg-foreground rounded-xl md:rounded-3xl mb-12 md:mb-20"
+        {/* Stats Bar */}
+        <div
+          className="grid grid-cols-4 gap-2 md:gap-4 p-4 md:p-10 bg-foreground rounded-xl md:rounded-3xl mb-12 md:mb-20 transition-all duration-700"
+          style={{ opacity: inView ? 1 : 0, transform: inView ? "scale(1)" : "scale(0.95)" }}
         >
           {stats.map((stat, index) => (
             <div key={index} className="text-center border-r last:border-0 border-background/10">
               <div className="text-xl md:text-5xl font-serif font-bold text-background">
-                <AnimatedCounter value={stat.value} suffix={stat.suffix} />
+                <AnimatedCounter value={stat.value} suffix={stat.suffix} isInView={inView} />
               </div>
               <div className="text-[8px] md:text-xs uppercase tracking-tighter md:tracking-widest text-background/50 mt-1 md:mt-2">
                 {stat.label}
               </div>
             </div>
           ))}
-        </motion.div>
+        </div>
 
-        {/* Features 3x3 Grid (2-col mobile, 3-col desktop) */}
-        <motion.div
-          variants={staggerContainer}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-          className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6"
-        >
+        {/* Features Grid */}
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
           {features.map((feature, index) => (
-            <motion.div
+            <div
               key={index}
-              variants={fadeInUp}
               className="group p-5 md:p-8 bg-secondary rounded-xl md:rounded-2xl border border-transparent hover:border-primary/20 transition-all duration-300"
+              style={{
+                opacity: inView ? 1 : 0,
+                transform: inView ? "translateY(0)" : "translateY(20px)",
+                transition: `opacity 500ms ease ${index * 80}ms, transform 500ms ease ${index * 80}ms, border-color 300ms`,
+              }}
             >
               <div className="w-10 h-10 md:w-14 md:h-14 rounded-lg md:rounded-xl bg-primary/10 flex items-center justify-center mb-4 md:mb-6 group-hover:bg-primary transition-colors">
                 <feature.icon className="w-5 h-5 md:w-7 md:h-7 text-primary group-hover:text-white transition-colors" />
@@ -149,13 +144,17 @@ export function WhyChooseUs() {
               <p className="text-[11px] md:text-sm text-muted-foreground leading-snug md:leading-relaxed">
                 {feature.description}
               </p>
-            </motion.div>
+            </div>
           ))}
 
-          {/* Call to Action Tile - Completes the Grid Look */}
-          <motion.div
-            variants={fadeInUp}
-            className="col-span-2 lg:col-span-3 mt-4 md:mt-8 p-6 md:p-10 bg-primary rounded-xl md:rounded-3xl text-primary-foreground flex flex-col md:flex-row items-center justify-between gap-6"
+          {/* Call to Action Tile */}
+          <div
+            className="col-span-2 lg:col-span-3 mt-4 md:mt-8 p-6 md:p-10 bg-primary rounded-xl md:rounded-3xl text-primary-foreground flex flex-col md:flex-row items-center justify-between gap-6 transition-all duration-700"
+            style={{
+              opacity: inView ? 1 : 0,
+              transform: inView ? "translateY(0)" : "translateY(20px)",
+              transitionDelay: `${features.length * 80}ms`,
+            }}
           >
             <div className="text-center md:text-left">
               <h3 className="text-xl md:text-3xl font-serif font-bold">Ready to elevate your brand?</h3>
@@ -168,8 +167,8 @@ export function WhyChooseUs() {
               Get Started Today
               <ArrowRight className="w-4 h-4" />
             </a>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </div>
     </section>
   )
