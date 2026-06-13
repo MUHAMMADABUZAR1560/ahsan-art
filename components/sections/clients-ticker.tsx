@@ -152,7 +152,7 @@ export function ClientsTicker() {
             Our Clients
             <span className="w-8 h-px bg-primary" />
           </span>
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-serif font-bold text-white leading-tight">
+          <h2 className="text-xl sm:text-3xl md:text-5xl lg:text-6xl font-serif font-bold text-white leading-tight whitespace-nowrap">
             Brands We&apos;ve{" "}
             <span className="text-primary italic">Worked With</span>
           </h2>
