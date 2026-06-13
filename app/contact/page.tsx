@@ -403,18 +403,17 @@ export default function ContactPage() {
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="w-full h-[400px] md:h-[600px] rounded-3xl overflow-hidden transition-all duration-700 border border-primary/10 shadow-2xl shadow-primary/5"
           >
-            <Link href="https://share.google/pEG3GOQWt0HLviHry" target="_blank" rel="noopener noreferrer" className="block w-full h-full relative group">
-              <Image
-                src="/images/map-thumbnail.jpg"
-                alt="Ahsan Art Creative Studio Location Map"
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
-                sizes="(max-width: 768px) 100vw, 100vw"
-              />
-              <div className="absolute inset-0 bg-black/20 flex items-center justify-center group-hover:bg-black/40 transition-colors">
-                <span className="bg-white text-black px-6 py-3 rounded-full font-semibold shadow-lg text-sm md:text-base">View on Google Maps</span>
-              </div>
-            </Link>
+            <iframe
+              src="https://maps.google.com/maps?q=31.468849,73.167816&z=17&output=embed"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Ahsan Art Creative Studio Location"
+              className="w-full h-full"
+            />
           </motion.div>
         </div>
       </section>

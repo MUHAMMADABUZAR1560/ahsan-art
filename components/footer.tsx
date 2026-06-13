@@ -1,7 +1,6 @@
 "use client"
 
 import Link from "next/link"
-import Image from "next/image"
 import { motion } from "framer-motion"
 import { Logo } from "./logo"
 import { Instagram, MessageCircle, Mail, ArrowUpRight, MapPin } from "lucide-react"
@@ -119,18 +118,17 @@ export function Footer() {
               <MapPin className="w-3 h-3" /> Location
             </h4>
             <div className="relative w-full aspect-video md:aspect-square lg:aspect-video rounded-xl overflow-hidden border border-background/10 bg-background/5">
-              <Link href="https://share.google/pEG3GOQWt0HLviHry" target="_blank" rel="noopener noreferrer" className="block w-full h-full relative group">
-                <Image
-                  src="/images/map-thumbnail.jpg"
-                  alt="Ahsan Art Creative Studio Location Map"
-                  fill
-                  className="object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500 grayscale invert-[0.9] contrast-90"
-                  sizes="(max-width: 768px) 100vw, 300px"
-                />
-                <div className="absolute inset-0 bg-transparent flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <span className="bg-white text-black px-4 py-2 rounded-full font-semibold shadow-lg text-xs">View Map</span>
-                </div>
-              </Link>
+              <iframe
+                src="https://maps.google.com/maps?q=31.468849,73.167816&z=17&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Ahsan Art Creative Studio Location"
+                className="w-full h-full opacity-80 hover:opacity-100 transition-opacity duration-500 grayscale hover:grayscale-0"
+              />
             </div>
           </div>
         </div>
