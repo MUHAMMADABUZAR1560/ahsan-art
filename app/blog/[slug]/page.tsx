@@ -5,6 +5,8 @@ import { notFound } from "next/navigation"
 import { getBlogPostBySlug, getBlogPosts } from "@/lib/blog"
 import { Calendar, ArrowLeft, User } from "lucide-react"
 import { Breadcrumb } from "@/components/breadcrumb"
+import { Navigation } from "@/components/navigation"
+import { Footer } from "@/components/footer"
 
 // Generate static parameters for all known blog posts
 export function generateStaticParams() {
@@ -54,7 +56,9 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
   }
 
   return (
-    <main className="min-h-screen pt-32 pb-24 px-4 md:px-8">
+    <>
+      <Navigation />
+      <main className="min-h-screen pt-32 pb-24 px-4 md:px-8">
       <article className="max-w-4xl mx-auto">
         <div className="mb-8">
           <Breadcrumb 
@@ -145,5 +149,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         }}
       />
     </main>
+    <Footer />
+  </>
   )
 }
