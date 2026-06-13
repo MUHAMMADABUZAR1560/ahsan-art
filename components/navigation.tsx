@@ -81,7 +81,7 @@ export function Navigation() {
             <div className="hidden lg:flex items-center">
               <Link
                 href="/contact"
-                className="group relative flex items-center gap-2 bg-foreground text-background px-6 py-2.5 rounded-full text-sm font-medium overflow-hidden hover:bg-primary transition-colors duration-300"
+                className="group relative flex items-center gap-2 bg-foreground text-background px-6 py-2.5 rounded-full text-sm font-medium overflow-hidden hover:bg-primary transition-colors duration-300 whitespace-nowrap"
               >
                 <span className="relative z-10">Start a Project</span>
                 <ArrowRight className="relative z-10 w-4 h-4 transition-transform group-hover:translate-x-1 duration-200" />
