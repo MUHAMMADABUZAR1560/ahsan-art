@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Navigation } from '@/components/navigation';
 import { Footer } from '@/components/footer';
 import { ArrowRight, Check, MessageCircle } from 'lucide-react';
+import { Breadcrumb } from '@/components/breadcrumb';
 
 export const metadata: Metadata = {
   title: 'UGC Videos Pakistan | User Generated Content for Ads',
@@ -29,7 +30,11 @@ export default function UGCVideosPage() {
         <Navigation />
         <section className="pt-36 pb-16 md:pt-52 md:pb-24 border-b border-border/50">
           <div className="container mx-auto px-6 lg:px-12">
-            <nav aria-label="Breadcrumb" className="mb-8"><ol className="flex items-center gap-2 text-xs text-muted-foreground"><li><Link href="/" className="hover:text-primary transition-colors">Home</Link></li><li>/</li><li><Link href="/services" className="hover:text-primary transition-colors">Services</Link></li><li>/</li><li aria-current="page" className="text-foreground">UGC Videos</li></ol></nav>
+            <Breadcrumb items={[
+              { label: 'Home', href: '/' },
+              { label: 'Services', href: '/services' },
+              { label: 'UGC Videos', href: '/services/ugc-videos' }
+            ]} />
             <span className="inline-flex items-center gap-2 text-primary text-xs font-bold tracking-widest uppercase mb-6"><span className="w-8 h-px bg-primary" />UGC Videos</span>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-foreground leading-tight max-w-4xl">UGC Videos That <span className="text-primary italic">Actually Convert</span></h1>
             <p className="mt-6 text-muted-foreground text-lg max-w-2xl leading-relaxed">Authentic, relatable video content that performs in paid ads and organic feeds. UGC content gets 4x more engagement than polished brand videos — and we make it look effortlessly real while being strategically built to sell.</p>

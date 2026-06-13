@@ -1,22 +1,28 @@
-import { MetadataRoute } from 'next';
+import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.ahsanart.pk';
-  const now = new Date();
+  const baseUrl = 'https://www.ahsanart.pk'
 
-  return [
-    { url: baseUrl,                                          lastModified: now, changeFrequency: 'weekly',  priority: 1.0 },
-    { url: `${baseUrl}/about`,                               lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${baseUrl}/services`,                            lastModified: now, changeFrequency: 'weekly',  priority: 0.9 },
-    { url: `${baseUrl}/services/product-photography`,        lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${baseUrl}/services/product-videography`,        lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${baseUrl}/services/ugc-videos`,                 lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${baseUrl}/services/amazon-content`,             lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${baseUrl}/services/food-photography`,           lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${baseUrl}/services/ecommerce-solutions`,        lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${baseUrl}/portfolio`,                           lastModified: now, changeFrequency: 'weekly',  priority: 0.8 },
-    { url: `${baseUrl}/faq`,                                 lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${baseUrl}/behind-the-scenes`,                   lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${baseUrl}/contact`,                             lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-  ];
+  const routes = [
+    '',
+    '/about',
+    '/services',
+    '/portfolio',
+    '/faq',
+    '/behind-the-scenes',
+    '/contact',
+    '/services/product-photography',
+    '/services/product-videography',
+    '/services/ugc-videos',
+    '/services/amazon-content',
+    '/services/food-photography',
+    '/services/ecommerce-solutions',
+  ]
+
+  return routes.map((route) => ({
+    url: `${baseUrl}${route}`,
+    lastModified: new Date(),
+    changeFrequency: route === '' ? 'weekly' : 'monthly',
+    priority: route === '' ? 1 : route.startsWith('/services/') ? 0.8 : 0.9,
+  }))
 }

@@ -34,7 +34,7 @@ export default function JsonLd() {
           }
         ],
         "sameAs": [
-          "https://instagram.com/ahsan.art1",
+          "https://www.instagram.com/ahsanart.studio/",
           "https://wa.me/923081122525"
         ],
         "priceRange": "$$",

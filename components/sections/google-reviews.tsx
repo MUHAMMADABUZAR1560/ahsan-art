@@ -65,13 +65,18 @@ function GoogleIcon() {
 
 function ReviewCard({ review }: { review: Review }) {
   return (
-    <div className="flex-shrink-0 w-[85vw] md:w-auto bg-background p-6 md:p-8 rounded-3xl border border-border/50 hover:border-primary/50 transition-colors duration-300 flex flex-col h-full">
-      <div className="flex gap-1 text-yellow-500 mb-4">
+    <div itemScope itemType="https://schema.org/Review" className="flex-shrink-0 w-[85vw] md:w-auto bg-background p-6 md:p-8 rounded-3xl border border-border/50 hover:border-primary/50 transition-colors duration-300 flex flex-col h-full">
+      <div className="hidden" itemProp="itemReviewed" itemScope itemType="https://schema.org/LocalBusiness">
+        <span itemProp="name">Ahsan Art Creative Studio</span>
+      </div>
+      <div itemProp="reviewRating" itemScope itemType="https://schema.org/Rating" className="flex gap-1 text-yellow-500 mb-4">
+        <meta itemProp="ratingValue" content={review.rating.toString()} />
+        <meta itemProp="bestRating" content="5" />
         {[...Array(review.rating || 5)].map((_, i) => (
           <Star key={i} className="w-4 h-4 fill-current" />
         ))}
       </div>
-      <p className="text-muted-foreground text-sm leading-relaxed flex-grow mb-6 line-clamp-6">
+      <p itemProp="reviewBody" className="text-muted-foreground text-sm leading-relaxed flex-grow mb-6 line-clamp-6">
         &ldquo;{review.text}&rdquo;
       </p>
       <div className="flex items-center gap-3 mt-auto">
@@ -82,8 +87,8 @@ function ReviewCard({ review }: { review: Review }) {
             {review.author_name.charAt(0)}
           </div>
         )}
-        <div className="min-w-0">
-          <div className="font-bold text-sm text-foreground truncate">{review.author_name}</div>
+        <div className="min-w-0" itemProp="author" itemScope itemType="https://schema.org/Person">
+          <div itemProp="name" className="font-bold text-sm text-foreground truncate">{review.author_name}</div>
           <div className="text-xs text-muted-foreground">{review.relative_time_description}</div>
         </div>
         <div className="ml-auto">

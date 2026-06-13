@@ -20,8 +20,8 @@ const contactInfo = [
   {
     icon: Instagram,
     title: "Instagram",
-    value: "@ahsan.art1",
-    href: "https://instagram.com/ahsan.art1",
+    value: "@ahsanart.studio",
+    href: "https://www.instagram.com/ahsanart.studio/",
   },
   {
     icon: Mail,

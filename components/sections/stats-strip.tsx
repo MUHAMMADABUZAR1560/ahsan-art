@@ -11,23 +11,30 @@ const stats = [
 ]
 
 function AnimatedCounter({ value, suffix, isInView }: { value: number; suffix: string; isInView: boolean }) {
-  const [count, setCount] = useState(0)
+  // Start with the actual value for server-rendered HTML
+  const [count, setCount] = useState(value)
 
   useEffect(() => {
     if (!isInView) return
-    let start = 0
+    // Determine a sensible start point for the animation
+    let start = value > 50 ? value - 50 : 0
     const duration = 2000
-    const increment = value / (duration / 16)
-    const timer = setInterval(() => {
-      start += increment
-      if (start >= value) {
-        setCount(value)
-        clearInterval(timer)
-      } else {
-        setCount(Math.floor(start))
-      }
-    }, 16)
-    return () => clearInterval(timer)
+    const increment = (value - start) / (duration / 16)
+    
+    // Only animate if start < value
+    if (start < value) {
+      setCount(start)
+      const timer = setInterval(() => {
+        start += increment
+        if (start >= value) {
+          setCount(value)
+          clearInterval(timer)
+        } else {
+          setCount(Math.floor(start))
+        }
+      }, 16)
+      return () => clearInterval(timer)
+    }
   }, [isInView, value])
 
   return (

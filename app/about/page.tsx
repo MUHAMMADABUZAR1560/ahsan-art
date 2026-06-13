@@ -259,9 +259,9 @@ export default function AboutPage() {
                 <MessageCircle className="w-5 h-5" />
                 <span className="text-sm font-medium">0308-1122525</span>
               </a>
-              <a href="https://instagram.com/ahsan.art1" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-white transition-colors">
+              <a href="https://www.instagram.com/ahsanart.studio/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-white transition-colors">
                 <Instagram className="w-5 h-5" />
-                <span className="text-sm font-medium">@ahsan.art1</span>
+                <span className="text-sm font-medium">@ahsanart.studio</span>
               </a>
             </div>
           </motion.div>

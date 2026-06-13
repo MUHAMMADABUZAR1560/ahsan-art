@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     description: "Faisalabad's e-commerce content studio. Product photography, videography, UGC, and Amazon content that drives real sales.",
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/images/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'Ahsan Art Creative Studio — Product Photography in Faisalabad',
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Ahsan Art Creative Studio | Product Photography Faisalabad',
     description: 'E-commerce content studio in Faisalabad. Product photography, videography, UGC & Amazon content.',
-    images: ['/og-image.jpg'],
+    images: ['/images/og-image.jpg'],
   },
   alternates: {
     canonical: 'https://www.ahsanart.pk',
@@ -82,10 +82,6 @@ export default function RootLayout({
   return (
     <html lang="en-PK" className={`${syne.variable} ${inter.variable}`}>
       <head>
-        <meta property="og:url" content="https://www.ahsanart.pk/" />
-        <meta property="og:image" content="https://www.ahsanart.pk/images/og-image.jpg" />
-        <meta name="twitter:site" content="@ahsanart_studio" />
-        <meta name="twitter:image" content="https://www.ahsanart.pk/images/og-image.jpg" />
         <JsonLd />
         <meta name="google-site-verification" content="G1u452HZsA8jYIUY4MyaH0c9Af_oWXoxLbMva6GCaaE" />
         <link rel="icon" href="/favicon.png?v=3" type="image/png" />

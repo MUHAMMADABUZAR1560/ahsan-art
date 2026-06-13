@@ -41,7 +41,7 @@ export function Footer() {
           </p>
           <div className="flex gap-3 mt-6">
             {[
-              { icon: Instagram, href: "https://instagram.com/ahsan.art1" },
+              { icon: Instagram, href: "https://www.instagram.com/ahsanart.studio/" },
               { icon: MessageCircle, href: "https://wa.me/923081122525" },
               { icon: Mail, href: "mailto:imahsan987@gmail.com" }
             ].map((social, i) => (
@@ -106,7 +106,7 @@ export function Footer() {
                 </p>
                 <div className="pt-2">
                   <p className="text-xs font-bold text-background/70 uppercase tracking-wider mb-1">Hours</p>
-                  <p className="text-xs text-background/50">Mon-Sat: 9:00 AM - 6:00 PM</p>
+                  <p className="text-xs text-background/50">Mon-Sat: 11:00 AM - 6:00 PM<br/>Friday: Closed</p>
                 </div>
               </div>
             </div>

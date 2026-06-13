@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Navigation } from '@/components/navigation';
 import { Footer } from '@/components/footer';
 import { ArrowRight, Check, MessageCircle } from 'lucide-react';
+import { Breadcrumb } from '@/components/breadcrumb';
 
 export const metadata: Metadata = {
   title: 'Amazon Content Pakistan | A+ Content & Listing Images',
@@ -29,7 +30,11 @@ export default function AmazonContentPage() {
         <Navigation />
         <section className="pt-36 pb-16 md:pt-52 md:pb-24 border-b border-border/50">
           <div className="container mx-auto px-6 lg:px-12">
-            <nav aria-label="Breadcrumb" className="mb-8"><ol className="flex items-center gap-2 text-xs text-muted-foreground"><li><Link href="/" className="hover:text-primary transition-colors">Home</Link></li><li>/</li><li><Link href="/services" className="hover:text-primary transition-colors">Services</Link></li><li>/</li><li aria-current="page" className="text-foreground">Amazon Content</li></ol></nav>
+            <Breadcrumb items={[
+              { label: 'Home', href: '/' },
+              { label: 'Services', href: '/services' },
+              { label: 'Amazon Content', href: '/services/amazon-content' }
+            ]} />
             <span className="inline-flex items-center gap-2 text-primary text-xs font-bold tracking-widest uppercase mb-6"><span className="w-8 h-px bg-primary" />Amazon Content</span>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-foreground leading-tight max-w-4xl">Amazon Content That <span className="text-primary italic">Wins the Buy Box</span></h1>
             <p className="mt-6 text-muted-foreground text-lg max-w-2xl leading-relaxed">From compliant main images to scroll-stopping A+ content — we create Amazon listing visuals that increase click-through rates, reduce returns, and convert browsers into buyers. Trusted by Pakistani sellers on Amazon.com, Amazon.ae, and Daraz.</p>

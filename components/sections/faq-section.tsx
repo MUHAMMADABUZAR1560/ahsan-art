@@ -9,27 +9,27 @@ import { useRef } from "react"
 const faqs = [
   {
     question: "Do I need to send my products to your studio?",
-    answer: "Yes, you can ship your products directly to our studio in Faisalabad. Once the shoot is completed, we can either return the products to you (shipping covered by you) or keep them for future shoots if we have an ongoing partnership."
+    answer: "Yes, you can ship your products directly to our studio at Gatwala Commercial Hub, Faisalabad. Once the shoot is done, we return them to you (shipping on your end) or store them for ongoing projects."
   },
   {
     question: "How long does a typical project take?",
-    answer: "For most standard product photography or videography projects, our turnaround time is 7-10 business days after we receive the products and finalize the brief. Larger campaigns may take 2-3 weeks."
+    answer: "Most product photography shoots are completed within 1–2 days. Edited images are delivered within 2–5 business days. For video projects, editing takes 3–7 days. Rush delivery is available."
   },
   {
     question: "Do you provide models and props?",
-    answer: "Yes! We have access to a variety of models, hand models, and a vast inventory of props. If your shoot requires specific, highly customized props or specific model demographics, we will source them and include the cost in the project estimate."
+    answer: "Yes. We have an in-house props collection and can arrange professional models for lifestyle shoots. Model and prop costs are discussed before the shoot."
   },
   {
-    question: "Do I get full rights to the images/videos?",
-    answer: "Absolutely. Once the final invoice is paid, you receive full commercial usage rights in perpetuity for all finalized deliverables. You can use them on your website, social media, ads, Amazon, and print."
+    question: "Do I get full rights to the images and videos?",
+    answer: "Yes — you get 100% full commercial rights to every image and video. Use them on your website, Amazon, Daraz, social media, packaging, anywhere. No licensing fees, no restrictions."
   },
   {
     question: "Can we shoot at our location instead of your studio?",
-    answer: "Yes, we offer on-location shoots for lifestyle campaigns, restaurants, and larger brand videos. Travel and equipment transport fees may apply depending on the location."
+    answer: "Yes, on-location shoots are available. We bring professional lighting and equipment to your site. Travel fees may apply depending on distance."
   },
   {
     question: "What is your revision policy?",
-    answer: "We include one round of minor revisions (such as color grading tweaks or minor edit changes) in our standard packages. Major reshoots due to a change in the original brief will be billed separately."
+    answer: "We include 2 rounds of revisions on all editing. This covers color corrections, cropping, and minor retouching. Additional rounds available for a small fee."
   }
 ]
 
@@ -90,20 +90,16 @@ export function FAQSection() {
                     )}
                   </div>
                 </button>
-                <AnimatePresence>
-                  {isOpen && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3, ease: "easeInOut" }}
-                    >
-                      <div className="px-6 pb-6 md:px-8 md:pb-8 text-muted-foreground text-sm md:text-base leading-relaxed">
-                        {faq.answer}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                <motion.div
+                  initial={false}
+                  animate={{ height: isOpen ? "auto" : 0, opacity: isOpen ? 1 : 0 }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  style={{ overflow: "hidden" }}
+                >
+                  <div className="px-6 pb-6 md:px-8 md:pb-8 text-muted-foreground text-sm md:text-base leading-relaxed">
+                    {faq.answer}
+                  </div>
+                </motion.div>
               </motion.div>
             )
           })}

@@ -11,7 +11,7 @@ const services = [
     icon: Camera,
     title: "Product Photography",
     description: "Sharp, clean images that make your product look exactly how it should — built for websites, social media, and online stores. We shoot with your brand in mind so every image feels consistent and trustworthy.",
-    href: "/services#photography",
+    href: "/services/product-photography",
     tag: "Photography",
   },
   {
@@ -19,7 +19,7 @@ const services = [
     icon: Video,
     title: "Product Videography",
     description: "Not just a video — a sales tool. We plan the strategy first, then shoot content that positions your brand and drives results. From concept to final edit, handled end to end.",
-    href: "/services#videography",
+    href: "/services/product-videography",
     tag: "Videography",
   },
   {
@@ -27,7 +27,7 @@ const services = [
     icon: Play,
     title: "UGC Videos",
     description: "Real-looking content people actually trust — made for TikTok, Reels, and ads that convert. Authentic, high-performing, built for today's platforms.",
-    href: "/services#ugc",
+    href: "/services/ugc-videos",
     tag: "UGC",
   },
   {
@@ -35,7 +35,7 @@ const services = [
     icon: Package,
     title: "Amazon Content",
     description: "Listing images, infographics, and A+ content built to rank and convert on Amazon. Your image is your storefront — we make sure it does the job.",
-    href: "/services#amazon",
+    href: "/services/amazon-content",
     tag: "Amazon",
   },
   {
@@ -43,7 +43,7 @@ const services = [
     icon: Utensils,
     title: "Food Photography",
     description: "Food shots that make people hungry just by looking — styled and shot for menus, packaging, and social media. Every frame is crafted to evoke appetite.",
-    href: "/services#food",
+    href: "/services/food-photography",
     tag: "Food",
   },
   {
@@ -51,7 +51,7 @@ const services = [
     icon: ShoppingBag,
     title: "E-Commerce Solutions",
     description: "Full content packages for your online store — consistent visuals across your website, social media, and ads. One studio, complete coverage.",
-    href: "/services#ecommerce",
+    href: "/services/ecommerce-solutions",
     tag: "E-Commerce",
   },
 ]
