@@ -313,7 +313,6 @@ export default function PortfolioPage() {
           </motion.div>
 
           <motion.div 
-            layout 
             variants={{
               hidden: { opacity: 0 },
               visible: {
@@ -327,17 +326,16 @@ export default function PortfolioPage() {
             animate="visible"
             className="grid grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-1.5 md:gap-6"
           >
-            <AnimatePresence mode="popLayout">
+            <AnimatePresence mode="wait">
               {filteredItems.map((item, index) => (
                 <motion.div
                   key={item.id}
-                  layout
                   variants={{
-                    hidden: { opacity: 0, y: 20 },
+                    hidden: { opacity: 0, y: 15 },
                     visible: { opacity: 1, y: 0 }
                   }}
                   transition={{ 
-                    duration: 0.6, 
+                    duration: 0.4, 
                     ease: [0.22, 1, 0.36, 1]
                   }}
                   onClick={() => setSelectedProject(item)}

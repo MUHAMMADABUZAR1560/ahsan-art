@@ -46,25 +46,34 @@ const features = [
 ]
 
 function AnimatedCounter({ value, suffix }: { value: number; suffix: string }) {
-  const [count, setCount] = useState(value)
+  const [count, setCount] = useState(0)
   const ref = useRef(null)
-  const isInView = useInView(ref, { })
+  const isInView = useInView(ref, { once: true })
 
   useEffect(() => {
     if (isInView) {
-      let start = 0
-      const duration = 2000
-      const increment = value / (duration / 16)
-      const timer = setInterval(() => {
-        start += increment
-        if (start >= value) {
-          setCount(value)
-          clearInterval(timer)
+      const duration = 1000
+      const startTime = performance.now()
+      let animationFrameId: number
+
+      const updateCount = (now: number) => {
+        const progress = Math.min((now - startTime) / duration, 1)
+        const easeProgress = progress * (2 - progress) // Ease out quadratic
+        const currentCount = Math.floor(easeProgress * value)
+        
+        setCount(currentCount)
+
+        if (progress < 1) {
+          animationFrameId = requestAnimationFrame(updateCount)
         } else {
-          setCount(Math.floor(start))
+          setCount(value)
         }
-      }, 16)
-      return () => clearInterval(timer)
+      }
+
+      animationFrameId = requestAnimationFrame(updateCount)
+      return () => {
+        if (animationFrameId) cancelAnimationFrame(animationFrameId)
+      }
     }
   }, [isInView, value])
 

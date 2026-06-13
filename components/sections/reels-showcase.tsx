@@ -89,6 +89,7 @@ export function ReelsShowcase() {
                 loop
                 muted
                 playsInline
+                preload="none"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 onMouseOver={(e) => e.currentTarget.play()}
                 onMouseOut={(e) => {

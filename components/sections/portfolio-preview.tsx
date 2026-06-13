@@ -71,17 +71,16 @@ export function PortfolioPreview() {
         </motion.div>
 
         {/* 2x2 Grid */}
-        <motion.div layout className="grid grid-cols-2 gap-4 md:gap-6">
-          <AnimatePresence mode="popLayout">
+        <div className="grid grid-cols-2 gap-4 md:gap-6">
+          <AnimatePresence mode="wait">
             {filteredItems.map((item, index) => {
               return (
                 <motion.div
                   key={item.id}
-                  layout
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.5, delay: index * 0.05, ease: [0.22, 1, 0.36, 1] }}
+                  exit={{ opacity: 0, scale: 0.98 }}
+                  transition={{ duration: 0.3, delay: index * 0.03, ease: [0.22, 1, 0.36, 1] }}
                   className="group relative overflow-hidden cursor-pointer rounded-2xl bg-background/5 aspect-[4/3]"
                 >
                   <Image
@@ -123,7 +122,7 @@ export function PortfolioPreview() {
               )
             })}
           </AnimatePresence>
-        </motion.div>
+        </div>
 
         {/* CTA */}
         <motion.div
