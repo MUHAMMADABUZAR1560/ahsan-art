@@ -121,7 +121,7 @@ export function Footer() {
               <Link href="https://maps.app.goo.gl/Zck8ebMFn9yVKkha8" target="_blank" rel="noopener noreferrer" className="block w-full h-full relative group">
                 <Image
                   src="/images/map-thumbnail.jpg"
-                  alt="Ahsan Art Location Map"
+                  alt="Ahsan Art Creative Studio Location Map"
                   fill
                   className="object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500 grayscale invert-[0.9] contrast-90"
                   sizes="(max-width: 768px) 100vw, 300px"
@@ -156,7 +156,7 @@ export function Footer() {
         >
           {[...Array(4)].map((_, i) => (
             <span key={i} className="text-[10vw] font-serif font-black text-background/[0.03] mx-4 uppercase">
-              Ahsan Art • Creative Studio •
+              Ahsan Art Creative Studio • 
             </span>
           ))}
         </motion.div>

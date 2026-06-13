@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: 'Food Photography Faisalabad | Restaurant & Menu Photography',
   description: 'Professional food photography for restaurants, cafes, and food brands in Faisalabad. Menu photography, social media content, and delivery app images that make food irresistible.',
   alternates: { canonical: 'https://www.ahsanart.pk/services/food-photography' },
-  openGraph: { url: 'https://www.ahsanart.pk/services/food-photography', title: 'Food Photography Faisalabad | Ahsan Art', description: 'Restaurant & menu food photography in Faisalabad. Social media & delivery app images.' },
+  openGraph: { url: 'https://www.ahsanart.pk/services/food-photography', title: 'Food Photography Faisalabad | Ahsan Art Creative Studio', description: 'Restaurant & menu food photography in Faisalabad. Social media & delivery app images.' },
 };
 
 const faqSchema = {

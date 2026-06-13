@@ -45,7 +45,7 @@ export function Logo({
   const LogoImage = (
     <img
       src={imageSrc}
-      alt="Ahsan Art Logo"
+      alt="Ahsan Art Creative Studio Logo"
       width={width}
       height={height}
       style={{

@@ -21,12 +21,12 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.ahsanart.pk'),
   title: {
-    default: 'Ahsan Art | Product Photography & Videography Studio Faisalabad',
-    template: '%s | Ahsan Art Faisalabad',
+    default: 'Ahsan Art Creative Studio | Product Photography & Videography Studio Faisalabad',
+    template: '%s | Ahsan Art Creative Studio Faisalabad',
   },
   description: "Faisalabad's #1 product photography & videography studio for e-commerce brands. Photos, UGC videos & Amazon content that drive sales.",
   authors: [{ name: 'Ahsan Art Creative Studio' }],
-  creator: 'Ahsan Art',
+  creator: 'Ahsan Art Creative Studio',
   publisher: 'Ahsan Art Creative Studio',
   robots: {
     index: true,

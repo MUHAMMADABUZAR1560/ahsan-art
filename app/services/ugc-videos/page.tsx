@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: 'UGC Videos Pakistan | User Generated Content for Ads',
   description: 'High-converting UGC-style video content for Pakistani brands. Made for Instagram, TikTok, Facebook ads, and Amazon. Based in Faisalabad.',
   alternates: { canonical: 'https://www.ahsanart.pk/services/ugc-videos' },
-  openGraph: { url: 'https://www.ahsanart.pk/services/ugc-videos', title: 'UGC Videos Pakistan | Ahsan Art', description: 'UGC-style video ads for social media and e-commerce. Based in Faisalabad.' },
+  openGraph: { url: 'https://www.ahsanart.pk/services/ugc-videos', title: 'UGC Videos Pakistan | Ahsan Art Creative Studio', description: 'UGC-style video ads for social media and e-commerce. Based in Faisalabad.' },
 };
 
 const faqSchema = {

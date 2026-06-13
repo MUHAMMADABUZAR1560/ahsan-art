@@ -54,7 +54,7 @@ export function AboutPreview() {
           <motion.div variants={fadeInUp} className="lg:pl-8">
             <span className="inline-flex items-center gap-2 text-primary text-sm font-medium tracking-wider uppercase mb-4">
               <span className="w-8 h-px bg-primary" />
-              About Ahsan Art
+              About Ahsan Art Creative Studio
             </span>
 
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-foreground leading-tight">
@@ -63,7 +63,7 @@ export function AboutPreview() {
             </h2>
 
             <p className="mt-6 text-muted-foreground text-lg leading-relaxed">
-              Most photographers in Faisalabad do weddings, events, everything. We don't. Ahsan Art is built specifically for e-commerce and product content — and that focus makes all the difference. We don't just shoot pretty pictures. Before any project, we study your brand, your social media, your website — and then we plan content that fits your goals and your budget. The result? Better ads, lower ad costs, more orders, and a brand that people actually remember. That's why most of our clients don't leave. They stay — some for 2 years and counting.
+              Most photographers in Faisalabad do weddings, events, everything. We don't. Ahsan Art Creative Studio is built specifically for e-commerce and product content — and that focus makes all the difference. We don't just shoot pretty pictures. Before any project, we study your brand, your social media, your website — and then we plan content that fits your goals and your budget. The result? Better ads, lower ad costs, more orders, and a brand that people actually remember. That's why most of our clients don't leave. They stay — some for 2 years and counting.
             </p>
 
             <div className="mt-8 grid grid-cols-2 gap-6">

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: 'Product Videography in Faisalabad | Brand & Ad Videos',
   description: 'Cinematic product videography for brands, ads, and social media. UGC-style and studio videos that convert viewers into buyers. Based in Faisalabad, Pakistan.',
   alternates: { canonical: 'https://www.ahsanart.pk/services/product-videography' },
-  openGraph: { url: 'https://www.ahsanart.pk/services/product-videography', title: 'Product Videography in Faisalabad | Ahsan Art', description: 'Cinematic product videos for ads & social media. Based in Faisalabad.' },
+  openGraph: { url: 'https://www.ahsanart.pk/services/product-videography', title: 'Product Videography in Faisalabad | Ahsan Art Creative Studio', description: 'Cinematic product videos for ads & social media. Based in Faisalabad.' },
 };
 
 const faqSchema = {

@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://www.ahsanart.pk/behind-the-scenes' },
   openGraph: {
     url: 'https://www.ahsanart.pk/behind-the-scenes',
-    title: 'Behind the Scenes | Ahsan Art',
+    title: 'Behind the Scenes | Ahsan Art Creative Studio',
     description: 'A glimpse into our studio, process, and the work that goes into creating stunning visuals.',
   },
 }

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://www.ahsanart.pk/services/product-photography' },
   openGraph: {
     url: 'https://www.ahsanart.pk/services/product-photography',
-    title: 'Product Photography in Faisalabad | Ahsan Art',
+    title: 'Product Photography in Faisalabad | Ahsan Art Creative Studio',
     description: 'Studio & lifestyle product photography for e-commerce, Amazon & Daraz. Based in Faisalabad.',
   },
 };

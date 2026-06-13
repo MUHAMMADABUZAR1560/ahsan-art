@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: 'Amazon Content Pakistan | A+ Content & Listing Images',
   description: 'Professional Amazon listing images, A+ content, and infographics for Pakistani sellers. White background, lifestyle, and comparison charts. Based in Faisalabad.',
   alternates: { canonical: 'https://www.ahsanart.pk/services/amazon-content' },
-  openGraph: { url: 'https://www.ahsanart.pk/services/amazon-content', title: 'Amazon Content Pakistan | Ahsan Art', description: 'Amazon listing images, A+ content & infographics for Pakistani sellers.' },
+  openGraph: { url: 'https://www.ahsanart.pk/services/amazon-content', title: 'Amazon Content Pakistan | Ahsan Art Creative Studio', description: 'Amazon listing images, A+ content & infographics for Pakistani sellers.' },
 };
 
 const faqSchema = {

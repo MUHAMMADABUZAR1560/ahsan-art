@@ -144,7 +144,7 @@ export default function AboutPage() {
               <div className="absolute left-0 bottom-0 w-[55%] h-[45%] rounded-3xl overflow-hidden shadow-2xl border-8 border-background">
                 <Image 
                   src="https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575369/b1_pf2xsu.jpg" 
-                  alt="Behind the scenes of a product photography shoot at Ahsan Art Studio" 
+                  alt="Behind the scenes of a product photography shoot at Ahsan Art Creative Studio" 
                   fill 
                   className="object-cover transition-all duration-700" 
                   quality={60}

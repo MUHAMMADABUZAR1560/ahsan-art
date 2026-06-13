@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Our Services | Product Photography, Videography & Amazon Content',
-  description: 'Ahsan Art offers product photography, videography, UGC videos, Amazon listing content, food photography and full e-commerce visual solutions in Faisalabad, Pakistan.',
+  description: 'Ahsan Art Creative Studio offers product photography, videography, UGC videos, Amazon listing content, food photography and full e-commerce visual solutions in Faisalabad, Pakistan.',
   alternates: { canonical: 'https://www.ahsanart.pk/services' },
   openGraph: {
     url: 'https://www.ahsanart.pk/services',

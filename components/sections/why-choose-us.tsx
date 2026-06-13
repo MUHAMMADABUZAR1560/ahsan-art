@@ -94,7 +94,7 @@ export function WhyChooseUs() {
             className="inline-flex items-center gap-2 text-primary text-[10px] md:text-sm font-bold tracking-widest uppercase mb-4"
           >
             <span className="w-6 md:w-8 h-px bg-primary" />
-            Why Ahsan Art
+            Why Ahsan Art Creative Studio
             <span className="w-6 md:w-8 h-px bg-primary" />
           </motion.span>
           <h2 className="text-2xl md:text-5xl font-serif font-bold text-foreground leading-tight">

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: 'E-Commerce Solutions Pakistan | Full Visual Content for Online Stores',
   description: 'Complete e-commerce content packages for Pakistani online stores. Photography, video, social media content, and Amazon/Daraz assets — all from one studio in Faisalabad.',
   alternates: { canonical: 'https://www.ahsanart.pk/services/ecommerce-solutions' },
-  openGraph: { url: 'https://www.ahsanart.pk/services/ecommerce-solutions', title: 'E-Commerce Solutions Pakistan | Ahsan Art', description: 'Full-service visual content for e-commerce brands. Photography, video, social media.' },
+  openGraph: { url: 'https://www.ahsanart.pk/services/ecommerce-solutions', title: 'E-Commerce Solutions Pakistan | Ahsan Art Creative Studio', description: 'Full-service visual content for e-commerce brands. Photography, video, social media.' },
 };
 
 const faqSchema = {
