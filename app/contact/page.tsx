@@ -33,7 +33,7 @@ const contactInfo = [
     icon: MapPin,
     title: "Studio",
     value: "Ahsan Art Creative Studio, Faisalabad, Pakistan",
-    href: "https://maps.app.goo.gl/Zck8ebMFn9yVKkha8",
+    href: "https://share.google/pEG3GOQWt0HLviHry",
   },
 ]
 
@@ -403,7 +403,7 @@ export default function ContactPage() {
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="w-full h-[400px] md:h-[600px] rounded-3xl overflow-hidden transition-all duration-700 border border-primary/10 shadow-2xl shadow-primary/5"
           >
-            <Link href="https://maps.app.goo.gl/Zck8ebMFn9yVKkha8" target="_blank" rel="noopener noreferrer" className="block w-full h-full relative group">
+            <Link href="https://share.google/pEG3GOQWt0HLviHry" target="_blank" rel="noopener noreferrer" className="block w-full h-full relative group">
               <Image
                 src="/images/map-thumbnail.jpg"
                 alt="Ahsan Art Creative Studio Location Map"

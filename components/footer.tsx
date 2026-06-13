@@ -119,7 +119,7 @@ export function Footer() {
               <MapPin className="w-3 h-3" /> Location
             </h4>
             <div className="relative w-full aspect-video md:aspect-square lg:aspect-video rounded-xl overflow-hidden border border-background/10 bg-background/5">
-              <Link href="https://maps.app.goo.gl/Zck8ebMFn9yVKkha8" target="_blank" rel="noopener noreferrer" className="block w-full h-full relative group">
+              <Link href="https://share.google/pEG3GOQWt0HLviHry" target="_blank" rel="noopener noreferrer" className="block w-full h-full relative group">
                 <Image
                   src="/images/map-thumbnail.jpg"
                   alt="Ahsan Art Creative Studio Location Map"
