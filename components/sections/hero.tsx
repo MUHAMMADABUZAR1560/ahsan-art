@@ -3,7 +3,7 @@
 import { useRef } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { motion, useScroll, useTransform } from "framer-motion"
+import { motion } from "framer-motion"
 import { ArrowDown, ArrowRight } from "lucide-react"
 import {
   Carousel,
@@ -53,15 +53,6 @@ export function HeroSection() {
     Autoplay({ delay: 6000, stopOnInteraction: true })
   )
 
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end start"],
-  })
-
-  const y = useTransform(scrollYProgress, [0, 1], [0, 200])
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.05])
-
   return (
     <section
       ref={containerRef}
@@ -77,9 +68,8 @@ export function HeroSection() {
         <CarouselContent className="h-screen m-0 w-full">
           {slides.map((slide, index) => (
             <CarouselItem key={index} className="relative h-full w-full p-0 flex-shrink-0">
-              {/* Background Image with Parallax & Dark Cinematic Overlay */}
-              <motion.div
-                style={{ scale }}
+              {/* Background Image & Dark Cinematic Overlay */}
+              <div
                 className="absolute inset-0 z-0 select-none pointer-events-none"
               >
                 {/* Desktop image — landscape/wide format */}
@@ -107,13 +97,12 @@ export function HeroSection() {
                 <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40 z-10 hidden md:block" />
                 {/* Mobile: only a bottom fade so banner is visible */}
                 <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/85 z-10 md:hidden" />
-              </motion.div>
+              </div>
 
               {/* ── DESKTOP layout: left-aligned glass card ── */}
               <div className="absolute inset-0 hidden md:flex items-center z-20">
                 <div className="w-full px-6 md:px-12 lg:px-16 xl:px-24">
                   <motion.div
-                    style={{ y, opacity }}
                     initial={{ opacity: 0, x: -30 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
@@ -200,7 +189,6 @@ export function HeroSection() {
               {/* ── MOBILE layout: compact strip pinned to bottom ── */}
               <div className="absolute bottom-0 left-0 right-0 z-20 md:hidden">
                 <motion.div
-                  style={{ opacity }}
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}

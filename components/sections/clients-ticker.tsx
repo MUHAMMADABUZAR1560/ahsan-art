@@ -62,22 +62,21 @@ function BrandCard({ brand }: { brand: typeof brands[0] }) {
 
 function TickerRow({ items, direction = "left" }: { items: typeof brands; direction?: "left" | "right" }) {
   const repeated = [...items, ...items, ...items]
+  const animationName = direction === "left" ? "ticker-slide-left" : "ticker-slide-right"
 
   return (
     <div className="flex overflow-hidden py-4">
-      <motion.div
+      <div
         className="flex gap-0 flex-shrink-0"
-        animate={{ x: direction === "left" ? ["0%", "-33.33%"] : ["-33.33%", "0%"] }}
-        transition={{
-          duration: 40,
-          ease: "linear",
-          repeat: Infinity,
+        style={{
+          animation: `${animationName} 40s linear infinite`,
+          willChange: "transform",
         }}
       >
         {repeated.map((brand, i) => (
           <BrandCard key={i} brand={brand} />
         ))}
-      </motion.div>
+      </div>
     </div>
   )
 }

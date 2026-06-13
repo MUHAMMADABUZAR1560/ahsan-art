@@ -155,7 +155,7 @@ export function GoogleReviews() {
   }, [isInView]);
 
   // Duplicate reviews for seamless infinite scroll
-  const duplicated = [...reviews, ...reviews, ...reviews]
+  const duplicated = [...reviews, ...reviews]
 
   return (
     <section ref={ref} className="py-20 md:py-32 bg-secondary/50 border-t border-border/50 overflow-hidden">
@@ -205,13 +205,11 @@ export function GoogleReviews() {
         <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-secondary/50 to-transparent z-10 pointer-events-none" />
         <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-secondary/50 to-transparent z-10 pointer-events-none" />
 
-        <motion.div
+        <div
           className="flex gap-4 pl-4"
-          animate={{ x: ["0%", "-50%"] }}
-          transition={{
-            duration: 30,
-            ease: "linear",
-            repeat: Infinity,
+          style={{
+            animation: "marquee-mobile 30s linear infinite",
+            willChange: "transform",
           }}
         >
           {loading ? (
@@ -221,7 +219,7 @@ export function GoogleReviews() {
               <ReviewCard key={i} review={review} />
             ))
           )}
-        </motion.div>
+        </div>
       </div>
 
       {/* ── Desktop: static grid ── */}

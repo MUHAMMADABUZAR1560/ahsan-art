@@ -3,7 +3,7 @@
 import { useRef } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { motion, useInView, useScroll, useTransform } from "framer-motion"
+import { motion, useInView } from "framer-motion"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { ArrowRight, Camera, Video, Play, Package, Utensils, ShoppingBag, Check } from "lucide-react"
@@ -172,16 +172,8 @@ export default function ServicesPage() {
 }
 
 function ServiceRow({ service, index, isLast }: { service: typeof services[0], index: number, isLast: boolean }) {
-  const containerRef = useRef(null)
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"]
-  })
-  
-  const y = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"])
-
   return (
-    <div ref={containerRef} id={service.id} className={`flex flex-col lg:flex-row relative ${!isLast ? "border-b border-border/50 pb-20 mb-20" : ""}`}>
+    <div id={service.id} className={`flex flex-col lg:flex-row relative ${!isLast ? "border-b border-border/50 pb-20 mb-20" : ""}`}>
       
       {/* Sticky Left Column (Number & Title) */}
       <div className="w-full lg:w-1/3 mb-8 lg:mb-0">
@@ -220,7 +212,17 @@ function ServiceRow({ service, index, isLast }: { service: typeof services[0], i
 
         {/* Parallax Image */}
         <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-secondary">
-          <motion.div style={{ y }} className="absolute inset-0 h-[120%] -top-[10%]">
+          <div 
+            className="absolute inset-0 h-[120%] -top-[10%]"
+            style={{
+              animation: "scroll-parallax-y linear forwards",
+              willChange: "transform",
+              ...({
+                animationTimeline: "view()",
+                animationRange: "entry exit"
+              } as any)
+            }}
+          >
             <Image
               src={service.image || "/placeholder.svg"}
               alt={service.title}
@@ -230,7 +232,7 @@ function ServiceRow({ service, index, isLast }: { service: typeof services[0], i
               loading="lazy"
               sizes="(max-width: 768px) 100vw, 100vw"
             />
-          </motion.div>
+          </div>
         </div>
 
         {/* CTA */}
