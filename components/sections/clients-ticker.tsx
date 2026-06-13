@@ -100,33 +100,42 @@ export function ClientsTicker() {
       className="relative py-16 md:py-24 overflow-hidden"
       style={{ background: "#000000" }}
     >
-      {/* Purple radial spotlight — left side */}
+      {/* Strong purple glow — anchored to left, hard fade to black on right */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 70% 80% at 15% 50%, rgba(140,82,255,0.28) 0%, rgba(140,82,255,0.08) 45%, transparent 70%), radial-gradient(ellipse 50% 60% at 85% 50%, rgba(140,82,255,0.14) 0%, transparent 60%)",
+            "radial-gradient(ellipse 60% 100% at -5% 50%, rgba(140,82,255,0.75) 0%, rgba(140,82,255,0.40) 30%, rgba(80,30,180,0.15) 55%, transparent 75%)",
         }}
       />
 
-      {/* Subtle top + bottom dark vignette */}
+      {/* Hard linear sweep: purple-left → black-right, same as reference */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, transparent 20%, transparent 80%, rgba(0,0,0,0.5) 100%)",
+            "linear-gradient(to right, rgba(100,50,200,0.30) 0%, rgba(60,20,140,0.10) 35%, transparent 65%)",
+        }}
+      />
+
+      {/* Top + bottom vignette to keep edges dark */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, transparent 18%, transparent 82%, rgba(0,0,0,0.6) 100%)",
         }}
       />
 
       {/* Left + Right fade masks over the ticker */}
       <div
-        className="absolute inset-y-0 left-0 w-32 md:w-48 z-10 pointer-events-none"
+        className="absolute inset-y-0 left-0 w-32 md:w-52 z-10 pointer-events-none"
         style={{
           background: "linear-gradient(to right, #000000 0%, transparent 100%)",
         }}
       />
       <div
-        className="absolute inset-y-0 right-0 w-32 md:w-48 z-10 pointer-events-none"
+        className="absolute inset-y-0 right-0 w-32 md:w-52 z-10 pointer-events-none"
         style={{
           background: "linear-gradient(to left, #000000 0%, transparent 100%)",
         }}
