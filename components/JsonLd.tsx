@@ -15,8 +15,9 @@ export default function JsonLd() {
         "email": "imahsan987@gmail.com",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "Gatwala Commercial Hub",
+          "streetAddress": "Opposite Gatwala Commercial Hub, Chak No 199 Rb",
           "addressLocality": "Faisalabad",
+          "postalCode": "38000",
           "addressRegion": "Punjab",
           "addressCountry": "PK"
         },

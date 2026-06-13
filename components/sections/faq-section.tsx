@@ -9,7 +9,7 @@ import { useRef } from "react"
 const faqs = [
   {
     question: "Do I need to send my products to your studio?",
-    answer: "Yes, you can ship your products directly to our studio at Gatwala Commercial Hub, Faisalabad. Once the shoot is done, we return them to you (shipping on your end) or store them for ongoing projects."
+    answer: "Yes, you can ship your products directly to our studio at Opposite Gatwala Commercial Hub, Chak No 199 Rb, Faisalabad. Once the shoot is done, we return them to you (shipping on your end) or store them for ongoing projects."
   },
   {
     question: "How long does a typical project take?",

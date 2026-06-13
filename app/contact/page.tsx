@@ -32,7 +32,7 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Studio",
-    value: "Ahsan Art Creative Studio, Faisalabad, Pakistan",
+    value: "Opposite Gatwala Commercial Hub, Chak No 199 Rb, Faisalabad, 38000, Pakistan",
     href: "https://share.google/pEG3GOQWt0HLviHry",
   },
 ]
@@ -404,7 +404,7 @@ export default function ContactPage() {
             className="w-full h-[400px] md:h-[600px] rounded-3xl overflow-hidden transition-all duration-700 border border-primary/10 shadow-2xl shadow-primary/5"
           >
             <iframe
-              src="https://maps.google.com/maps?q=31.468849,73.167816&z=17&output=embed"
+              src="https://maps.google.com/maps?q=opposite+Gatwala+Commercial+Hub,+Chak+No+199+Rb,+Faisalabad,+38000,+Pakistan&z=17&output=embed"
               width="100%"
               height="100%"
               style={{ border: 0 }}

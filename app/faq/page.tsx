@@ -17,7 +17,7 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Do I need to send my products to your studio?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, you can ship your products directly to our studio at Gatwala Commercial Hub, Faisalabad. Once the shoot is done, we return them to you (shipping on your end) or store them for ongoing projects." } },
+    { "@type": "Question", "name": "Do I need to send my products to your studio?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, you can ship your products directly to our studio at Opposite Gatwala Commercial Hub, Chak No 199 Rb, Faisalabad. Once the shoot is done, we return them to you (shipping on your end) or store them for ongoing projects." } },
     { "@type": "Question", "name": "How long does a typical project take?", "acceptedAnswer": { "@type": "Answer", "text": "Most product photography shoots are completed within 1–2 days. Edited images are delivered within 2–5 business days. For video projects, editing takes 3–7 days. Rush delivery is available." } },
     { "@type": "Question", "name": "Do you provide models and props?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We have an in-house props collection and can arrange professional models for lifestyle shoots. Model and prop costs are discussed before the shoot." } },
     { "@type": "Question", "name": "Do I get full rights to the images and videos?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — you get 100% full commercial rights to every image and video. Use them on your website, Amazon, Daraz, social media, packaging, anywhere. No licensing fees, no restrictions." } },

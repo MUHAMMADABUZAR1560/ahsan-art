@@ -102,7 +102,7 @@ export function Footer() {
               <div className="space-y-3">
                 <p className="text-sm text-background/80 font-mono">0308-1122525</p>
                 <p className="text-xs text-background/50 leading-relaxed max-w-[200px]">
-                  Gatwala Commercial Hub, Faisalabad.
+                  Opposite Gatwala Commercial Hub, Chak No 199 Rb, Faisalabad, 38000, Pakistan.
                 </p>
                 <div className="pt-2">
                   <p className="text-xs font-bold text-background/70 uppercase tracking-wider mb-1">Hours</p>
@@ -119,7 +119,7 @@ export function Footer() {
             </h4>
             <div className="relative w-full aspect-video md:aspect-square lg:aspect-video rounded-xl overflow-hidden border border-background/10 bg-background/5">
               <iframe
-                src="https://maps.google.com/maps?q=31.468849,73.167816&z=17&output=embed"
+                src="https://maps.google.com/maps?q=opposite+Gatwala+Commercial+Hub,+Chak+No+199+Rb,+Faisalabad,+38000,+Pakistan&z=17&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
