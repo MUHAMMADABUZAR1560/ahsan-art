@@ -118,7 +118,7 @@ export function Footer() {
             </h4>
             <div className="relative w-full aspect-video md:aspect-square lg:aspect-video rounded-xl overflow-hidden border border-background/10 bg-background/5">
               <iframe
-                src="https://maps.google.com/maps?q=opposite+Gatwala+Commercial+Hub,+Chak+No+199+Rb,+Faisalabad,+38000,+Pakistan&z=17&output=embed"
+                src="https://maps.google.com/maps?q=31.46619448105869,73.19306313222438&z=17&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

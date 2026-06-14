@@ -33,7 +33,7 @@ const contactInfo = [
     icon: MapPin,
     title: "Studio",
     value: "Opposite Gatwala Commercial Hub, Chak No 199 Rb, Faisalabad, 38000, Pakistan",
-    href: "https://share.google/pEG3GOQWt0HLviHry",
+    href: "https://maps.app.goo.gl/gVddJFUuFZzUb2Y26?g_st=ic",
   },
 ]
 
@@ -404,7 +404,7 @@ export default function ContactPage() {
             className="w-full h-[400px] md:h-[600px] rounded-3xl overflow-hidden transition-all duration-700 border border-primary/10 shadow-2xl shadow-primary/5"
           >
             <iframe
-              src="https://maps.google.com/maps?q=opposite+Gatwala+Commercial+Hub,+Chak+No+199+Rb,+Faisalabad,+38000,+Pakistan&z=17&output=embed"
+              src="https://maps.google.com/maps?q=31.46619448105869,73.19306313222438&z=17&output=embed"
               width="100%"
               height="100%"
               style={{ border: 0 }}
