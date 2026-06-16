@@ -4,21 +4,21 @@ import { useRef, useState, useEffect } from "react"
 import Image from "next/image"
 
 const brands = [
-  { name: "Partner Brand", category: "Dairy", logo: "https://res.cloudinary.com/da6r15g9n/image/upload/v1781612283/WhatsApp_Image_2026-06-16_at_3.22.29_PM_bkvdvz.jpg" },
-  { name: "Partner Brand", category: "Clothing", logo: "https://res.cloudinary.com/da6r15g9n/image/upload/v1781612282/WhatsApp_Image_2026-06-16_at_3.22.29_PM_3_vhgfct.jpg" },
-  { name: "Partner Brand", category: "Clothing", logo: "https://res.cloudinary.com/da6r15g9n/image/upload/v1781612281/WhatsApp_Image_2026-06-16_at_3.22.29_PM_2_anaax3.jpg" },
-  { name: "Partner Brand", category: "Shopping Store", logo: "https://res.cloudinary.com/da6r15g9n/image/upload/v1781612281/WhatsApp_Image_2026-06-16_at_3.22.29_PM_1_wexnih.jpg" },
-  { name: "Partner Brand", category: "Clothing", logo: "https://res.cloudinary.com/da6r15g9n/image/upload/v1781612281/WhatsApp_Image_2026-06-16_at_3.22.28_PM_npgmwp.jpg" },
-  { name: "Partner Brand", category: "Kids Clothing", logo: "https://res.cloudinary.com/da6r15g9n/image/upload/v1781612280/WhatsApp_Image_2026-06-16_at_3.22.28_PM_2_ousjxh.jpg" },
-  { name: "Partner Brand", category: "Home Decor", logo: "https://res.cloudinary.com/da6r15g9n/image/upload/v1781612279/WhatsApp_Image_2026-06-16_at_3.22.27_PM_3_jn6mdt.jpg" },
-  { name: "Partner Brand", category: "Bed Sheets", logo: "https://res.cloudinary.com/da6r15g9n/image/upload/v1781612279/WhatsApp_Image_2026-06-16_at_3.22.28_PM_1_qqxhki.jpg" },
-  { name: "Partner Brand", category: "Clothing", logo: "https://res.cloudinary.com/da6r15g9n/image/upload/v1781612279/WhatsApp_Image_2026-06-16_at_3.22.27_PM_2_tplku5.jpg" },
-  { name: "Partner Brand", category: "Clothing", logo: "https://res.cloudinary.com/da6r15g9n/image/upload/v1781612279/WhatsApp_Image_2026-06-16_at_3.22.27_PM_y8tfqn.jpg" },
-  { name: "Partner Brand", category: "Kids Clothing", logo: "https://res.cloudinary.com/da6r15g9n/image/upload/v1781612278/WhatsApp_Image_2026-06-16_at_3.22.25_PM_1_q3lgfu.jpg" },
-  { name: "Partner Brand", category: "Food", logo: "https://res.cloudinary.com/da6r15g9n/image/upload/v1781612278/WhatsApp_Image_2026-06-16_at_3.22.26_PM_xpjgua.jpg" },
-  { name: "Partner Brand", category: "Shoes", logo: "https://res.cloudinary.com/da6r15g9n/image/upload/v1781612278/WhatsApp_Image_2026-06-16_at_3.22.27_PM_1_fgovzp.jpg" },
-  { name: "Partner Brand", category: "Clothing", logo: "https://res.cloudinary.com/da6r15g9n/image/upload/v1781612278/WhatsApp_Image_2026-06-16_at_3.22.26_PM_1_rv5qn8.jpg" },
-  { name: "Partner Brand", category: "Clothing", logo: "https://res.cloudinary.com/da6r15g9n/image/upload/v1781612278/WhatsApp_Image_2026-06-16_at_3.22.25_PM_p4buyc.jpg" },
+  { name: "MOOR FARMS", category: "Dairy", logo: "https://res.cloudinary.com/da6r15g9n/image/upload/v1781612283/WhatsApp_Image_2026-06-16_at_3.22.29_PM_bkvdvz.jpg" },
+  { name: "RUE & MAN", category: "Clothing", logo: "https://res.cloudinary.com/da6r15g9n/image/upload/v1781612282/WhatsApp_Image_2026-06-16_at_3.22.29_PM_3_vhgfct.jpg" },
+  { name: "ROYAL SHOP", category: "Clothing", logo: "https://res.cloudinary.com/da6r15g9n/image/upload/v1781612281/WhatsApp_Image_2026-06-16_at_3.22.29_PM_2_anaax3.jpg" },
+  { name: "ELO", category: "Shopping Store", logo: "https://res.cloudinary.com/da6r15g9n/image/upload/v1781612281/WhatsApp_Image_2026-06-16_at_3.22.29_PM_1_wexnih.jpg" },
+  { name: "REBEL APPAREL", category: "Clothing", logo: "https://res.cloudinary.com/da6r15g9n/image/upload/v1781612281/WhatsApp_Image_2026-06-16_at_3.22.28_PM_npgmwp.jpg" },
+  { name: "MAMAYA", category: "Kids Clothing", logo: "https://res.cloudinary.com/da6r15g9n/image/upload/v1781612280/WhatsApp_Image_2026-06-16_at_3.22.28_PM_2_ousjxh.jpg" },
+  { name: "DECOR TOWN", category: "Home Decor", logo: "https://res.cloudinary.com/da6r15g9n/image/upload/v1781612279/WhatsApp_Image_2026-06-16_at_3.22.27_PM_3_jn6mdt.jpg" },
+  { name: "COMFORE", category: "Bed Sheets", logo: "https://res.cloudinary.com/da6r15g9n/image/upload/v1781612279/WhatsApp_Image_2026-06-16_at_3.22.28_PM_1_qqxhki.jpg" },
+  { name: "YAMANI FABRICS", category: "Clothing", logo: "https://res.cloudinary.com/da6r15g9n/image/upload/v1781612279/WhatsApp_Image_2026-06-16_at_3.22.27_PM_2_tplku5.jpg" },
+  { name: "LIBAAN FABRICS", category: "Clothing", logo: "https://res.cloudinary.com/da6r15g9n/image/upload/v1781612279/WhatsApp_Image_2026-06-16_at_3.22.27_PM_y8tfqn.jpg" },
+  { name: "YUMZZ", category: "Kids Clothing", logo: "https://res.cloudinary.com/da6r15g9n/image/upload/v1781612278/WhatsApp_Image_2026-06-16_at_3.22.25_PM_1_q3lgfu.jpg" },
+  { name: "Broh.", category: "Food", logo: "https://res.cloudinary.com/da6r15g9n/image/upload/v1781612278/WhatsApp_Image_2026-06-16_at_3.22.26_PM_xpjgua.jpg" },
+  { name: "PURO PELLE", category: "Shoes", logo: "https://res.cloudinary.com/da6r15g9n/image/upload/v1781612278/WhatsApp_Image_2026-06-16_at_3.22.27_PM_1_fgovzp.jpg" },
+  { name: "ETERNITY MEN", category: "Clothing", logo: "https://res.cloudinary.com/da6r15g9n/image/upload/v1781612278/WhatsApp_Image_2026-06-16_at_3.22.26_PM_1_rv5qn8.jpg" },
+  { name: "OSCAR", category: "Shoes", logo: "https://res.cloudinary.com/da6r15g9n/image/upload/v1781612278/WhatsApp_Image_2026-06-16_at_3.22.25_PM_p4buyc.jpg" },
 ]
 
 function BrandCard({ brand }: { brand: typeof brands[0] & { domain?: string, initials?: string } }) {
