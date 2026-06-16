@@ -22,6 +22,10 @@ export const blogPosts: BlogPost[] = [
 
       <blockquote>Before customers buy your product, they first buy confidence. Trust is the first sale — and visuals are how trust is built online.</blockquote>
 
+      <figure class="my-12 rounded-2xl overflow-hidden shadow-2xl border border-white/5 bg-white/5">
+        <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?q=80&w=2000&auto=format&fit=crop" alt="Customer shopping online on mobile device" class="w-full h-auto object-cover max-h-[450px] m-0" />
+      </figure>
+
       <h2>Customers Buy What They Can Trust</h2>
       <p>Imagine you're shopping online for bedsheets. You find two stores selling a nearly identical product at the same price.</p>
       <p><strong>Store A has:</strong></p>
@@ -53,6 +57,10 @@ export const blogPosts: BlogPost[] = [
       </ul>
       <p>A customer who receives a product that looks different from the online images is much more likely to return it. In Pakistan's ecommerce market, where Cash on Delivery is still dominant, this becomes a very expensive problem very quickly.</p>
 
+      <figure class="my-12 rounded-2xl overflow-hidden shadow-2xl border border-white/5 bg-white/5">
+        <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=2000&auto=format&fit=crop" alt="Professional product photography studio setup" class="w-full h-auto object-cover max-h-[450px] m-0" />
+      </figure>
+
       <h2>Why Your Instagram Content Isn't Converting</h2>
       <p>Many brands focus only on getting likes. But likes don't pay bills — sales do. A common and costly mistake is posting random content without a clear visual strategy. For example:</p>
       <ul>
@@ -82,6 +90,10 @@ export const blogPosts: BlogPost[] = [
 
       <h3>Lifestyle Images</h3>
       <p>Lifestyle photos help customers imagine ownership. Instead of seeing a product on a plain background, they see themselves using it in a real, aspirational setting — which is a much more powerful purchase trigger.</p>
+
+      <figure class="my-12 rounded-2xl overflow-hidden shadow-2xl border border-white/5 bg-white/5">
+        <img src="https://images.unsplash.com/photo-1627384113743-6bd5a479fffd?q=80&w=2000&auto=format&fit=crop" alt="Clean and premium cosmetic product shot" class="w-full h-auto object-cover max-h-[450px] m-0" />
+      </figure>
 
       <h3>Product Videos</h3>
       <p>Videos answer questions faster than any photo can. Customers instantly understand size, usage, features, and functionality — which is especially critical for footwear, electronics, skincare, home products, and apparel.</p>
