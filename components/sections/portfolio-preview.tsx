@@ -60,12 +60,8 @@ export function PortfolioPreview() {
           style={{ opacity: inView ? 1 : 0, transform: inView ? "translateY(0)" : "translateY(30px)" }}
         >
           <div>
-            <span className="inline-flex items-center gap-2 text-primary text-xs font-bold tracking-widest uppercase mb-4">
-              <span className="w-8 h-px bg-primary" />
-              Selected Works
-            </span>
             <h2 className="text-3xl md:text-5xl lg:text-6xl font-serif font-bold leading-tight">
-              A Glimpse Into <br className="hidden md:block" /> Our <span className="text-primary italic">Portfolio</span>.
+              Our Work
             </h2>
           </div>
 

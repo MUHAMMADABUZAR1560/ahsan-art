@@ -5,13 +5,6 @@ import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight } from "lucide-react"
 
-const features = [
-  { title: "E-Commerce Specialists", desc: "Optimized for online sales" },
-  { title: "Strategy Before Every Shoot", desc: "Quick delivery without compromise" },
-  { title: "All Under One Roof", desc: "From concept to execution" },
-  { title: "Clients Who Keep Coming Back", desc: "Premium results every time" },
-]
-
 export function AboutPreview() {
   const ref = useRef<HTMLElement>(null)
   const [inView, setInView] = useState(false)
@@ -19,12 +12,32 @@ export function AboutPreview() {
   useEffect(() => {
     const el = ref.current
     if (!el) return
-    const obs = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { setInView(true); obs.disconnect() } },
-      { rootMargin: "-80px" }
-    )
-    obs.observe(el)
-    return () => obs.disconnect()
+
+    // Fallback: trigger after 2 seconds in case IntersectionObserver fails
+    const fallbackTimer = setTimeout(() => {
+      setInView(true)
+    }, 2000)
+
+    if (typeof IntersectionObserver !== "undefined") {
+      const obs = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setInView(true)
+            clearTimeout(fallbackTimer)
+            obs.disconnect()
+          }
+        },
+        { threshold: 0.1 }
+      )
+      obs.observe(el)
+      return () => {
+        clearTimeout(fallbackTimer)
+        obs.disconnect()
+      }
+    } else {
+      setInView(true)
+      clearTimeout(fallbackTimer)
+    }
   }, [])
 
   return (
@@ -67,13 +80,8 @@ export function AboutPreview() {
             className="lg:pl-8 transition-all duration-700 delay-150"
             style={{ opacity: inView ? 1 : 0, transform: inView ? "translateY(0)" : "translateY(30px)" }}
           >
-            <span className="inline-flex items-center gap-2 text-primary text-sm font-medium tracking-wider uppercase mb-4">
-              <span className="w-8 h-px bg-primary" />
-              About Ahsan Art Creative Studio
-            </span>
-
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-foreground leading-tight">
-              The Studio Behind Hundreds of Brands
+              About Us
               <span className="inline-block w-2 h-2 rounded-full bg-primary ml-2 align-middle" />
             </h2>
 
@@ -81,27 +89,8 @@ export function AboutPreview() {
               Most photographers in Faisalabad do weddings, events, everything. We don't. Ahsan Art Creative Studio is built specifically for e-commerce and product content — and that focus makes all the difference. We don't just shoot pretty pictures. Before any project, we study your brand, your social media, your website — and then we plan content that fits your goals and your budget. The result? Better ads, lower ad costs, more orders, and a brand that people actually remember. That's why most of our clients don't leave. They stay — some for 2 years and counting.
             </p>
 
-            <div className="mt-8 grid grid-cols-2 gap-6">
-              {features.map((item, index) => (
-                <div
-                  key={index}
-                  className="group transition-all duration-500"
-                  style={{
-                    opacity: inView ? 1 : 0,
-                    transform: inView ? "translateY(0)" : "translateY(20px)",
-                    transitionDelay: `${300 + index * 80}ms`,
-                  }}
-                >
-                  <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors">
-                    {item.title}
-                  </h4>
-                  <p className="text-sm text-muted-foreground mt-1">{item.desc}</p>
-                </div>
-              ))}
-            </div>
-
             <div
-              className="mt-10 transition-all duration-500 delay-[650ms]"
+              className="mt-10 transition-all duration-500 delay-[300ms]"
               style={{ opacity: inView ? 1 : 0, transform: inView ? "translateY(0)" : "translateY(20px)" }}
             >
               <Link

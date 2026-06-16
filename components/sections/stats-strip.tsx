@@ -3,7 +3,7 @@
 import { useRef, useEffect, useState } from "react"
 
 const stats = [
-  { value: 500, suffix: "+", label: "Projects Delivered" },
+  { value: 200, suffix: "+", label: "Projects Delivered" },
   { value: 100, suffix: "+", label: "Happy Clients" },
   { value: 7, suffix: "+", label: "Years in E-Commerce" },
   { value: 6, suffix: "", label: "Core Services" },
@@ -17,19 +17,23 @@ function AnimatedCounter({ value, suffix, isInView }: { value: number; suffix: s
     if (!isInView || started.current) return
     started.current = true
 
-    const start = value > 50 ? value - 50 : 0
-    const duration = 1800
+    const duration = 1500
     const startTime = performance.now()
+    const startValue = 0
 
     const tick = (now: number) => {
       const elapsed = now - startTime
       const progress = Math.min(elapsed / duration, 1)
-      // ease out
-      const eased = 1 - Math.pow(1 - progress, 3)
-      setCount(Math.floor(start + (value - start) * eased))
-      if (progress < 1) requestAnimationFrame(tick)
+      const eased = 1 - Math.pow(1 - progress, 3) // ease out cubic
+      setCount(Math.floor(startValue + (value - startValue) * eased))
+      if (progress < 1) {
+        requestAnimationFrame(tick)
+      } else {
+        setCount(value)
+      }
     }
 
+    setCount(startValue)
     requestAnimationFrame(tick)
   }, [isInView, value])
 
@@ -48,12 +52,32 @@ export function StatsStrip() {
   useEffect(() => {
     const el = ref.current
     if (!el) return
-    const obs = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { setInView(true); obs.disconnect() } },
-      { rootMargin: "-80px" }
-    )
-    obs.observe(el)
-    return () => obs.disconnect()
+
+    // Fallback: trigger after 2 seconds in case IntersectionObserver fails
+    const fallbackTimer = setTimeout(() => {
+      setInView(true)
+    }, 2000)
+
+    if (typeof IntersectionObserver !== "undefined") {
+      const obs = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setInView(true)
+            clearTimeout(fallbackTimer)
+            obs.disconnect()
+          }
+        },
+        { threshold: 0.1 }
+      )
+      obs.observe(el)
+      return () => {
+        clearTimeout(fallbackTimer)
+        obs.disconnect()
+      }
+    } else {
+      setInView(true)
+      clearTimeout(fallbackTimer)
+    }
   }, [])
 
   return (

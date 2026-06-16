@@ -51,12 +51,8 @@ export function ReelsShowcase() {
           className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 md:mb-16"
         >
           <div>
-            <span className="inline-flex items-center gap-2 text-primary text-xs font-bold tracking-widest uppercase mb-4">
-              <span className="w-8 h-px bg-primary" />
-              Vertical Video
-            </span>
             <h2 className="text-3xl md:text-5xl lg:text-6xl font-serif font-bold text-foreground leading-tight">
-              Reels &amp; <span className="text-primary italic">UGC</span>
+              Reels &amp; UGC Content
             </h2>
           </div>
           <div className="flex flex-col items-start md:items-end gap-3">

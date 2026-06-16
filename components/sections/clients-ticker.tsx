@@ -139,14 +139,8 @@ export function ClientsTicker() {
           className="text-center mb-12 px-6 transition-all duration-700"
           style={{ opacity: inView ? 1 : 0, transform: inView ? "translateY(0)" : "translateY(24px)" }}
         >
-          <span className="inline-flex items-center gap-3 text-primary text-xs font-bold tracking-widest uppercase mb-5">
-            <span className="w-8 h-px bg-primary" />
-            Our Clients
-            <span className="w-8 h-px bg-primary" />
-          </span>
           <h2 className="text-xl sm:text-3xl md:text-5xl lg:text-6xl font-serif font-bold text-white leading-tight whitespace-nowrap">
-            Brands We&apos;ve{" "}
-            <span className="text-primary italic">Worked With</span>
+            Trusted By These Brands
           </h2>
         </div>
 

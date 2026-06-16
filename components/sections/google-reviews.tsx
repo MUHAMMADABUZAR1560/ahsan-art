@@ -167,12 +167,8 @@ export function GoogleReviews() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           >
-            <div className="flex items-center gap-3 mb-4">
-              <GoogleIcon />
-              <span className="text-sm font-bold tracking-widest uppercase text-foreground">Reviews</span>
-            </div>
             <h2 className="text-3xl md:text-5xl font-serif font-bold text-foreground">
-              What Our <span className="italic text-primary">Clients</span> Say
+              What Our Clients Say
             </h2>
           </motion.div>
 

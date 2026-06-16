@@ -36,20 +36,11 @@ export function CTASection() {
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          <span
-            className="inline-flex items-center gap-2 text-primary-foreground/80 text-sm font-medium tracking-wider uppercase mb-6 transition-all duration-600"
-            style={{ opacity: inView ? 1 : 0, transform: inView ? "translateY(0)" : "translateY(30px)" }}
-          >
-            <span className="w-8 h-px bg-primary-foreground/50" />
-            Start Your Project
-            <span className="w-8 h-px bg-primary-foreground/50" />
-          </span>
-
           <h2
             className="text-3xl md:text-4xl lg:text-6xl font-serif font-bold leading-tight transition-all duration-700 delay-100"
             style={{ opacity: inView ? 1 : 0, transform: inView ? "translateY(0)" : "translateY(30px)" }}
           >
-            Ready to Make Your Brand Look Its Best?
+            Let&apos;s Start Your Project
           </h2>
 
           <p

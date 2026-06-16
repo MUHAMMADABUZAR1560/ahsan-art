@@ -5,7 +5,7 @@ import { Award, Clock, Target, Users, Sparkles, Shield, ArrowRight } from "lucid
 
 const stats = [
   { value: 7, suffix: "+", label: "Years in E-Commerce", icon: Award },
-  { value: 500, suffix: "+", label: "Projects", icon: Target },
+  { value: 200, suffix: "+", label: "Projects", icon: Target },
   { value: 100, suffix: "+", label: "Clients", icon: Users },
   { value: 24, suffix: "hr", label: "Turnaround", icon: Clock },
 ]
@@ -44,25 +44,30 @@ const features = [
 ]
 
 function AnimatedCounter({ value, suffix, isInView }: { value: number; suffix: string; isInView: boolean }) {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(value)
   const started = useRef(false)
 
   useEffect(() => {
     if (!isInView || started.current) return
     started.current = true
 
-    const duration = 1000
+    const duration = 1200
     const startTime = performance.now()
+    const startValue = 0
 
     const tick = (now: number) => {
       const elapsed = now - startTime
       const progress = Math.min(elapsed / duration, 1)
       const eased = progress * (2 - progress) // ease out quadratic
-      setCount(Math.floor(eased * value))
-      if (progress < 1) requestAnimationFrame(tick)
-      else setCount(value)
+      setCount(Math.floor(startValue + (value - startValue) * eased))
+      if (progress < 1) {
+        requestAnimationFrame(tick)
+      } else {
+        setCount(value)
+      }
     }
 
+    setCount(startValue)
     requestAnimationFrame(tick)
   }, [isInView, value])
 
@@ -81,12 +86,32 @@ export function WhyChooseUs() {
   useEffect(() => {
     const el = ref.current
     if (!el) return
-    const obs = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { setInView(true); obs.disconnect() } },
-      { rootMargin: "-80px" }
-    )
-    obs.observe(el)
-    return () => obs.disconnect()
+
+    // Fallback: trigger after 2 seconds in case IntersectionObserver fails
+    const fallbackTimer = setTimeout(() => {
+      setInView(true)
+    }, 2000)
+
+    if (typeof IntersectionObserver !== "undefined") {
+      const obs = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setInView(true)
+            clearTimeout(fallbackTimer)
+            obs.disconnect()
+          }
+        },
+        { threshold: 0.1 }
+      )
+      obs.observe(el)
+      return () => {
+        clearTimeout(fallbackTimer)
+        obs.disconnect()
+      }
+    } else {
+      setInView(true)
+      clearTimeout(fallbackTimer)
+    }
   }, [])
 
   return (
@@ -95,16 +120,8 @@ export function WhyChooseUs() {
 
         {/* Header Section */}
         <div className="text-center max-w-3xl mx-auto mb-12 md:mb-20">
-          <span
-            className="inline-flex items-center gap-2 text-primary text-[10px] md:text-sm font-bold tracking-widest uppercase mb-4 transition-opacity duration-700"
-            style={{ opacity: inView ? 1 : 0 }}
-          >
-            <span className="w-6 md:w-8 h-px bg-primary" />
-            Why Ahsan Art Creative Studio
-            <span className="w-6 md:w-8 h-px bg-primary" />
-          </span>
           <h2 className="text-2xl md:text-5xl font-serif font-bold text-foreground leading-tight">
-            We Don't Just Make Content. We Grow Brands.
+            Why Choose Us
           </h2>
         </div>
 
@@ -146,28 +163,6 @@ export function WhyChooseUs() {
               </p>
             </div>
           ))}
-
-          {/* Call to Action Tile */}
-          <div
-            className="col-span-2 lg:col-span-3 mt-4 md:mt-8 p-6 md:p-10 bg-primary rounded-xl md:rounded-3xl text-primary-foreground flex flex-col md:flex-row items-center justify-between gap-6 transition-all duration-700"
-            style={{
-              opacity: inView ? 1 : 0,
-              transform: inView ? "translateY(0)" : "translateY(20px)",
-              transitionDelay: `${features.length * 80}ms`,
-            }}
-          >
-            <div className="text-center md:text-left">
-              <h3 className="text-xl md:text-3xl font-serif font-bold">Ready to elevate your brand?</h3>
-              <p className="text-sm md:text-lg text-primary-foreground/80 mt-1">Tell us about your product. We'll build a content plan that fits your goals and your budget.</p>
-            </div>
-            <a
-              href="/contact"
-              className="bg-white text-foreground px-8 py-3 md:py-4 rounded-full font-bold hover:bg-stone-100 transition-colors flex items-center gap-2 text-xs md:text-base whitespace-nowrap"
-            >
-              Get Started Today
-              <ArrowRight className="w-4 h-4" />
-            </a>
-          </div>
         </div>
       </div>
     </section>
