@@ -6,28 +6,48 @@ import { Plus, Minus, ArrowUpRight } from "lucide-react"
 
 const faqs = [
   {
-    question: "Do I need to send my products to your studio?",
-    answer: "Yes, you can ship your products directly to our studio at Opposite Gatwala Commercial Hub, Chak No 199 Rb, Faisalabad. Once the shoot is done, we return them to you (shipping on your end) or store them for ongoing projects."
+    question: "How much does product photography cost in Faisalabad?",
+    answer: "Product photography pricing depends on the type of image and the amount of work involved. At Ahsan Art Creative Studio, photography typically ranges from Rs. 500 to Rs. 2,700 per image. Simple white background images are more affordable, while lifestyle, creative, and Amazon listing images usually require more planning and editing."
   },
   {
-    question: "How long does a typical project take?",
-    answer: "Most product photography shoots are completed within 1–2 days. Edited images are delivered within 2–5 business days. For video projects, editing takes 3–7 days. Rush delivery is available."
+    question: "How much does a product video cost in Faisalabad?",
+    answer: "Our white background product videos start from Rs. 7,500, while theme-based product videos start from Rs. 8,500. If you’re looking for UGC-style content, plain background UGC videos start from Rs. 9,500 and theme-based UGC videos start from Rs. 17,000 depending on the concept, scripting, and production requirements."
   },
   {
-    question: "Do you provide models and props?",
-    answer: "Yes. We have an in-house props collection and can arrange professional models for lifestyle shoots. Model and prop costs are discussed before the shoot."
+    question: "How long does a typical product photography or videography project take?",
+    answer: "Most photography projects are delivered within 2-4 working days after the shoot. Product videos generally take 3-7 working days depending on the complexity, editing requirements, and number of deliverables. We always share a timeline before starting the project so expectations are clear from day one."
   },
   {
-    question: "Do I get full rights to the images and videos?",
-    answer: "Yes — you get 100% full commercial rights to every image and video. Use them on your website, Amazon, Daraz, social media, packaging, anywhere. No licensing fees, no restrictions."
+    question: "Can I visit your studio, or do I need to send products by courier?",
+    answer: "Both options are available. Our studio is located in Faisalabad, opposite Gatwala Commercial Hub, and clients are welcome to visit by appointment. If you’re outside Faisalabad, you can simply courier your products to us and we’ll handle the complete shoot and return process."
   },
   {
-    question: "Can we shoot at our location instead of your studio?",
-    answer: "Yes, on-location shoots are available. We bring professional lighting and equipment to your site. Travel fees may apply depending on distance."
+    question: "What is the difference between a UGC video and a regular product video?",
+    answer: "A regular product video focuses on showcasing the product through professional shots, details, and visuals. A UGC (User Generated Content) video is designed to feel more natural and relatable, usually featuring a person using or talking about the product. UGC content often performs exceptionally well for Facebook and Instagram ads because it feels more authentic to viewers."
   },
   {
-    question: "What is your revision policy?",
-    answer: "We include 2 rounds of revisions on all editing. This covers color corrections, cropping, and minor retouching. Additional rounds available for a small fee."
+    question: "Do you provide raw photos or unedited video footage?",
+    answer: "Our standard packages include professionally edited final files ready for use on your website, social media, or advertisements. Raw files and unedited footage are generally not included because they don’t represent the final quality standard of our work. If a project specifically requires raw assets, this can be discussed before production begins."
+  },
+  {
+    question: "How many revisions are included in your service?",
+    answer: "We include reasonable revisions to ensure the final content matches the agreed brief. Most projects are approved within one or two revision rounds because the planning process happens before the shoot. Major changes that fall outside the approved scope may require additional charges."
+  },
+  {
+    question: "Is the content optimized for Instagram, Facebook Ads, Shopify, and websites?",
+    answer: "Yes. We don’t create content with a one-size-fits-all approach. Before every project, we identify where the content will be used—whether it’s Instagram, Facebook Ads, Shopify, Amazon, Daraz, or your website—and create visuals accordingly so they perform better on that specific platform."
+  },
+  {
+    question: "Do you work with small businesses or brands that only have one product?",
+    answer: "Yes. Many successful brands start with a single product. Whether you’re launching your first item or managing a large catalog, we can help create professional visuals that build trust and make your brand look established from day one."
+  },
+  {
+    question: "What makes Ahsan Art Creative Studio different from other photography studios in Faisalabad?",
+    answer: "Most studios focus on taking good-looking photos. We focus on creating content that supports sales. Before every project, we review your current content, identify visual gaps, and plan photography and videography around your brand, platform, and customer journey. That’s why many ecommerce businesses trust us not just as photographers, but as long-term content partners."
+  },
+  {
+    question: "How do I book a product photography or videography project?",
+    answer: "Getting started is simple. Contact us on 0308-1122525, send a message on Instagram @ahsanart.studio, or email ahsanart.creativestudio@gmail.com. We’ll discuss your products, goals, required deliverables, timeline, and provide a clear quotation before moving forward."
   }
 ]
 
