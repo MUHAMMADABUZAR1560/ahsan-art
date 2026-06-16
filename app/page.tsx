@@ -16,14 +16,14 @@ export default function HomePage() {
     <main className="min-h-screen">
       <Navigation />
       <HeroSection />
-      <StatsStrip />
-      <AboutPreview />
-      <ClientsTicker />
       <ServicesPreview />
-      <ReelsShowcase />
+      <ClientsTicker />
       <PortfolioPreview />
+      <ReelsShowcase />
       <WhyChooseUs />
+      <StatsStrip />
       <GoogleReviews />
+      <AboutPreview />
       <CTASection />
       <Footer />
     </main>
