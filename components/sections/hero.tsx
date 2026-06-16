@@ -165,7 +165,7 @@ export function HeroSection() {
                       >
                         {[
                           { value: "7+", label: "Years in E-Commerce" },
-                          { value: "500+", label: "Projects" },
+                          { value: "200+", label: "Projects" },
                           { value: "100+", label: "Clients" },
                         ].map((stat, idx) => (
                           <div key={idx} className="text-left">
@@ -220,7 +220,7 @@ export function HeroSection() {
                     <div className="flex items-center gap-4">
                       {[
                         { value: "7+", label: "Years" },
-                        { value: "500+", label: "Projects" },
+                        { value: "200+", label: "Projects" },
                         { value: "100+", label: "Clients" },
                       ].map((stat, idx) => (
                         <div key={idx} className="text-center">

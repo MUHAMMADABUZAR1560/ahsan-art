@@ -155,7 +155,7 @@ export default function AboutPage() {
 
               {/* Floating Stat Card */}
               <div className="absolute top-[65%] right-[70%] bg-primary text-primary-foreground p-6 rounded-2xl shadow-xl w-40 text-center">
-                <div className="text-4xl font-serif font-bold">500+</div>
+                <div className="text-4xl font-serif font-bold">200+</div>
                 <div className="text-[10px] uppercase tracking-widest mt-2 font-medium">Projects</div>
               </div>
             </motion.div>
