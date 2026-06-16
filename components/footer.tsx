@@ -42,7 +42,7 @@ export function Footer() {
             {[
               { icon: Instagram, href: "https://www.instagram.com/ahsanart.studio/" },
               { icon: MessageCircle, href: "https://wa.me/923081122525" },
-              { icon: Mail, href: "mailto:imahsan987@gmail.com" }
+              { icon: Mail, href: "mailto:ahsanart.creativestudio@gmail.com" }
             ].map((social, i) => (
               <a
                 key={i}

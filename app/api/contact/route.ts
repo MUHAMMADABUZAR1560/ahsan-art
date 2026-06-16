@@ -17,7 +17,7 @@ export async function POST(req: NextRequest) {
 
     const { data, error } = await resend.emails.send({
       from: 'Ahsan Art Creative Studio Contact Form <onboarding@resend.dev>',
-      to: ['imahsan9876@gmail.com'],
+      to: ['ahsanart.creativestudio@gmail.com'],
       replyTo: email,
       subject: `New Inquiry from ${name} — ${service || 'General'}`,
       html: `

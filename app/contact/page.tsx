@@ -25,8 +25,8 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email",
-    value: "imahsan9876@gmail.com",
-    href: "https://mail.google.com/mail/?view=cm&fs=1&to=imahsan9876@gmail.com",
+    value: "ahsanart.creativestudio@gmail.com",
+    href: "https://mail.google.com/mail/?view=cm&fs=1&to=ahsanart.creativestudio@gmail.com",
   },
   {
     icon: MapPin,

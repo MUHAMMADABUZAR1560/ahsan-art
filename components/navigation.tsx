@@ -182,8 +182,8 @@ export function Navigation() {
 
             {/* Social/Contact Info */}
             <div className="mt-8 flex items-center justify-center gap-6 text-sm text-muted-foreground">
-              <a href="mailto:hello@ahsanart.com" className="hover:text-primary transition-colors">
-                hello@ahsanart.com
+              <a href="mailto:ahsanart.creativestudio@gmail.com" className="hover:text-primary transition-colors">
+                ahsanart.creativestudio@gmail.com
               </a>
               <span className="w-1 h-1 rounded-full bg-border" />
               <a href="tel:+923081122525" className="hover:text-primary transition-colors">

@@ -12,7 +12,7 @@ export default function JsonLd() {
         "image": "https://www.ahsanart.pk/images/cimage.jpeg",
         "description": "Faisalabad's e-commerce focused content studio specialising in product photography, videography, UGC videos, Amazon content, and food photography.",
         "telephone": "+923081122525",
-        "email": "imahsan987@gmail.com",
+        "email": "ahsanart.creativestudio@gmail.com",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Opposite Gatwala Commercial Hub, Chak No 199 Rb",
