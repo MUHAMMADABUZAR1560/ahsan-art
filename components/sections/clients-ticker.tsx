@@ -4,44 +4,47 @@ import { useRef, useState, useEffect } from "react"
 import Image from "next/image"
 
 const brands = [
-  { name: "Khaadi", category: "Clothing", domain: "khaadi.com", initials: "KH" },
-  { name: "Sapphire", category: "Fashion", domain: "sapphireonline.pk", initials: "SP" },
-  { name: "Outfitters", category: "Apparel", domain: "outfitters.com.pk", initials: "OU" },
-  { name: "Edenrobe", category: "Fashion", domain: "edenrobe.com", initials: "ER" },
-  { name: "Bonanza Satrangi", category: "Clothing", domain: "bonanzasatrangi.com", initials: "BS" },
-  { name: "Charizma", category: "Textiles", domain: "charizma.com.pk", initials: "CH" },
-  { name: "J.", category: "Retail", domain: "j-dot.pk", initials: "J." },
-  { name: "Safi", category: "Healthcare", domain: "safi.pk", initials: "SA" },
-  { name: "Peropelle", category: "Fashion", domain: "peropelle.com", initials: "PE" },
-  { name: "Urban Sole", category: "Footwear", domain: "urbansole.pk", initials: "US" },
-  { name: "Alkaram Studio", category: "Textiles", domain: "alkaramstudio.com", initials: "AK" },
-  { name: "Gul Ahmed", category: "Clothing", domain: "gulahmedshop.com", initials: "GA" },
+  { name: "Partner Brand", category: "Dairy", logo: "https://res.cloudinary.com/da6r15g9n/image/upload/v1781612283/WhatsApp_Image_2026-06-16_at_3.22.29_PM_bkvdvz.jpg" },
+  { name: "Partner Brand", category: "Clothing", logo: "https://res.cloudinary.com/da6r15g9n/image/upload/v1781612282/WhatsApp_Image_2026-06-16_at_3.22.29_PM_3_vhgfct.jpg" },
+  { name: "Partner Brand", category: "Clothing", logo: "https://res.cloudinary.com/da6r15g9n/image/upload/v1781612281/WhatsApp_Image_2026-06-16_at_3.22.29_PM_2_anaax3.jpg" },
+  { name: "Partner Brand", category: "Shopping Store", logo: "https://res.cloudinary.com/da6r15g9n/image/upload/v1781612281/WhatsApp_Image_2026-06-16_at_3.22.29_PM_1_wexnih.jpg" },
+  { name: "Partner Brand", category: "Clothing", logo: "https://res.cloudinary.com/da6r15g9n/image/upload/v1781612281/WhatsApp_Image_2026-06-16_at_3.22.28_PM_npgmwp.jpg" },
+  { name: "Partner Brand", category: "Kids Clothing", logo: "https://res.cloudinary.com/da6r15g9n/image/upload/v1781612280/WhatsApp_Image_2026-06-16_at_3.22.28_PM_2_ousjxh.jpg" },
+  { name: "Partner Brand", category: "Home Decor", logo: "https://res.cloudinary.com/da6r15g9n/image/upload/v1781612279/WhatsApp_Image_2026-06-16_at_3.22.27_PM_3_jn6mdt.jpg" },
+  { name: "Partner Brand", category: "Bed Sheets", logo: "https://res.cloudinary.com/da6r15g9n/image/upload/v1781612279/WhatsApp_Image_2026-06-16_at_3.22.28_PM_1_qqxhki.jpg" },
+  { name: "Partner Brand", category: "Clothing", logo: "https://res.cloudinary.com/da6r15g9n/image/upload/v1781612279/WhatsApp_Image_2026-06-16_at_3.22.27_PM_2_tplku5.jpg" },
+  { name: "Partner Brand", category: "Clothing", logo: "https://res.cloudinary.com/da6r15g9n/image/upload/v1781612279/WhatsApp_Image_2026-06-16_at_3.22.27_PM_y8tfqn.jpg" },
+  { name: "Partner Brand", category: "Kids Clothing", logo: "https://res.cloudinary.com/da6r15g9n/image/upload/v1781612278/WhatsApp_Image_2026-06-16_at_3.22.25_PM_1_q3lgfu.jpg" },
+  { name: "Partner Brand", category: "Food", logo: "https://res.cloudinary.com/da6r15g9n/image/upload/v1781612278/WhatsApp_Image_2026-06-16_at_3.22.26_PM_xpjgua.jpg" },
+  { name: "Partner Brand", category: "Shoes", logo: "https://res.cloudinary.com/da6r15g9n/image/upload/v1781612278/WhatsApp_Image_2026-06-16_at_3.22.27_PM_1_fgovzp.jpg" },
+  { name: "Partner Brand", category: "Clothing", logo: "https://res.cloudinary.com/da6r15g9n/image/upload/v1781612278/WhatsApp_Image_2026-06-16_at_3.22.26_PM_1_rv5qn8.jpg" },
+  { name: "Partner Brand", category: "Clothing", logo: "https://res.cloudinary.com/da6r15g9n/image/upload/v1781612278/WhatsApp_Image_2026-06-16_at_3.22.25_PM_p4buyc.jpg" },
 ]
 
-function BrandCard({ brand }: { brand: typeof brands[0] }) {
+function BrandCard({ brand }: { brand: typeof brands[0] & { domain?: string, initials?: string } }) {
   const [imgError, setImgError] = useState(false)
-  const logoUrl = `https://logo.clearbit.com/${brand.domain}`
+  const logoUrl = brand.logo || (brand.domain ? `https://logo.clearbit.com/${brand.domain}` : '')
 
   return (
     <div className="flex flex-col items-center gap-3 px-6 flex-shrink-0 group cursor-default">
       {/* Circular logo container */}
       <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-white flex items-center justify-center shadow-lg ring-1 ring-white/10 group-hover:scale-110 group-hover:ring-primary/60 group-hover:shadow-primary/20 group-hover:shadow-xl transition-all duration-300 overflow-hidden">
-        {!imgError ? (
+        {!imgError && logoUrl ? (
           <Image
             src={logoUrl}
             alt={brand.name}
             width={80}
             height={80}
-            className="w-12 h-12 md:w-14 md:h-14 object-contain"
+            className="w-full h-full object-contain p-2"
             onError={() => setImgError(true)}
-            quality={60}
+            quality={80}
             loading="lazy"
             sizes="80px"
             unoptimized
           />
         ) : (
           <span className="text-gray-700 font-bold text-sm md:text-base tracking-wide select-none">
-            {brand.initials}
+            {brand.initials || brand.name.slice(0, 2).toUpperCase()}
           </span>
         )}
       </div>
