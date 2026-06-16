@@ -65,7 +65,7 @@ export function CursorFollower() {
       }}
     >
       <img 
-        src="https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575373/Cursor_mayvjg.png" 
+        src="/images/ahsan-art-cursor.png" 
         alt="Follower" 
         className="w-24 h-24 object-cover rounded-full shadow-2xl backdrop-blur-md bg-white/10 border border-white/20"
       />
