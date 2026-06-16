@@ -7,7 +7,6 @@ import Image from "next/image"
 import { motion, useInView } from "framer-motion"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
-import { FAQSection } from "@/components/sections/faq-section"
 import { Phone, Mail, Instagram, MapPin, Send, CheckCircle } from "lucide-react"
 
 const contactInfo = [
@@ -381,10 +380,6 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-
-      {/* FAQ Section - reusing the proper component */}
-      <FAQSection />
-
       {/* Map Section */}
       <section className="py-24 lg:py-32 bg-background">
         <div className="container mx-auto px-6 lg:px-12">
