@@ -48,6 +48,7 @@ export function Logo({
       alt="Ahsan Art Creative Studio Logo"
       width={width}
       height={height}
+      className="dark:invert-0 invert"
       style={{
         display: "block",
         objectFit: "contain",

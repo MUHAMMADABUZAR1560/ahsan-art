@@ -45,14 +45,14 @@ export function Navigation() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? "top-4 mx-auto w-[95%] max-w-5xl rounded-full bg-background/80 backdrop-blur-md border border-white/10 shadow-lg"
+            ? "top-4 mx-auto w-[98%] max-w-[1400px] rounded-full bg-background/80 backdrop-blur-md border border-white/10 shadow-lg"
             : "top-0 w-full bg-transparent"
         }`}
       >
-        <nav className="container mx-auto px-6 lg:px-12">
+        <nav className="container mx-auto px-4 lg:px-8">
           <div className="flex items-center justify-between h-20 lg:h-24">
             {/* Logo */}
-            <Link href="/" className="relative z-50 group">
+            <Link href="/" className="relative z-50 group flex-shrink-0">
               <Logo
                 size="sm"
                 animated={false}
@@ -61,12 +61,12 @@ export function Navigation() {
             </Link>
 
             {/* Desktop Navigation - Centered */}
-            <div className="hidden lg:flex items-center justify-center flex-1 mx-8 gap-1">
+            <div className="hidden lg:flex items-center justify-center flex-1 mx-4 xl:mx-8 gap-0.5 xl:gap-1">
               {navItems.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`relative px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+                  className={`relative px-3 xl:px-4 py-2 rounded-full text-[13px] xl:text-sm font-medium transition-all duration-200 ${
                     pathname === item.href
                       ? "text-primary bg-primary/10 border border-primary/20"
                       : "text-foreground/80 hover:text-foreground hover:bg-secondary/80"
@@ -78,7 +78,7 @@ export function Navigation() {
             </div>
 
             {/* Right side CTAs (Desktop) */}
-            <div className="hidden lg:flex items-center gap-3">
+            <div className="hidden lg:flex items-center gap-2 xl:gap-3 flex-shrink-0">
               <Link
                 href="/portfolio"
                 className="group flex items-center gap-2 border border-foreground/20 text-foreground/80 hover:border-foreground/50 hover:text-foreground px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 whitespace-nowrap"
