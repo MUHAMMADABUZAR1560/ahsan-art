@@ -137,7 +137,7 @@ export function HeroSection() {
           <div className="flex-1 flex items-center pr-10 lg:pr-16">
             <h1
               className="font-serif font-black text-white uppercase leading-[1.0] tracking-tight"
-              style={{ fontSize: "clamp(3.5rem, 6vw, 6rem)" }}
+              style={{ fontSize: "clamp(2.8rem, 4.5vw, 4.8rem)" }}
             >
               VISUALS
               <br />
@@ -165,7 +165,7 @@ export function HeroSection() {
       <div className="absolute inset-0 z-20 hidden md:flex lg:hidden flex-col justify-center px-8 pt-28 pb-10 gap-6">
         <h1
           className="font-serif font-black text-white uppercase leading-[1.0] tracking-tight"
-          style={{ fontSize: "clamp(3rem, 5vw, 4.5rem)" }}
+          style={{ fontSize: "clamp(2.4rem, 4vw, 3.8rem)" }}
         >
           VISUALS<br />THAT<br />BUILD<br />
           <span style={{ color: "#a855f7", fontStyle: "italic" }}>BRANDS.</span>
@@ -191,7 +191,7 @@ export function HeroSection() {
         {/* Headline */}
         <h1
           className="font-serif font-black text-white uppercase leading-[1.0] tracking-tight"
-          style={{ fontSize: "clamp(2.5rem, 10vw, 3.5rem)" }}
+          style={{ fontSize: "clamp(2rem, 8vw, 3rem)" }}
         >
           VISUALS<br />THAT<br />BUILD<br />
           <span style={{ color: "#a855f7", fontStyle: "italic" }}>BRANDS.</span>
