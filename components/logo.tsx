@@ -25,11 +25,13 @@ export function Logo({
 
   const { width, height } = sizes[size]
 
-  // Determine which logo URL to use based on the color prop or variant
-  const darkLogoUrl = "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575381/footerlogo_ucwjlu.png"
-  const lightLogoUrl = "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575375/Logo3_r5awnk.png"
+  // Logo3_r5awnk = BLACK logo (for light/white backgrounds)
+  // footerlogo_ucwjlu = WHITE logo (for dark backgrounds like footer/hero)
+  const blackLogoUrl = "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575375/Logo3_r5awnk.png"
+  const whiteLogoUrl = "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575381/footerlogo_ucwjlu.png"
 
-  const isDarkLogo = variant === "footer" || color === "dark"
+  // showBlack = true → show black logo; false → show white logo
+  const showBlack = color === "dark" && variant !== "footer"
 
   const logoVariants = {
     hidden: { opacity: 0, scale: 0.9 },
@@ -45,29 +47,29 @@ export function Logo({
 
   const LogoImage = (
     <div className="relative flex items-center" style={{ width, height }}>
-      {/* Light Logo (White text — shown when NOT dark) */}
+      {/* BLACK logo — visible on light/white backgrounds */}
       <img
-        src={lightLogoUrl}
+        src={blackLogoUrl}
         alt="Ahsan Art Creative Studio Logo"
         width={width}
         height={height}
         style={{
           position: "absolute",
           objectFit: "contain",
-          opacity: isDarkLogo ? 0 : 1,
+          opacity: showBlack ? 1 : 0,
           transition: "opacity 300ms ease",
         }}
       />
-      {/* Dark Logo (Black text — shown when dark) */}
+      {/* WHITE logo — visible on dark backgrounds (footer / hero) */}
       <img
-        src={darkLogoUrl}
+        src={whiteLogoUrl}
         alt="Ahsan Art Creative Studio Logo"
         width={width}
         height={height}
         style={{
           position: "absolute",
           objectFit: "contain",
-          opacity: isDarkLogo ? 1 : 0,
+          opacity: showBlack ? 0 : 1,
           transition: "opacity 300ms ease",
         }}
       />
