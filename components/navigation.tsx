@@ -56,7 +56,7 @@ export function Navigation() {
               <Logo
                 size="sm"
                 animated={false}
-                color={isScrolled ? "dark" : "light"}
+                color="dark"
               />
             </Link>
 
