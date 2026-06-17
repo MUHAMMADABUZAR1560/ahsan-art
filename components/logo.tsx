@@ -29,10 +29,7 @@ export function Logo({
   const darkLogoUrl = "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575381/footerlogo_ucwjlu.png"
   const lightLogoUrl = "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575375/Logo3_r5awnk.png"
 
-  let imageSrc = lightLogoUrl
-  if (variant === "footer" || color === "dark") {
-    imageSrc = darkLogoUrl
-  }
+  const isDarkLogo = variant === "footer" || color === "dark"
 
   const logoVariants = {
     hidden: { opacity: 0, scale: 0.9 },
@@ -47,16 +44,30 @@ export function Logo({
   }
 
   const LogoImage = (
-    <img
-      src={imageSrc}
-      alt="Ahsan Art Creative Studio Logo"
-      width={width}
-      height={height}
-      style={{
-        display: "block",
-        objectFit: "contain",
-      }}
-    />
+    <div className="relative flex items-center" style={{ width, height }}>
+      {/* Light Logo (White text, green dots) */}
+      <img
+        src={lightLogoUrl}
+        alt="Ahsan Art Creative Studio Logo"
+        width={width}
+        height={height}
+        className={`absolute transition-opacity duration-300 ${isDarkLogo ? 'opacity-0' : 'opacity-100'}`}
+        style={{
+          objectFit: "contain",
+        }}
+      />
+      {/* Dark Logo (Black text, green dots) */}
+      <img
+        src={darkLogoUrl}
+        alt="Ahsan Art Creative Studio Logo"
+        width={width}
+        height={height}
+        className={`absolute transition-opacity duration-300 ${isDarkLogo ? 'opacity-100' : 'opacity-0'}`}
+        style={{
+          objectFit: "contain",
+        }}
+      />
+    </div>
   )
 
   if (animated) {

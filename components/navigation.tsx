@@ -43,9 +43,9 @@ export function Navigation() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out ${
           isScrolled
-            ? "top-4 mx-auto w-[98%] max-w-[1400px] rounded-full bg-background/80 backdrop-blur-md border border-white/10 shadow-lg"
+            ? "top-4 mx-auto w-[96%] max-w-[1152px] rounded-full bg-background/80 backdrop-blur-md border border-white/10 shadow-lg"
             : "top-0 w-full bg-transparent"
         }`}
       >
@@ -61,12 +61,12 @@ export function Navigation() {
             </Link>
 
             {/* Desktop Navigation - Centered */}
-            <div className="hidden lg:flex items-center justify-center flex-1 mx-4 xl:mx-8 gap-0.5 xl:gap-1">
+            <div className="hidden lg:flex items-center justify-center flex-1 mx-2 gap-0">
               {navItems.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`relative px-3 xl:px-4 py-2 rounded-full text-[13px] xl:text-sm font-medium transition-all duration-200 ${
+                  className={`relative px-2.5 xl:px-3 py-2 rounded-full text-[12px] xl:text-[13px] font-medium transition-all duration-200 whitespace-nowrap ${
                     pathname === item.href
                       ? "text-primary bg-primary/10 border border-primary/20"
                       : "text-foreground/80 hover:text-foreground hover:bg-secondary/80"
