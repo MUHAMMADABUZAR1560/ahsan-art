@@ -143,8 +143,8 @@ export function HeroSection() {
           {/* RIGHT — MASSIVE editorial headline */}
           <div className="flex-1 flex items-center pr-10 lg:pr-16">
             <h1
-              className="font-serif font-black text-white uppercase leading-[0.86] tracking-[-0.01em]"
-              style={{ fontSize: "clamp(5.5rem, 13.5vw, 14rem)" }}
+              className="font-serif font-bold text-white uppercase leading-[1.05] tracking-tight"
+              style={{ fontSize: "clamp(3.5rem, 6vw, 6rem)" }}
             >
               Visuals
               <br />
@@ -191,8 +191,8 @@ export function HeroSection() {
       <div className="absolute inset-0 z-20 hidden md:flex lg:hidden flex-col justify-between px-8 pt-28 pb-10">
         <span className="text-[9px] font-bold uppercase tracking-[0.3em] text-white/30">Content Studio</span>
         <h1
-          className="font-serif font-black text-white uppercase leading-[0.88] tracking-tight"
-          style={{ fontSize: "clamp(4rem, 11vw, 7rem)" }}
+          className="font-serif font-bold text-white uppercase leading-[1.05] tracking-tight"
+          style={{ fontSize: "clamp(3rem, 5vw, 4.5rem)" }}
         >
           Visuals<br />That<br />Build<br />
           <span style={{ color: "#a855f7", fontStyle: "italic" }}>Brands.</span>
@@ -215,8 +215,8 @@ export function HeroSection() {
         {/* Massive headline */}
         <div className="flex-1 flex items-center px-5">
           <h1
-            className="font-serif font-black text-white uppercase leading-[0.88] tracking-tight"
-            style={{ fontSize: "clamp(3.4rem, 16vw, 5.5rem)" }}
+            className="font-serif font-bold text-white uppercase leading-[1.05] tracking-tight"
+            style={{ fontSize: "clamp(2.5rem, 8vw, 3.5rem)" }}
           >
             Visuals<br />That<br />Build<br />
             <span style={{ color: "#a855f7", fontStyle: "italic" }}>Brands.</span>
