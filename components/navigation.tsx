@@ -77,8 +77,15 @@ export function Navigation() {
               ))}
             </div>
 
-            {/* Right side CTA (Desktop) */}
-            <div className="hidden lg:flex items-center">
+            {/* Right side CTAs (Desktop) */}
+            <div className="hidden lg:flex items-center gap-3">
+              <Link
+                href="/portfolio"
+                className="group flex items-center gap-2 border border-foreground/20 text-foreground/80 hover:border-foreground/50 hover:text-foreground px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 whitespace-nowrap"
+              >
+                View Our Work
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-200" />
+              </Link>
               <Link
                 href="/contact"
                 className="group relative flex items-center gap-2 bg-foreground text-background px-6 py-2.5 rounded-full text-sm font-medium overflow-hidden hover:bg-primary transition-colors duration-300 whitespace-nowrap"
