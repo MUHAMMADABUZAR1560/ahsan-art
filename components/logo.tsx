@@ -25,10 +25,14 @@ export function Logo({
 
   const { width, height } = sizes[size]
 
-  // Logic to switch between the main logo and the footer logo
-  const imageSrc = variant === "footer" 
-    ? "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575381/footerlogo_ucwjlu.png" 
-    : "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575375/Logo3_r5awnk.png"
+  // Determine which logo URL to use based on the color prop or variant
+  const darkLogoUrl = "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575381/footerlogo_ucwjlu.png"
+  const lightLogoUrl = "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575375/Logo3_r5awnk.png"
+
+  let imageSrc = lightLogoUrl
+  if (variant === "footer" || color === "dark") {
+    imageSrc = darkLogoUrl
+  }
 
   const logoVariants = {
     hidden: { opacity: 0, scale: 0.9 },
@@ -48,7 +52,6 @@ export function Logo({
       alt="Ahsan Art Creative Studio Logo"
       width={width}
       height={height}
-      className="dark:invert-0 invert"
       style={{
         display: "block",
         objectFit: "contain",
