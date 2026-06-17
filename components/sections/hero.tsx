@@ -69,26 +69,7 @@ export function HeroSection() {
         </CarouselContent>
       </Carousel>
 
-      {/* ══════════════════════════════════════
-          OVERLAY — lighter, less fading
-      ══════════════════════════════════════ */}
 
-      {/* Left-to-right gradient — only darkens left sidebar area, bleeds to transparent on right */}
-      <div
-        className="absolute inset-0 z-10 pointer-events-none"
-        style={{
-          background:
-            "linear-gradient(100deg, rgba(4,2,12,0.88) 0%, rgba(4,2,12,0.65) 30%, rgba(4,2,12,0.20) 60%, rgba(4,2,12,0.05) 100%)",
-        }}
-      />
-      {/* Subtle top vignette only (navbar readability) */}
-      <div
-        className="absolute inset-0 z-10 pointer-events-none"
-        style={{
-          background:
-            "linear-gradient(to bottom, rgba(0,0,0,0.45) 0%, transparent 20%)",
-        }}
-      />
 
       {/* ══════════════════════════════════════
           CONTENT — DESKTOP (lg +)
