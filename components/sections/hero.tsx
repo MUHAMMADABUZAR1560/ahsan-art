@@ -70,23 +70,23 @@ export function HeroSection() {
       </Carousel>
 
       {/* ══════════════════════════════════════
-          OVERLAYS — cinematic dark treatment
+          OVERLAY — lighter, less fading
       ══════════════════════════════════════ */}
 
-      {/* Heavy left-to-right gradient (sidebar is nearly black, photo bleeds through on right) */}
+      {/* Left-to-right gradient — only darkens left sidebar area, bleeds to transparent on right */}
       <div
         className="absolute inset-0 z-10 pointer-events-none"
         style={{
           background:
-            "linear-gradient(100deg, rgba(4,2,12,0.97) 0%, rgba(4,2,12,0.85) 28%, rgba(4,2,12,0.60) 55%, rgba(4,2,12,0.35) 100%)",
+            "linear-gradient(100deg, rgba(4,2,12,0.88) 0%, rgba(4,2,12,0.65) 30%, rgba(4,2,12,0.20) 60%, rgba(4,2,12,0.05) 100%)",
         }}
       />
-      {/* Top & bottom vignettes */}
+      {/* Subtle top vignette only (navbar readability) */}
       <div
         className="absolute inset-0 z-10 pointer-events-none"
         style={{
           background:
-            "linear-gradient(to bottom, rgba(0,0,0,0.65) 0%, transparent 25%, transparent 72%, rgba(0,0,0,0.75) 100%)",
+            "linear-gradient(to bottom, rgba(0,0,0,0.45) 0%, transparent 20%)",
         }}
       />
 
@@ -95,20 +95,13 @@ export function HeroSection() {
       ══════════════════════════════════════ */}
       <div className="absolute inset-0 z-20 hidden lg:flex flex-col">
 
-        {/* TOP-LEFT micro-label */}
-        <div className="px-12 lg:px-16 pt-28 lg:pt-32">
-          <span className="text-[9px] font-bold uppercase tracking-[0.35em] text-white/30">
-            Content Studio
-          </span>
-        </div>
-
         {/* ── MAIN ROW ── */}
-        <div className="flex flex-1">
+        <div className="flex flex-1 items-center">
 
           {/* LEFT SIDEBAR — service nav */}
           <div
-            className="flex flex-col justify-center flex-shrink-0 relative px-12 lg:px-16"
-            style={{ width: "clamp(220px, 20vw, 300px)" }}
+            className="flex flex-col justify-center flex-shrink-0 relative px-12 lg:px-16 pt-32"
+            style={{ width: "clamp(240px, 22vw, 320px)" }}
           >
             {/* Vertical track line */}
             <div
@@ -117,11 +110,11 @@ export function HeroSection() {
                 left: "calc(3rem + 4px)",
                 width: "1px",
                 background:
-                  "linear-gradient(to bottom, transparent 5%, rgba(255,255,255,0.10) 20%, rgba(255,255,255,0.10) 80%, transparent 95%)",
+                  "linear-gradient(to bottom, transparent 5%, rgba(255,255,255,0.12) 20%, rgba(255,255,255,0.12) 80%, transparent 95%)",
               }}
             />
 
-            <ul className="flex flex-col gap-[18px] relative z-10">
+            <ul className="flex flex-col gap-[22px] relative z-10">
               {services.map((svc, i) => (
                 <li key={svc} className="flex items-center gap-4">
                   {/* Dot with staggered pulse */}
@@ -132,7 +125,7 @@ export function HeroSection() {
                       animationDelay: `${i * 0.5}s`,
                     }}
                   />
-                  <span className="text-white/45 text-[12px] font-medium tracking-wide leading-snug">
+                  <span className="text-white/70 text-[15px] font-medium tracking-wide leading-snug">
                     {svc}
                   </span>
                 </li>
@@ -140,17 +133,17 @@ export function HeroSection() {
             </ul>
           </div>
 
-          {/* RIGHT — MASSIVE editorial headline */}
+          {/* RIGHT — editorial headline */}
           <div className="flex-1 flex items-center pr-10 lg:pr-16">
             <h1
-              className="font-serif font-bold text-white uppercase leading-[1.05] tracking-tight"
+              className="font-serif font-black text-white uppercase leading-[1.0] tracking-tight"
               style={{ fontSize: "clamp(3.5rem, 6vw, 6rem)" }}
             >
-              Visuals
+              VISUALS
               <br />
-              That
+              THAT
               <br />
-              Build
+              BUILD
               <br />
               <span
                 style={{
@@ -159,28 +152,9 @@ export function HeroSection() {
                   display: "block",
                 }}
               >
-                Brands.
+                BRANDS.
               </span>
             </h1>
-          </div>
-        </div>
-
-        {/* ── BOTTOM ROW ── */}
-        <div className="flex items-end justify-between px-12 lg:px-16 pb-12 lg:pb-16">
-
-          {/* Year stamp */}
-          <span className="text-[11px] font-mono text-white/22 tracking-widest">
-            {new Date().getFullYear()}
-          </span>
-
-          {/* Two editorial text columns */}
-          <div className="flex gap-12 xl:gap-20">
-            <p className="max-w-[210px] text-white/38 text-[11.5px] leading-[1.75] font-medium">
-              Faisalabad&apos;s premier e-commerce content studio — crafting visuals that convert browsers into buyers.
-            </p>
-            <p className="max-w-[210px] text-white/38 text-[11.5px] leading-[1.75] font-medium">
-              Every detail is thoughtfully created to elevate your brand, from product photography to full Amazon content packages.
-            </p>
           </div>
         </div>
       </div>
@@ -188,64 +162,51 @@ export function HeroSection() {
       {/* ══════════════════════════════════════
           CONTENT — TABLET  (md – lg)
       ══════════════════════════════════════ */}
-      <div className="absolute inset-0 z-20 hidden md:flex lg:hidden flex-col justify-between px-8 pt-28 pb-10">
-        <span className="text-[9px] font-bold uppercase tracking-[0.3em] text-white/30">Content Studio</span>
+      <div className="absolute inset-0 z-20 hidden md:flex lg:hidden flex-col justify-center px-8 pt-28 pb-10 gap-6">
         <h1
-          className="font-serif font-bold text-white uppercase leading-[1.05] tracking-tight"
+          className="font-serif font-black text-white uppercase leading-[1.0] tracking-tight"
           style={{ fontSize: "clamp(3rem, 5vw, 4.5rem)" }}
         >
-          Visuals<br />That<br />Build<br />
-          <span style={{ color: "#a855f7", fontStyle: "italic" }}>Brands.</span>
+          VISUALS<br />THAT<br />BUILD<br />
+          <span style={{ color: "#a855f7", fontStyle: "italic" }}>BRANDS.</span>
         </h1>
-        <p className="text-white/40 text-[12px] leading-relaxed max-w-xs">
-          Faisalabad&apos;s premier e-commerce content studio crafting visuals that convert.
-        </p>
+        {/* Service pills on tablet */}
+        <div className="flex flex-wrap gap-2">
+          {services.map((svc) => (
+            <span
+              key={svc}
+              className="text-[13px] font-medium text-white/70 bg-white/8 border border-white/15 rounded-full px-4 py-1.5"
+            >
+              {svc}
+            </span>
+          ))}
+        </div>
       </div>
 
       {/* ══════════════════════════════════════
           CONTENT — MOBILE  (< md)
       ══════════════════════════════════════ */}
-      <div className="absolute inset-0 z-20 flex md:hidden flex-col justify-between">
+      <div className="absolute inset-0 z-20 flex md:hidden flex-col justify-center px-5 pt-20 gap-6">
 
-        {/* Top label */}
-        <div className="px-5 pt-24">
-          <span className="text-[9px] font-bold uppercase tracking-[0.3em] text-white/30">Content Studio</span>
-        </div>
-
-        {/* Massive headline */}
-        <div className="flex-1 flex items-center px-5">
-          <h1
-            className="font-serif font-bold text-white uppercase leading-[1.05] tracking-tight"
-            style={{ fontSize: "clamp(2.5rem, 8vw, 3.5rem)" }}
-          >
-            Visuals<br />That<br />Build<br />
-            <span style={{ color: "#a855f7", fontStyle: "italic" }}>Brands.</span>
-          </h1>
-        </div>
-
-        {/* Bottom */}
-        <div
-          className="px-5 py-7"
-          style={{
-            background: "rgba(0,0,0,0.55)",
-            backdropFilter: "blur(10px)",
-            WebkitBackdropFilter: "blur(10px)",
-            borderTop: "1px solid rgba(255,255,255,0.06)",
-          }}
+        {/* Headline */}
+        <h1
+          className="font-serif font-black text-white uppercase leading-[1.0] tracking-tight"
+          style={{ fontSize: "clamp(2.5rem, 10vw, 3.5rem)" }}
         >
-          <div className="flex gap-2 overflow-x-auto no-scrollbar mb-4 pb-0.5">
-            {services.map((svc) => (
-              <span
-                key={svc}
-                className="flex-shrink-0 text-[9px] font-medium text-white/40 bg-white/5 border border-white/10 rounded-full px-3 py-1 uppercase tracking-wider"
-              >
-                {svc}
-              </span>
-            ))}
-          </div>
-          <p className="text-white/38 text-[11px] leading-relaxed">
-            Faisalabad&apos;s e-commerce content studio — visuals that convert.
-          </p>
+          VISUALS<br />THAT<br />BUILD<br />
+          <span style={{ color: "#a855f7", fontStyle: "italic" }}>BRANDS.</span>
+        </h1>
+
+        {/* Service pills on mobile */}
+        <div className="flex gap-2 overflow-x-auto no-scrollbar pb-0.5">
+          {services.map((svc) => (
+            <span
+              key={svc}
+              className="flex-shrink-0 text-[12px] font-medium text-white/65 bg-white/8 border border-white/12 rounded-full px-3 py-1.5 uppercase tracking-wider"
+            >
+              {svc}
+            </span>
+          ))}
         </div>
       </div>
 
