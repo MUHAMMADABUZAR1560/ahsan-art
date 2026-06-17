@@ -170,17 +170,6 @@ export function HeroSection() {
           VISUALS<br />THAT<br />BUILD<br />
           <span style={{ color: "#a855f7", fontStyle: "italic" }}>BRANDS.</span>
         </h1>
-        {/* Service pills on tablet */}
-        <div className="flex flex-wrap gap-2">
-          {services.map((svc) => (
-            <span
-              key={svc}
-              className="text-[13px] font-medium text-white/70 bg-white/8 border border-white/15 rounded-full px-4 py-1.5"
-            >
-              {svc}
-            </span>
-          ))}
-        </div>
       </div>
 
       {/* ══════════════════════════════════════
@@ -196,18 +185,6 @@ export function HeroSection() {
           VISUALS<br />THAT<br />BUILD<br />
           <span style={{ color: "#a855f7", fontStyle: "italic" }}>BRANDS.</span>
         </h1>
-
-        {/* Service pills on mobile */}
-        <div className="flex gap-2 overflow-x-auto no-scrollbar pb-0.5">
-          {services.map((svc) => (
-            <span
-              key={svc}
-              className="flex-shrink-0 text-[12px] font-medium text-white/65 bg-white/8 border border-white/12 rounded-full px-3 py-1.5 uppercase tracking-wider"
-            >
-              {svc}
-            </span>
-          ))}
-        </div>
       </div>
 
       {/* ══════════════════════════════════════
