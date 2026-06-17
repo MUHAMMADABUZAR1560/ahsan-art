@@ -45,26 +45,30 @@ export function Logo({
 
   const LogoImage = (
     <div className="relative flex items-center" style={{ width, height }}>
-      {/* Light Logo (White text, green dots) */}
+      {/* Light Logo (White text — shown when NOT dark) */}
       <img
         src={lightLogoUrl}
         alt="Ahsan Art Creative Studio Logo"
         width={width}
         height={height}
-        className={`absolute transition-opacity duration-300 ${isDarkLogo ? 'opacity-0' : 'opacity-100'}`}
         style={{
+          position: "absolute",
           objectFit: "contain",
+          opacity: isDarkLogo ? 0 : 1,
+          transition: "opacity 300ms ease",
         }}
       />
-      {/* Dark Logo (Black text, green dots) */}
+      {/* Dark Logo (Black text — shown when dark) */}
       <img
         src={darkLogoUrl}
         alt="Ahsan Art Creative Studio Logo"
         width={width}
         height={height}
-        className={`absolute transition-opacity duration-300 ${isDarkLogo ? 'opacity-100' : 'opacity-0'}`}
         style={{
+          position: "absolute",
           objectFit: "contain",
+          opacity: isDarkLogo ? 1 : 0,
+          transition: "opacity 300ms ease",
         }}
       />
     </div>
