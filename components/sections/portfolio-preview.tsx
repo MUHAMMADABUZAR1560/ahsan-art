@@ -8,6 +8,21 @@ import { ArrowUpRight, Play } from "lucide-react"
 
 const categories = ["All", "Photography", "Videography", "Amazon", "Food"]
 
+/**
+ * Map from the homepage preview item id to the portfolio project slug.
+ * The homepage uses slightly different titles, so we map by id rather than title.
+ */
+const idToSlug: Record<number, string> = {
+  1: "luxury-skincare",
+  2: "water-bottles",
+  3: "bed-sheets",
+  4: "gourmet-food",
+  5: "fashion-accessories",
+  6: "men-footwear",
+  7: "kids",
+  8: "delivery-app",
+}
+
 const portfolioItems = [
   { id: 1, title: "Premium Skincare", category: "Photography", image: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774578569/1_oa9m7u.jpg", type: "image", size: "large" },
   { id: 2, title: "Hydration Campaign", category: "Videography", image: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575418/1_c8da7s.jpg", type: "image", size: "small" },
@@ -83,53 +98,59 @@ export function PortfolioPreview() {
           </div>
         </div>
 
-        {/* 2x2 Grid */}
+        {/* 2x2 Grid — each card now links to its project page */}
         <div
           className="grid grid-cols-2 gap-4 md:gap-6 transition-opacity duration-200"
           style={{ opacity: visible ? 1 : 0 }}
         >
-          {filteredItems.map((item, index) => (
-            <div
-              key={item.id}
-              className="group relative overflow-hidden cursor-pointer rounded-2xl bg-background/5 aspect-[4/3]"
-            >
-              <Image
-                src={item.image || "/placeholder.svg"}
-                alt={item.title}
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
-                quality={60}
-                loading="lazy"
-                sizes="(max-width: 768px) 50vw, 50vw"
-              />
+          {filteredItems.map((item) => {
+            const slug = idToSlug[item.id]
+            const href = slug ? `/portfolio/${slug}` : "/portfolio"
 
-              {/* Persistent dark gradient for text legibility */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80" />
+            return (
+              <Link
+                key={item.id}
+                href={href}
+                className="group relative overflow-hidden cursor-pointer rounded-2xl bg-background/5 aspect-[4/3] block"
+              >
+                <Image
+                  src={item.image || "/placeholder.svg"}
+                  alt={item.title}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  quality={60}
+                  loading="lazy"
+                  sizes="(max-width: 768px) 50vw, 50vw"
+                />
 
-              {/* Hover Overlay Background */}
-              <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                {/* Persistent dark gradient for text legibility */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80" />
 
-              {/* Content Container */}
-              <div className="absolute inset-0 p-6 md:p-10 flex flex-col justify-end">
-                <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                  <div className="flex items-center gap-3 mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                    <span className="w-6 h-px bg-primary" />
-                    <span className="text-primary text-[10px] md:text-xs font-bold uppercase tracking-widest">{item.category}</span>
+                {/* Hover Overlay Background */}
+                <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                {/* Content Container */}
+                <div className="absolute inset-0 p-6 md:p-10 flex flex-col justify-end">
+                  <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                    <div className="flex items-center gap-3 mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                      <span className="w-6 h-px bg-primary" />
+                      <span className="text-primary text-[10px] md:text-xs font-bold uppercase tracking-widest">{item.category}</span>
+                    </div>
+                    <h3 className="text-xl md:text-3xl font-serif font-bold text-white mb-2">{item.title}</h3>
                   </div>
-                  <h3 className="text-xl md:text-3xl font-serif font-bold text-white mb-2">{item.title}</h3>
                 </div>
-              </div>
 
-              {/* Top Right Arrow / Icon */}
-              <div className="absolute top-6 right-6 w-12 h-12 rounded-full bg-black/20 backdrop-blur-md border border-white/10 flex items-center justify-center transform -translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-100">
-                {item.type === "video" ? (
-                  <Play className="w-5 h-5 text-white fill-white translate-x-0.5" />
-                ) : (
-                  <ArrowUpRight className="w-5 h-5 text-white" />
-                )}
-              </div>
-            </div>
-          ))}
+                {/* Top Right Arrow / Icon */}
+                <div className="absolute top-6 right-6 w-12 h-12 rounded-full bg-black/20 backdrop-blur-md border border-white/10 flex items-center justify-center transform -translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-100">
+                  {item.type === "video" ? (
+                    <Play className="w-5 h-5 text-white fill-white translate-x-0.5" />
+                  ) : (
+                    <ArrowUpRight className="w-5 h-5 text-white" />
+                  )}
+                </div>
+              </Link>
+            )
+          })}
         </div>
 
         {/* CTA */}

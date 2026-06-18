@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next'
 import { getBlogPosts } from '@/lib/blog'
+import { portfolioSlugs } from '@/lib/portfolio-data'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.ahsanart.pk'
@@ -36,5 +37,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }))
 
-  return [...staticRoutes, ...blogRoutes]
+  /** Individual project pages — indexable case-study URLs */
+  const portfolioProjectRoutes = portfolioSlugs.map((slug) => ({
+    url: `${baseUrl}/portfolio/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as "monthly",
+    priority: 0.75,
+  }))
+
+  return [...staticRoutes, ...portfolioProjectRoutes, ...blogRoutes]
 }
