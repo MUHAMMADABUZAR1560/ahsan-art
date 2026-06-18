@@ -81,7 +81,7 @@ export function PortfolioPreview() {
           </div>
 
           {/* Category Filter */}
-          <div className="flex overflow-x-auto pb-4 gap-2 no-scrollbar lg:flex-wrap lg:justify-end lg:pb-0 lg:max-w-md">
+          <div className="flex overflow-x-auto pb-4 gap-2 no-scrollbar flex-nowrap lg:justify-end lg:pb-0">
             {categories.map((category) => (
               <button
                 key={category}
