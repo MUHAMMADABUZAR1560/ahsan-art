@@ -125,14 +125,6 @@
   }
 }
 
-/* Hide the native OS cursor on desktop so our custom purple cursor takes over.
-   Touch/mobile devices are unaffected (pointer: fine only matches mouse/trackpad). */
-@media (pointer: fine) {
-  *, *::before, *::after {
-    cursor: none !important;
-  }
-}
-
 @keyframes ticker-slide-left {
   0% {
     transform: translate3d(0, 0, 0);
