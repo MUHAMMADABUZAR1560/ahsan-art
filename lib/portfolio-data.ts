@@ -374,45 +374,27 @@ export const portfolioItems: PortfolioItem[] = [
     metaDescription:
       "Kids clothing product photography by Ahsan Art Creative Studio, Faisalabad. Playful, professional imagery for children's fashion brands and e-commerce listings.",
     image:
-      "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883337/1_lt4of6.jpg",
+      "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883183/22_bev8mp.jpg",
     type: "image",
     gallery: [
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883337/1_lt4of6.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883337/2_nt8lxu.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883338/3_h8f5ha.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883339/4_dzysxd.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883343/5_gllegp.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883342/6_mybvbm.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883343/7_p3fpdz.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883346/8_ieqjfa.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883347/9_itddaw.jpg",
-      },
+      { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883183/22_bev8mp.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883192/23_lp0xb0.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883190/24_aiqla8.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883175/19_jqemy6.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883180/20_vqbioe.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883181/21_whtczx.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883157/10_nurxop.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883165/11_eoydmp.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883159/12_kmt1ge.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883141/7_nr3dq0.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883146/8_pirdb9.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883158/9_gvtkby.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883127/1_hr9gwd.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883131/2_nhiqni.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883135/3_vi7gxt.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883135/4_in9x8i.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883160/5_sllikl.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883148/6_xwewjy.jpg" },
     ],
   },
   {
