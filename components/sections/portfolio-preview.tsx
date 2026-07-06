@@ -131,13 +131,13 @@ export function PortfolioPreview() {
 
                 {/* Content Container */}
                 <div className="absolute inset-0 p-6 md:p-10 flex flex-col justify-end">
-                  <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                    <div className="flex items-center gap-3 mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                      <span className="w-6 h-px bg-primary" />
+                  <div className="transform translate-y-0 md:translate-y-4 md:group-hover:translate-y-0 transition-transform duration-500">
+                    <div className="flex items-center gap-3 mb-2 md:mb-3 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                      <span className="w-4 md:w-6 h-px bg-primary" />
                       <span className="text-primary text-[10px] md:text-xs font-bold uppercase tracking-widest">{item.category}</span>
                     </div>
-                    <h3 className="text-xl md:text-3xl font-serif font-bold text-white mb-2">{item.title}</h3>
-                    <div className="flex items-center gap-2 text-white/90 text-[10px] md:text-sm font-medium opacity-0 group-hover:opacity-100 transition-all duration-500 delay-150">
+                    <h3 className="text-xl md:text-3xl font-serif font-bold text-white mb-1 md:mb-2">{item.title}</h3>
+                    <div className="flex items-center gap-2 text-white/90 text-[10px] md:text-sm font-medium opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-500 delay-150">
                       <span>{item.type === "video" ? "Watch Video" : "View Gallery"}</span>
                       <ArrowUpRight className="w-3 h-3 md:w-4 md:h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                     </div>
@@ -145,11 +145,11 @@ export function PortfolioPreview() {
                 </div>
 
                 {/* Top Right Arrow / Icon */}
-                <div className="absolute top-6 right-6 w-12 h-12 rounded-full bg-black/20 backdrop-blur-md border border-white/10 flex items-center justify-center transform -translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-100">
+                <div className="absolute top-4 right-4 md:top-6 md:right-6 w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/20 backdrop-blur-md border border-white/10 flex items-center justify-center transform translate-y-0 md:-translate-y-4 opacity-100 md:opacity-0 md:group-hover:translate-y-0 md:group-hover:opacity-100 transition-all duration-500 delay-100">
                   {item.type === "video" ? (
-                    <Play className="w-5 h-5 text-white fill-white translate-x-0.5" />
+                    <Play className="w-4 h-4 md:w-5 md:h-5 text-white fill-white translate-x-0.5" />
                   ) : (
-                    <ArrowUpRight className="w-5 h-5 text-white" />
+                    <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5 text-white" />
                   )}
                 </div>
               </Link>

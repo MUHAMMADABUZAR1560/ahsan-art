@@ -118,8 +118,8 @@ export default function PortfolioPage() {
                       loading="lazy"
                       sizes="(max-width: 768px) 33vw, (max-width: 1024px) 50vw, 33vw"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 p-4 md:p-6 flex flex-col justify-end">
-                      <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 p-4 md:p-6 flex flex-col justify-end">
+                      <div className="transform translate-y-0 md:translate-y-4 md:group-hover:translate-y-0 transition-transform duration-300">
                         <span className="text-primary text-[10px] md:text-sm font-bold tracking-wider uppercase">{item.category}</span>
                         <h3 className="text-sm md:text-2xl font-serif font-bold text-white mt-1 mb-2">{item.title}</h3>
                         <div className="flex items-center gap-2 text-white/90 text-[10px] md:text-sm font-medium">
