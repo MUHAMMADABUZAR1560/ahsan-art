@@ -137,6 +137,10 @@ export function PortfolioPreview() {
                       <span className="text-primary text-[10px] md:text-xs font-bold uppercase tracking-widest">{item.category}</span>
                     </div>
                     <h3 className="text-xl md:text-3xl font-serif font-bold text-white mb-2">{item.title}</h3>
+                    <div className="flex items-center gap-2 text-white/90 text-[10px] md:text-sm font-medium opacity-0 group-hover:opacity-100 transition-all duration-500 delay-150">
+                      <span>{item.type === "video" ? "Watch Video" : "View Gallery"}</span>
+                      <ArrowUpRight className="w-3 h-3 md:w-4 md:h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                    </div>
                   </div>
                 </div>
 
