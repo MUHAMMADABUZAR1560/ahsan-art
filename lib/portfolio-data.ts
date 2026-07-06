@@ -345,26 +345,7 @@ export const portfolioItems: PortfolioItem[] = [
       { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883148/6_xwewjy.jpg" },
     ],
   },
-  {
-    id: 8,
-    title: "Delivery App",
-    slug: "delivery-app",
-    category: "Photography",
-    description: "Vibrant food photography for delivery app.",
-    longDescription:
-      "A fast-paced food photography project producing high-impact imagery optimised for delivery app storefronts. We focused on hero shots that grab attention in a crowded feed — bold colours, perfect styling, and appetising presentation. Every image was sized and formatted to perform across multiple delivery platforms.",
-    metaDescription:
-      "Food delivery app product photography by Ahsan Art Creative Studio, Faisalabad. Bold, high-impact food imagery optimised for delivery platforms and online ordering.",
-    image:
-      "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575369/food_ytgqbg.jpg",
-    type: "image",
-    gallery: [
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575369/food_ytgqbg.jpg",
-      },
-    ],
-  },
+
 
   {
     id: 10,
