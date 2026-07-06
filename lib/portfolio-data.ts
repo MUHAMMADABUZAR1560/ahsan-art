@@ -703,6 +703,31 @@ export const portfolioItems: PortfolioItem[] = [
       { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774576701/15_apjzen.jpg" },
     ],
   },
+  {
+    id: 15,
+    title: "Women Flatlay",
+    slug: "women-flatlay",
+    category: "Photography",
+    description: "Creative flatlay photography for women's apparel and accessories.",
+    longDescription:
+      "A stylish flatlay photography project showcasing women's apparel. We used thoughtful styling, textures, and lighting to create a premium aesthetic that highlights the fabric and design of each piece. These images are perfectly suited for social media campaigns, lookbooks, and e-commerce listings.",
+    metaDescription:
+      "Women's flatlay product photography by Ahsan Art Creative Studio, Faisalabad. Beautiful overhead imagery for fashion brands and e-commerce.",
+    image:
+      "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883346/8_ieqjfa.jpg",
+    type: "image",
+    gallery: [
+      { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883346/8_ieqjfa.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883347/9_itddaw.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883343/7_p3fpdz.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883343/5_gllegp.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883342/6_mybvbm.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883339/4_dzysxd.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883337/2_nt8lxu.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883338/3_h8f5ha.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883337/1_lt4of6.jpg" },
+    ],
+  },
 ]
 
 /** Map from slug string to PortfolioItem for O(1) lookup */
