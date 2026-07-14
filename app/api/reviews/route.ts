@@ -60,7 +60,7 @@ export async function GET() {
   try {
     const response = await fetch(
       `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=reviews,user_ratings_total,rating&key=${apiKey}`,
-      { next: { revalidate: 86400 } } // Cache for 24 hours
+      { next: { revalidate: 3600 } } // Cache for 1 hour instead of 24 to get updates faster
     );
 
     if (!response.ok) {
@@ -86,7 +86,7 @@ export async function GET() {
 
     return NextResponse.json(result, {
       headers: {
-        'Cache-Control': 'public, s-maxage=86400, stale-while-revalidate=172800',
+        'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=86400',
       },
     });
   } catch (error) {

@@ -251,7 +251,7 @@ export function GoogleReviews() {
           className="mt-12 text-center"
         >
           <a
-            href="https://g.page/r/ahsanart/review"
+            href="https://search.google.com/local/reviews?placeid=ChIJV7etTL9vIjkRJsX50GUm-Eo"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 border border-border/60 rounded-full px-6 py-3 text-sm font-medium text-foreground hover:border-primary hover:text-primary transition-colors group"
