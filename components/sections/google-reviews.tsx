@@ -127,32 +127,34 @@ export function GoogleReviews() {
   const ref = useRef(null)
   const isInView = useInView(ref, { margin: "-100px" })
   
-  const [reviews, setReviews] = useState<Review[]>(FALLBACK_REVIEWS)
+  const [reviews, setReviews] = useState<Review[]>([])
   const [rating, setRating] = useState<number>(5.0)
-  const [totalReviews, setTotalReviews] = useState<number>(45)
-  const [loading, setLoading] = useState(false)
+  const [totalReviews, setTotalReviews] = useState<number>(47)
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     async function fetchReviews() {
+      setLoading(true);
       try {
         const res = await fetch(`/api/reviews?t=${Date.now()}`);
         if (res.ok) {
           const data = await res.json();
-          setReviews(data.reviews || []);
+          setReviews(data.reviews || FALLBACK_REVIEWS);
           setRating(data.rating || 5.0);
-          setTotalReviews(data.user_ratings_total || 0);
+          setTotalReviews(data.user_ratings_total || 47);
+        } else {
+          setReviews(FALLBACK_REVIEWS);
         }
       } catch (error) {
         console.error("Failed to fetch reviews:", error);
+        setReviews(FALLBACK_REVIEWS);
       } finally {
         setLoading(false);
       }
     }
     
-    if (isInView) {
-      fetchReviews();
-    }
-  }, [isInView]);
+    fetchReviews();
+  }, []);
 
   // Duplicate reviews for seamless infinite scroll
   const duplicated = [...reviews, ...reviews]
