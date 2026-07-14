@@ -135,7 +135,7 @@ export function GoogleReviews() {
   useEffect(() => {
     async function fetchReviews() {
       try {
-        const res = await fetch('/api/reviews');
+        const res = await fetch(`/api/reviews?t=${Date.now()}`);
         if (res.ok) {
           const data = await res.json();
           setReviews(data.reviews || []);
@@ -251,7 +251,7 @@ export function GoogleReviews() {
           className="mt-12 text-center"
         >
           <a
-            href="https://search.google.com/local/reviews?placeid=ChIJV7etTL9vIjkRJsX50GUm-Eo"
+            href="https://share.google/Lds7N8WMCTSRN4jwz"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 border border-border/60 rounded-full px-6 py-3 text-sm font-medium text-foreground hover:border-primary hover:text-primary transition-colors group"
