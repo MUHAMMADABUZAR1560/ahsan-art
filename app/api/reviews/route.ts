@@ -44,6 +44,9 @@ const FALLBACK_DATA = {
   user_ratings_total: 45
 };
 
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 export async function GET() {
   const apiKey = process.env.GOOGLE_PLACES_API_KEY;
   const placeId = process.env.NEXT_PUBLIC_GOOGLE_PLACE_ID;
@@ -52,7 +55,7 @@ export async function GET() {
     console.warn("Missing Google Places API Key or Place ID. Returning fallback reviews.");
     return NextResponse.json(FALLBACK_DATA, {
       headers: {
-        'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=86400',
+        'Cache-Control': 'no-store, no-cache, must-revalidate',
       },
     });
   }
@@ -60,7 +63,7 @@ export async function GET() {
   try {
     const response = await fetch(
       `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=reviews,user_ratings_total,rating&key=${apiKey}`,
-      { next: { revalidate: 3600 } } // Cache for 1 hour instead of 24 to get updates faster
+      { cache: 'no-store' }
     );
 
     if (!response.ok) {
@@ -72,29 +75,25 @@ export async function GET() {
     if (data.status !== 'OK') {
       console.warn("Google API returned non-OK status:", data.status);
       return NextResponse.json(FALLBACK_DATA, {
-        headers: {
-          'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=86400',
-        },
+        headers: { 'Cache-Control': 'no-store' },
       });
     }
 
     const result = {
-      reviews: data.result.reviews || FALLBACK_REVIEWS,
+      reviews: data.result.reviews || FALLBACK_DATA.reviews,
       rating: data.result.rating || 5.0,
-      user_ratings_total: data.result.user_ratings_total || 45
+      user_ratings_total: data.result.user_ratings_total || 47
     };
 
     return NextResponse.json(result, {
       headers: {
-        'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=86400',
+        'Cache-Control': 'no-store, no-cache, must-revalidate',
       },
     });
   } catch (error) {
     console.error("Error fetching Google Reviews:", error);
     return NextResponse.json(FALLBACK_DATA, {
-      headers: {
-        'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=86400',
-      },
+      headers: { 'Cache-Control': 'no-store' },
     });
   }
 }
