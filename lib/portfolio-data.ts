@@ -512,6 +512,34 @@ export const portfolioItems: PortfolioItem[] = [
       { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883337/1_lt4of6.jpg" },
     ],
   },
+  {
+    id: 16,
+    title: "Women Clothing",
+    slug: "women-clothing",
+    category: "Photography",
+    description: "Premium product photography for women's designer apparel.",
+    longDescription:
+      "A high-quality product photography project showcasing a collection of women's apparel. We focused on capturing accurate fabric colours, textures, and details in clean studio settings. Perfect for e-commerce listings, seasonal lookbooks, and brand campaigns.",
+    metaDescription:
+      "Women's clothing product photography by Ahsan Art Creative Studio, Faisalabad. High-quality e-commerce imagery for fashion brands.",
+    image:
+      "https://res.cloudinary.com/da6r15g9n/image/upload/v1782053187/5_m2ts6e.jpg",
+    type: "image",
+    gallery: [
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782053187/5_m2ts6e.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782049106/green-1_hffxfl.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782049149/green-1-c_p0wcx7.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782049112/green-1-b_d25aji.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782049114/a_y1gwss.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782049088/1_dkmig1.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782049084/4_n5sw67.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782049086/2_jd1lsn.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782049095/7_slsluu.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782049101/black-a_vao17h.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782049147/black-c_cfswp9.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782049095/black-b_mu3cu9.jpg" },
+    ],
+  },
 ]
 
 /** Map from slug string to PortfolioItem for O(1) lookup */
