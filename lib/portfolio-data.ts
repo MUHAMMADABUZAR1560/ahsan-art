@@ -325,65 +325,25 @@ export const portfolioItems: PortfolioItem[] = [
     metaDescription:
       "Women's footwear product photography by Ahsan Art Creative Studio, Faisalabad. Elegant, conversion-driven shoe imagery for fashion brands and e-commerce storefronts.",
     image:
-      "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883366/1_hc7kx2.jpg",
+      "https://res.cloudinary.com/da6r15g9n/image/upload/v1782048955/c4_xlcd1i.jpg",
     type: "image",
     gallery: [
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883366/1_hc7kx2.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883365/2_ufnpm0.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883367/3_t71ogd.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883373/4_lucubc.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883368/5_ay0xdr.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883371/6_eznaax.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883370/7_urvdq0.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883372/8_xk40hy.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883372/9_uffnwv.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883374/10_nmn8bi.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883375/11_x9jgum.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883385/12_bppxpt.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883379/13_qlhgaq.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883379/14_ykgffx.jpg",
-      },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782048955/c4_xlcd1i.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782048947/c1_paazqc.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782048955/c3_bqzyeq.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782048953/c2_dregkx.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782048941/x4_2_f5zsaf.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782048931/x1_axrudr.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782048937/x3_er2ozv.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782048933/x2_uzs9us.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782048953/a3b_kogpgk.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782048944/a1b_swqesv.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782048956/a4b_ygwwcw.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782048946/a2b_hzqzte.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782048945/a3_t2lxdj.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782048940/a1_szrdiq.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782048948/a4_tknoth.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782048939/a2_j7it5a.jpg" },
     ],
   },
   {
