@@ -206,6 +206,7 @@ export const portfolioItems: PortfolioItem[] = [
       { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784806800/DSC00533b_v7ei0w.jpg" },
       { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784807482/DSC00533.jpgb_zkkx9q.jpg" },
       { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782051288/DSC00591-e_zuqp7r.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782051278/DSC00584-e_xsvi64.jpg" },
     ],
   },
   {
