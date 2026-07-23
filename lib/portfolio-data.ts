@@ -214,6 +214,10 @@ export const portfolioItems: PortfolioItem[] = [
       { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782050723/DSC_8435_spjlpp.jpg" },
       { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782050692/DSC_8452_u2gxht.jpg" },
       { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782050677/DSC_8443_qxo2w0.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784806368/DSC_8491_mcm7lk.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784806800/DSC00533b_v7ei0w.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784807482/DSC00533.jpgb_zkkx9q.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782051288/DSC00591-e_zuqp7r.jpg" },
     ],
   },
   {
