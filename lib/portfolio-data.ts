@@ -35,42 +35,32 @@ export interface PortfolioItem {
 export const portfolioItems: PortfolioItem[] = [
   {
     id: 1,
-    title: "Luxury Skincare",
-    slug: "luxury-skincare",
+    title: "Health and Care",
+    slug: "health-and-care",
     category: "Photography",
-    description: "Premium skincare brand product photography.",
+    description: "Premium health and personal care brand product photography.",
     longDescription:
-      "We partnered with a premium skincare brand to create a full suite of e-commerce product imagery that communicates elegance, purity, and trust. Each frame was composed to highlight texture, packaging detail, and brand identity across multiple SKUs. The result is a cohesive visual library ready for website listings, social media, and marketplace storefronts.",
+      "We partnered with a premium health and personal care brand to create a full suite of e-commerce product imagery that communicates elegance, purity, and trust. Each frame was composed to highlight texture, packaging detail, and brand identity across multiple SKUs. The result is a cohesive visual library ready for website listings, social media, and marketplace storefronts.",
     metaDescription:
-      "Luxury skincare product photography by Ahsan Art Creative Studio, Faisalabad. Premium e-commerce imagery crafted to elevate beauty brands and drive online conversions.",
+      "Health and care product photography by Ahsan Art Creative Studio, Faisalabad. Premium e-commerce imagery crafted to elevate health and beauty brands.",
     image:
-      "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774578569/1_oa9m7u.jpg",
+      "https://res.cloudinary.com/da6r15g9n/image/upload/v1782053004/ff1_rdjeg6.jpg",
     type: "image",
     gallery: [
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774578569/1_oa9m7u.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774578617/2_pcg2aa.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774578618/3_qx7fg8.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774578618/4_c4qbcz.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774578618/5_hrmwbh.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774578618/6_x9xrv9.jpg",
-      },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782053004/ff1_rdjeg6.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782053002/bf2_e9uoot.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782053001/ff2_iwdj26.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782052998/bf1_mzecex.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782050065/f3_h657i2.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782050068/f1_lvlzfu.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782050066/f2_wasfbx.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782050177/sleep-on_oxxuwo.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782050023/s3_nofba7.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782050025/s2_m4bvgi.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782050025/s1-re.jpgb_rg2bay.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782050013/DSC_9892_hxvpyo.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782050016/DSC_9945b_vu5dvd.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782050012/d_gyngno.jpg" },
     ],
   },
   {
