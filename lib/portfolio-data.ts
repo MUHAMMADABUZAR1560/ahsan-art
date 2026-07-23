@@ -188,63 +188,32 @@ export const portfolioItems: PortfolioItem[] = [
     metaDescription:
       "Gourmet food photography and videography by Ahsan Art Creative Studio, Faisalabad. Mouth-watering imagery for restaurants, menus, and food delivery platforms.",
     image:
-      "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575591/1_f4bbym.jpg",
+      "https://res.cloudinary.com/da6r15g9n/image/upload/v1782050790/small-box-6_l8pcao.jpg",
     type: "image",
     gallery: [
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575591/1_f4bbym.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575593/2_nikfhs.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575595/3_uzo9qg.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575595/4_udb3hn.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575592/5_za9jov.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575594/6_qyvzow.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575594/7_kchjti.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575594/8_otriki.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575599/9_kmfe96.jpg",
-      },
-      {
-        type: "video",
-        url: "https://res.cloudinary.com/dhtktd4ka/video/upload/v1774575652/10_wdzpbs.mp4",
-        thumbnail:
-          "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575602/14_ntpptt.png",
-      },
-      {
-        type: "video",
-        url: "https://res.cloudinary.com/dhtktd4ka/video/upload/v1774575632/11_uvrvhz.mp4",
-        thumbnail:
-          "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575601/13_o7kk3y.png",
-      },
-      {
-        type: "video",
-        url: "https://res.cloudinary.com/dhtktd4ka/video/upload/v1774575676/12_gwqpig.mp4",
-        thumbnail:
-          "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575603/15_gjyjyn.png",
-      },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782050790/small-box-6_l8pcao.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782050791/small-box-4_jruo4y.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782050793/small-box-5_yijger.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782050789/small-box-3_bcax0y.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782050741/cone-7_k2glxn.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782050782/cone-2_m7tg6v.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782050747/cone-8_xsi6gb.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782050739/cone-11_g8tx4i.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782050612/ice-cream-8b_etcgwj.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782050610/ice-cream-6b_hxzbtq.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782050637/ice-cream-3b_s6hc06.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782050636/ice-cream-2_sn6ess.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782050809/popsicle-5.jpgb_wlbezm.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782050821/popsicle-4_f4v9re.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782050820/popsicle-1_cl9xgb.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782050863/popsicle-7_znyweu.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782050717/DSC_8481_cbwosr.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782050691/DSC_8469_sceeht.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782050579/DSC_8472_-_Copy_zwrg8n.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782050580/DSC_8462_tjy1uh.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782050723/DSC_8435_spjlpp.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782050692/DSC_8452_u2gxht.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782050677/DSC_8443_qxo2w0.jpg" },
     ],
   },
   {
