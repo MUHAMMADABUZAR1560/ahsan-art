@@ -19,7 +19,7 @@ const idToSlug: Record<number, string> = {
   4: "gourmet-food",
   5: "fashion-accessories",
   6: "men-footwear",
-  7: "kids",
+  7: "kids-flatlay",
   8: "delivery-app",
 }
 
@@ -31,7 +31,7 @@ const portfolioItems = [
   { id: 5, title: "Fashion Accessories", category: "Photography", image: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883470/1_ophv2w.jpg", type: "image", size: "large" },
   { id: 6, title: "Men's Footwear", category: "Photography", image: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883014/1_kwi1qt.jpg", type: "image", size: "small" },
   { id: 8, title: "Brand Launch", category: "Videography", image: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575368/a2_tc7xlt.jpg", type: "video", size: "large" },
-  { id: 7, title: "Kids Wear", category: "Photography", image: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883337/1_lt4of6.jpg", type: "image", size: "small" },
+  { id: 7, title: "Kids Flatlay", category: "Photography", image: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782053096/polo_red_a_cnt1w8.jpg", type: "image", size: "small" },
 ]
 
 export function PortfolioPreview() {
