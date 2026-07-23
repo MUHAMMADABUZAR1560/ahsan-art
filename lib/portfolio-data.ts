@@ -399,33 +399,21 @@ export const portfolioItems: PortfolioItem[] = [
     metaDescription:
       "Men's unstitched fabric product photography by Ahsan Art Creative Studio, Faisalabad. Minimalist, colour-accurate imagery for ethnic wear brands and e-commerce listings.",
     image:
-      "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883267/1_qdlrog.jpg",
+      "https://res.cloudinary.com/da6r15g9n/image/upload/v1784809210/0006_men_unstich_suit_photography_wpodbw.jpg",
     type: "image",
     gallery: [
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883267/1_qdlrog.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883272/2_ns030g.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883278/3_irnsn6.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883282/4_oqvzgv.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883287/5_ca2ho3.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883291/6_tyeiar.jpg",
-      },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784809210/0006_men_unstich_suit_photography_wpodbw.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784809217/0007_men_unstich_suit_photography_pwj6kx.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784809218/0004-re_men_unstich_suit_photography_efxo9p.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784809230/0001_men_suit_photography_itsf38.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782050444/e-re_sij4yy.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782050445/d_haseuy.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782050434/f_pz1hfs.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782050430/g_kjih8p.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782050395/DSC_6123b.jpgd_aww4d2.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782050400/b3_ia7e9b.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782050395/DSC_6199_y5icye.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782050394/DSC_6186_o6u991.jpg" },
     ],
   },
   {
