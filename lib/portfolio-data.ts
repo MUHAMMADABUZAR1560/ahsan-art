@@ -44,23 +44,21 @@ export const portfolioItems: PortfolioItem[] = [
     metaDescription:
       "Health and care product photography by Ahsan Art Creative Studio, Faisalabad. Premium e-commerce imagery crafted to elevate health and beauty brands.",
     image:
-      "https://res.cloudinary.com/da6r15g9n/image/upload/v1782053004/ff1_rdjeg6.jpg",
+      "https://res.cloudinary.com/da6r15g9n/image/upload/v1782053001/ff2_iwdj26.jpg",
     type: "image",
     gallery: [
-      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782053004/ff1_rdjeg6.jpg" },
-      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782053002/bf2_e9uoot.jpg" },
       { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782053001/ff2_iwdj26.jpg" },
       { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782052998/bf1_mzecex.jpg" },
-      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782050065/f3_h657i2.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782053004/ff1_rdjeg6.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782053002/bf2_e9uoot.jpg" },
       { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782050068/f1_lvlzfu.jpg" },
       { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782050066/f2_wasfbx.jpg" },
-      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782050177/sleep-on_oxxuwo.jpg" },
-      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782050023/s3_nofba7.jpg" },
-      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782050025/s2_m4bvgi.jpg" },
       { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782050025/s1-re.jpgb_rg2bay.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782050023/s3_nofba7.jpg" },
       { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782050013/DSC_9892_hxvpyo.jpg" },
       { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782050016/DSC_9945b_vu5dvd.jpg" },
       { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782050012/d_gyngno.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782050011/b_fxorec.jpg" },
     ],
   },
   {

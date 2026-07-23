@@ -24,7 +24,7 @@ const idToSlug: Record<number, string> = {
 }
 
 const portfolioItems = [
-  { id: 1, title: "Health & Care", category: "Photography", image: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782053004/ff1_rdjeg6.jpg", type: "image", size: "large" },
+  { id: 1, title: "Health & Care", category: "Photography", image: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782053001/ff2_iwdj26.jpg", type: "image", size: "large" },
   { id: 2, title: "Hydration Campaign", category: "Videography", image: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575418/1_c8da7s.jpg", type: "image", size: "small" },
   { id: 3, title: "Luxury Bedding", category: "Amazon", image: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575484/1_kttjdw.jpg", type: "image", size: "small" },
   { id: 4, title: "Gourmet Burgers", category: "Food", image: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575591/1_f4bbym.jpg", type: "image", size: "small" },
