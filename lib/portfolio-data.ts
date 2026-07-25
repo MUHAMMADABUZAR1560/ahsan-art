@@ -561,6 +561,30 @@ export const portfolioItems: PortfolioItem[] = [
       { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784976939/_DSC2816_1_dtlyul.jpg" },
     ],
   },
+  {
+    id: 17,
+    title: "Amazon",
+    slug: "amazon",
+    category: "Photography",
+    description: "Professional Amazon listing & infographical product photography.",
+    longDescription:
+      "A comprehensive Amazon product photography shoot showcasing product features, infographics, lifestyle scenarios, and packaging details designed specifically to maximize conversions and comply with Amazon marketplace standards.",
+    metaDescription:
+      "Amazon listing product photography by Ahsan Art Creative Studio, Faisalabad. High-converting infographics, main listing images, and lifestyle photography.",
+    image:
+      "https://res.cloudinary.com/da6r15g9n/image/upload/v1784977548/Re_Frame_2_juyehu.jpg",
+    type: "image",
+    gallery: [
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784977548/Re_Frame_2_juyehu.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784977548/frame_acdnkm.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784977547/Re_Frame_2222_vdur1x.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784977548/girl_with_frame_szte1a.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784977548/life_style_image_2_p9kvoz.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784977546/long_lasting_backing_board_i0uyd4.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784977546/EASY_TO_INSTALL_MOUNT_2_ofe8uz.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784977546/6_back_side_2_iglgsg.jpg" },
+    ],
+  },
 ]
 
 /** Map from slug string to PortfolioItem for O(1) lookup */
