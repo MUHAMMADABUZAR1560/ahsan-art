@@ -108,69 +108,41 @@ export const portfolioItems: PortfolioItem[] = [
     metaDescription:
       "Bed sheet product photography by Ahsan Art Creative Studio, Faisalabad. Amazon-optimised bedding imagery that showcases fabric quality and drives e-commerce sales.",
     image:
-      "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575484/1_kttjdw.jpg",
+      "https://res.cloudinary.com/da6r15g9n/image/upload/v1784981075/p2_l8ghrw.jpg",
     type: "image",
     gallery: [
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575484/1_kttjdw.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575490/2_hhil0m.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575488/3_xlhci9.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575492/4_ybeayk.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575496/5_mn2atm.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575494/6_y4kkz5.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575495/7_tsndtc.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575501/8_cwdnhy.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575495/9_azhcdg.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575496/10_noax0s.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575504/11_qpudcv.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575507/12_cdndim.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575497/13_s2o90c.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575505/14_uyml1w.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575503/15_hwm7dl.jpg",
-      },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784981075/p2_l8ghrw.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784981074/p4_ekxvs6.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784981079/p6_jnmflo.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784981065/p3_l1lx73.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784980682/o2_abggq8.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784980668/o4_h0xkxp.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784980682/o6_rurkno.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784980685/o3_snoygs.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784980615/c2_xrwbb1.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784980602/c4_ye2qme.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784980603/c6_haqp03.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784980617/c3_rxqmxp.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784981023/n2_y2thnz.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784980851/n4_jpfshx.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784980812/n6_msjwf9.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784981018/n7_lwxz4o.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784981088/d2_naxri4.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784981083/d6_xt56ly.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784981082/d5_f3wmtl.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784981093/d3_bmkkvy.png" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784980638/grid-1_uyuz2k.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784980627/grid-1-c_vxspqt.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784980637/grid-2-c_zgbrhp.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784980659/grid--2-a_td8puz.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784981429/b1_hvcybn.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784981430/b4_fozzrd.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784981427/b2b_mnfgvs.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784981423/b5_tncaah.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784981200/ll6_b8xdzy.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784981201/ll2_gedpxs.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784981415/ll4_zoweg7.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784981200/ll1_ac7cmm.jpg" },
     ],
   },
   {
