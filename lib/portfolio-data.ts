@@ -532,9 +532,13 @@ export const portfolioItems: PortfolioItem[] = [
     metaDescription:
       "Women's clothing product photography by Ahsan Art Creative Studio, Faisalabad. High-quality e-commerce imagery for fashion brands.",
     image:
-      "https://res.cloudinary.com/da6r15g9n/image/upload/v1782053187/5_m2ts6e.jpg",
+      "https://res.cloudinary.com/da6r15g9n/image/upload/v1782053173/b_wcqpl2.jpg",
     type: "image",
     gallery: [
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782053173/b_wcqpl2.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784820082/7_b5kpue.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784820120/10_hh1yly.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784977349/8_f78geo.jpg" },
       { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782053187/5_m2ts6e.jpg" },
       { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782049106/green-1_hffxfl.jpg" },
       { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782049149/green-1-c_p0wcx7.jpg" },
@@ -547,6 +551,10 @@ export const portfolioItems: PortfolioItem[] = [
       { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782049101/black-a_vao17h.jpg" },
       { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782049147/black-c_cfswp9.jpg" },
       { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782049095/black-b_mu3cu9.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784976932/fff_ffeda2.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784976933/_DSC2812_1_-Recovered_vmxhgj.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784976936/_DSC2813_1_-Recovered_fp2wys.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784976939/_DSC2816_1_dtlyul.jpg" },
     ],
   },
 ]
