@@ -244,33 +244,21 @@ export const portfolioItems: PortfolioItem[] = [
     metaDescription:
       "Men's footwear product photography by Ahsan Art Creative Studio, Faisalabad. Studio-quality shoe imagery for Amazon, brand websites, and e-commerce storefronts.",
     image:
-      "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883014/1_kwi1qt.jpg",
+      "https://res.cloudinary.com/da6r15g9n/image/upload/v1784809403/a_usbtpt.jpg",
     type: "image",
     gallery: [
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883014/1_kwi1qt.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883015/2_krkosf.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883023/3_i130gk.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883019/4_akp9ks.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883027/5_gfbnrd.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883021/6_searyo.jpg",
-      },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784809403/a_usbtpt.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784809403/b_gwtydu.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784809408/e_xb8q5j.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784809400/c_gghhvn.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782053221/a2_tspvss.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782053226/a1_joprro.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782053230/a3_ovbvds.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782053231/a4_lxtzzv.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782052987/f1_jq9mrs.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782052963/DSC_3201_dj6dwe.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782052946/d2_krfy4z.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782052943/ff1_lrmo3u.jpg" },
     ],
   },
   {
