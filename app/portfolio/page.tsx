@@ -9,7 +9,7 @@ import { Footer } from "@/components/footer"
 import { ArrowRight } from "lucide-react"
 import { portfolioItems } from "@/lib/portfolio-data"
 
-const categories = ["All", "Photography", "Videography", "Amazon", "Food", "UGC Videos"]
+const categories = ["All", "Photography", "Videography", "Amazon", "Food", "UGC Videos", "BTS"]
 
 export default function PortfolioPage() {
   const heroRef = useRef(null)

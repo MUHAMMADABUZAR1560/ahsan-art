@@ -647,7 +647,7 @@ export const portfolioItems: PortfolioItem[] = [
     id: 25,
     title: "BTS Videos",
     slug: "bts-videos",
-    category: "Videography",
+    category: "BTS",
     description: "Behind-the-scenes footage and production process reels.",
     longDescription:
       "Exclusive behind-the-scenes (BTS) video coverage from set. See how our creative team sets up lighting, styles props, directs models, and captures stunning commercial imagery at Ahsan Art Creative Studio.",
