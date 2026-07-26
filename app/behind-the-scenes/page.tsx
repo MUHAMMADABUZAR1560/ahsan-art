@@ -9,6 +9,11 @@ import { Footer } from "@/components/footer"
 import { ArrowRight, Play, X, Camera, Video, Sparkles } from "lucide-react"
 import { useLockBodyScroll } from "@/hooks/use-lock-body-scroll"
 
+function getYouTubeId(url: string): string | null {
+  const match = url.match(/(?:shorts\/|v=|youtu\.be\/)([a-zA-Z0-9_-]{11})/)
+  return match ? match[1] : null
+}
+
 const btsItems = [
   {
     id: 1,
@@ -63,6 +68,105 @@ const btsItems = [
     thumbnail: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883470/1_ophv2w.jpg",
     type: "video",
     category: "Editing",
+  },
+  {
+    id: 7,
+    title: "BTS Reel 1",
+    description: "Behind-the-scenes footage from our creative studio sessions",
+    image: "https://www.youtube.com/shorts/eiiDW4BTKCc",
+    thumbnail: "https://img.youtube.com/vi/eiiDW4BTKCc/hqdefault.jpg",
+    type: "youtube",
+    category: "BTS",
+  },
+  {
+    id: 8,
+    title: "BTS Reel 2",
+    description: "Behind-the-scenes footage from our creative studio sessions",
+    image: "https://www.youtube.com/shorts/g38tsGlVM_Y",
+    thumbnail: "https://img.youtube.com/vi/g38tsGlVM_Y/hqdefault.jpg",
+    type: "youtube",
+    category: "BTS",
+  },
+  {
+    id: 9,
+    title: "BTS Reel 3",
+    description: "Behind-the-scenes footage from our creative studio sessions",
+    image: "https://www.youtube.com/shorts/vy-iNFKZLqc",
+    thumbnail: "https://img.youtube.com/vi/vy-iNFKZLqc/hqdefault.jpg",
+    type: "youtube",
+    category: "BTS",
+  },
+  {
+    id: 10,
+    title: "BTS Reel 4",
+    description: "Behind-the-scenes footage from our creative studio sessions",
+    image: "https://www.youtube.com/shorts/sqlgdHxqXRo",
+    thumbnail: "https://img.youtube.com/vi/sqlgdHxqXRo/hqdefault.jpg",
+    type: "youtube",
+    category: "BTS",
+  },
+  {
+    id: 11,
+    title: "BTS Reel 5",
+    description: "Behind-the-scenes footage from our creative studio sessions",
+    image: "https://www.youtube.com/shorts/2u6RxZmp-gE",
+    thumbnail: "https://img.youtube.com/vi/2u6RxZmp-gE/hqdefault.jpg",
+    type: "youtube",
+    category: "BTS",
+  },
+  {
+    id: 12,
+    title: "BTS Reel 6",
+    description: "Behind-the-scenes footage from our creative studio sessions",
+    image: "https://www.youtube.com/shorts/leMn2knjq5g",
+    thumbnail: "https://img.youtube.com/vi/leMn2knjq5g/hqdefault.jpg",
+    type: "youtube",
+    category: "BTS",
+  },
+  {
+    id: 13,
+    title: "BTS Reel 7",
+    description: "Behind-the-scenes footage from our creative studio sessions",
+    image: "https://www.youtube.com/shorts/C1HSUZuSmGY",
+    thumbnail: "https://img.youtube.com/vi/C1HSUZuSmGY/hqdefault.jpg",
+    type: "youtube",
+    category: "BTS",
+  },
+  {
+    id: 14,
+    title: "BTS Reel 8",
+    description: "Behind-the-scenes footage from our creative studio sessions",
+    image: "https://www.youtube.com/shorts/6RjV6G6RmiE",
+    thumbnail: "https://img.youtube.com/vi/6RjV6G6RmiE/hqdefault.jpg",
+    type: "youtube",
+    category: "BTS",
+  },
+  {
+    id: 15,
+    title: "BTS Reel 9",
+    description: "Behind-the-scenes footage from our creative studio sessions",
+    image: "https://www.youtube.com/shorts/O6IFsHJ0JDU",
+    thumbnail: "https://img.youtube.com/vi/O6IFsHJ0JDU/hqdefault.jpg",
+    type: "youtube",
+    category: "BTS",
+  },
+  {
+    id: 16,
+    title: "BTS Reel 10",
+    description: "Behind-the-scenes footage from our creative studio sessions",
+    image: "https://www.youtube.com/shorts/XAsR_KS4tdg",
+    thumbnail: "https://img.youtube.com/vi/XAsR_KS4tdg/hqdefault.jpg",
+    type: "youtube",
+    category: "BTS",
+  },
+  {
+    id: 17,
+    title: "BTS Reel 11",
+    description: "Behind-the-scenes footage from our creative studio sessions",
+    image: "https://www.youtube.com/shorts/mhmBlw4zfwU",
+    thumbnail: "https://img.youtube.com/vi/mhmBlw4zfwU/hqdefault.jpg",
+    type: "youtube",
+    category: "BTS",
   },
 ]
 
@@ -284,8 +388,15 @@ export default function BTSPage() {
               className="max-w-4xl w-full"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="relative aspect-video rounded-xl md:rounded-2xl overflow-hidden bg-black">
-                {selectedItem.type === "video" ? (
+              <div className={`relative rounded-xl md:rounded-2xl overflow-hidden bg-black ${selectedItem.type === "youtube" ? "aspect-[9/16] max-h-[80vh] mx-auto" : "aspect-video"}`} style={selectedItem.type === "youtube" ? { maxWidth: "min(400px, 90vw)" } : {}}>
+                {selectedItem.type === "youtube" ? (
+                  <iframe
+                    src={`https://www.youtube.com/embed/${getYouTubeId(selectedItem.image)}?autoplay=1&rel=0`}
+                    allow="autoplay; encrypted-media"
+                    allowFullScreen
+                    className="w-full h-full"
+                  />
+                ) : selectedItem.type === "video" ? (
                   <video 
                     src={selectedItem.image} 
                     poster={selectedItem.thumbnail}
