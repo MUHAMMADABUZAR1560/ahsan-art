@@ -61,34 +61,7 @@ export const portfolioItems: PortfolioItem[] = [
       { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782050011/b_fxorec.jpg" },
     ],
   },
-  {
-    id: 2,
-    title: "Water Bottles",
-    slug: "water-bottles",
-    category: "Photography",
-    description: "Dynamic product photography for premium hydration.",
-    longDescription:
-      "This project showcases a premium hydration brand's range of insulated water bottles through clean, high-contrast studio photography. We focused on material texture and colour accuracy to ensure listing images convert at the highest rate. Each angle was planned to meet marketplace hero image requirements while maintaining brand consistency.",
-    metaDescription:
-      "Water bottle product photography by Ahsan Art Creative Studio, Faisalabad. Clean, high-conversion e-commerce images for hydration and lifestyle brands.",
-    image:
-      "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575418/1_c8da7s.jpg",
-    type: "image",
-    gallery: [
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575418/1_c8da7s.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575420/2_heeux0.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575419/3_uatshv.jpg",
-      },
-    ],
-  },
+
   {
     id: 3,
     title: "Bed Sheets",
@@ -424,105 +397,6 @@ export const portfolioItems: PortfolioItem[] = [
       { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784820376/i2_cs4tku.jpg" },
       { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784820351/g3_payxhw.jpg" },
       { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782050395/DSC_6123b.jpgd_aww4d2.jpg" },
-      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782050400/b3_ia7e9b.jpg" },
-      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782050395/DSC_6199_y5icye.jpg" },
-      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782050394/DSC_6186_o6u991.jpg" },
-    ],
-  },
-  {
-    id: 13,
-    title: "Pillows",
-    slug: "pillows",
-    category: "Photography",
-    description: "Soft and luxurious pillow product photography for e-commerce listings.",
-    longDescription:
-      "A soft-focused, texture-rich shoot for a home décor brand's pillow range, designed to evoke comfort and quality. We styled each piece in curated bedroom settings and clean white-background shots to serve both lifestyle and listing use cases. The imagery communicates softness and craftsmanship — two factors that drive home goods purchasing decisions.",
-    metaDescription:
-      "Pillow and cushion product photography by Ahsan Art Creative Studio, Faisalabad. Soft, texture-rich home décor imagery for e-commerce listings and lifestyle content.",
-    image:
-      "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883298/1_gok4n1.jpg",
-    type: "image",
-    gallery: [
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883298/1_gok4n1.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883299/2_pzpnga.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883301/3_irnsus.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883299/4_krbj2q.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883301/5_z8ohnf.jpg",
-      },
-      {
-        type: "image",
-        url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883302/6_dhy5ok.jpg",
-      },
-    ],
-  },
-  {
-    id: 14,
-    title: "Flatlay",
-    slug: "flatlay",
-    category: "Photography",
-    description: "Minimalist flatlay product photography highlighting texture and design.",
-    longDescription:
-      "A large-scale flatlay photography project producing overhead shots for a brand's full product range across multiple categories. We used precise prop styling and consistent colour direction to create a cohesive set that works individually and as a collection. The images are ideal for social media, e-commerce banners, and editorial use.",
-    metaDescription:
-      "Flatlay product photography by Ahsan Art Creative Studio, Faisalabad. Overhead, minimalist product imagery for e-commerce, social media, and editorial campaigns.",
-    image:
-      "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575751/1_wkbknx.jpg",
-    type: "image",
-    gallery: [
-      { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575751/1_wkbknx.jpg" },
-      { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575774/2_votrjj.jpg" },
-      { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575825/3_ylrd2f.jpg" },
-      { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774576696/10_v4v6rx.jpg" },
-      { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774576700/11_s1bxel.jpg" },
-      { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774576701/12_cmv8oa.jpg" },
-      { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774576694/7_xwfnvs.jpg" },
-      { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774576694/8_xzr58q.jpg" },
-      { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774576695/9_hcr6kq.jpg" },
-      { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774576688/4_y6tv6c.jpg" },
-      { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774576692/5_yjrpt2.jpg" },
-      { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774576700/6_zugoxb.jpg" },
-      { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774576701/13_gjhh0c.jpg" },
-      { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774576698/14_mhaj0m.jpg" },
-      { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774576701/15_apjzen.jpg" },
-    ],
-  },
-  {
-    id: 15,
-    title: "Women Flatlay",
-    slug: "women-flatlay",
-    category: "Photography",
-    description: "Creative flatlay photography for women's apparel and accessories.",
-    longDescription:
-      "A stylish flatlay photography project showcasing women's apparel. We used thoughtful styling, textures, and lighting to create a premium aesthetic that highlights the fabric and design of each piece. These images are perfectly suited for social media campaigns, lookbooks, and e-commerce listings.",
-    metaDescription:
-      "Women's flatlay product photography by Ahsan Art Creative Studio, Faisalabad. Beautiful overhead imagery for fashion brands and e-commerce.",
-    image:
-      "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883346/8_ieqjfa.jpg",
-    type: "image",
-    gallery: [
-      { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883346/8_ieqjfa.jpg" },
-      { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883347/9_itddaw.jpg" },
-      { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883343/7_p3fpdz.jpg" },
-      { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883343/5_gllegp.jpg" },
-      { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883342/6_mybvbm.jpg" },
-      { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883339/4_dzysxd.jpg" },
-      { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883337/2_nt8lxu.jpg" },
-      { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883338/3_h8f5ha.jpg" },
-      { type: "image", url: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883337/1_lt4of6.jpg" },
     ],
   },
   {
