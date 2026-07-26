@@ -499,7 +499,7 @@ export const portfolioItems: PortfolioItem[] = [
     id: 19,
     title: "UGC Videos",
     slug: "ugc-videos",
-    category: "Videography",
+    category: "UGC Videos",
     description: "Authentic user-generated content videos for social media and brand campaigns.",
     longDescription:
       "A collection of high-quality UGC (User Generated Content) videos produced for brands targeting social media audiences. Each video is crafted to feel authentic, relatable, and platform-native — ideal for TikTok, Instagram Reels, and YouTube Shorts. The content drives engagement, builds trust, and converts viewers into customers.",
