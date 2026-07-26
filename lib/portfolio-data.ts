@@ -536,6 +536,38 @@ export const portfolioItems: PortfolioItem[] = [
       { type: "video", url: "https://www.youtube.com/shorts/hV4OXZyCMHc", thumbnail: "https://img.youtube.com/vi/hV4OXZyCMHc/hqdefault.jpg" },
     ],
   },
+  {
+    id: 20,
+    title: "Videography",
+    slug: "videography",
+    category: "Videography",
+    description: "High-impact brand videography and commercial product videos.",
+    longDescription:
+      "A showcase of high-end commercial videography, product reels, and brand promotional videos crafted by Ahsan Art Creative Studio. Designed for social media campaigns, YouTube, and website landing pages, each video combines dynamic visuals and polished editing to maximize audience engagement.",
+    metaDescription:
+      "Commercial videography and product video showcase by Ahsan Art Creative Studio, Faisalabad. High-impact video production for e-commerce and retail brands.",
+    image:
+      "https://img.youtube.com/vi/Bs11b8yKFfk/hqdefault.jpg",
+    type: "video",
+    gallery: [
+      { type: "video", url: "https://www.youtube.com/shorts/Bs11b8yKFfk", thumbnail: "https://img.youtube.com/vi/Bs11b8yKFfk/hqdefault.jpg" },
+      { type: "video", url: "https://www.youtube.com/shorts/O6IFsHJ0JDU", thumbnail: "https://img.youtube.com/vi/O6IFsHJ0JDU/hqdefault.jpg" },
+      { type: "video", url: "https://www.youtube.com/shorts/O2IJwFkYGIg", thumbnail: "https://img.youtube.com/vi/O2IJwFkYGIg/hqdefault.jpg" },
+      { type: "video", url: "https://www.youtube.com/shorts/rcn8iDYDaJA", thumbnail: "https://img.youtube.com/vi/rcn8iDYDaJA/hqdefault.jpg" },
+      { type: "video", url: "https://www.youtube.com/shorts/KWsn4eVHlJM", thumbnail: "https://img.youtube.com/vi/KWsn4eVHlJM/hqdefault.jpg" },
+      { type: "video", url: "https://www.youtube.com/shorts/knrPg9W1gu0", thumbnail: "https://img.youtube.com/vi/knrPg9W1gu0/hqdefault.jpg" },
+      { type: "video", url: "https://www.youtube.com/shorts/gvOpEDqXl4k", thumbnail: "https://img.youtube.com/vi/gvOpEDqXl4k/hqdefault.jpg" },
+      { type: "video", url: "https://www.youtube.com/shorts/nCfW_U0oFN0", thumbnail: "https://img.youtube.com/vi/nCfW_U0oFN0/hqdefault.jpg" },
+      { type: "video", url: "https://www.youtube.com/shorts/A8DS3rXBwn4", thumbnail: "https://img.youtube.com/vi/A8DS3rXBwn4/hqdefault.jpg" },
+      { type: "video", url: "https://www.youtube.com/shorts/LEK5sMGWMCE", thumbnail: "https://img.youtube.com/vi/LEK5sMGWMCE/hqdefault.jpg" },
+      { type: "video", url: "https://www.youtube.com/shorts/_uC6iTAaUic", thumbnail: "https://img.youtube.com/vi/_uC6iTAaUic/hqdefault.jpg" },
+      { type: "video", url: "https://www.youtube.com/shorts/8sS5_Zd1uYI", thumbnail: "https://img.youtube.com/vi/8sS5_Zd1uYI/hqdefault.jpg" },
+      { type: "video", url: "https://www.youtube.com/shorts/XP972ZADO58", thumbnail: "https://img.youtube.com/vi/XP972ZADO58/hqdefault.jpg" },
+      { type: "video", url: "https://www.youtube.com/shorts/SsH7a0l1-yE", thumbnail: "https://img.youtube.com/vi/SsH7a0l1-yE/hqdefault.jpg" },
+      { type: "video", url: "https://www.youtube.com/shorts/KizIywLfZr4", thumbnail: "https://img.youtube.com/vi/KizIywLfZr4/hqdefault.jpg" },
+      { type: "video", url: "https://www.youtube.com/shorts/06tTDrhnhcE", thumbnail: "https://img.youtube.com/vi/06tTDrhnhcE/hqdefault.jpg" },
+    ],
+  },
 ]
 
 /** Map from slug string to PortfolioItem for O(1) lookup */
