@@ -560,6 +560,27 @@ export const portfolioItems: PortfolioItem[] = [
       { type: "video", url: "https://www.youtube.com/shorts/65Z6aXwDgPI", thumbnail: "https://img.youtube.com/vi/65Z6aXwDgPI/hqdefault.jpg" },
     ],
   },
+  {
+    id: 21,
+    title: "Food Videos",
+    slug: "food-videos",
+    category: "Videography",
+    description: "Appetizing food videography and short-form culinary video reels.",
+    longDescription:
+      "A mouth-watering videography portfolio capturing gourmet dishes, restaurant menus, and food products in dynamic short-form video formats. Perfect for social media promotions, delivery app banners, and brand marketing campaigns.",
+    metaDescription:
+      "Food videography and culinary video reels by Ahsan Art Creative Studio, Faisalabad. Appetizing video content for restaurants, food brands, and delivery platforms.",
+    image:
+      "https://img.youtube.com/vi/O2IJwFkYGIg/hqdefault.jpg",
+    type: "video",
+    gallery: [
+      { type: "video", url: "https://www.youtube.com/shorts/O2IJwFkYGIg", thumbnail: "https://img.youtube.com/vi/O2IJwFkYGIg/hqdefault.jpg" },
+      { type: "video", url: "https://www.youtube.com/shorts/knrPg9W1gu0", thumbnail: "https://img.youtube.com/vi/knrPg9W1gu0/hqdefault.jpg" },
+      { type: "video", url: "https://www.youtube.com/shorts/A8DS3rXBwn4", thumbnail: "https://img.youtube.com/vi/A8DS3rXBwn4/hqdefault.jpg" },
+      { type: "video", url: "https://www.youtube.com/shorts/8sS5_Zd1uYI", thumbnail: "https://img.youtube.com/vi/8sS5_Zd1uYI/hqdefault.jpg" },
+      { type: "video", url: "https://www.youtube.com/shorts/KizIywLfZr4", thumbnail: "https://img.youtube.com/vi/KizIywLfZr4/hqdefault.jpg" },
+    ],
+  },
 ]
 
 /** Map from slug string to PortfolioItem for O(1) lookup */
