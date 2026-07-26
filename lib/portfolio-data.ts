@@ -469,6 +469,10 @@ export const portfolioItems: PortfolioItem[] = [
       { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784977546/long_lasting_backing_board_i0uyd4.jpg" },
       { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784977546/EASY_TO_INSTALL_MOUNT_2_ofe8uz.jpg" },
       { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784977546/6_back_side_2_iglgsg.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784991853/a_bd00g2.png" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784991850/fb_bpjqsq.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784991832/dB_uqdsyw.jpg" },
+      { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784991835/e_lnfiud.jpg" },
     ],
   },
   {
