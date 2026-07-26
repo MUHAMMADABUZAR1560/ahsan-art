@@ -622,6 +622,27 @@ export const portfolioItems: PortfolioItem[] = [
       { type: "video", url: "https://www.youtube.com/shorts/WHxNE5df7eo", thumbnail: "https://img.youtube.com/vi/WHxNE5df7eo/hqdefault.jpg" },
     ],
   },
+  {
+    id: 24,
+    title: "Studio Insights",
+    slug: "studio-insights",
+    category: "Videography",
+    description: "Behind-the-scenes and studio process videography.",
+    longDescription:
+      "An exclusive look behind the scenes at Ahsan Art Creative Studio. These videos showcase our production setup, lighting techniques, creative workflow, and the passion that goes into crafting top-tier commercial imagery.",
+    metaDescription:
+      "Behind the scenes and studio insights videography by Ahsan Art Creative Studio, Faisalabad. Explore our production process and creative workflow.",
+    image:
+      "https://img.youtube.com/vi/x_zNRi0O3Vc/hqdefault.jpg",
+    type: "video",
+    gallery: [
+      { type: "video", url: "https://www.youtube.com/shorts/x_zNRi0O3Vc", thumbnail: "https://img.youtube.com/vi/x_zNRi0O3Vc/hqdefault.jpg" },
+      { type: "video", url: "https://www.youtube.com/shorts/jr4gP-tRwh8", thumbnail: "https://img.youtube.com/vi/jr4gP-tRwh8/hqdefault.jpg" },
+      { type: "video", url: "https://www.youtube.com/shorts/BnNXze7R04U", thumbnail: "https://img.youtube.com/vi/BnNXze7R04U/hqdefault.jpg" },
+      { type: "video", url: "https://www.youtube.com/shorts/qOsEyay5tJQ", thumbnail: "https://img.youtube.com/vi/qOsEyay5tJQ/hqdefault.jpg" },
+      { type: "video", url: "https://www.youtube.com/shorts/mN8ij9xNTWY", thumbnail: "https://img.youtube.com/vi/mN8ij9xNTWY/hqdefault.jpg" },
+    ],
+  },
 ]
 
 /** Map from slug string to PortfolioItem for O(1) lookup */
