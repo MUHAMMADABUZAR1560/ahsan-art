@@ -451,7 +451,7 @@ export const portfolioItems: PortfolioItem[] = [
     id: 17,
     title: "Amazon",
     slug: "amazon",
-    category: "Photography",
+    category: "Amazon, Photography",
     description: "Professional Amazon listing & infographical product photography.",
     longDescription:
       "A comprehensive Amazon product photography shoot showcasing product features, infographics, lifestyle scenarios, and packaging details designed specifically to maximize conversions and comply with Amazon marketplace standards.",
