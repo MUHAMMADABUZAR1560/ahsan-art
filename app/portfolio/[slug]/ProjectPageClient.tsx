@@ -153,8 +153,10 @@ export function ProjectPageClient({ item }: ProjectPageClientProps) {
                 {/* Hover overlay */}
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
                   {asset.type === "video" && (
-                    <div className="absolute inset-0 flex items-center justify-center bg-black/20">
-                      <Play className="w-8 h-8 text-white fill-white drop-shadow-lg" />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-14 h-14 rounded-full bg-primary flex items-center justify-center shadow-lg shadow-primary/40 group-hover:scale-110 transition-transform duration-300">
+                        <Play className="w-6 h-6 text-white fill-white translate-x-0.5" />
+                      </div>
                     </div>
                   )}
                 </div>

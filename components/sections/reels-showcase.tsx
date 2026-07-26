@@ -112,8 +112,8 @@ export function ReelsShowcase() {
 
                 {/* Bottom: Play + Caption */}
                 <div className="flex flex-col justify-end mt-auto">
-                  <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center mb-4 group-hover:bg-primary transition-colors duration-300">
-                    <Play className="w-4 h-4 text-white fill-white translate-x-0.5" />
+                  <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center mb-4 shadow-lg shadow-primary/40 group-hover:scale-110 transition-transform duration-300">
+                    <Play className="w-5 h-5 text-white fill-white translate-x-0.5" />
                   </div>
                   {reel.caption && (
                     <h3 className="text-white font-serif font-bold text-lg md:text-xl line-clamp-2">
