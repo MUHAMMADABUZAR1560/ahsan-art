@@ -66,7 +66,7 @@ export const portfolioItems: PortfolioItem[] = [
     id: 3,
     title: "Bed Sheets",
     slug: "bed-sheets",
-    category: "Photography",
+    category: "Amazon, Photography",
     description: "Amazon listing imagery optimized for conversions.",
     longDescription:
       "A comprehensive Amazon listing shoot for a bedding brand covering multiple colour variants and fabric types. We styled each set to communicate comfort and luxury while meeting Amazon's strict image guidelines. The expanded gallery gives buyers the confidence to purchase with a clear view of pattern, weave, and finish.",
