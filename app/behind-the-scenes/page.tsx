@@ -330,7 +330,7 @@ export default function BTSPage() {
                 {/* Mobile is square aspect for grid consistency, Desktop maintains masonry feel if desired, but here we use a fixed aspect for the 3x3 look */}
                 <div className="relative aspect-square md:aspect-[4/5] bg-muted">
                   <Image
-                    src={(item.type === "video" ? item.thumbnail : item.image) || "/placeholder.svg"}
+                    src={(item.type === "video" || item.type === "youtube" ? item.thumbnail : item.image) || "/placeholder.svg"}
                     alt={item.title}
                     fill
                     className="object-cover transition-transform duration-700 ease-out md:group-hover:scale-110"
