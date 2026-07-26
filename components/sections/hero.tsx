@@ -144,13 +144,13 @@ export function HeroSection() {
           CONTENT — TABLET  (md – lg)
       ══════════════════════════════════════ */}
       <div className="absolute inset-0 z-20 hidden md:flex lg:hidden flex-col justify-center px-8 pt-28 pb-10 gap-6">
-        <h1
+        <div
           className="font-serif font-black text-white uppercase leading-[1.0] tracking-tight"
           style={{ fontSize: "clamp(2.4rem, 4vw, 3.8rem)" }}
         >
           VISUALS<br />THAT<br />BUILD<br />
           <span style={{ color: "#a855f7", fontStyle: "italic" }}>BRANDS.</span>
-        </h1>
+        </div>
       </div>
 
       {/* ══════════════════════════════════════
@@ -159,13 +159,13 @@ export function HeroSection() {
       <div className="absolute inset-0 z-20 flex md:hidden flex-col justify-center px-5 pt-20 gap-6">
 
         {/* Headline */}
-        <h1
+        <div
           className="font-serif font-black text-white uppercase leading-[1.0] tracking-tight"
           style={{ fontSize: "clamp(2rem, 8vw, 3rem)" }}
         >
           VISUALS<br />THAT<br />BUILD<br />
           <span style={{ color: "#a855f7", fontStyle: "italic" }}>BRANDS.</span>
-        </h1>
+        </div>
       </div>
 
       {/* ══════════════════════════════════════

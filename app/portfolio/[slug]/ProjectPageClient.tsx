@@ -250,7 +250,7 @@ export function ProjectPageClient({ item }: ProjectPageClientProps) {
                 <div className="relative w-full h-full">
                   <Image
                     src={fullscreenAsset.url}
-                    alt="Fullscreen view"
+                    alt={`${item.title} — fullscreen view`}
                     fill
                     className="object-contain"
                     quality={90}

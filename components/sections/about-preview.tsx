@@ -52,7 +52,7 @@ export function AboutPreview() {
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden">
               <Image
                 src="https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575375/studio_zpk4im.jpg"
-                alt="Ahsan Art Creative Studio"
+                alt="Ahsan Art Creative Studio - E-commerce Product Photography in Faisalabad"
                 fill
                 className="object-cover"
                 quality={60}

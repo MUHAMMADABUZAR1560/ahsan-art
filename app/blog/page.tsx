@@ -49,6 +49,7 @@ export default function BlogPage() {
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    loading="lazy"
                   />
                 </div>
                 <div className="flex items-center gap-2 text-sm text-muted-foreground mb-3">
