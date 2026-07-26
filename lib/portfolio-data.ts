@@ -581,6 +581,28 @@ export const portfolioItems: PortfolioItem[] = [
       { type: "video", url: "https://www.youtube.com/shorts/KizIywLfZr4", thumbnail: "https://img.youtube.com/vi/KizIywLfZr4/hqdefault.jpg" },
     ],
   },
+  {
+    id: 22,
+    title: "Shoes Videos",
+    slug: "shoes-videos",
+    category: "Videography",
+    description: "Sleek and dynamic footwear videography for shoe brands.",
+    longDescription:
+      "A specialized videography collection showcasing footwear craftsmanship, material texture, and lifestyle movement for men's and women's shoe brands. Designed for high-converting social media reels, YouTube Shorts, and e-commerce product listings.",
+    metaDescription:
+      "Shoes videography and footwear video reels by Ahsan Art Creative Studio, Faisalabad. High-converting short-form video content for shoe brands.",
+    image:
+      "https://img.youtube.com/vi/rcn8iDYDaJA/hqdefault.jpg",
+    type: "video",
+    gallery: [
+      { type: "video", url: "https://www.youtube.com/shorts/rcn8iDYDaJA", thumbnail: "https://img.youtube.com/vi/rcn8iDYDaJA/hqdefault.jpg" },
+      { type: "video", url: "https://www.youtube.com/shorts/gvOpEDqXl4k", thumbnail: "https://img.youtube.com/vi/gvOpEDqXl4k/hqdefault.jpg" },
+      { type: "video", url: "https://www.youtube.com/shorts/LEK5sMGWMCE", thumbnail: "https://img.youtube.com/vi/LEK5sMGWMCE/hqdefault.jpg" },
+      { type: "video", url: "https://www.youtube.com/shorts/XP972ZADO58", thumbnail: "https://img.youtube.com/vi/XP972ZADO58/hqdefault.jpg" },
+      { type: "video", url: "https://www.youtube.com/shorts/06tTDrhnhcE", thumbnail: "https://img.youtube.com/vi/06tTDrhnhcE/hqdefault.jpg" },
+      { type: "video", url: "https://www.youtube.com/shorts/aAtjacYGdPs", thumbnail: "https://img.youtube.com/vi/aAtjacYGdPs/hqdefault.jpg" },
+    ],
+  },
 ]
 
 /** Map from slug string to PortfolioItem for O(1) lookup */
