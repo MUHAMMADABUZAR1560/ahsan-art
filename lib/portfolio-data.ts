@@ -643,6 +643,33 @@ export const portfolioItems: PortfolioItem[] = [
       { type: "video", url: "https://www.youtube.com/shorts/mN8ij9xNTWY", thumbnail: "https://img.youtube.com/vi/mN8ij9xNTWY/hqdefault.jpg" },
     ],
   },
+  {
+    id: 25,
+    title: "BTS Videos",
+    slug: "bts-videos",
+    category: "Videography",
+    description: "Behind-the-scenes footage and production process reels.",
+    longDescription:
+      "Exclusive behind-the-scenes (BTS) video coverage from set. See how our creative team sets up lighting, styles props, directs models, and captures stunning commercial imagery at Ahsan Art Creative Studio.",
+    metaDescription:
+      "Behind-the-scenes BTS video reels by Ahsan Art Creative Studio, Faisalabad. Watch set preparations, lighting setups, and production moments.",
+    image:
+      "https://img.youtube.com/vi/eiiDW4BTKCc/hqdefault.jpg",
+    type: "video",
+    gallery: [
+      { type: "video", url: "https://www.youtube.com/shorts/eiiDW4BTKCc", thumbnail: "https://img.youtube.com/vi/eiiDW4BTKCc/hqdefault.jpg" },
+      { type: "video", url: "https://www.youtube.com/shorts/g38tsGlVM_Y", thumbnail: "https://img.youtube.com/vi/g38tsGlVM_Y/hqdefault.jpg" },
+      { type: "video", url: "https://www.youtube.com/shorts/vy-iNFKZLqc", thumbnail: "https://img.youtube.com/vi/vy-iNFKZLqc/hqdefault.jpg" },
+      { type: "video", url: "https://www.youtube.com/shorts/sqlgdHxqXRo", thumbnail: "https://img.youtube.com/vi/sqlgdHxqXRo/hqdefault.jpg" },
+      { type: "video", url: "https://www.youtube.com/shorts/2u6RxZmp-gE", thumbnail: "https://img.youtube.com/vi/2u6RxZmp-gE/hqdefault.jpg" },
+      { type: "video", url: "https://www.youtube.com/shorts/leMn2knjq5g", thumbnail: "https://img.youtube.com/vi/leMn2knjq5g/hqdefault.jpg" },
+      { type: "video", url: "https://www.youtube.com/shorts/C1HSUZuSmGY", thumbnail: "https://img.youtube.com/vi/C1HSUZuSmGY/hqdefault.jpg" },
+      { type: "video", url: "https://www.youtube.com/shorts/6RjV6G6RmiE", thumbnail: "https://img.youtube.com/vi/6RjV6G6RmiE/hqdefault.jpg" },
+      { type: "video", url: "https://www.youtube.com/shorts/O6IFsHJ0JDU", thumbnail: "https://img.youtube.com/vi/O6IFsHJ0JDU/hqdefault.jpg" },
+      { type: "video", url: "https://www.youtube.com/shorts/XAsR_KS4tdg", thumbnail: "https://img.youtube.com/vi/XAsR_KS4tdg/hqdefault.jpg" },
+      { type: "video", url: "https://www.youtube.com/shorts/mhmBlw4zfwU", thumbnail: "https://img.youtube.com/vi/mhmBlw4zfwU/hqdefault.jpg" },
+    ],
+  },
 ]
 
 /** Map from slug string to PortfolioItem for O(1) lookup */
