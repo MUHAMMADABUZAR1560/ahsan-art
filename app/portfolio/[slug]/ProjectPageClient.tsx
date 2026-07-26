@@ -13,6 +13,31 @@ interface ProjectPageClientProps {
   item: PortfolioItem
 }
 
+/** Extract a YouTube embed URL from a watch URL or Shorts URL. Returns null if not YouTube. */
+function getYouTubeEmbedUrl(url: string): string | null {
+  // Handle https://www.youtube.com/shorts/VIDEO_ID
+  const shortsMatch = url.match(/youtube\.com\/shorts\/([\w-]+)/)
+  if (shortsMatch) return `https://www.youtube.com/embed/${shortsMatch[1]}?autoplay=1`
+  // Handle https://www.youtube.com/watch?v=VIDEO_ID
+  const watchMatch = url.match(/[?&]v=([\w-]+)/)
+  if (watchMatch) return `https://www.youtube.com/embed/${watchMatch[1]}?autoplay=1`
+  // Handle https://youtu.be/VIDEO_ID
+  const shortMatch = url.match(/youtu\.be\/([\w-]+)/)
+  if (shortMatch) return `https://www.youtube.com/embed/${shortMatch[1]}?autoplay=1`
+  return null
+}
+
+/** Get a YouTube thumbnail URL from a watch URL or Shorts URL. */
+function getYouTubeThumbnail(url: string): string | null {
+  const shortsMatch = url.match(/youtube\.com\/shorts\/([\w-]+)/)
+  if (shortsMatch) return `https://img.youtube.com/vi/${shortsMatch[1]}/hqdefault.jpg`
+  const watchMatch = url.match(/[?&]v=([\w-]+)/)
+  if (watchMatch) return `https://img.youtube.com/vi/${watchMatch[1]}/hqdefault.jpg`
+  const shortMatch = url.match(/youtu\.be\/([\w-]+)/)
+  if (shortMatch) return `https://img.youtube.com/vi/${shortMatch[1]}/hqdefault.jpg`
+  return null
+}
+
 export function ProjectPageClient({ item }: ProjectPageClientProps) {
   const [fullscreenAsset, setFullscreenAsset] = useState<GalleryAsset | null>(null)
 
@@ -107,7 +132,7 @@ export function ProjectPageClient({ item }: ProjectPageClientProps) {
                 className="group relative aspect-square bg-stone-100 rounded-lg md:rounded-xl overflow-hidden cursor-pointer"
               >
                 <Image
-                  src={asset.type === "video" ? (asset.thumbnail || item.image) : asset.url}
+                  src={asset.type === "video" ? (asset.thumbnail || getYouTubeThumbnail(asset.url) || item.image) : asset.url}
                   alt={`${item.title} — image ${idx + 1}`}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -193,12 +218,22 @@ export function ProjectPageClient({ item }: ProjectPageClientProps) {
               onClick={(e) => e.stopPropagation()}
             >
               {fullscreenAsset.type === "video" ? (
-                <video
-                  src={fullscreenAsset.url}
-                  controls
-                  autoPlay
-                  className="max-h-full max-w-full rounded-md"
-                />
+                getYouTubeEmbedUrl(fullscreenAsset.url) ? (
+                  <iframe
+                    src={getYouTubeEmbedUrl(fullscreenAsset.url)!}
+                    allow="autoplay; encrypted-media; picture-in-picture"
+                    allowFullScreen
+                    className="w-full rounded-md"
+                    style={{ aspectRatio: "9/16", maxHeight: "80vh" }}
+                  />
+                ) : (
+                  <video
+                    src={fullscreenAsset.url}
+                    controls
+                    autoPlay
+                    className="max-h-full max-w-full rounded-md"
+                  />
+                )
               ) : (
                 <div className="relative w-full h-full">
                   <Image

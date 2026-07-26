@@ -495,6 +495,31 @@ export const portfolioItems: PortfolioItem[] = [
       { type: "image", url: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784977270/s_kgjbbf.jpg" },
     ],
   },
+  {
+    id: 19,
+    title: "UGC Videos",
+    slug: "ugc-videos",
+    category: "Videography",
+    description: "Authentic user-generated content videos for social media and brand campaigns.",
+    longDescription:
+      "A collection of high-quality UGC (User Generated Content) videos produced for brands targeting social media audiences. Each video is crafted to feel authentic, relatable, and platform-native — ideal for TikTok, Instagram Reels, and YouTube Shorts. The content drives engagement, builds trust, and converts viewers into customers.",
+    metaDescription:
+      "UGC video content by Ahsan Art Creative Studio, Faisalabad. Authentic, high-converting user-generated content videos for social media brands.",
+    image:
+      "https://img.youtube.com/vi/f4taWIGMYSs/hqdefault.jpg",
+    type: "video",
+    gallery: [
+      { type: "video", url: "https://www.youtube.com/shorts/f4taWIGMYSs", thumbnail: "https://img.youtube.com/vi/f4taWIGMYSs/hqdefault.jpg" },
+      { type: "video", url: "https://www.youtube.com/shorts/b3PsQnsXujg", thumbnail: "https://img.youtube.com/vi/b3PsQnsXujg/hqdefault.jpg" },
+      { type: "video", url: "https://www.youtube.com/shorts/0fQO7fbEJH8", thumbnail: "https://img.youtube.com/vi/0fQO7fbEJH8/hqdefault.jpg" },
+      { type: "video", url: "https://www.youtube.com/shorts/wryV3sWjU3M", thumbnail: "https://img.youtube.com/vi/wryV3sWjU3M/hqdefault.jpg" },
+      { type: "video", url: "https://www.youtube.com/shorts/u86tXhur8dY", thumbnail: "https://img.youtube.com/vi/u86tXhur8dY/hqdefault.jpg" },
+      { type: "video", url: "https://www.youtube.com/shorts/kVEaOK1tcx8", thumbnail: "https://img.youtube.com/vi/kVEaOK1tcx8/hqdefault.jpg" },
+      { type: "video", url: "https://www.youtube.com/shorts/pe6rHT1BCTA", thumbnail: "https://img.youtube.com/vi/pe6rHT1BCTA/hqdefault.jpg" },
+      { type: "video", url: "https://www.youtube.com/shorts/3bF79eBpsNg", thumbnail: "https://img.youtube.com/vi/3bF79eBpsNg/hqdefault.jpg" },
+      { type: "video", url: "https://www.youtube.com/shorts/hV4OXZyCMHc", thumbnail: "https://img.youtube.com/vi/hV4OXZyCMHc/hqdefault.jpg" },
+    ],
+  },
 ]
 
 /** Map from slug string to PortfolioItem for O(1) lookup */
