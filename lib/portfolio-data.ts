@@ -536,6 +536,30 @@ export const portfolioItems: PortfolioItem[] = [
       { type: "video", url: "https://www.youtube.com/shorts/hV4OXZyCMHc", thumbnail: "https://img.youtube.com/vi/hV4OXZyCMHc/hqdefault.jpg" },
     ],
   },
+  {
+    id: 20,
+    title: "Clothing Videos",
+    slug: "clothing-videos",
+    category: "Videography",
+    description: "Dynamic video showcase and social media reels for fashion and apparel brands.",
+    longDescription:
+      "A dedicated videography collection featuring fashion apparel, street wear, and clothing brands. Each short video captures fabric motion, garment fit, and styling details in a dynamic format optimized for Instagram Reels, TikTok, and e-commerce product pages.",
+    metaDescription:
+      "Clothing videography and fashion video reels by Ahsan Art Creative Studio, Faisalabad. High-converting short-form video content for apparel brands.",
+    image:
+      "https://img.youtube.com/vi/Bs11b8yKFfk/hqdefault.jpg",
+    type: "video",
+    gallery: [
+      { type: "video", url: "https://www.youtube.com/shorts/Bs11b8yKFfk", thumbnail: "https://img.youtube.com/vi/Bs11b8yKFfk/hqdefault.jpg" },
+      { type: "video", url: "https://www.youtube.com/shorts/KWsn4eVHlJM", thumbnail: "https://img.youtube.com/vi/KWsn4eVHlJM/hqdefault.jpg" },
+      { type: "video", url: "https://www.youtube.com/shorts/nCfW_U0oFN0", thumbnail: "https://img.youtube.com/vi/nCfW_U0oFN0/hqdefault.jpg" },
+      { type: "video", url: "https://www.youtube.com/shorts/_uC6iTAaUic", thumbnail: "https://img.youtube.com/vi/_uC6iTAaUic/hqdefault.jpg" },
+      { type: "video", url: "https://www.youtube.com/shorts/SsH7a0l1-yE", thumbnail: "https://img.youtube.com/vi/SsH7a0l1-yE/hqdefault.jpg" },
+      { type: "video", url: "https://www.youtube.com/shorts/3nYFqVskyFk", thumbnail: "https://img.youtube.com/vi/3nYFqVskyFk/hqdefault.jpg" },
+      { type: "video", url: "https://www.youtube.com/shorts/ZF__oLVi9VQ", thumbnail: "https://img.youtube.com/vi/ZF__oLVi9VQ/hqdefault.jpg" },
+      { type: "video", url: "https://www.youtube.com/shorts/65Z6aXwDgPI", thumbnail: "https://img.youtube.com/vi/65Z6aXwDgPI/hqdefault.jpg" },
+    ],
+  },
 ]
 
 /** Map from slug string to PortfolioItem for O(1) lookup */
