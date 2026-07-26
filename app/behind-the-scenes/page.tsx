@@ -329,15 +329,25 @@ export default function BTSPage() {
               >
                 {/* Mobile is square aspect for grid consistency, Desktop maintains masonry feel if desired, but here we use a fixed aspect for the 3x3 look */}
                 <div className="relative aspect-square md:aspect-[4/5] bg-muted">
-                  <Image
-                    src={(item.type === "video" || item.type === "youtube" ? item.thumbnail : item.image) || "/placeholder.svg"}
-                    alt={item.title}
-                    fill
-                    className="object-cover transition-transform duration-700 ease-out md:group-hover:scale-110"
-                    quality={60}
-                    loading="lazy"
-                    sizes="(max-width: 768px) 100vw, 100vw"
-                  />
+                  {item.type === "youtube" ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      src={item.thumbnail}
+                      alt={item.title}
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out md:group-hover:scale-110"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <Image
+                      src={(item.type === "video" ? item.thumbnail : item.image) || "/placeholder.svg"}
+                      alt={item.title}
+                      fill
+                      className="object-cover transition-transform duration-700 ease-out md:group-hover:scale-110"
+                      quality={60}
+                      loading="lazy"
+                      sizes="(max-width: 768px) 100vw, 100vw"
+                    />
+                  )}
                   
                   {/* Overlay - simplified for mobile grid */}
                   <div className="absolute inset-0 bg-black/40 md:bg-gradient-to-t md:from-foreground/80 md:via-foreground/20 md:to-transparent opacity-0 md:group-hover:opacity-100 transition-opacity duration-500" />

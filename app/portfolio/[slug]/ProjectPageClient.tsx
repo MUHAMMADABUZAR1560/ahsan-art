@@ -131,15 +131,25 @@ export function ProjectPageClient({ item }: ProjectPageClientProps) {
                 onClick={() => setFullscreenAsset(asset)}
                 className="group relative aspect-square bg-stone-100 rounded-lg md:rounded-xl overflow-hidden cursor-pointer"
               >
-                <Image
-                  src={asset.type === "video" ? (asset.thumbnail || getYouTubeThumbnail(asset.url) || item.image) : asset.url}
-                  alt={`${item.title} — image ${idx + 1}`}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  quality={70}
-                  loading={idx < 8 ? "eager" : "lazy"}
-                  sizes="(max-width: 768px) 50vw, 25vw"
-                />
+                {asset.type === "video" && (asset.thumbnail || getYouTubeThumbnail(asset.url)) ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={asset.thumbnail || getYouTubeThumbnail(asset.url) || item.image}
+                    alt={`${item.title} — image ${idx + 1}`}
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading={idx < 8 ? "eager" : "lazy"}
+                  />
+                ) : (
+                  <Image
+                    src={asset.type === "video" ? (asset.thumbnail || getYouTubeThumbnail(asset.url) || item.image) : asset.url}
+                    alt={`${item.title} — image ${idx + 1}`}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    quality={70}
+                    loading={idx < 8 ? "eager" : "lazy"}
+                    sizes="(max-width: 768px) 50vw, 25vw"
+                  />
+                )}
                 {/* Hover overlay */}
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
                   {asset.type === "video" && (
