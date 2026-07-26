@@ -603,6 +603,25 @@ export const portfolioItems: PortfolioItem[] = [
       { type: "video", url: "https://www.youtube.com/shorts/aAtjacYGdPs", thumbnail: "https://img.youtube.com/vi/aAtjacYGdPs/hqdefault.jpg" },
     ],
   },
+  {
+    id: 23,
+    title: "Event Videos",
+    slug: "event-videos",
+    category: "Videography",
+    description: "Vibrant and cinematic event coverage videography.",
+    longDescription:
+      "A collection of cinematic event coverage videos capturing key moments, brand activations, and live highlights. Optimized for social media engagement, recap reels, and promotional campaigns.",
+    metaDescription:
+      "Event videography and recap video reels by Ahsan Art Creative Studio, Faisalabad. Cinematic short-form video coverage for corporate, brand, and social events.",
+    image:
+      "https://img.youtube.com/vi/XQBSWQYsX0o/hqdefault.jpg",
+    type: "video",
+    gallery: [
+      { type: "video", url: "https://www.youtube.com/shorts/XQBSWQYsX0o", thumbnail: "https://img.youtube.com/vi/XQBSWQYsX0o/hqdefault.jpg" },
+      { type: "video", url: "https://www.youtube.com/shorts/Q360cKddV2o", thumbnail: "https://img.youtube.com/vi/Q360cKddV2o/hqdefault.jpg" },
+      { type: "video", url: "https://www.youtube.com/shorts/WHxNE5df7eo", thumbnail: "https://img.youtube.com/vi/WHxNE5df7eo/hqdefault.jpg" },
+    ],
+  },
 ]
 
 /** Map from slug string to PortfolioItem for O(1) lookup */
