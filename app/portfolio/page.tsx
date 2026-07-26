@@ -19,7 +19,7 @@ export default function PortfolioPage() {
 
   const filteredItems = activeCategory === "All"
     ? portfolioItems
-    : portfolioItems.filter((item) => item.category === activeCategory)
+    : portfolioItems.filter((item) => item.category.includes(activeCategory))
 
   return (
     <main className="min-h-screen">

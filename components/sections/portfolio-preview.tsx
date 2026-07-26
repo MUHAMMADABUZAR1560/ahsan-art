@@ -60,7 +60,7 @@ export function PortfolioPreview() {
 
   let filteredItems = activeCategory === "All"
     ? portfolioItems
-    : portfolioItems.filter((item) => item.category === activeCategory)
+    : portfolioItems.filter((item) => item.category.includes(activeCategory))
 
   // Limit to 4 items to create a 2x2 grid on homepage
   filteredItems = filteredItems.slice(0, 4)

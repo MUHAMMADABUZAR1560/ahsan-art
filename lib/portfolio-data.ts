@@ -564,7 +564,7 @@ export const portfolioItems: PortfolioItem[] = [
     id: 21,
     title: "Food Videos",
     slug: "food-videos",
-    category: "Videography",
+    category: "Food, Videography",
     description: "Appetizing food videography and short-form culinary video reels.",
     longDescription:
       "A mouth-watering videography portfolio capturing gourmet dishes, restaurant menus, and food products in dynamic short-form video formats. Perfect for social media promotions, delivery app banners, and brand marketing campaigns.",
