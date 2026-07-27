@@ -79,14 +79,13 @@ export function ReelsShowcase() {
               transition={{ duration: 0.5, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
               whileHover={{ y: -4 }}
               style={{
-                borderRadius: "8px",
                 boxShadow: "0px 1px 3px rgba(0,0,0,0.1), 0px 6px 12px rgba(0,0,0,0.08)",
                 transition: "box-shadow 0.3s ease, transform 0.3s ease",
                 position: "relative",
               }}
               className="relative flex-shrink-0 w-[45vw] sm:w-[40vw] md:w-auto aspect-[9/16]"
             >
-              <div className="absolute inset-0" style={{ borderRadius: "7px", overflow: "hidden" }}>
+              <div className="absolute inset-0" style={{ overflow: "hidden" }}>
                 <video
                   src={reel.media_url}
                   poster={reel.thumbnail_url}

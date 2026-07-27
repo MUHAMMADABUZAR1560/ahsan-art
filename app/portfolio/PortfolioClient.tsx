@@ -101,7 +101,6 @@ export default function PortfolioClient() {
                   }}
                   whileHover={{ y: -4 }}
                   style={{
-                    borderRadius: "8px",
                     boxShadow: "0px 1px 3px rgba(0,0,0,0.1), 0px 6px 12px rgba(0,0,0,0.08)",
                     transition: "box-shadow 0.3s ease, transform 0.3s ease",
                     overflow: "hidden",
