@@ -321,19 +321,10 @@ export function BTSContent() {
                   }
                 }}
                 onClick={() => setSelectedItem(item)}
-                whileHover={{ y: -4 }}
-                style={{
-                  boxShadow: "0px 1px 3px rgba(0,0,0,0.1), 0px 6px 12px rgba(0,0,0,0.08)",
-                  transition: "box-shadow 0.3s ease, transform 0.3s ease",
-                  aspectRatio: "1 / 1",
-                  position: "relative",
-                  display: "block",
-                  cursor: "pointer",
-                }}
-                className="group md:[aspect-ratio:4/5]"
+                className="group portfolio-card aspect-square md:aspect-[4/5]"
               >
                 {/* Mobile is square aspect for grid consistency, Desktop maintains masonry feel if desired, but here we use a fixed aspect for the 3x3 look */}
-                <div className="absolute inset-0" style={{ overflow: "hidden" }}>
+                <div className="portfolio-card-inner bg-muted">
                   {item.type === "youtube" ? (
                     // eslint-disable-next-line @next/next/no-img-element
                     <img

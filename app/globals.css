@@ -202,19 +202,25 @@
   50% { transform: translateY(8px); }
 }
 
-/* Card Shadows — Natural Shadow = Core + Cast (per design reference)
-   Core:  0px 1px 3px rgba(0,0,0,0.1)
-   Cast:  0px 6px 12px rgba(0,0,0,0.08)
-   Combined: Natural Shadow */
+/* Card Shadows and Borders - Applied to Portfolio and BTS Cards to ensure visibility on all backgrounds */
 .portfolio-card {
-  box-shadow: 0px 1px 3px rgba(0,0,0,0.1), 0px 6px 12px rgba(0,0,0,0.08) !important;
-  transition: box-shadow 0.3s ease, transform 0.3s ease !important;
+  background-color: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12) !important;
+  border-radius: 16px !important;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
   position: relative;
   display: block;
 }
 
+.portfolio-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2) !important;
+  border-color: rgba(0, 0, 0, 0.15) !important;
+}
 
 .portfolio-card-inner {
+  border-radius: 15px !important;
   overflow: hidden !important;
   width: 100% !important;
   height: 100% !important;

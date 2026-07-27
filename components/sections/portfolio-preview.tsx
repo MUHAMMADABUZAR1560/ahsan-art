@@ -111,8 +111,7 @@ export function PortfolioPreview() {
               <Link
                 key={item.id}
                 href={href}
-                className="group portfolio-card"
-                style={{ aspectRatio: "4 / 3" }}
+                className="group portfolio-card aspect-[4/3]"
               >
                 <div className="portfolio-card-inner">
                   <Image
