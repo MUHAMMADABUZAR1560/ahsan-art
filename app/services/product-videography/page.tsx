@@ -6,10 +6,10 @@ import { ArrowRight, Check, MessageCircle } from 'lucide-react';
 import { Breadcrumb } from '@/components/breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Product Videography in Faisalabad | Brand & Ad Videos',
-  description: 'Cinematic product videography for brands, ads, and social media. UGC-style and studio videos that convert viewers into buyers. Based in Faisalabad, Pakistan.',
+  title: 'Product Videography Faisalabad, Pakistan | Ahsan Art Creative Studio',
+  description: 'Premium product videography in Faisalabad, Pakistan. Scroll-stopping ad creatives, Reels, and Shopify video production to increase e-commerce sales.',
   alternates: { canonical: 'https://www.ahsanart.pk/services/product-videography' },
-  openGraph: { url: 'https://www.ahsanart.pk/services/product-videography', title: 'Product Videography in Faisalabad | Ahsan Art Creative Studio', description: 'Cinematic product videos for ads & social media. Based in Faisalabad.' },
+  openGraph: { url: 'https://www.ahsanart.pk/services/product-videography', title: 'Product Videography Faisalabad, Pakistan | Ahsan Art Creative Studio', description: 'Premium product videography in Faisalabad, Pakistan. High-converting video ads, Reels, and TikTok clips.' },
 };
 
 const faqSchema = {
@@ -36,8 +36,8 @@ export default function ProductVideographyPage() {
               { label: 'Product Videography', href: '/services/product-videography' }
             ]} />
             <span className="inline-flex items-center gap-2 text-primary text-xs font-bold tracking-widest uppercase mb-6"><span className="w-8 h-px bg-primary" />Product Videography</span>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-foreground leading-tight max-w-4xl">Product Videography <span className="text-primary italic">That Converts</span></h1>
-            <p className="mt-6 text-muted-foreground text-lg max-w-2xl leading-relaxed">Scroll-stopping product videos for Instagram Reels, TikTok, Amazon, and paid ads. We handle the full production — concept to final edit — so your brand looks premium everywhere.</p>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-foreground leading-tight max-w-4xl">Product Videography <span className="text-primary italic">Faisalabad, Pakistan</span></h1>
+            <p className="mt-6 text-muted-foreground text-lg max-w-2xl leading-relaxed">Elevate your brand with premium product videography in Faisalabad, Pakistan. We handle scroll-stopping video production for Instagram Reels, TikTok, Amazon, and paid ads — concept to final edit — so your brand looks premium everywhere.</p>
             <div className="mt-10 flex flex-wrap gap-4">
               <a href="https://wa.me/923081122525" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-full font-bold hover:bg-primary/90 transition-all"><MessageCircle className="w-4 h-4" /> Get a Quote</a>
               <Link href="/portfolio" className="inline-flex items-center gap-2 border border-border px-8 py-4 rounded-full font-bold hover:border-primary hover:text-primary transition-all">View Portfolio <ArrowRight className="w-4 h-4" /></Link>

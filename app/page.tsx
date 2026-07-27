@@ -25,6 +25,15 @@ export default function HomePage() {
     <main className="min-h-screen">
       <Navigation />
       <HeroSection />
+      {/* SEO: secondary heading below hero — visually subtle, crawler-readable */}
+      <div className="bg-background border-b border-border/40 py-4 px-6">
+        <div className="container mx-auto">
+          <h2 className="text-center text-sm md:text-base font-medium text-muted-foreground tracking-wide">
+            Product Photography &amp; Videography Studio in{" "}
+            <span className="text-foreground font-semibold">Faisalabad, Pakistan</span>
+          </h2>
+        </div>
+      </div>
       <ServicesPreview />
       <ClientsTicker />
       <PortfolioPreview />

@@ -6,10 +6,10 @@ import { ArrowRight, Check, MessageCircle } from 'lucide-react';
 import { Breadcrumb } from '@/components/breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'UGC Videos Pakistan | User Generated Content for Ads',
-  description: 'High-converting UGC-style video content for Pakistani brands. Made for Instagram, TikTok, Facebook ads, and Amazon. Based in Faisalabad.',
+  title: 'UGC Video Production Faisalabad | Ahsan Art Creative Studio',
+  description: 'High-converting UGC video production in Faisalabad, Pakistan. Authentic user-generated content and video ads for TikTok, Instagram, and Facebook.',
   alternates: { canonical: 'https://www.ahsanart.pk/services/ugc-videos' },
-  openGraph: { url: 'https://www.ahsanart.pk/services/ugc-videos', title: 'UGC Videos Pakistan | Ahsan Art Creative Studio', description: 'UGC-style video ads for social media and e-commerce. Based in Faisalabad.' },
+  openGraph: { url: 'https://www.ahsanart.pk/services/ugc-videos', title: 'UGC Video Production Faisalabad | Ahsan Art Creative Studio', description: 'UGC video production in Faisalabad, Pakistan. Authentic user-generated content that drives real sales.' },
 };
 
 const faqSchema = {
@@ -36,8 +36,8 @@ export default function UGCVideosPage() {
               { label: 'UGC Videos', href: '/services/ugc-videos' }
             ]} />
             <span className="inline-flex items-center gap-2 text-primary text-xs font-bold tracking-widest uppercase mb-6"><span className="w-8 h-px bg-primary" />UGC Videos</span>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-foreground leading-tight max-w-4xl">UGC Videos That <span className="text-primary italic">Actually Convert</span></h1>
-            <p className="mt-6 text-muted-foreground text-lg max-w-2xl leading-relaxed">Authentic, relatable video content that performs in paid ads and organic feeds. UGC content gets 4x more engagement than polished brand videos — and we make it look effortlessly real while being strategically built to sell.</p>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-foreground leading-tight max-w-4xl">UGC Video Production <span className="text-primary italic">Faisalabad</span></h1>
+            <p className="mt-6 text-muted-foreground text-lg max-w-2xl leading-relaxed">Ahsan Art Creative Studio is the leading provider of UGC video production in Faisalabad, Pakistan, creating authentic user-generated content that drives sales. UGC content gets 4x more engagement than polished brand videos — and we make it look effortlessly real while being strategically built to sell.</p>
             <div className="mt-10 flex flex-wrap gap-4">
               <a href="https://wa.me/923081122525" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-full font-bold hover:bg-primary/90 transition-all"><MessageCircle className="w-4 h-4" /> Get a Quote</a>
               <Link href="/portfolio" className="inline-flex items-center gap-2 border border-border px-8 py-4 rounded-full font-bold hover:border-primary hover:text-primary transition-all">View Portfolio <ArrowRight className="w-4 h-4" /></Link>

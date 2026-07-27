@@ -13,6 +13,29 @@ interface ProjectPageClientProps {
   item: PortfolioItem
 }
 
+/** Maps portfolio slugs to their corresponding service page */
+const serviceMap: Record<string, { label: string; href: string }> = {
+  "health-and-care": { label: "Product Photography", href: "/services/product-photography" },
+  "skin-care":       { label: "Product Photography", href: "/services/product-photography" },
+  "bed-sheets":      { label: "Product Photography", href: "/services/product-photography" },
+  "women-bags":      { label: "Product Photography", href: "/services/product-photography" },
+  "men-footwear":    { label: "Product Photography", href: "/services/product-photography" },
+  "women-footwear":  { label: "Product Photography", href: "/services/product-photography" },
+  "kids-flatlay":    { label: "Product Photography", href: "/services/product-photography" },
+  "men-clothing":    { label: "Product Photography", href: "/services/product-photography" },
+  "men-unstitched":  { label: "Product Photography", href: "/services/product-photography" },
+  "women-clothing":  { label: "Product Photography", href: "/services/product-photography" },
+  "gourmet-food":    { label: "Food Photography",    href: "/services/food-photography" },
+  "amazon":          { label: "Amazon Content",      href: "/services/amazon-content" },
+  "ugc-videos":      { label: "UGC Videos",          href: "/services/ugc-videos" },
+  "clothing-videos": { label: "Product Videography", href: "/services/product-videography" },
+  "food-videos":     { label: "Product Videography", href: "/services/product-videography" },
+  "shoes-videos":    { label: "Product Videography", href: "/services/product-videography" },
+  "event-videos":    { label: "Product Videography", href: "/services/product-videography" },
+  "studio-insights": { label: "E-Commerce Solutions",href: "/services/ecommerce-solutions" },
+  "bts-videos":      { label: "Product Videography", href: "/services/product-videography" },
+}
+
 /** Extract a YouTube embed URL from a watch URL or Shorts URL. Returns null if not YouTube. */
 function getYouTubeEmbedUrl(url: string): string | null {
   // Handle https://www.youtube.com/shorts/VIDEO_ID
@@ -181,6 +204,24 @@ export function ProjectPageClient({ item }: ProjectPageClientProps) {
           </motion.div>
         </div>
       </section>
+
+      {/* ── Related Service — contextual internal link ── */}
+      {serviceMap[item.slug] && (
+        <section className="py-10 bg-secondary/40 border-y border-border/40">
+          <div className="container mx-auto px-6 lg:px-12 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p className="text-sm text-muted-foreground">
+              Interested in this type of content?
+            </p>
+            <Link
+              href={serviceMap[item.slug].href}
+              className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline underline-offset-4"
+            >
+              View our {serviceMap[item.slug].label} service
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </section>
+      )}
 
       {/* ── CTA — matches /portfolio page style exactly ── */}
       <section className="py-16 md:py-32 bg-primary text-white">

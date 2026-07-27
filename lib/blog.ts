@@ -165,6 +165,214 @@ export const blogPosts: BlogPost[] = [
     coverImage: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?q=80&w=2574&auto=format&fit=crop",
     date: "2024-06-16",
     author: "Ahsan Art"
+  },
+  {
+    title: "Product Photography Faisalabad: Complete Guide for E-Commerce Brands",
+    slug: "product-photography-faisalabad-guide-ecommerce-brands",
+    excerpt: "Everything Faisalabad e-commerce brands need to know about professional product photography — from white background shots to lifestyle imagery that drives sales.",
+    content: `
+      <p style="font-size:1.2rem;font-weight:600;line-height:1.7;color:var(--foreground)">If you run an e-commerce brand in Faisalabad and your products aren't converting online, there's one thing that almost always makes an immediate difference: professional product photography.</p>
+
+      <p>Faisalabad has become one of Pakistan's fastest-growing e-commerce hubs. Brands here are selling apparel, bed sheets, skincare, footwear, and food products — not just locally, but across the country and globally on platforms like Amazon. Yet many of them are losing sales every day because their product visuals don't build trust.</p>
+
+      <blockquote>You have 3 seconds to stop a customer from scrolling. Your product photography is your only shot.</blockquote>
+
+      <figure class="my-12 rounded-2xl overflow-hidden shadow-2xl border border-white/5 bg-white/5">
+        <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=2000&auto=format&fit=crop" alt="Professional product photography studio setup in Faisalabad" class="w-full h-auto object-cover max-h-[450px] m-0" />
+      </figure>
+
+      <h2>What Types of Product Photography Do Faisalabad Brands Need?</h2>
+      <p>Different platforms require different types of images. Here's what works:</p>
+      <ul>
+        <li><strong>White Background Photography:</strong> Required for Amazon, Daraz, and most e-commerce stores. Clean, distraction-free, shows exactly what you're selling.</li>
+        <li><strong>Lifestyle Photography:</strong> Shows your product being used in a real setting. Perfect for Instagram, Facebook ads, and website hero sections.</li>
+        <li><strong>Detail Shots:</strong> Close-up images showing texture, material, stitching, or finish. Critical for apparel, accessories, and skincare.</li>
+        <li><strong>Infographic Images:</strong> Highlight product features, dimensions, or benefits with text overlays. Essential for Amazon A+ content.</li>
+      </ul>
+
+      <h2>How Much Does Product Photography Cost in Faisalabad?</h2>
+      <p>Product photography pricing in Faisalabad varies based on the number of products, types of shots, and whether models or props are required. Most studios offer per-product or per-day pricing. The key is to think of photography as an investment — not a cost. Better visuals directly increase your conversion rate.</p>
+      <p>At <a href="/services/product-photography">Ahsan Art Creative Studio</a>, we offer transparent, package-based pricing tailored to each brand's needs. Contact us on WhatsApp for a customised quote.</p>
+
+      <h2>Why Local Faisalabad Brands Should Use a Specialist Studio</h2>
+      <p>General photography studios focus on portraits and events. E-commerce content studios focus on one thing: making products sell. There's a meaningful difference. An e-commerce photographer understands platform guidelines, lighting for product detail, colour accuracy for online displays, and the visual strategy needed for ads versus listings.</p>
+
+      <figure class="my-12 rounded-2xl overflow-hidden shadow-2xl border border-white/5 bg-white/5">
+        <img src="https://images.unsplash.com/photo-1627384113743-6bd5a479fffd?q=80&w=2000&auto=format&fit=crop" alt="Skincare product photography by Ahsan Art Faisalabad" class="w-full h-auto object-cover max-h-[450px] m-0" />
+      </figure>
+
+      <h2>Getting Started With Product Photography in Faisalabad</h2>
+      <p>The process is simple: ship your products to our studio in Faisalabad (or bring them in-person), share your brand references, and we handle everything else — lighting, styling, shooting, and editing. Final images are delivered within 2–3 business days.</p>
+      <p>Ready to upgrade your product visuals? View our <a href="/portfolio">portfolio</a> or <a href="/contact">contact us</a> to get started.</p>
+    `,
+    coverImage: "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=2574&auto=format&fit=crop",
+    date: "2024-08-10",
+    author: "Ahsan Art"
+  },
+  {
+    title: "Amazon Listing Photography in Pakistan: What Sellers Need to Know",
+    slug: "amazon-listing-photography-pakistan-sellers-guide",
+    excerpt: "A practical guide for Pakistani Amazon sellers on creating compliant, high-converting listing images — from main images to A+ content and infographics.",
+    content: `
+      <p style="font-size:1.2rem;font-weight:600;line-height:1.7;color:var(--foreground)">Pakistani sellers are growing fast on Amazon.com, Amazon.ae, and Amazon.sa. But most lose significant revenue every month due to one avoidable problem: poor listing photography.</p>
+
+      <p>Amazon is an extremely visual marketplace. Before a customer reads your title or price, they've already judged your product based on the main image. This is why <a href="/services/amazon-content">Amazon product photography in Pakistan</a> has become one of the most important investments for sellers.</p>
+
+      <h2>Amazon's Main Image Requirements</h2>
+      <ul>
+        <li>Pure white background (RGB 255,255,255)</li>
+        <li>Product must fill at least 85% of the frame</li>
+        <li>Minimum 1000px on the shortest side (for zoom to work)</li>
+        <li>No text, logos, or graphics on the main image</li>
+        <li>No props that don't come with the product</li>
+      </ul>
+      <p>Violating these guidelines can result in listing suppression — meaning your product won't show in search results until fixed.</p>
+
+      <figure class="my-12 rounded-2xl overflow-hidden shadow-2xl border border-white/5 bg-white/5">
+        <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?q=80&w=2000&auto=format&fit=crop" alt="Amazon product listing photography Pakistan" class="w-full h-auto object-cover max-h-[450px] m-0" />
+      </figure>
+
+      <h2>What Images Should a Listing Have?</h2>
+      <p>Amazon allows up to 9 images per listing. Here's how to use them:</p>
+      <ul>
+        <li><strong>Image 1:</strong> Compliant white background main image</li>
+        <li><strong>Image 2–3:</strong> Lifestyle or in-context images</li>
+        <li><strong>Image 4–5:</strong> Feature infographics with callouts</li>
+        <li><strong>Image 6:</strong> Size chart or dimension reference</li>
+        <li><strong>Image 7:</strong> Comparison chart vs competitors</li>
+        <li><strong>Image 8–9:</strong> Additional lifestyle or detail shots</li>
+      </ul>
+
+      <h2>What is Amazon A+ Content?</h2>
+      <p>A+ Content (Enhanced Brand Content) is available to Brand Registered sellers. It replaces the plain text description with visual modules — image-text combinations, comparison tables, and brand story sections. Listings with A+ content typically see a 3–10% increase in conversion rate.</p>
+
+      <h2>Work With a Pakistan-Based Amazon Photography Studio</h2>
+      <p>Working with a local studio means faster turnaround, easier communication, and images shot by people who understand the Pakistani market. Ahsan Art Creative Studio has worked with dozens of Pakistani Amazon sellers — from apparel to skincare to home products. <a href="/contact">Contact us</a> to discuss your listing needs.</p>
+    `,
+    coverImage: "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?q=80&w=2574&auto=format&fit=crop",
+    date: "2024-09-05",
+    author: "Ahsan Art"
+  },
+  {
+    title: "UGC Video Production for Pakistani D2C Brands",
+    slug: "ugc-video-production-pakistani-d2c-brands",
+    excerpt: "How Pakistani direct-to-consumer brands can use UGC-style video content to dramatically reduce ad costs and increase conversions on Instagram and Facebook.",
+    content: `
+      <p style="font-size:1.2rem;font-weight:600;line-height:1.7;color:var(--foreground)">UGC (User Generated Content) videos are the highest-performing ad format on Meta right now — and Pakistani D2C brands are just starting to discover how powerful they can be.</p>
+
+      <p>Traditional polished brand videos have their place. But when it comes to paid advertising on Instagram and Facebook, UGC-style content consistently outperforms. It looks real. It feels trustworthy. And viewers watch it instead of skipping it.</p>
+
+      <blockquote>The best ad doesn't look like an ad. UGC content converts because it looks like a recommendation from a friend.</blockquote>
+
+      <h2>Why UGC Works So Well for Pakistani Brands</h2>
+      <p>Pakistani consumers are increasingly sophisticated online shoppers. They've seen thousands of polished ads and learned to scroll past them. But an authentic-looking video of someone demonstrating a product, talking about what they love about it, or showing it in a real-life setting — that stops the scroll.</p>
+      <ul>
+        <li>4x higher engagement than traditional brand videos</li>
+        <li>Lower cost-per-click on Meta ads</li>
+        <li>Higher conversion rates from ad to purchase</li>
+        <li>More trust signals for first-time buyers</li>
+      </ul>
+
+      <figure class="my-12 rounded-2xl overflow-hidden shadow-2xl border border-white/5 bg-white/5">
+        <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=2000&auto=format&fit=crop" alt="UGC video production Pakistan" class="w-full h-auto object-cover max-h-[450px] m-0" />
+      </figure>
+
+      <h2>What Makes a Good UGC Video?</h2>
+      <p>The most effective UGC videos for Pakistani brands share a few key characteristics:</p>
+      <ul>
+        <li><strong>Strong hook in the first 2 seconds</strong> — before the viewer can swipe away</li>
+        <li><strong>Authentic presentation</strong> — natural lighting, real environments, genuine reactions</li>
+        <li><strong>Problem-solution structure</strong> — show the pain point, then show the product solving it</li>
+        <li><strong>Clear call to action</strong> — tell the viewer exactly what to do next</li>
+      </ul>
+
+      <h2>How Ahsan Art Creates UGC Content</h2>
+      <p>Our <a href="/services/ugc-videos">UGC video production</a> in Faisalabad combines authentic visual style with strategic scripting. We write conversion-focused hooks, plan the visual flow, and execute shoots that look organic — because the best performing UGC content is strategically crafted to look unscripted. <a href="/contact">Get in touch</a> to discuss your campaign goals.</p>
+    `,
+    coverImage: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=2574&auto=format&fit=crop",
+    date: "2024-10-12",
+    author: "Ahsan Art"
+  },
+  {
+    title: "How Much Does Product Photography Cost in Pakistan?",
+    slug: "product-photography-cost-pakistan",
+    excerpt: "A transparent breakdown of product photography pricing in Pakistan — what affects the cost, what to expect from different studios, and how to get the best value.",
+    content: `
+      <p style="font-size:1.2rem;font-weight:600;line-height:1.7;color:var(--foreground)">One of the most common questions we get from Pakistani e-commerce brands is: how much does product photography actually cost?</p>
+
+      <p>The honest answer is: it depends. But let's break down exactly what it depends on — so you can plan your budget realistically and know what you're paying for.</p>
+
+      <h2>Factors That Affect Product Photography Pricing in Pakistan</h2>
+      <ul>
+        <li><strong>Number of products:</strong> More products usually means a lower per-product rate.</li>
+        <li><strong>Types of shots:</strong> White background only vs. lifestyle vs. detail shots vs. a combination.</li>
+        <li><strong>Models or no models:</strong> Model photography adds casting, styling, and coordination costs.</li>
+        <li><strong>Props and set design:</strong> Complex styled sets with props cost more to set up.</li>
+        <li><strong>Video vs. photography:</strong> Video production requires more equipment, setup, and editing time.</li>
+        <li><strong>Editing depth:</strong> Basic colour correction vs. advanced compositing and retouching.</li>
+        <li><strong>Turnaround time:</strong> Rush delivery typically costs more.</li>
+      </ul>
+
+      <figure class="my-12 rounded-2xl overflow-hidden shadow-2xl border border-white/5 bg-white/5">
+        <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=2000&auto=format&fit=crop" alt="Product photography pricing Pakistan studio" class="w-full h-auto object-cover max-h-[450px] m-0" />
+      </figure>
+
+      <h2>What to Expect at Different Price Points</h2>
+      <p>In Pakistan, product photography can range significantly. Here's a general breakdown of what different investment levels typically include:</p>
+      <ul>
+        <li><strong>Budget options:</strong> Basic white background shots, minimal editing, high turnaround volume. Good for commodities, not for brand building.</li>
+        <li><strong>Mid-range studios:</strong> Cleaner results, some lifestyle capability, better colour accuracy. Suitable for Daraz and local e-commerce.</li>
+        <li><strong>Specialist e-commerce studios:</strong> Strategic approach, Amazon-compliant images, lifestyle photography, UGC, and full creative direction. Best ROI for brands serious about growth.</li>
+      </ul>
+
+      <h2>The Real ROI Calculation</h2>
+      <p>Think of it this way: if better product photography increases your conversion rate from 1% to 2%, you've doubled your revenue from the same traffic — without spending more on ads. That's the kind of return professional <a href="/services/product-photography">product photography</a> can deliver.</p>
+      <p>Want a transparent, customised quote for your products? <a href="/contact">Contact Ahsan Art Creative Studio</a> on WhatsApp for a no-obligation estimate.</p>
+    `,
+    coverImage: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=2574&auto=format&fit=crop",
+    date: "2024-11-08",
+    author: "Ahsan Art"
+  },
+  {
+    title: "White Background vs Lifestyle Product Photography: Which Do You Need?",
+    slug: "white-background-vs-lifestyle-product-photography",
+    excerpt: "Learn when to use white background product photography vs lifestyle imagery — and why the best brands use both strategically across different platforms.",
+    content: `
+      <p style="font-size:1.2rem;font-weight:600;line-height:1.7;color:var(--foreground)">Every e-commerce brand eventually faces this question: should we invest in white background product photography or lifestyle images? The answer is almost always: both. But each type serves a different purpose — and knowing when to use each one is what separates smart content strategies from wasted budgets.</p>
+
+      <h2>White Background Product Photography</h2>
+      <p>White background photography is the foundation of any e-commerce content strategy. It's clean, professional, and required by most major marketplaces.</p>
+      <ul>
+        <li><strong>Best for:</strong> Amazon, Daraz, Shopify product pages, WooCommerce stores</li>
+        <li><strong>Purpose:</strong> Show exactly what the customer is buying — no distractions, no confusion</li>
+        <li><strong>Key benefits:</strong> Compliance with marketplace guidelines, consistent look across a catalogue, works for all product types</li>
+      </ul>
+      <p>Without proper white background images, many marketplaces will suppress or reject your listing. It's the non-negotiable baseline.</p>
+
+      <figure class="my-12 rounded-2xl overflow-hidden shadow-2xl border border-white/5 bg-white/5">
+        <img src="https://images.unsplash.com/photo-1627384113743-6bd5a479fffd?q=80&w=2000&auto=format&fit=crop" alt="White background product photography vs lifestyle photography" class="w-full h-auto object-cover max-h-[450px] m-0" />
+      </figure>
+
+      <h2>Lifestyle Product Photography</h2>
+      <p>Lifestyle photography shows your product being used in a real-world context. It helps customers emotionally connect with the product and imagine owning it.</p>
+      <ul>
+        <li><strong>Best for:</strong> Instagram, Facebook ads, Pinterest, website hero sections, brand storytelling</li>
+        <li><strong>Purpose:</strong> Create desire and emotional connection — show a life, not just a product</li>
+        <li><strong>Key benefits:</strong> Higher engagement on social media, better ad performance, stronger brand identity</li>
+      </ul>
+
+      <h2>The Smart Strategy: Use Both Together</h2>
+      <p>The most effective approach combines both types strategically:</p>
+      <ul>
+        <li>Use white background shots for all marketplace listings and product pages</li>
+        <li>Use lifestyle images for Instagram, ads, and website homepage sections</li>
+        <li>Mix both in Amazon listings: white background main + lifestyle secondary images</li>
+      </ul>
+      <p>Ahsan Art Creative Studio specialises in both — and we can help you plan a content strategy that makes every image work harder. View our <a href="/portfolio">portfolio</a> or explore our <a href="/services/product-photography">product photography services</a> to see both styles in action.</p>
+    `,
+    coverImage: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2574&auto=format&fit=crop",
+    date: "2024-12-02",
+    author: "Ahsan Art"
   }
 ]
 

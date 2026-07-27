@@ -99,43 +99,35 @@ export default function PortfolioClient() {
                     duration: 0.4,
                     ease: [0.22, 1, 0.36, 1]
                   }}
-                  whileHover={{ y: -4, boxShadow: "0 12px 28px rgba(0,0,0,0.18)" }}
-                  style={{
-                    borderRadius: "8px",
-                    boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
-                    transition: "box-shadow 0.3s ease, transform 0.3s ease",
-                    overflow: "hidden",
-                    aspectRatio: "1 / 1",
-                    position: "relative",
-                    display: "block",
-                  }}
-                  className="md:[aspect-ratio:4/5]"
+                  className="group portfolio-card aspect-square md:aspect-[4/5]"
                 >
-                  {/* Each card is now a real navigable link to the project page */}
-                  <Link
-                    href={`/portfolio/${item.slug}`}
-                    className="group block absolute inset-0"
-                  >
-                    <Image
-                      src={item.image || "/placeholder.svg"}
-                      alt={item.title}
-                      fill
-                      className="object-cover transition-transform duration-700 ease-out md:group-hover:scale-110"
-                      quality={60}
-                      loading="lazy"
-                      sizes="(max-width: 768px) 33vw, (max-width: 1024px) 50vw, 33vw"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 p-4 md:p-6 flex flex-col justify-end">
-                      <div className="transform translate-y-0 md:translate-y-4 md:group-hover:translate-y-0 transition-transform duration-300">
-                        <span className="text-primary text-[10px] md:text-sm font-bold tracking-wider uppercase">{item.category}</span>
-                        <h3 className="text-sm md:text-2xl font-serif font-bold text-white mt-1 mb-2">{item.title}</h3>
-                        <div className="flex items-center gap-2 text-white/90 text-[10px] md:text-sm font-medium">
-                          <span>View Gallery</span>
-                          <ArrowRight className="w-3 h-3 md:w-4 md:h-4 group-hover:translate-x-1 transition-transform" />
+                  <div className="portfolio-card-inner bg-white">
+                    {/* Each card is now a real navigable link to the project page */}
+                    <Link
+                      href={`/portfolio/${item.slug}`}
+                      className="group block absolute inset-0"
+                    >
+                      <Image
+                        src={item.image || "/placeholder.svg"}
+                        alt={item.title}
+                        fill
+                        className="object-cover transition-transform duration-700 ease-out md:group-hover:scale-110"
+                        quality={60}
+                        loading="lazy"
+                        sizes="(max-width: 768px) 33vw, (max-width: 1024px) 50vw, 33vw"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 p-4 md:p-6 flex flex-col justify-end">
+                        <div className="transform translate-y-0 md:translate-y-4 md:group-hover:translate-y-0 transition-transform duration-300">
+                          <span className="text-primary text-[10px] md:text-sm font-bold tracking-wider uppercase">{item.category}</span>
+                          <h3 className="text-sm md:text-2xl font-serif font-bold text-white mt-1 mb-2">{item.title}</h3>
+                          <div className="flex items-center gap-2 text-white/90 text-[10px] md:text-sm font-medium">
+                            <span>View Gallery</span>
+                            <ArrowRight className="w-3 h-3 md:w-4 md:h-4 group-hover:translate-x-1 transition-transform" />
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </Link>
+                    </Link>
+                  </div>
                 </motion.div>
               ))}
             </AnimatePresence>

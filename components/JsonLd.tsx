@@ -23,17 +23,30 @@ export default function JsonLd() {
         },
         "geo": {
           "@type": "GeoCoordinates",
-          "latitude": 31.468849,
-          "longitude": 73.167816
+          "latitude": 31.46619448105869,
+          "longitude": 73.19306313222438
         },
         "openingHoursSpecification": [
           {
             "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
-            "opens": "09:00",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"],
+            "opens": "11:00",
+            "closes": "18:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Saturday"],
+            "opens": "11:00",
             "closes": "18:00"
           }
         ],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5.0",
+          "reviewCount": "47",
+          "bestRating": "5",
+          "worstRating": "1"
+        },
         "sameAs": [
           "https://www.instagram.com/ahsanart.studio/",
           "https://wa.me/923081122525"

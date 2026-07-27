@@ -6,19 +6,19 @@ import { ArrowRight, Check, MessageCircle } from 'lucide-react';
 import { Breadcrumb } from '@/components/breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'E-Commerce Solutions Pakistan | Full Visual Content for Online Stores',
-  description: 'Complete e-commerce content packages for Pakistani online stores. Photography, video, social media content, and Amazon/Daraz assets — all from one studio in Faisalabad.',
+  title: 'E-Commerce Content Studio Faisalabad | Ahsan Art Creative Studio',
+  description: 'Complete e-commerce content solutions in Faisalabad, Pakistan. Product photography, video, UGC, and Amazon assets under one roof for brands ready to scale.',
   alternates: { canonical: 'https://www.ahsanart.pk/services/ecommerce-solutions' },
-  openGraph: { url: 'https://www.ahsanart.pk/services/ecommerce-solutions', title: 'E-Commerce Solutions Pakistan | Ahsan Art Creative Studio', description: 'Full-service visual content for e-commerce brands. Photography, video, social media.' },
+  openGraph: { url: 'https://www.ahsanart.pk/services/ecommerce-solutions', title: 'E-Commerce Content Studio Faisalabad | Ahsan Art Creative Studio', description: 'Complete e-commerce content solutions in Faisalabad, Pakistan. Photography, video & Amazon content under one roof.' },
 };
 
 const faqSchema = {
   "@context": "https://schema.org", "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "What does a full e-commerce content package include?", "acceptedAnswer": { "@type": "Answer", "text": "Our e-commerce solutions packages include product photography, listing images, lifestyle shots, social media content, UGC videos, and Amazon/Daraz optimised assets — everything your brand needs to sell online." } },
-    { "@type": "Question", "name": "Do you work with new brands just starting out?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We work with startups and new brands regularly. We help plan content strategy, create a visual identity, and build a content library from scratch." } },
-    { "@type": "Question", "name": "Can you handle ongoing monthly content creation?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Many of our clients are on monthly retainer packages where we create fresh content consistently to keep their feeds and listings updated." } },
-    { "@type": "Question", "name": "Do you work with brands outside Faisalabad?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We work with brands across Pakistan. Products can be shipped to our studio in Faisalabad or we can travel for larger projects in Lahore, Karachi, and Islamabad." } },
+    { "@type": "Question", "name": "What e-commerce platforms do you create content for?", "acceptedAnswer": { "@type": "Answer", "text": "We create content for Shopify, WooCommerce, Amazon, Daraz, Instagram, TikTok, and all major e-commerce and social media platforms." } },
+    { "@type": "Question", "name": "Can you manage all our content needs as a retainer?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We offer monthly retainer packages for brands that need consistent content output — including photography, video, and UGC at a fixed monthly rate." } },
+    { "@type": "Question", "name": "Do you help with brand identity and visual strategy?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We work with you to define your brand's visual identity before producing any content, ensuring every asset reflects your brand guidelines and resonates with your target audience." } },
+    { "@type": "Question", "name": "Do you ship products to your studio?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Brands across Pakistan ship products to our studio in Faisalabad. We handle everything after that — shoot, edit, and deliver final files digitally." } },
   ]
 };
 
@@ -36,8 +36,8 @@ export default function EcommerceSolutionsPage() {
               { label: 'E-Commerce Solutions', href: '/services/ecommerce-solutions' }
             ]} />
             <span className="inline-flex items-center gap-2 text-primary text-xs font-bold tracking-widest uppercase mb-6"><span className="w-8 h-px bg-primary" />E-Commerce Solutions</span>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-foreground leading-tight max-w-4xl">Everything Your <span className="text-primary italic">Online Store Needs</span></h1>
-            <p className="mt-6 text-muted-foreground text-lg max-w-2xl leading-relaxed">One studio. Every visual asset your e-commerce brand needs. From your first product shoot to monthly content retainers — we grow with you. No jumping between vendors. No inconsistent quality. Just content that works.</p>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-foreground leading-tight max-w-4xl">E-Commerce Content Studio <span className="text-primary italic">Faisalabad</span></h1>
+            <p className="mt-6 text-muted-foreground text-lg max-w-2xl leading-relaxed">Ahsan Art Creative Studio is Faisalabad's dedicated e-commerce content studio, providing photography, videography, UGC, and Amazon assets under one roof for brands across Pakistan. Stop juggling multiple vendors. One studio, one strategy, one consistent brand voice — across every product, platform, and campaign.</p>
             <div className="mt-10 flex flex-wrap gap-4">
               <a href="https://wa.me/923081122525" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-full font-bold hover:bg-primary/90 transition-all"><MessageCircle className="w-4 h-4" /> Get a Quote</a>
               <Link href="/portfolio" className="inline-flex items-center gap-2 border border-border px-8 py-4 rounded-full font-bold hover:border-primary hover:text-primary transition-all">View Portfolio <ArrowRight className="w-4 h-4" /></Link>

@@ -6,10 +6,10 @@ import { ArrowRight, Check, MessageCircle } from 'lucide-react';
 import { Breadcrumb } from '@/components/breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Food Photography Faisalabad | Restaurant & Menu Photography',
-  description: 'Professional food photography for restaurants, cafes, and food brands in Faisalabad. Menu photography, social media content, and delivery app images that make food irresistible.',
+  title: 'Food Photography Faisalabad | Ahsan Art Creative Studio',
+  description: 'Irresistible food photography in Faisalabad, Pakistan. Professional restaurant menu, social media, and Foodpanda/Careem listing images to boost orders.',
   alternates: { canonical: 'https://www.ahsanart.pk/services/food-photography' },
-  openGraph: { url: 'https://www.ahsanart.pk/services/food-photography', title: 'Food Photography Faisalabad | Ahsan Art Creative Studio', description: 'Restaurant & menu food photography in Faisalabad. Social media & delivery app images.' },
+  openGraph: { url: 'https://www.ahsanart.pk/services/food-photography', title: 'Food Photography Faisalabad | Ahsan Art Creative Studio', description: 'Professional restaurant & menu food photography in Faisalabad, Pakistan. Boost your restaurant orders.' },
 };
 
 const faqSchema = {
@@ -36,8 +36,8 @@ export default function FoodPhotographyPage() {
               { label: 'Food Photography', href: '/services/food-photography' }
             ]} />
             <span className="inline-flex items-center gap-2 text-primary text-xs font-bold tracking-widest uppercase mb-6"><span className="w-8 h-px bg-primary" />Food Photography</span>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-foreground leading-tight max-w-4xl">Food Photography That <span className="text-primary italic">Makes Mouths Water</span></h1>
-            <p className="mt-6 text-muted-foreground text-lg max-w-2xl leading-relaxed">Beautifully styled food photography for restaurants, cafes, catering brands, and food products. Images that make your menu irresistible on Instagram, delivery apps, and your website — driving more orders with every scroll.</p>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-foreground leading-tight max-w-4xl">Food Photography <span className="text-primary italic">Faisalabad</span></h1>
+            <p className="mt-6 text-muted-foreground text-lg max-w-2xl leading-relaxed">Ahsan Art Creative Studio provides professional food photography in Faisalabad, Pakistan, creating mouth-watering menu and restaurant visuals that drive orders. Beautifully styled food photography for restaurants, cafes, catering brands, and food products will make your menu irresistible on Instagram, delivery apps, and your website — driving more orders with every scroll.</p>
             <div className="mt-10 flex flex-wrap gap-4">
               <a href="https://wa.me/923081122525" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-full font-bold hover:bg-primary/90 transition-all"><MessageCircle className="w-4 h-4" /> Get a Quote</a>
               <Link href="/portfolio" className="inline-flex items-center gap-2 border border-border px-8 py-4 rounded-full font-bold hover:border-primary hover:text-primary transition-all">View Portfolio <ArrowRight className="w-4 h-4" /></Link>

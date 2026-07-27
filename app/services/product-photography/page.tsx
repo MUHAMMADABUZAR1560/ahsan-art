@@ -6,13 +6,13 @@ import { ArrowRight, Camera, Check, MessageCircle } from 'lucide-react';
 import { Breadcrumb } from '@/components/breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Product Photography in Faisalabad | E-Commerce & Amazon',
-  description: 'Professional product photography for e-commerce, Amazon, Daraz, and social media. Studio & lifestyle shots, white background, colour-accurate editing. Based in Faisalabad, Pakistan.',
+  title: 'Product Photography Faisalabad | Ahsan Art Creative Studio',
+  description: 'Professional product photography in Faisalabad, Pakistan. Get high-converting studio and lifestyle shoots for Amazon, Daraz, and e-commerce brands.',
   alternates: { canonical: 'https://www.ahsanart.pk/services/product-photography' },
   openGraph: {
     url: 'https://www.ahsanart.pk/services/product-photography',
-    title: 'Product Photography in Faisalabad | Ahsan Art Creative Studio',
-    description: 'Studio & lifestyle product photography for e-commerce, Amazon & Daraz. Based in Faisalabad.',
+    title: 'Product Photography Faisalabad | Ahsan Art Creative Studio',
+    description: 'Professional product photography in Faisalabad, Pakistan. High-converting studio & lifestyle product photography for e-commerce and marketplaces.',
   },
 };
 
@@ -42,10 +42,10 @@ export default function ProductPhotographyPage() {
             ]} />
             <span className="inline-flex items-center gap-2 text-primary text-xs font-bold tracking-widest uppercase mb-6"><span className="w-8 h-px bg-primary" />Product Photography</span>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-foreground leading-tight max-w-4xl">
-              Product Photography <span className="text-primary italic">in Faisalabad</span>
+              Product Photography <span className="text-primary italic">Faisalabad</span>
             </h1>
             <p className="mt-6 text-muted-foreground text-lg max-w-2xl leading-relaxed">
-              We shoot product photography that is built for one purpose: making your products sell. From crisp white-background shots for Amazon and Daraz to lifestyle images that build emotional connection — every frame is planned around your buyer.
+              Ahsan Art Creative Studio offers professional product photography in Faisalabad, Pakistan, built to showcase your products and drive e-commerce sales. From crisp white-background shots for Amazon and Daraz to lifestyle images that build emotional connection — every frame is planned around your buyer.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
               <a href="https://wa.me/923081122525" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-full font-bold hover:bg-primary/90 transition-all">

@@ -6,10 +6,10 @@ import { ArrowRight, Check, MessageCircle } from 'lucide-react';
 import { Breadcrumb } from '@/components/breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Amazon Content Pakistan | A+ Content & Listing Images',
-  description: 'Professional Amazon listing images, A+ content, and infographics for Pakistani sellers. White background, lifestyle, and comparison charts. Based in Faisalabad.',
+  title: 'Amazon Product Photography Pakistan | Ahsan Art Creative Studio',
+  description: 'Expert Amazon product photography in Pakistan. Boost conversion rates with optimized listing images, A+ content, and infographics for global marketplaces.',
   alternates: { canonical: 'https://www.ahsanart.pk/services/amazon-content' },
-  openGraph: { url: 'https://www.ahsanart.pk/services/amazon-content', title: 'Amazon Content Pakistan | Ahsan Art Creative Studio', description: 'Amazon listing images, A+ content & infographics for Pakistani sellers.' },
+  openGraph: { url: 'https://www.ahsanart.pk/services/amazon-content', title: 'Amazon Product Photography Pakistan | Ahsan Art Creative Studio', description: 'Amazon product photography in Pakistan. Optimized listing images & A+ EBC content.' },
 };
 
 const faqSchema = {
@@ -36,8 +36,8 @@ export default function AmazonContentPage() {
               { label: 'Amazon Content', href: '/services/amazon-content' }
             ]} />
             <span className="inline-flex items-center gap-2 text-primary text-xs font-bold tracking-widest uppercase mb-6"><span className="w-8 h-px bg-primary" />Amazon Content</span>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-foreground leading-tight max-w-4xl">Amazon Content That <span className="text-primary italic">Wins the Buy Box</span></h1>
-            <p className="mt-6 text-muted-foreground text-lg max-w-2xl leading-relaxed">From compliant main images to scroll-stopping A+ content — we create Amazon listing visuals that increase click-through rates, reduce returns, and convert browsers into buyers. Trusted by Pakistani sellers on Amazon.com, Amazon.ae, and Daraz.</p>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-foreground leading-tight max-w-4xl">Amazon Product Photography <span className="text-primary italic">Pakistan</span></h1>
+            <p className="mt-6 text-muted-foreground text-lg max-w-2xl leading-relaxed">We specialize in Amazon product photography in Pakistan, delivering compliant main listing images, infographics, and A+ content for local and global sellers. From compliant main images to scroll-stopping A+ content — we create Amazon listing visuals that increase click-through rates, reduce returns, and convert browsers into buyers. Trusted by Pakistani sellers on Amazon.com, Amazon.ae, and Daraz.</p>
             <div className="mt-10 flex flex-wrap gap-4">
               <a href="https://wa.me/923081122525" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-full font-bold hover:bg-primary/90 transition-all"><MessageCircle className="w-4 h-4" /> Get a Quote</a>
               <Link href="/portfolio" className="inline-flex items-center gap-2 border border-border px-8 py-4 rounded-full font-bold hover:border-primary hover:text-primary transition-all">View Portfolio <ArrowRight className="w-4 h-4" /></Link>

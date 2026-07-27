@@ -62,11 +62,11 @@ function BrandCard({ brand }: { brand: typeof brands[0] & { domain?: string, ini
 }
 
 function TickerRow({ items, direction = "left" }: { items: typeof brands; direction?: "left" | "right" }) {
-  const repeated = [...items, ...items, ...items]
   const animationName = direction === "left" ? "ticker-slide-left" : "ticker-slide-right"
 
   return (
-    <div className="flex overflow-hidden py-4">
+    <div className="flex overflow-hidden py-4" role="list" aria-label="Client brands">
+      {/* Primary track — indexed by crawlers */}
       <div
         className="flex gap-0 flex-shrink-0"
         style={{
@@ -74,8 +74,19 @@ function TickerRow({ items, direction = "left" }: { items: typeof brands; direct
           willChange: "transform",
         }}
       >
-        {repeated.map((brand, i) => (
-          <BrandCard key={i} brand={brand} />
+        {items.map((brand, i) => (
+          <BrandCard key={`a-${i}`} brand={brand} />
+        ))}
+        {/* Seamless loop duplicate — hidden from crawlers & assistive tech */}
+        {items.map((brand, i) => (
+          <div key={`b-${i}`} aria-hidden="true">
+            <BrandCard brand={brand} />
+          </div>
+        ))}
+        {items.map((brand, i) => (
+          <div key={`c-${i}`} aria-hidden="true">
+            <BrandCard brand={brand} />
+          </div>
         ))}
       </div>
     </div>
