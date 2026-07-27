@@ -164,14 +164,14 @@ export const portfolioItems: PortfolioItem[] = [
   },
   {
     id: 5,
-    title: "Fashion Acc.",
-    slug: "fashion-accessories",
+    title: "Women Bags",
+    slug: "women-bags",
     category: "Photography",
-    description: "High-end fashion accessory photography.",
+    description: "High-end women's bags photography.",
     longDescription:
-      "An extensive fashion accessories shoot covering bags, jewellery, belts, and more for a multi-SKU brand targeting premium e-commerce audiences. We built a consistent studio aesthetic across all pieces to unify the brand visually. Every shot balances product clarity with aspirational lifestyle appeal for use across listings, lookbooks, and social media.",
+      "An extensive women's bags shoot covering purses, hand bags, and shoulder bags for a multi-SKU brand targeting premium e-commerce audiences. We built a consistent studio aesthetic across all pieces to unify the brand visually. Every shot balances product clarity with aspirational lifestyle appeal for use across listings, lookbooks, and social media.",
     metaDescription:
-      "Fashion accessories product photography by Ahsan Art Creative Studio, Faisalabad. High-end imagery for bags, jewellery, and accessories targeting premium e-commerce audiences.",
+      "Women's bags product photography by Ahsan Art Creative Studio, Faisalabad. High-end imagery for purses, hand bags, and accessories targeting premium e-commerce audiences.",
     image:
       "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883487/13_z8pc7v.jpg",
     type: "image",

@@ -129,36 +129,38 @@ export function ProjectPageClient({ item }: ProjectPageClientProps) {
                 whileHover={{ scale: 0.98 }}
                 transition={{ duration: 0.2 }}
                 onClick={() => setFullscreenAsset(asset)}
-                className="group relative aspect-square bg-stone-100 rounded-lg md:rounded-xl overflow-hidden cursor-pointer"
+                className="group portfolio-card aspect-square"
               >
-                {asset.type === "video" && (asset.thumbnail || getYouTubeThumbnail(asset.url)) ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
-                    src={asset.thumbnail || getYouTubeThumbnail(asset.url) || item.image}
-                    alt={`${item.title} — image ${idx + 1}`}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    loading={idx < 8 ? "eager" : "lazy"}
-                  />
-                ) : (
-                  <Image
-                    src={asset.type === "video" ? (asset.thumbnail || getYouTubeThumbnail(asset.url) || item.image) : asset.url}
-                    alt={`${item.title} — image ${idx + 1}`}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    quality={70}
-                    loading={idx < 8 ? "eager" : "lazy"}
-                    sizes="(max-width: 768px) 50vw, 25vw"
-                  />
-                )}
-                {/* Hover overlay */}
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
-                  {asset.type === "video" && (
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-14 h-14 rounded-full bg-primary flex items-center justify-center shadow-lg shadow-primary/40 group-hover:scale-110 transition-transform duration-300">
-                        <Play className="w-6 h-6 text-white fill-white translate-x-0.5" />
-                      </div>
-                    </div>
+                <div className="portfolio-card-inner">
+                  {asset.type === "video" && (asset.thumbnail || getYouTubeThumbnail(asset.url)) ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      src={asset.thumbnail || getYouTubeThumbnail(asset.url) || item.image}
+                      alt={`${item.title} — image ${idx + 1}`}
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      loading={idx < 8 ? "eager" : "lazy"}
+                    />
+                  ) : (
+                    <Image
+                      src={asset.type === "video" ? (asset.thumbnail || getYouTubeThumbnail(asset.url) || item.image) : asset.url}
+                      alt={`${item.title} — image ${idx + 1}`}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      quality={70}
+                      loading={idx < 8 ? "eager" : "lazy"}
+                      sizes="(max-width: 768px) 50vw, 25vw"
+                    />
                   )}
+                  {/* Hover overlay */}
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+                    {asset.type === "video" && (
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="w-14 h-14 rounded-full bg-primary flex items-center justify-center shadow-lg shadow-primary/40 group-hover:scale-110 transition-transform duration-300">
+                          <Play className="w-6 h-6 text-white fill-white translate-x-0.5" />
+                        </div>
+                      </div>
+                    )}
+                  </div>
                 </div>
               </motion.div>
             ))}

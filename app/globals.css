@@ -201,3 +201,25 @@
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(8px); }
 }
+
+/* Card Shadows — Natural Shadow = Core + Cast (per design reference)
+   Core:  0px 1px 3px rgba(0,0,0,0.1)
+   Cast:  0px 6px 12px rgba(0,0,0,0.08)
+   Combined: Natural Shadow */
+.portfolio-card {
+  box-shadow: 0px 1px 3px rgba(0,0,0,0.1), 0px 6px 12px rgba(0,0,0,0.08) !important;
+  border-radius: 8px !important;
+  transition: box-shadow 0.3s ease, transform 0.3s ease !important;
+  position: relative;
+  display: block;
+}
+
+
+.portfolio-card-inner {
+  border-radius: 7px !important;
+  overflow: hidden !important;
+  width: 100% !important;
+  height: 100% !important;
+  position: absolute !important;
+  inset: 0 !important;
+}

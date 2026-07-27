@@ -108,7 +108,7 @@ INSERT INTO public.portfolio_items (title, category, description, image_url, fea
   ('Tech Product Launch', 'Technology', 'High-end product shots for tech startup', '/images/portfolio/tech.jpg', true),
   ('Amazon Product Listing', 'E-commerce', 'Conversion-focused product photography', '/images/portfolio/amazon.jpg', true),
   ('Gourmet Food Photography', 'Food', 'Appetizing food photography for restaurant menu', '/images/portfolio/food.jpg', true),
-  ('Fashion Accessories', 'Fashion', 'Elegant photography for fashion brand', '/images/portfolio/fashion.jpg', false),
+  ('Women Bags', 'Fashion', 'Elegant photography for women bags brand', '/images/portfolio/fashion.jpg', false),
   ('Brand Identity Shoot', 'Branding', 'Complete visual identity package', '/images/portfolio/brand.jpg', false);
 
 -- Insert initial services

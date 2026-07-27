@@ -17,7 +17,7 @@ const idToSlug: Record<number, string> = {
   2: "skin-care",
   3: "bed-sheets",
   4: "gourmet-food",
-  5: "fashion-accessories",
+  5: "women-bags",
   6: "men-footwear",
   7: "kids-flatlay",
   8: "delivery-app",
@@ -28,7 +28,7 @@ const portfolioItems = [
   { id: 2, title: "Skin Care", category: "Photography", image: "https://res.cloudinary.com/da6r15g9n/image/upload/v1784988474/DSC00192-copy_rmmujd.jpg", type: "image", size: "small" },
   { id: 3, title: "Luxury Bedding", category: "Amazon", image: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575484/1_kttjdw.jpg", type: "image", size: "small" },
   { id: 4, title: "Gourmet Burgers", category: "Food", image: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575591/1_f4bbym.jpg", type: "image", size: "small" },
-  { id: 5, title: "Fashion Accessories", category: "Photography", image: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883470/1_ophv2w.jpg", type: "image", size: "large" },
+  { id: 5, title: "Women Bags", category: "Photography", image: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883470/1_ophv2w.jpg", type: "image", size: "large" },
   { id: 6, title: "Men's Footwear", category: "Photography", image: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774883014/1_kwi1qt.jpg", type: "image", size: "small" },
   { id: 8, title: "Brand Launch", category: "Videography", image: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575368/a2_tc7xlt.jpg", type: "video", size: "large" },
   { id: 7, title: "Kids Flatlay", category: "Photography", image: "https://res.cloudinary.com/da6r15g9n/image/upload/v1782053096/polo_red_a_cnt1w8.jpg", type: "image", size: "small" },
@@ -111,46 +111,49 @@ export function PortfolioPreview() {
               <Link
                 key={item.id}
                 href={href}
-                className="group relative overflow-hidden cursor-pointer rounded-2xl bg-background/5 aspect-[4/3] block"
+                className="group portfolio-card"
+                style={{ aspectRatio: "4 / 3" }}
               >
-                <Image
-                  src={item.image || "/placeholder.svg"}
-                  alt={item.title}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  quality={60}
-                  loading="lazy"
-                  sizes="(max-width: 768px) 50vw, 50vw"
-                />
+                <div className="portfolio-card-inner">
+                  <Image
+                    src={item.image || "/placeholder.svg"}
+                    alt={item.title}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    quality={60}
+                    loading="lazy"
+                    sizes="(max-width: 768px) 50vw, 50vw"
+                  />
 
-                {/* Persistent dark gradient for text legibility */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80" />
+                  {/* Persistent dark gradient for text legibility */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80" />
 
-                {/* Hover Overlay Background */}
-                <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  {/* Hover Overlay Background */}
+                  <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                {/* Content Container */}
-                <div className="absolute inset-0 p-6 md:p-10 flex flex-col justify-end">
-                  <div className="transform translate-y-0 md:translate-y-4 md:group-hover:translate-y-0 transition-transform duration-500">
-                    <div className="flex items-center gap-3 mb-2 md:mb-3 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                      <span className="w-4 md:w-6 h-px bg-primary" />
-                      <span className="text-primary text-[10px] md:text-xs font-bold uppercase tracking-widest">{item.category}</span>
-                    </div>
-                    <h3 className="text-xl md:text-3xl font-serif font-bold text-white mb-1 md:mb-2">{item.title}</h3>
-                    <div className="flex items-center gap-2 text-white/90 text-[10px] md:text-sm font-medium opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-500 delay-150">
-                      <span>{item.type === "video" ? "Watch Video" : "View Gallery"}</span>
-                      <ArrowUpRight className="w-3 h-3 md:w-4 md:h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                  {/* Content Container */}
+                  <div className="absolute inset-0 p-6 md:p-10 flex flex-col justify-end">
+                    <div className="transform translate-y-0 md:translate-y-4 md:group-hover:translate-y-0 transition-transform duration-500">
+                      <div className="flex items-center gap-3 mb-2 md:mb-3 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                        <span className="w-4 md:w-6 h-px bg-primary" />
+                        <span className="text-primary text-[10px] md:text-xs font-bold uppercase tracking-widest">{item.category}</span>
+                      </div>
+                      <h3 className="text-xl md:text-3xl font-serif font-bold text-white mb-1 md:mb-2">{item.title}</h3>
+                      <div className="flex items-center gap-2 text-white/90 text-[10px] md:text-sm font-medium opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-500 delay-150">
+                        <span>{item.type === "video" ? "Watch Video" : "View Gallery"}</span>
+                        <ArrowUpRight className="w-3 h-3 md:w-4 md:h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                {/* Top Right Arrow / Icon */}
-                <div className="absolute top-4 right-4 md:top-6 md:right-6 w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary flex items-center justify-center shadow-lg shadow-primary/40 transform translate-y-0 md:-translate-y-4 opacity-100 md:opacity-0 md:group-hover:translate-y-0 md:group-hover:opacity-100 transition-all duration-500 delay-100">
-                  {item.type === "video" ? (
-                    <Play className="w-4 h-4 md:w-5 md:h-5 text-white fill-white translate-x-0.5" />
-                  ) : (
-                    <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5 text-white" />
-                  )}
+                  {/* Top Right Arrow / Icon */}
+                  <div className="absolute top-4 right-4 md:top-6 md:right-6 w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary flex items-center justify-center shadow-lg shadow-primary/40 transform translate-y-0 md:-translate-y-4 opacity-100 md:opacity-0 md:group-hover:translate-y-0 md:group-hover:opacity-100 transition-all duration-500 delay-100">
+                    {item.type === "video" ? (
+                      <Play className="w-4 h-4 md:w-5 md:h-5 text-white fill-white translate-x-0.5" />
+                    ) : (
+                      <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5 text-white" />
+                    )}
+                  </div>
                 </div>
               </Link>
             )

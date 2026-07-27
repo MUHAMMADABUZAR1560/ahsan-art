@@ -77,49 +77,58 @@ export function ReelsShowcase() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
-              className="relative flex-shrink-0 w-[45vw] sm:w-[40vw] md:w-auto aspect-[9/16] rounded-2xl overflow-hidden group cursor-pointer bg-background"
+              whileHover={{ y: -4 }}
+              style={{
+                borderRadius: "8px",
+                boxShadow: "0px 1px 3px rgba(0,0,0,0.1), 0px 6px 12px rgba(0,0,0,0.08)",
+                transition: "box-shadow 0.3s ease, transform 0.3s ease",
+                position: "relative",
+              }}
+              className="relative flex-shrink-0 w-[45vw] sm:w-[40vw] md:w-auto aspect-[9/16]"
             >
-              <video
-                src={reel.media_url}
-                poster={reel.thumbnail_url}
-                loop
-                muted
-                playsInline
-                preload="none"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                onMouseOver={(e) => e.currentTarget.play()}
-                onMouseOut={(e) => {
-                  e.currentTarget.pause()
-                  e.currentTarget.currentTime = 0
-                }}
-              />
+              <div className="absolute inset-0" style={{ borderRadius: "7px", overflow: "hidden" }}>
+                <video
+                  src={reel.media_url}
+                  poster={reel.thumbnail_url}
+                  loop
+                  muted
+                  playsInline
+                  preload="none"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  onMouseOver={(e) => e.currentTarget.play()}
+                  onMouseOut={(e) => {
+                    e.currentTarget.pause()
+                    e.currentTarget.currentTime = 0
+                  }}
+                />
 
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80" />
 
-              <div className="absolute inset-0 p-6 flex flex-col justify-between">
-                {/* Top: Instagram link if live */}
-                {isLive && reel.permalink && reel.permalink !== '#' && (
-                  <Link
-                    href={reel.permalink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="self-end w-9 h-9 rounded-full bg-black/30 backdrop-blur-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-primary"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <ExternalLink className="w-4 h-4 text-white" />
-                  </Link>
-                )}
-
-                {/* Bottom: Play + Caption */}
-                <div className="flex flex-col justify-end mt-auto">
-                  <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center mb-4 shadow-lg shadow-primary/40 group-hover:scale-110 transition-transform duration-300">
-                    <Play className="w-5 h-5 text-white fill-white translate-x-0.5" />
-                  </div>
-                  {reel.caption && (
-                    <h3 className="text-white font-serif font-bold text-lg md:text-xl line-clamp-2">
-                      {reel.caption.split('\n')[0].substring(0, 40)}
-                    </h3>
+                <div className="absolute inset-0 p-6 flex flex-col justify-between">
+                  {/* Top: Instagram link if live */}
+                  {isLive && reel.permalink && reel.permalink !== '#' && (
+                    <Link
+                      href={reel.permalink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="self-end w-9 h-9 rounded-full bg-black/30 backdrop-blur-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-primary"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <ExternalLink className="w-4 h-4 text-white" />
+                    </Link>
                   )}
+
+                  {/* Bottom: Play + Caption */}
+                  <div className="flex flex-col justify-end mt-auto">
+                    <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center mb-4 shadow-lg shadow-primary/40 group-hover:scale-110 transition-transform duration-300">
+                      <Play className="w-5 h-5 text-white fill-white translate-x-0.5" />
+                    </div>
+                    {reel.caption && (
+                      <h3 className="text-white font-serif font-bold text-lg md:text-xl line-clamp-2">
+                        {reel.caption.split('\n')[0].substring(0, 40)}
+                      </h3>
+                    )}
+                  </div>
                 </div>
               </div>
             </motion.div>
