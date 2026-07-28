@@ -71,7 +71,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full bg-primary/20 blur-[100px] pointer-events-none" />
 
         {/* Cover image as background */}
-        <div className="absolute inset-0 opacity-20">
+        <div className="absolute inset-0 opacity-35">
           <Image
             src={post.coverImage}
             alt={post.title}
@@ -81,7 +81,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             sizes="100vw"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d0d] via-[#0d0d0d]/60 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d0d] via-[#0d0d0d]/70 to-transparent" />
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 md:px-8 pt-40 pb-16">
           {/* Back link */}
@@ -138,6 +138,20 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             />
           </div>
 
+          {/* Featured Cover Image Banner */}
+          {post.coverImage && (
+            <div className="mb-12 rounded-2xl overflow-hidden shadow-2xl border border-border bg-secondary relative aspect-[16/9] w-full">
+              <Image
+                src={post.coverImage}
+                alt={post.title}
+                fill
+                className="object-cover"
+                priority
+                sizes="(max-width: 768px) 100vw, 800px"
+              />
+            </div>
+          )}
+
           {/* Prose content */}
           <div 
             className="
@@ -147,6 +161,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               prose-h2:border-l-4 prose-h2:border-primary prose-h2:pl-4
               prose-h3:text-xl prose-h3:mt-10 prose-h3:mb-3 prose-h3:text-foreground/90
               prose-p:text-foreground/70 prose-p:leading-[1.9] prose-p:mb-5 prose-p:text-[1.07rem]
+              prose-img:rounded-2xl prose-img:shadow-2xl prose-img:border prose-img:border-border prose-img:w-full prose-img:my-8
               prose-a:text-primary prose-a:font-medium prose-a:no-underline hover:prose-a:underline
               prose-strong:text-foreground prose-strong:font-semibold
               prose-ul:my-6 prose-ul:pl-0 prose-ul:list-none
