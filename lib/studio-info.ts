@@ -1,6 +1,11 @@
 export const studioInfo = {
   instagram: "@ahsanart.studio",
   instagramLink: "https://www.instagram.com/ahsanart.studio/",
+  // Social profiles — used in footer icons AND JSON-LD sameAs
+  facebookLink: "https://www.facebook.com/ahsanart.studio",
+  youtubeLink: "https://www.youtube.com/@ahsanart.studio",
+  linkedinLink: "https://www.linkedin.com/company/ahsanart-studio",
+  twitterLink: "https://x.com/ahsanart_studio",
   email: "ahsanart.creativestudio@gmail.com",
   emailLink: "https://mail.google.com/mail/?view=cm&fs=1&to=ahsanart.creativestudio@gmail.com",
   phone: "0308-1122525",

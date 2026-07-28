@@ -1,6 +1,7 @@
 import React, { Suspense } from "react"
 import type { Metadata, Viewport } from 'next'
 import { Syne, Inter } from 'next/font/google'
+import Script from 'next/script'
 import './globals.css'
 import { CursorFollower } from "@/components/CursorFollower"
 import MetaPixel from "@/components/MetaPixel"
@@ -18,13 +19,18 @@ const inter = Inter({
   display: 'swap'
 });
 
+// GA4 Measurement ID — update if you ever rotate properties
+const GA_ID = 'G-XXXXXXXXXX' // TODO: replace with your real GA4 ID from analytics.google.com
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.ahsanart.pk'),
   title: {
-    default: 'Ahsan Art Creative Studio | Product Photography & Videography Studio Faisalabad',
-    template: '%s | Ahsan Art Creative Studio Faisalabad',
+    // 55 chars — within the 50-60 char ideal range
+    default: 'Ahsan Art Creative Studio | Photography Faisalabad',
+    template: '%s | Ahsan Art',
   },
-  description: "Faisalabad's #1 product photography & videography studio for e-commerce brands. Photos, UGC videos & Amazon content that drive sales.",
+  // 148 chars — within the 120-160 char ideal range
+  description: "Faisalabad's top product photography & videography studio for e-commerce brands. Professional photos, UGC videos & Amazon content.",
   authors: [{ name: 'Ahsan Art Creative Studio' }],
   creator: 'Ahsan Art Creative Studio',
   publisher: 'Ahsan Art Creative Studio',
@@ -38,8 +44,9 @@ export const metadata: Metadata = {
     locale: 'en_PK',
     url: 'https://www.ahsanart.pk',
     siteName: 'Ahsan Art Creative Studio',
-    title: 'Ahsan Art Creative Studio | Product Photography & Videography in Faisalabad',
-    description: "Faisalabad's e-commerce content studio. Product photography, videography, UGC, and Amazon content that drives real sales.",
+    // 57 chars
+    title: 'Ahsan Art Creative Studio | Photography Faisalabad',
+    description: "Faisalabad's e-commerce content studio. Product photography, videography, UGC & Amazon content that drives real sales.",
     images: [
       {
         url: '/images/og-image.jpg',
@@ -51,7 +58,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Ahsan Art Creative Studio | Product Photography Faisalabad',
+    site: '@ahsanart_studio',
+    creator: '@ahsanart_studio',
+    // 50 chars
+    title: 'Ahsan Art Creative Studio | Photography Faisalabad',
     description: 'E-commerce content studio in Faisalabad. Product photography, videography, UGC & Amazon content.',
     images: ['/images/og-image.jpg'],
   },
@@ -87,6 +97,21 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.png?v=3" type="image/png" />
         <link rel="shortcut icon" href="/favicon.png?v=3" type="image/png" />
         <link rel="apple-touch-icon" href="/favicon.png?v=3" type="image/png" />
+
+        {/* Google Analytics 4 — load after page is interactive to not block LCP */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_ID}', { page_path: window.location.pathname });
+          `}
+        </Script>
+
         <script
           dangerouslySetInnerHTML={{
             __html: `

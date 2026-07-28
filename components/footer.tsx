@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { Logo } from "./logo"
-import { Instagram, MessageCircle, Mail, ArrowUpRight, MapPin } from "lucide-react"
+import { Instagram, MessageCircle, Mail, ArrowUpRight, MapPin, Facebook, Youtube, Linkedin, Twitter } from "lucide-react"
 import { studioInfo } from "@/lib/studio-info"
 
 const footerLinks = {
@@ -39,17 +39,22 @@ export function Footer() {
           <p className="mt-6 text-background/60 text-sm md:text-base leading-relaxed">
             Premium product photography and videography studio specializing in e-commerce and brand content.
           </p>
-          <div className="flex gap-3 mt-6">
+          <div className="flex flex-wrap gap-3 mt-6">
             {[
-              { icon: Instagram, href: studioInfo.instagramLink },
-              { icon: MessageCircle, href: studioInfo.phoneLink },
-              { icon: Mail, href: `mailto:${studioInfo.email}` }
-            ].map((social, i) => (
+              { icon: Instagram, href: studioInfo.instagramLink, label: "Instagram" },
+              { icon: Facebook,  href: studioInfo.facebookLink,  label: "Facebook" },
+              { icon: Youtube,   href: studioInfo.youtubeLink,   label: "YouTube" },
+              { icon: Linkedin,  href: studioInfo.linkedinLink,  label: "LinkedIn" },
+              { icon: Twitter,   href: studioInfo.twitterLink,   label: "X / Twitter" },
+              { icon: MessageCircle, href: studioInfo.phoneLink, label: "WhatsApp" },
+              { icon: Mail, href: `mailto:${studioInfo.email}`,  label: "Email" },
+            ].map((social) => (
               <a
-                key={i}
+                key={social.label}
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={social.label}
                 className="w-10 h-10 rounded-full bg-background/5 border border-background/10 flex items-center justify-center hover:bg-primary hover:border-primary transition-all group"
               >
                 <social.icon className="w-5 h-5 text-background/70 group-hover:text-white" />

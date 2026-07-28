@@ -4,7 +4,7 @@ export default function JsonLd() {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "LocalBusiness",
+        "@type": ["LocalBusiness", "ProfessionalService"],
         "@id": "https://www.ahsanart.pk/#business",
         "name": "Ahsan Art Creative Studio",
         "url": "https://www.ahsanart.pk",
@@ -49,6 +49,10 @@ export default function JsonLd() {
         },
         "sameAs": [
           "https://www.instagram.com/ahsanart.studio/",
+          "https://www.facebook.com/ahsanart.studio",
+          "https://www.youtube.com/@ahsanart.studio",
+          "https://www.linkedin.com/company/ahsanart-studio",
+          "https://x.com/ahsanart_studio",
           "https://wa.me/923081122525"
         ],
         "priceRange": "$$",
