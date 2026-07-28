@@ -296,43 +296,64 @@ export const blogPosts: BlogPost[] = [
   {
     title: "How Much Does Product Photography Cost in Pakistan?",
     slug: "product-photography-cost-pakistan",
-    excerpt: "A transparent breakdown of product photography pricing in Pakistan — what affects the cost, what to expect from different studios, and how to get the best value.",
+    excerpt: "A transparent breakdown of product photography pricing in Pakistan — real PKR rates, what affects the cost, and how to budget for your next shoot.",
     content: `
       <p style="font-size:1.2rem;font-weight:600;line-height:1.7;color:var(--foreground)">One of the most common questions we get from Pakistani e-commerce brands is: how much does product photography actually cost?</p>
 
-      <p>The honest answer is: it depends. But let's break down exactly what it depends on — so you can plan your budget realistically and know what you're paying for.</p>
+      <p>The honest answer is: it depends on what you need. But we believe in transparency — so here is a real, detailed breakdown of what product photography and videography actually costs in Pakistan in 2025, using our own pricing as a reference.</p>
 
-      <h2>Factors That Affect Product Photography Pricing in Pakistan</h2>
+      <h2>Product Photography Pricing (Per Image)</h2>
+      <p>Here are the starting rates for the most common photography types at a specialist e-commerce studio:</p>
       <ul>
-        <li><strong>Number of products:</strong> More products usually means a lower per-product rate.</li>
-        <li><strong>Types of shots:</strong> White background only vs. lifestyle vs. detail shots vs. a combination.</li>
-        <li><strong>Models or no models:</strong> Model photography adds casting, styling, and coordination costs.</li>
-        <li><strong>Props and set design:</strong> Complex styled sets with props cost more to set up.</li>
-        <li><strong>Video vs. photography:</strong> Video production requires more equipment, setup, and editing time.</li>
-        <li><strong>Editing depth:</strong> Basic colour correction vs. advanced compositing and retouching.</li>
-        <li><strong>Turnaround time:</strong> Rush delivery typically costs more.</li>
+        <li><strong>E-commerce (White Background):</strong> Rs. 500–700 per image — clean, marketplace-compliant shots for Daraz, Amazon, Shopify, and WooCommerce</li>
+        <li><strong>Clothing — Unstitched:</strong> Rs. 700 per image — flat lay or ghost-mannequin shots that show fabric clearly</li>
+        <li><strong>Flat Lay Photography:</strong> Rs. 2,000 per product — creative styled lay-downs for social media and brand content</li>
+        <li><strong>Lifestyle (No Props):</strong> Rs. 1,000 per image — product in a real-world setting without added props</li>
+        <li><strong>Lifestyle (With Props):</strong> Rs. 1,800 per image — styled set with props, backgrounds, and creative direction</li>
+        <li><strong>Group Image (White Background):</strong> Rs. 1,000 per image — multiple products in one frame</li>
       </ul>
 
       <figure class="my-12 rounded-2xl overflow-hidden shadow-2xl border border-white/5 bg-white/5">
-        <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=2000&auto=format&fit=crop" alt="Product photography pricing Pakistan studio" class="w-full h-auto object-cover max-h-[450px] m-0" />
+        <img src="https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575375/studio_zpk4im.jpg" alt="Ahsan Art Creative Studio — professional product photography setup in Faisalabad" class="w-full h-auto object-cover max-h-[450px] m-0" />
       </figure>
 
-      <h2>What to Expect at Different Price Points</h2>
-      <p>In Pakistan, product photography can range significantly. Here's a general breakdown of what different investment levels typically include:</p>
+      <h2>Product Videography Pricing</h2>
+      <p>Video content consistently outperforms static images in ads and social media. Here's what you can expect to pay:</p>
       <ul>
-        <li><strong>Budget options:</strong> Basic white background shots, minimal editing, high turnaround volume. Good for commodities, not for brand building.</li>
-        <li><strong>Mid-range studios:</strong> Cleaner results, some lifestyle capability, better colour accuracy. Suitable for Daraz and local e-commerce.</li>
-        <li><strong>Specialist e-commerce studios:</strong> Strategic approach, Amazon-compliant images, lifestyle photography, UGC, and full creative direction. Best ROI for brands serious about growth.</li>
+        <li><strong>Single Product (White Background):</strong> Rs. 7,500 per video — clean, marketplace-ready product video</li>
+        <li><strong>Group Video (Up to 5 Products):</strong> Rs. 8,000 per video — multiple products in one video</li>
+        <li><strong>Theme-Based / Set Video:</strong> Rs. 8,500+ per video — styled set with creative direction and props</li>
       </ul>
 
+      <h2>Factors That Affect Your Final Quote</h2>
+      <ul>
+        <li><strong>Number of products:</strong> Larger catalogs unlock better per-product rates</li>
+        <li><strong>Types of shots:</strong> White background only vs. lifestyle vs. detail shots vs. a combination</li>
+        <li><strong>Video vs. photography:</strong> Video production requires more setup, equipment, and editing time</li>
+        <li><strong>Props and set design:</strong> Complex styled sets with props cost more to build</li>
+        <li><strong>Turnaround time:</strong> Rush delivery (under 48 hours) adds 20% to the total</li>
+        <li><strong>Monthly retainer:</strong> Brands on ongoing packages get significantly lower per-image rates than one-off bookings</li>
+      </ul>
+
+      <figure class="my-12 rounded-2xl overflow-hidden shadow-2xl border border-white/5 bg-white/5">
+        <img src="https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575381/footerlogo_ucwjlu.png" alt="Ahsan Art Creative Studio — product photography for e-commerce brands in Faisalabad Pakistan" class="w-full h-auto object-contain max-h-[200px] m-0 p-8 bg-black/80" />
+      </figure>
+
       <h2>The Real ROI Calculation</h2>
-      <p>Think of it this way: if better product photography increases your conversion rate from 1% to 2%, you've doubled your revenue from the same traffic — without spending more on ads. That's the kind of return professional <a href="/services/product-photography">product photography</a> can deliver.</p>
-      <p>Want a transparent, customised quote for your products? <a href="/contact">Contact Ahsan Art Creative Studio</a> on WhatsApp for a no-obligation estimate.</p>
+      <p>Think of it this way: if better product photography increases your conversion rate from 1% to 2%, you've doubled your revenue from the same traffic — without spending more on ads. A single good image that costs Rs. 700 to produce can generate Rs. 70,000 in additional sales if it's in a high-traffic listing.</p>
+
+      <p>Pakistan's e-commerce market — especially Cash on Delivery — means returns are expensive. Clear, honest, high-quality photography that accurately represents your product reduces return rates significantly.</p>
+
+      <h2>What to Expect: One-Off vs Monthly Packages</h2>
+      <p>For brands with a single product launch or a small catalog, a one-off booking works well. For brands that continuously add products, run seasonal campaigns, or need regular social media content, a <strong>monthly retainer package</strong> is significantly more cost-effective. Ask us for a custom monthly quote when you reach out.</p>
+
+      <p>Want a transparent, customised quote for your products? <a href="/contact">Contact Ahsan Art Creative Studio</a> on WhatsApp for a no-obligation estimate — most quotes are ready within a few hours.</p>
     `,
-    coverImage: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=2574&auto=format&fit=crop",
+    coverImage: "https://res.cloudinary.com/dhtktd4ka/image/upload/v1774575375/studio_zpk4im.jpg",
     date: "2024-11-08",
     author: "Ahsan Art"
   },
+
   {
     title: "White Background vs Lifestyle Product Photography: Which Do You Need?",
     slug: "white-background-vs-lifestyle-product-photography",
