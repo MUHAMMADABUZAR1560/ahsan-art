@@ -26,8 +26,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     }
   }
 
+  const pageTitle = post.slug === "how-to-choose-product-photography-studio-pakistan"
+    ? "How to Choose a Product Photography Studio in Pakistan | Ahsan Art"
+    : `${post.title} | Ahsan Art Creative Studio Blog`
+
   return {
-    title: `${post.title} | Ahsan Art Creative Studio Blog`,
+    title: pageTitle,
     description: post.excerpt,
     alternates: { canonical: `https://www.ahsanart.pk/blog/${post.slug}` },
     openGraph: {
