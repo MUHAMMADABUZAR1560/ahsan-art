@@ -6,10 +6,10 @@ import { ArrowRight, Check, MessageCircle } from 'lucide-react';
 import { Breadcrumb } from '@/components/breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'E-Commerce Content Studio Faisalabad | Ahsan Art Creative Studio',
+  title: 'E-Commerce Content Studio | Ahsan Art',
   description: 'Complete e-commerce content solutions in Faisalabad, Pakistan. Product photography, video, UGC, and Amazon assets under one roof for brands ready to scale.',
   alternates: { canonical: 'https://www.ahsanart.pk/services/ecommerce-solutions' },
-  openGraph: { url: 'https://www.ahsanart.pk/services/ecommerce-solutions', title: 'E-Commerce Content Studio Faisalabad | Ahsan Art Creative Studio', description: 'Complete e-commerce content solutions in Faisalabad, Pakistan. Photography, video & Amazon content under one roof.' },
+  openGraph: { url: 'https://www.ahsanart.pk/services/ecommerce-solutions', title: 'E-Commerce Content Studio | Ahsan Art', description: 'Complete e-commerce content solutions in Faisalabad, Pakistan. Photography, video & Amazon content under one roof.' },
 };
 
 const faqSchema = {

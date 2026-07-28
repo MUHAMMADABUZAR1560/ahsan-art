@@ -6,10 +6,10 @@ import { ArrowRight, Check, MessageCircle } from 'lucide-react';
 import { Breadcrumb } from '@/components/breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Product Videography Faisalabad, Pakistan | Ahsan Art Creative Studio',
+  title: 'Product Videography Faisalabad | Ahsan Art',
   description: 'Premium product videography in Faisalabad, Pakistan. Scroll-stopping ad creatives, Reels, and Shopify video production to increase e-commerce sales.',
   alternates: { canonical: 'https://www.ahsanart.pk/services/product-videography' },
-  openGraph: { url: 'https://www.ahsanart.pk/services/product-videography', title: 'Product Videography Faisalabad, Pakistan | Ahsan Art Creative Studio', description: 'Premium product videography in Faisalabad, Pakistan. High-converting video ads, Reels, and TikTok clips.' },
+  openGraph: { url: 'https://www.ahsanart.pk/services/product-videography', title: 'Product Videography Faisalabad | Ahsan Art', description: 'Premium product videography in Faisalabad, Pakistan. High-converting video ads, Reels, and TikTok clips.' },
 };
 
 const faqSchema = {

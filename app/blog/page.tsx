@@ -8,12 +8,12 @@ import { Footer } from "@/components/footer"
 
 export const metadata: Metadata = {
   title: "Blog | Insights on E-Commerce Photography & Videography",
-  description: "Read the latest tips, trends, and strategies for e-commerce visual content from Ahsan Art Creative Studio.",
+  description: "Read the latest tips, trends, and strategies for e-commerce product photography, videography, and visual marketing from Ahsan Art Creative Studio.",
   alternates: { canonical: "https://www.ahsanart.pk/blog" },
   openGraph: {
     url: "https://www.ahsanart.pk/blog",
-    title: "Blog | Ahsan Art Creative Studio",
-    description: "Read the latest tips, trends, and strategies for e-commerce visual content from Ahsan Art Creative Studio.",
+    title: "Blog | E-Commerce Photography Insights",
+    description: "Read the latest tips, trends, and strategies for e-commerce product photography, videography, and visual marketing from Ahsan Art Creative Studio.",
   },
 }
 

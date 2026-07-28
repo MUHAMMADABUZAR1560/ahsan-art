@@ -3,7 +3,7 @@ import { FAQPageClient } from "./faq-client"
 
 export const metadata: Metadata = {
   title: 'FAQ | Common Questions About Our Photography Services',
-  description: "Frequently asked questions about Ahsan Art Creative Studio's product photography, videography, Amazon content, UGC videos, and food photography services in Faisalabad.",
+  description: "Frequently asked questions about product photography, videography, UGC videos, and e-commerce content services at Ahsan Art Creative Studio.",
   alternates: { canonical: 'https://www.ahsanart.pk/faq' },
   openGraph: {
     title: 'FAQ | Common Questions About Our Photography Services',

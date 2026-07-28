@@ -13,10 +13,10 @@ import { GoogleReviews } from "@/components/sections/google-reviews"
 import { CTASection } from "@/components/sections/cta-section"
 
 export const metadata: Metadata = {
-  title: "Ahsan Art Creative Studio | Product Photography & Videography Faisalabad",
-  description: "Specialized e-commerce content studio in Faisalabad, Pakistan. Professional product photography, videography, UGC videos, and Amazon listing designs that drive sales.",
+  title: "Ahsan Art Creative Studio | Photography Faisalabad",
+  description: "Faisalabad's top product photography & videography studio. Professional photos, UGC videos, and Amazon listing designs that drive sales.",
   alternates: {
-    canonical: "https://ahsanart.pk",
+    canonical: "https://www.ahsanart.pk",
   },
 }
 

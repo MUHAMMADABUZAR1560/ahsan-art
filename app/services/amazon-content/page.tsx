@@ -6,10 +6,10 @@ import { ArrowRight, Check, MessageCircle } from 'lucide-react';
 import { Breadcrumb } from '@/components/breadcrumb';
 
 export const metadata: Metadata = {
-  title: 'Amazon Product Photography Pakistan | Ahsan Art Creative Studio',
+  title: 'Amazon Product Photography Pakistan | Ahsan Art',
   description: 'Expert Amazon product photography in Pakistan. Boost conversion rates with optimized listing images, A+ content, and infographics for global marketplaces.',
   alternates: { canonical: 'https://www.ahsanart.pk/services/amazon-content' },
-  openGraph: { url: 'https://www.ahsanart.pk/services/amazon-content', title: 'Amazon Product Photography Pakistan | Ahsan Art Creative Studio', description: 'Amazon product photography in Pakistan. Optimized listing images & A+ EBC content.' },
+  openGraph: { url: 'https://www.ahsanart.pk/services/amazon-content', title: 'Amazon Product Photography Pakistan | Ahsan Art', description: 'Amazon product photography in Pakistan. Optimized listing images & A+ EBC content.' },
 };
 
 const faqSchema = {
