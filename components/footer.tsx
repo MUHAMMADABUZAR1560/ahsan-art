@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { Logo } from "./logo"
 import { Instagram, MessageCircle, Mail, ArrowUpRight, MapPin } from "lucide-react"
+import { studioInfo } from "@/lib/studio-info"
 
 const footerLinks = {
   navigation: [
@@ -40,9 +41,9 @@ export function Footer() {
           </p>
           <div className="flex gap-3 mt-6">
             {[
-              { icon: Instagram, href: "https://www.instagram.com/ahsanart.studio/" },
-              { icon: MessageCircle, href: "https://wa.me/923081122525" },
-              { icon: Mail, href: "mailto:ahsanart.creativestudio@gmail.com" }
+              { icon: Instagram, href: studioInfo.instagramLink },
+              { icon: MessageCircle, href: studioInfo.phoneLink },
+              { icon: Mail, href: `mailto:${studioInfo.email}` }
             ].map((social, i) => (
               <a
                 key={i}
@@ -99,13 +100,13 @@ export function Footer() {
                 Start a Project <ArrowUpRight className="w-3.5 h-3.5" />
               </Link>
               <div className="space-y-3">
-                <p className="text-sm text-background/80 font-mono">0308-1122525</p>
+                <p className="text-sm text-background/80 font-mono">{studioInfo.phone}</p>
                 <p className="text-xs text-background/50 leading-relaxed max-w-[200px]">
-                  Opposite Gatwala Commercial Hub, Chak No 199 Rb, Faisalabad, 38000, Pakistan.
+                  {studioInfo.address}
                 </p>
                 <div className="pt-2">
                   <p className="text-xs font-bold text-background/70 uppercase tracking-wider mb-1">Hours</p>
-                  <p className="text-xs text-background/50">Mon-Sat: 11:00 AM - 6:00 PM<br/>Friday: Closed</p>
+                  <p className="text-xs text-background/50">Sat–Thu: 11:00 AM – 6:00 PM<br/>Friday: Closed</p>
                 </div>
               </div>
             </div>

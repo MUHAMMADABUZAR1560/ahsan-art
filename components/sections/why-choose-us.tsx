@@ -1,13 +1,14 @@
 "use client"
 
 import { useRef, useEffect, useState } from "react"
-import { Award, Clock, Target, Users, Sparkles, Shield, ArrowRight } from "lucide-react"
+import { Award, Clock, Target, Users, Sparkles, Shield } from "lucide-react"
+import { studioInfo } from "@/lib/studio-info"
 
 const stats = [
-  { value: 7, suffix: "+", label: "Years in E-Commerce", icon: Award },
-  { value: 200, suffix: "+", label: "Projects", icon: Target },
-  { value: 100, suffix: "+", label: "Clients", icon: Users },
-  { value: 24, suffix: "hr", label: "Turnaround", icon: Clock },
+  { value: studioInfo.stats.years, suffix: "+", label: "Years in E-Commerce", icon: Award },
+  { value: studioInfo.stats.projects, suffix: "+", label: "Projects", icon: Target },
+  { value: studioInfo.stats.clients, suffix: "+", label: "Clients", icon: Users },
+  { value: studioInfo.stats.turnaround, suffix: "hr", label: "Turnaround", icon: Clock },
 ]
 
 const features = [
@@ -44,22 +45,27 @@ const features = [
 ]
 
 function AnimatedCounter({ value, suffix, isInView }: { value: number; suffix: string; isInView: boolean }) {
+  // Start at final value to avoid hydration mismatch (server renders the real number)
   const [count, setCount] = useState(value)
   const started = useRef(false)
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    if (!isInView || started.current) return
+    setMounted(true)
+  }, [])
+
+  useEffect(() => {
+    if (!mounted || !isInView || started.current) return
     started.current = true
 
     const duration = 1200
     const startTime = performance.now()
-    const startValue = 0
 
     const tick = (now: number) => {
       const elapsed = now - startTime
       const progress = Math.min(elapsed / duration, 1)
       const eased = progress * (2 - progress) // ease out quadratic
-      setCount(Math.floor(startValue + (value - startValue) * eased))
+      setCount(Math.floor(value * eased))
       if (progress < 1) {
         requestAnimationFrame(tick)
       } else {
@@ -67,9 +73,9 @@ function AnimatedCounter({ value, suffix, isInView }: { value: number; suffix: s
       }
     }
 
-    setCount(startValue)
+    setCount(0)
     requestAnimationFrame(tick)
-  }, [isInView, value])
+  }, [mounted, isInView, value])
 
   return (
     <span className="tabular-nums" data-target={value}>
@@ -87,7 +93,6 @@ export function WhyChooseUs() {
     const el = ref.current
     if (!el) return
 
-    // Fallback: trigger after 2 seconds in case IntersectionObserver fails
     const fallbackTimer = setTimeout(() => {
       setInView(true)
     }, 2000)

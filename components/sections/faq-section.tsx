@@ -4,57 +4,119 @@ import { useState, useRef, useEffect } from "react"
 import Link from "next/link"
 import { Plus, Minus, ArrowUpRight } from "lucide-react"
 
-const faqs = [
+const faqCategories = [
   {
-    question: "How much does product photography cost in Faisalabad?",
-    answer: "Product photography pricing depends on the type of image and the amount of work involved. At Ahsan Art Creative Studio, photography typically ranges from Rs. 500 to Rs. 2,700 per image. Simple white background images are more affordable, while lifestyle, creative, and Amazon listing images usually require more planning and editing."
+    title: "📦 Shipping & Products",
+    items: [
+      {
+        question: "Do I need to send my products to your studio?",
+        answer: "Yes, you can ship your products directly to our studio in Faisalabad, or drop them off in person. Once the shoot is completed, we return the products to you (return shipping is covered by the client), or we can safely hold them for future shoots if you're on an ongoing content package."
+      },
+      {
+        question: "Can we shoot at our location instead of your studio?",
+        answer: "Yes, on-location shoots are available for select services. On-location shoots are quoted separately based on distance, setup time, and equipment needed — mention this when requesting your quote."
+      },
+      {
+        question: "What condition should my products be in when I ship them?",
+        answer: "Products should be clean, undamaged, and packed securely to avoid transit damage. For clothing, please steam or iron items beforehand where possible — this saves shoot-day time and keeps your final images crisp."
+      },
+      {
+        question: "Do you provide models and props?",
+        answer: "We maintain an in-house prop and background library for most product categories at no extra cost. We do not offer model photography for standard product shoots. For UGC (user-generated content) videos, male models are available — currently the only model option we offer, so mention this at quoting stage if your UGC concept requires one."
+      }
+    ]
   },
   {
-    question: "How much does a product video cost in Faisalabad?",
-    answer: "Our white background product videos start from Rs. 7,500, while theme-based product videos start from Rs. 8,500. If you’re looking for UGC-style content, plain background UGC videos start from Rs. 9,500 and theme-based UGC videos start from Rs. 17,000 depending on the concept, scripting, and production requirements."
+    title: "⏱️ Turnaround Time",
+    items: [
+      {
+        question: "How long does a typical project take?",
+        answer: "Standard turnaround is 5–7 working days from the day we receive both your products and confirmed payment. Larger catalogs or multi-category shoots may take longer — we'll confirm an exact delivery date in your quotation before the shoot begins."
+      },
+      {
+        question: "Do you offer rush/urgent delivery?",
+        answer: "Yes, rush/urgent delivery is available for an additional 20% of the total project cost. Let us know upfront if you have a launch deadline so we can prioritize your shoot."
+      },
+      {
+        question: "How will I receive my final files?",
+        answer: "All final images and videos are delivered via a Google Drive link, accessible from any device. Files remain available for download for 30 days after delivery."
+      }
+    ]
   },
   {
-    question: "How long does a typical product photography or videography project take?",
-    answer: "Most photography projects are delivered within 2-4 working days after the shoot. Product videos generally take 3-7 working days depending on the complexity, editing requirements, and number of deliverables. We always share a timeline before starting the project so expectations are clear from day one."
+    title: "💰 Pricing & Booking",
+    items: [
+      {
+        question: "How much does a shoot cost?",
+        answer: "Pricing depends on the product category, number of items, background type (white/theme-based), and whether photography, video, or UGC content is included. Photography starts at Rs. 700 per product, videography starts at Rs. 7,500 for a white-background video and Rs. 8,500+ for theme-based content. Send us your product details and requirements and we'll share a custom quotation — most quotes are ready within a few hours."
+      },
+      {
+        question: "Do I need to pay in advance?",
+        answer: "Yes, we require an advance payment to confirm and schedule your shoot slot. The remaining balance (per your agreed terms) is due before final files are released."
+      },
+      {
+        question: "What payment methods do you accept?",
+        answer: "We accept bank transfer as well as mobile payment methods including Easypaisa and JazzCash. Payment details are shared during quotation and invoicing."
+      },
+      {
+        question: "Can I cancel or reschedule my shoot?",
+        answer: "Shoots can be rescheduled with at least 24 hours' notice at no extra charge. If a shoot is cancelled after products have already been received or the shoot date confirmed, the advance payment is non-refundable, as it reserves studio time and resources."
+      }
+    ]
   },
   {
-    question: "Can I visit your studio, or do I need to send products by courier?",
-    answer: "Both options are available. Our studio is located in Faisalabad, opposite Gatwala Commercial Hub, and clients are welcome to visit by appointment. If you’re outside Faisalabad, you can simply courier your products to us and we’ll handle the complete shoot and return process."
+    title: "✅ Usage Rights & Ownership",
+    items: [
+      {
+        question: "Do I get full rights to the images/videos?",
+        answer: "Yes. Once final payment is received, you get full commercial usage rights to all delivered images and videos — for your website, marketplace listings, social media, and paid advertising, with no additional licensing fees. Ahsan Art may showcase select final work in our own portfolio and social media unless you request otherwise in writing."
+      },
+      {
+        question: "Can I request the raw, unedited files?",
+        answer: "Raw files are not included by default, as pricing covers the full shoot-to-edit process. Raw file delivery can be arranged separately for an additional fee if needed."
+      }
+    ]
   },
   {
-    question: "What is the difference between a UGC video and a regular product video?",
-    answer: "A regular product video focuses on showcasing the product through professional shots, details, and visuals. A UGC (User Generated Content) video is designed to feel more natural and relatable, usually featuring a person using or talking about the product. UGC content often performs exceptionally well for Facebook and Instagram ads because it feels more authentic to viewers."
+    title: "🔄 Revisions",
+    items: [
+      {
+        question: "What is your revision policy?",
+        answer: "Every project includes 1–2 rounds of revisions (minor color, crop, or retouching adjustments) within 3 days of delivery, at no extra cost. Requests for a full reshoot or additional products beyond the original brief are treated as a new booking."
+      },
+      {
+        question: "What if I'm not happy with the final results?",
+        answer: "We review your reference images and requirements with you before the shoot to minimize surprises. If the final output doesn't match the agreed brief, we'll revise it at no cost within our standard revision window."
+      }
+    ]
   },
   {
-    question: "Do you provide raw photos or unedited video footage?",
-    answer: "Our standard packages include professionally edited final files ready for use on your website, social media, or advertisements. Raw files and unedited footage are generally not included because they don’t represent the final quality standard of our work. If a project specifically requires raw assets, this can be discussed before production begins."
-  },
-  {
-    question: "How many revisions are included in your service?",
-    answer: "We include reasonable revisions to ensure the final content matches the agreed brief. Most projects are approved within one or two revision rounds because the planning process happens before the shoot. Major changes that fall outside the approved scope may require additional charges."
-  },
-  {
-    question: "Is the content optimized for Instagram, Facebook Ads, Shopify, and websites?",
-    answer: "Yes. We don’t create content with a one-size-fits-all approach. Before every project, we identify where the content will be used—whether it’s Instagram, Facebook Ads, Shopify, Amazon, Daraz, or your website—and create visuals accordingly so they perform better on that specific platform."
-  },
-  {
-    question: "Do you work with small businesses or brands that only have one product?",
-    answer: "Yes. Many successful brands start with a single product. Whether you’re launching your first item or managing a large catalog, we can help create professional visuals that build trust and make your brand look established from day one."
-  },
-  {
-    question: "What makes Ahsan Art Creative Studio different from other photography studios in Faisalabad?",
-    answer: "Most studios focus on taking good-looking photos. We focus on creating content that supports sales. Before every project, we review your current content, identify visual gaps, and plan photography and videography around your brand, platform, and customer journey. That’s why many ecommerce businesses trust us not just as photographers, but as long-term content partners."
-  },
-  {
-    question: "How do I book a product photography or videography project?",
-    answer: "Getting started is simple. Contact us on 0308-1122525, send a message on Instagram @ahsanart.studio, or email ahsanart.creativestudio@gmail.com. We’ll discuss your products, goals, required deliverables, timeline, and provide a clear quotation before moving forward."
+    title: "🎬 Services & Process",
+    items: [
+      {
+        question: "What services do you offer?",
+        answer: "Product photography, product videography, UGC videos, Amazon-ready content and A+ layouts, food photography, and full e-commerce content packages — for local and national brands."
+      },
+      {
+        question: "Do you work with clients outside Faisalabad?",
+        answer: "Yes, we work with clients across Pakistan. Ship your products to our studio and we handle the shoot, edit, and delivery online via Google Drive, no matter where you're located."
+      },
+      {
+        question: "Can I be present during my shoot?",
+        answer: "While not required, you're welcome to join in person or over a video call for real-time feedback, especially for larger or customized shoots."
+      },
+      {
+        question: "Do you offer ongoing monthly content packages?",
+        answer: "Yes, we offer monthly retainer packages for brands that need a steady stream of product photos, videos, UGC, and social media assets — more cost-effective than one-off bookings."
+      }
+    ]
   }
 ]
 
 export function FAQSection() {
   const ref = useRef<HTMLElement>(null)
   const [inView, setInView] = useState(false)
-  const [openIndex, setOpenIndex] = useState<number | null>(0)
+  const [openKey, setOpenKey] = useState<string | null>("0-0") // Open first item of first category by default
 
   useEffect(() => {
     const el = ref.current
@@ -87,60 +149,72 @@ export function FAQSection() {
           </p>
         </div>
 
-        <div className="space-y-4">
-          {faqs.map((faq, index) => {
-            const isOpen = openIndex === index
-            return (
-              <div
-                key={index}
-                className={`border rounded-2xl overflow-hidden transition-all duration-300 ${
-                  isOpen ? "bg-secondary border-primary/20" : "bg-transparent border-border/50 hover:border-border"
-                }`}
-                style={{
-                  opacity: inView ? 1 : 0,
-                  transform: inView ? "translateY(0)" : "translateY(20px)",
-                  transition: `opacity 500ms ease ${index * 80}ms, transform 500ms ease ${index * 80}ms, background-color 300ms, border-color 300ms`,
-                }}
-              >
-                <button
-                  onClick={() => setOpenIndex(isOpen ? null : index)}
-                  className="w-full text-left px-6 py-6 md:px-8 md:py-8 flex items-center justify-between gap-4"
-                >
-                  <h3 className={`text-base md:text-lg font-bold transition-colors ${isOpen ? "text-primary" : "text-foreground"}`}>
-                    {faq.question}
-                  </h3>
-                  <div className={`flex-shrink-0 w-8 h-8 rounded-full border flex items-center justify-center transition-colors ${
-                    isOpen ? "bg-primary border-primary" : "border-border"
-                  }`}>
-                    {isOpen ? (
-                      <Minus className="w-4 h-4 text-white" />
-                    ) : (
-                      <Plus className="w-4 h-4 text-foreground" />
-                    )}
-                  </div>
-                </button>
-                <div
-                  className="transition-all duration-300 ease-in-out grid"
-                  style={{
-                    gridTemplateRows: isOpen ? "1fr" : "0fr",
-                    opacity: isOpen ? 1 : 0,
-                    overflow: "hidden",
-                  }}
-                >
-                  <div className="min-h-0">
-                    <div className="px-6 pb-6 md:px-8 md:pb-8 text-muted-foreground text-sm md:text-base leading-relaxed">
-                      {faq.answer}
+        <div className="space-y-12">
+          {faqCategories.map((category, catIndex) => (
+            <div key={catIndex} className="space-y-4">
+              <h3 className="text-xl md:text-2xl font-serif font-bold text-foreground mt-8 mb-4 border-b border-border/50 pb-2">
+                {category.title}
+              </h3>
+              
+              <div className="space-y-4">
+                {category.items.map((faq, itemIndex) => {
+                  const uniqueKey = `${catIndex}-${itemIndex}`
+                  const isOpen = openKey === uniqueKey
+                  
+                  return (
+                    <div
+                      key={itemIndex}
+                      className={`border rounded-2xl overflow-hidden transition-all duration-300 ${
+                        isOpen ? "bg-secondary border-primary/20" : "bg-transparent border-border/50 hover:border-border"
+                      }`}
+                      style={{
+                        opacity: inView ? 1 : 0,
+                        transform: inView ? "translateY(0)" : "translateY(20px)",
+                        transition: "opacity 500ms ease, transform 500ms ease, background-color 300ms, border-color 300ms",
+                      }}
+                    >
+                      <button
+                        onClick={() => setOpenKey(isOpen ? null : uniqueKey)}
+                        className="w-full text-left px-6 py-6 md:px-8 md:py-8 flex items-center justify-between gap-4"
+                      >
+                        <h4 className={`text-base md:text-lg font-bold transition-colors ${isOpen ? "text-primary" : "text-foreground"}`}>
+                          {faq.question}
+                        </h4>
+                        <div className={`flex-shrink-0 w-8 h-8 rounded-full border flex items-center justify-center transition-colors ${
+                          isOpen ? "bg-primary border-primary" : "border-border"
+                        }`}>
+                          {isOpen ? (
+                            <Minus className="w-4 h-4 text-white" />
+                          ) : (
+                            <Plus className="w-4 h-4 text-foreground" />
+                          )}
+                        </div>
+                      </button>
+                      <div
+                        className="transition-all duration-300 ease-in-out grid"
+                        style={{
+                          gridTemplateRows: isOpen ? "1fr" : "0fr",
+                          opacity: isOpen ? 1 : 0,
+                          overflow: "hidden",
+                        }}
+                      >
+                        <div className="min-h-0">
+                          <div className="px-6 pb-6 md:px-8 md:pb-8 text-muted-foreground text-sm md:text-base leading-relaxed">
+                            {faq.answer}
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
+                  )
+                })}
               </div>
-            )
-          })}
+            </div>
+          ))}
         </div>
 
         {/* View All Link */}
         <div
-          className="mt-10 text-center transition-all duration-500"
+          className="mt-12 text-center transition-all duration-500"
           style={{
             opacity: inView ? 1 : 0,
             transform: inView ? "translateY(0)" : "translateY(16px)",

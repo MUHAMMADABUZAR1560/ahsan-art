@@ -6,30 +6,31 @@ import Link from "next/link"
 import Image from "next/image"
 import { motion, useInView } from "framer-motion"
 import { Phone, Mail, Instagram, MapPin, Send, CheckCircle } from "lucide-react"
+import { studioInfo } from "@/lib/studio-info"
 
 const contactInfo = [
   {
     icon: Phone,
     title: "WhatsApp",
-    value: "0308-1122525",
-    href: "https://wa.me/923081122525",
+    value: studioInfo.phone,
+    href: studioInfo.phoneLink,
   },
   {
     icon: Instagram,
     title: "Instagram",
-    value: "@ahsanart.studio",
-    href: "https://www.instagram.com/ahsanart.studio/",
+    value: studioInfo.instagram,
+    href: studioInfo.instagramLink,
   },
   {
     icon: Mail,
     title: "Email",
-    value: "ahsanart.creativestudio@gmail.com",
-    href: "https://mail.google.com/mail/?view=cm&fs=1&to=ahsanart.creativestudio@gmail.com",
+    value: studioInfo.email,
+    href: studioInfo.emailLink,
   },
   {
     icon: MapPin,
     title: "Studio",
-    value: "Opposite Gatwala Commercial Hub, Chak No 199 Rb, Faisalabad, 38000, Pakistan",
+    value: studioInfo.address,
     href: "https://maps.app.goo.gl/gVddJFUuFZzUb2Y26?g_st=ic",
   },
 ]
@@ -219,8 +220,7 @@ export function ContactContent() {
               >
                 <h3 className="font-semibold text-lg">Working Hours</h3>
                 <div className="mt-4 space-y-2 text-background/70">
-                  <p>Saturday - Thursday: 11:00 AM - 6:00 PM</p>
-                  <p>Thursday: 10:00 AM - 5:00 PM</p>
+                  <p>Saturday – Thursday: 11:00 AM – 6:00 PM</p>
                   <p>Friday: Closed</p>
                 </div>
               </motion.div>

@@ -11,9 +11,10 @@ import { ArrowRight, MessageCircle } from "lucide-react"
 const categories = [
   { label: "Shipping & Products" },
   { label: "Turnaround Time" },
-  { label: "Pricing" },
-  { label: "Usage Rights" },
+  { label: "Pricing & Booking" },
+  { label: "Usage Rights & Ownership" },
   { label: "Revisions" },
+  { label: "Services & Process" },
 ]
 
 export function FAQPageClient() {

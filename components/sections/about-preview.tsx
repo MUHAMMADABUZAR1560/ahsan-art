@@ -4,6 +4,7 @@ import { useRef, useEffect, useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight } from "lucide-react"
+import { studioInfo } from "@/lib/studio-info"
 
 export function AboutPreview() {
   const ref = useRef<HTMLElement>(null)
@@ -66,7 +67,7 @@ export function AboutPreview() {
               className="absolute -right-4 lg:-right-8 bottom-8 bg-background p-6 rounded-xl shadow-2xl max-w-[200px] transition-all duration-700 delay-300"
               style={{ opacity: inView ? 1 : 0, transform: inView ? "translateX(0)" : "translateX(20px)" }}
             >
-              <div className="text-4xl font-serif font-bold text-primary">7+</div>
+              <div className="text-4xl font-serif font-bold text-primary">{studioInfo.stats.yearsString}</div>
               <div className="text-sm text-muted-foreground mt-1">
                 Years of Professional Experience
               </div>
