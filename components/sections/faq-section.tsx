@@ -6,7 +6,7 @@ import { Plus, Minus, ArrowUpRight } from "lucide-react"
 
 const faqCategories = [
   {
-    title: "📦 Shipping & Products",
+    title: "Shipping & Products",
     items: [
       {
         question: "Do I need to send my products to your studio?",
@@ -27,7 +27,7 @@ const faqCategories = [
     ]
   },
   {
-    title: "⏱️ Turnaround Time",
+    title: "Turnaround Time",
     items: [
       {
         question: "How long does a typical project take?",
@@ -44,7 +44,7 @@ const faqCategories = [
     ]
   },
   {
-    title: "💰 Pricing & Booking",
+    title: "Pricing & Booking",
     items: [
       {
         question: "How much does a shoot cost?",
@@ -65,7 +65,7 @@ const faqCategories = [
     ]
   },
   {
-    title: "✅ Usage Rights & Ownership",
+    title: "Usage Rights & Ownership",
     items: [
       {
         question: "Do I get full rights to the images/videos?",
@@ -78,7 +78,7 @@ const faqCategories = [
     ]
   },
   {
-    title: "🔄 Revisions",
+    title: "Revisions",
     items: [
       {
         question: "What is your revision policy?",
@@ -91,7 +91,7 @@ const faqCategories = [
     ]
   },
   {
-    title: "🎬 Services & Process",
+    title: "Services & Process",
     items: [
       {
         question: "What services do you offer?",
