@@ -130,15 +130,11 @@ export function PortfolioPreview() {
                   {/* Hover Overlay Background */}
                   <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                  {/* Content Container */}
-                  <div className="absolute inset-0 p-6 md:p-10 flex flex-col justify-end">
-                    <div className="transform translate-y-0 md:translate-y-4 md:group-hover:translate-y-0 transition-transform duration-500">
-                      <div className="flex items-center gap-3 mb-2 md:mb-3 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                        <span className="w-4 md:w-6 h-px bg-primary" />
-                        <span className="text-primary text-[10px] md:text-xs font-bold uppercase tracking-widest">{item.category}</span>
-                      </div>
-                      <h3 className="text-xl md:text-3xl font-serif font-bold text-white mb-1 md:mb-2">{item.title}</h3>
-                      <div className="flex items-center gap-2 text-white/90 text-[10px] md:text-sm font-medium opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-500 delay-150">
+                  {/* Content — always anchored at bottom inside gradient */}
+                  <div className="absolute bottom-0 left-0 right-0 p-4 md:p-8">
+                    <div className="transform translate-y-0 md:translate-y-3 md:group-hover:translate-y-0 transition-transform duration-500">
+                      <h3 className="text-lg md:text-3xl font-serif font-bold text-white mb-1 md:mb-2 leading-tight">{item.title}</h3>
+                      <div className="flex items-center gap-2 text-white/80 text-[10px] md:text-sm font-medium">
                         <span>{item.type === "video" ? "Watch Video" : "View Gallery"}</span>
                         <ArrowUpRight className="w-3 h-3 md:w-4 md:h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                       </div>
